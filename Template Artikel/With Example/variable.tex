@@ -1,0 +1,154 @@
+%======================%
+% NORMAL TEXT VARIABLE %
+%======================%
+
+\newcommand{\judul}{Judul Karya Tulis Artikel}
+
+% Informasi Mata Kuliah, Sesi, TUgas, dan Tutor
+\newcommand{\sesiKe}{3}
+\newcommand{\tugasKe}{1}
+\newcommand{\tanggalLengkap}{\today}
+\newcommand{\tahun}{\the\year}
+
+\newcommand{\namaMataKuliah}{Pengendalian Amarah Berbasis Desktop}
+\newcommand{\kodeMataKuliah}{STSI9999}
+\newcommand{\KodeMataKuliah}{STSI-9999}
+
+\newcommand{\kodeKelas}{256}
+
+\newcommand{\namaTutorPengampu}{Revi Soekatno, S.Pd., M.Pd., M.Sc.}
+
+% Informasi Mahasiswa
+\newcommand{\namaMahasiswa}{Yoeru Sandaru}
+\newcommand{\nimMahasiswa}{081298765432}
+\newcommand{\programStudi}{Sains Data}
+\newcommand{\kodeProgramStudi}{/257}
+\newcommand{\fakultas}{Sains dan Teknologi}
+\newcommand{\kodeFakultas}{/127}
+\newcommand{\utDaerah}{UT Medan}
+\newcommand{\kodeUTDaerah}{/28}
+\newcommand{\perguruanTinggi}{Universitas Terbuka}
+\newcommand{\daearhMahasiswa}{Medan}
+
+%==========================%
+% ANOTHER COMMAND VARIABLE %
+%==========================%
+
+\newcommand{\linesskip}[1]{\vspace{#1\baselineskip}}
+\newcommand{\titleindent}{1.24cm}
+
+% Keterangan dan Sumber
+\newcommand{\longcaption}[1]{\caption{\begin{tabular}[t]{@{}l@{}}#1\end{tabular}}}
+\newcommand{\tablesource}[1]{\caption*{Sumber: #1}}
+\newcommand{\tablesourceleft}[2]{\raggedright\medskip\hspace{#1} Sumber: #2}
+\newcommand{\figuresource}[1]{Sumber: #1}
+\newcommand{\lstsource}[1]{\begin{center}\vspace{-1.4\baselineskip}\singlespacing Sumber: #1 \vspace{.5\baselineskip}\end{center}}
+
+% Notasi Matematika Tegak
+\newcommand{\deriv}{\mathrm{d}}
+\newcommand{\adj}[1]{\mathrm{adj}#1}
+\newcommand{\euler}{\mathrm{e}}
+\newcommand{\imaginary}{\mathrm{i}}
+
+%=====================%
+% PENGGANTIAN ISTILAH %
+%=====================%
+
+\addto\captionsindonesian{\renewcommand{\bibname}{Referensi}} % Bibliography
+\addto\captionsindonesian{\renewcommand{\refname}{Referensi}} % Reference
+
+\renewcommand{\figureautorefname}{Gambar}
+\renewcommand{\tableautorefname}{Tabel}
+\renewcommand{\equationautorefname}{Pernyataan}
+
+\renewcommand{\lstlistingname}{Kode}
+
+\DeclareTblrTemplate{contfoot-text}{normal}{Lanjutan di halaman berikutnya}
+\SetTblrTemplate{contfoot-text}{normal}
+\DeclareTblrTemplate{conthead-text}{normal}{(Lanjutan)}
+\SetTblrTemplate{conthead-text}{normal}
+
+\DeclareTblrTemplate{remark-tag}{normal}{
+    \UseTblrFont {remark-tag} \InsertTblrRemarkTag
+}
+\SetTblrTemplate{remark-tag}{normal}
+
+%===================================%
+% ISTILAH DAlAM APA6 DAFTAR PUSTAKA %
+%===================================%
+
+\renewcommand{\onemaskedcitationmsg}[1]{%
+    \emph{(#1\ sitasi dihilangkan untuk tinjauan anonim)}}%
+\renewcommand{\maskedcitationsmsg}[1]{%
+    \emph{(#1\ sitasi dihilangkan untuk tinjauan anonim)}}%
+\renewcommand{\authorindexname}{Indeks Penulis}% Nama Indeks Penulis
+%%
+%% A note before the references if a meta-analysis is reported.
+\renewcommand{\APACmetaprenote}{%
+    Referensi yang ditandai dengan tanda bintang menunjukkan studi
+    yang dimasukkan dalam meta-analisis.}%
+%%
+%% Commands for specific types of @misc entries.
+\renewcommand{\bibmessage}{Pesan}%
+\renewcommand{\bibcomputerprogram}{Program komputer}%
+\renewcommand{\bibcomputerprogrammanual}{Manual program komputer}%
+\renewcommand{\bibcomputerprogramandmanual}{Program dan manual komputer}%
+\renewcommand{\bibcomputersoftware}{Perangkat lunak}%
+\renewcommand{\bibcomputersoftwaremanual}{Manual perangkat lunak}%
+\renewcommand{\bibcomputersoftwareandmanual}{Perangkat lunak dan manual}%
+\renewcommand{\bibprogramminglanguage}{Bahasa pemrograman}%
+%%
+%% Other labels
+\renewcommand{\bibnodate}{t.t.\hbox{}}%   % ``tanpa tanggal''
+\renewcommand{\BIP}{dalam proses terbit}%            % ``in press''
+\renewcommand{\BOthers}[1]{et al.\hbox{}}% ``dan lain-lain''
+\renewcommand{\BOthersPeriod}[1]{et al.\hbox{}}% ``dan lain-lain'' dengan titik
+\renewcommand{\BIn}{Dalam}%                  % for ``In '' editor...
+\renewcommand{\Bby}{oleh}%                  % for ``by '' editor... (in reprints)
+\renewcommand{\BED}{Penyunt.}%          % penyunting
+\renewcommand{\BEDS}{Penyunt.}%        % para penyunting
+\renewcommand{\BTRANS}{Penerj.}%    % penerjemah
+\renewcommand{\BTRANSS}{Penerj.}%   % para penerjemah
+\renewcommand{\BTRANSL}{terj.}%   % terjemahan, for the year field
+\renewcommand{\BCHAIR}{Ketua}%            % ketua simposium
+\renewcommand{\BCHAIRS}{Para Ketua}%          % para ketua
+\renewcommand{\BVOL}{Jilid}%        % jilid
+\renewcommand{\BVOLS}{Jilid}%        % jilid
+\renewcommand{\BNUM}{No.\hbox{}}%         % nomor
+\renewcommand{\BNUMS}{No.\hbox{}}%       % nomor
+\renewcommand{\BEd}{ed.\hbox{}}%          % edisi
+\renewcommand{\BCHAP}{bab}%        % bab
+\renewcommand{\BCHAPS}{bab}%       % bab
+\renewcommand{\BPG}{h.\hbox{}}%           % halaman
+\renewcommand{\BPGS}{hlm.\hbox{}}%         % halaman
+%% Default technical report type name.
+\renewcommand{\BTR}{Lap. Tek.}
+%% Default PhD thesis type name.
+\renewcommand{\BPhD}{Disertasi doktor}
+%% Default unpublished PhD thesis type name.
+\renewcommand{\BUPhD}{Disertasi doktor tidak diterbitkan}
+%% Default master's thesis type name.
+\renewcommand{\BMTh}{Tesis magister}
+%% Default unpublished master's thesis type name.
+\renewcommand{\BUMTh}{Tesis magister tidak diterbitkan}
+%%
+\renewcommand{\BAuthor}{Penulis}% ``Penulis'' jika penerbit = penulis
+\renewcommand{\BOWP}{Karya asli diterbitkan}%
+\renewcommand{\BREPR}{Dicetak ulang dari}%
+\renewcommand{\BAvailFrom}{Tersedia dari\ }%       Situs web; perhatikan spasi.
+%% The argument is the date on which it was last checked.
+\renewcommand{\BRetrieved}[1]{Diakses {#1}, dari\ }% Situs web; perhatikan spasi.
+\renewcommand{\BRetrievedFrom}{Diakses dari\ }% Situs web; perhatikan spasi.
+\renewcommand{\BMsgPostedTo}{Pesan dikirim ke\ }%     Pesan; perhatikan spasi.
+
+
+%=============%
+% COLOR NAMES %
+%=============%
+
+\definecolor{monokai-bg}{RGB}{250,250,250}     % Light gray background
+\definecolor{monokai-comment}{RGB}{117,113,94} % Grayish comments
+\definecolor{monokai-purple}{RGB}{137,89,168}  % Purple for keywords
+\definecolor{monokai-green}{RGB}{58,110,59}    % Green for strings
+\definecolor{monokai-orange}{RGB}{253,151,31}  % Orange for specials
+\definecolor{monokai-blue}{RGB}{81,154,186}    % Blue for types/functions

@@ -1,0 +1,108 @@
+\section{Kajian Teori} % Dapat diganti menjadi "Kajian Pustaka" bila perlu
+
+%=========================================================%
+%                TULIS KAJIAN TEORI DI SINI               %
+% Jangan Lupa untuk Menghapus Contoh Tulisan di Bawah Ini %
+%=========================================================%
+
+Bagian ini berfungsi sebagai fondasi teoritis artikel Anda. Di sini, Anda menunjukkan bahwa Anda telah melakukan riset mendalam dan memahami konteks topik yang Anda bahas.
+
+\textbf{Landasan Teori:} Jelaskan teori atau konsep-konsep utama yang relevan dengan topik Anda. Misalnya, jika Anda menulis tentang pemasaran digital, jelaskan apa itu SEO, content marketing, dan social media engagement menurut para ahli. Gunakan definisi-definisi dari sumber-sumber terpercaya (buku teks, jurnal ilmiah).
+
+Jika artikel Anda tidak memerlukan bagian Kajian Teori, Anda dapat menghilangkannya dengan menghapus/memberi \textit{comment} bagian \verb|\input{section/kajian-teori.tex}| dalam \textit{file} \texttt{main.tex}.
+
+\subsection{Spesifikasi Dokumen}
+
+Spesifikasi atau setelan dokumen yang digunakan dalam \textit{template} bawaan ini dapat Anda lihat pada \autoref{table:spek-template-bawaan} di bawah ini.
+
+\noindent\begin{longtblr}[
+    caption={Spesifikasi \textit{Template} Bawaan},
+    label={table:spek-template-bawaan}
+    ]{
+        colspec={r c l}, 
+        colsep=0pt, 
+        rowsep=0pt, 
+        column{2}={colsep=4pt}
+    }
+    Jenis Dokumen &:& Report (dapat menggunakan bab) \\
+    Ukuran Kertas &:& A4 \\
+    Margin &:& $\leftarrow$ 3cm, $\uparrow$ 3cm, $\rightarrow$ 3cm, $\downarrow$ 3cm \\
+    &&\\
+    Font Serif &:& Times New Roman \\
+    Font Sans-Serif &:& Noto Sans \\
+    Font Matematika &:& XITS Math \\
+    Font Monospace &:& Fira Code \\
+    Ukuran Font &:& 12pt \\
+    &&\\
+    Line Spacing &:& 1,5 \\
+    Ukuran Indent &:& 1,24cm \\
+    &&\\
+    Standar Heading &:& APA (dimodifikasi) \\
+    Sistem Indentation &:& Semua paragraf, kecuali paragraf pertama di bawah heading. \\
+    Urutan Heading &:& {Chapter $\rangle$ Section $\rangle$ Subsection $\rangle$ Subsubsection \\ Paragraph $\rangle$ Subparagraph} \\
+    Penomoran Heading &:& I. II. III $\rangle$ A. B. C. $\rangle$ 1. 2. 3. $\rangle$ a. b. c. $\rangle$ 1) 2) 3) $\rangle$ a) b) c) \\
+    &&\\
+    Reference Manager &:& BiBTeX \\
+    Citation Style &:& APA Edisi ke-6 \\
+    &&\\
+    Teks Bervariabel &:& {Judul, Tugas ke-$x$, Sesi ke-$x$, Nama \& Kode Mata Kuliah, \\ Nama Tutor, Nama Mahasiswa, Nama \& Kode Program \\ Studi, dll.} \\
+\end{longtblr}
+
+\subsection{Struktur \textit{File}}
+
+\textit{Template} \LaTeX\ ini bukan ditulis semua kodenya menjadi satu \textit{file}, tapi dipisah-pisah agar lebih mudah digunakan.
+
+\begin{enumerate}[]
+    \item \textbf{Folder \texttt{image}} sebagai tempat untuk menyimpan gambar. Anda dapat memasukkan gambar yang diperlukan ke dalam folder ini.
+    \item \textbf{Folder \texttt{pdf}} sebagai tempat untuk menyimpan file PDF. Anda dapat memasukkan file PDF naskah soal atau file PDF lain yang diperlukan ke dalam folder ini.
+    \item \textbf{Folder \texttt{section}} sebagai tempat untuk menyimpan bagian isi dokumen seperti bab. Jika Anda hendak menulis dan ada bagian yang kode \LaTeX\-nya bakal menjadi banyak, Anda dapat menambahkan bagian tersebut menjadi file \texttt{.tex} di dalam folder ini sesuai kebutuhan.
+    \begin{itemize}[]
+        \item \textbf{\textit{File} \texttt{cover.tex}} untuk bagian halaman \textit{cover}. Bagian ini tidak perlu diedit. Jika Anda ingin mengubah nama, mata kuliah, dan lainnya pada halaman \textit{cover}, cukup ubah dari variabel yang tersedia di dalam \textit{file} \texttt{variable.tex}.
+        \item \textbf{\textit{File} \texttt{soal.tex}} untuk bagian soal (setelah halaman \textit{cover}). Anda dapat menuliskan soal yang diperoleh dari naskah soal di \textit{file} ini, tapi jangan lupa untuk menghapus isi contohnya.
+        \item \textbf{\textit{File} \texttt{jawaban.tex}} untuk bagian jawaban (setelah halaman soal). Anda dapat menuliskan jawabannya di \textit{file} ini, tapi jangan lupa untuk menghapus isi contohnya.
+    \end{itemize}
+    \item \textbf{\textit{File} \texttt{variable.tex}} berisi variabel yang dapat memudahkan Anda mengisi \textit{field} teks yang berulang-ulang. Terdapat variabel teks, variabel penggantian istilah, dan variabel warna yang tersedia secara bawaan. Variabel yang lebih sering diubah biasanya:
+    \begin{itemize}[nosep]
+        \item Judul --- Misalnya: \judul
+        \item Tugas ke-$x$ --- Misalnya: \tugasKe
+        \item Sesi ke-$x$ --- Misalnya: \sesiKe
+        \item Mata Kuliah --- Misalnya: \namaMataKuliah
+        \item Kode Mata Kuliah --- Misalnya: \kodeMataKuliah
+        \item Kode Mata Kuliah (\textit{Dashed}) --- Misalnya: \KodeMataKuliah
+        \item Kode Kelas/Kelas ke-$x$ --- Misalnya: \kodeKelas
+        \item Nama Tutor --- Misalnya: \namaTutorPengampu
+        \item Nama Mahasiswa --- Misalnya: \namaMahasiswa
+        \item Program Studi --- Misalnya: \programStudi
+        \item Kode Program Studi --- Misalnya: \kodeProgramStudi
+        \item Fakultas --- Misalnya: \fakultas
+        \item Kode Fakultas --- Misalnya: \kodeFakultas
+    \end{itemize}
+    
+    Variabel juga bisa diaplikasikan seperti contoh ini:
+    
+    Hai teman-teman. Perkenalkan aku \namaMahasiswa\ yang berkuliah di \perguruanTinggi. Aku dari Program Studi \programStudi, Fakultas \fakultas, dan berasal dari \utDaerah. Saat ini aku mengerjakan tugas mata kuliah \namaMataKuliah\ yang ditutorkan oleh \namaTutorPengampu\ di kelas \textit{online} ke-\kodeKelas.
+    
+    Anda dapat menambahkan variabel lain di dalam \textit{file} ini sesuai keperluan.
+    
+    \item \textbf{\textit{File} \texttt{reference.bib}} berisi daftar pustaka/referensi yang dapat digunakan sebagai penguat jawaban. Daftar referensi ditulis dengan format BiBTeX. Anda dapat mengedit daftar referensi di \textit{file} ini dengan format BiBTeX. Dasar penulisan BiBTeX dapat Anda lihat pada situs \url{https://www.bibtex.com/e/entry-types/} dan \url{https://www.bibtex.com/format/}. Cara yang lebih mudah adalah memakai konverter atau meminta tolong AI untuk menuliskannya.
+\end{enumerate}
+
+\subsection{\textit{Heading}}
+
+Format \textit{heading} ini mengikuti standar APA, tapi dimodifikasi dengan menambahkan penomoran pada \textit{heading}-nya. Jenis-jenis \textit{heading} yang digunakan dalam \textit{template} ini dapat Anda lihat pada \autoref{table:jenis-heading}.
+
+\begin{table}[H]
+    \centering
+    \caption{\textit{Jenis Heading} Beserta \textit{Command}-nya}
+    \label{table:jenis-heading}
+    \begin{tblr}{colspec={c l X{l} X{l}}, hline{1,2,Z}={1-Z}{1pt, solid}, row{3}={bg=yellow!30}, row{1}={c}}
+        Level & Heading & \textit{Command} Bernomor & \textit{Command} Tanpa Nomor \\
+        1. & Section & \texttt{\textbackslash section\{TEKS\}} & \texttt{\textbackslash section*\{TEKS\}} \\
+        2. & Subsection & \texttt{\textbackslash subsection\{TEKS\}} & \texttt{\textbackslash subsection*\{TEKS\}} \\
+        3. & Subsubsection & \texttt{\textbackslash subsubsection\{TEKS\}} & \texttt{\textbackslash subsubsection*\{TEKS\}} \\
+        4. & Paragraph & \texttt{\textbackslash paragraph\{TEKS\}} & \texttt{\textbackslash paragraph*\{TEKS\}} \\
+        5. & Subparagraph & \texttt{\textbackslash subparagraph\{TEKS\}} & \texttt{\textbackslash subparagraph*\{TEKS\}}
+    \end{tblr}
+\end{table}
+
+Saat Anda hendak menulis \textit{heading} di dalam bagian Pendahuluan, Kajian Teori, dan lain sebagainya, mulailah dari \textit{Subsection} --- seperti yang di-\textit{highlight} pada \autoref{table:jenis-heading}.
