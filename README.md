@@ -2,7 +2,7 @@
 
 Repositori ini berisi template-template lembar jawaban dan buku penugasan tutorial online di Universitas Terbuka.
 
-# Pendahuluan
+# 💭 Pendahuluan
 
 ## Keistimewaan LaTeX Template
 
@@ -36,7 +36,7 @@ Menulis tulisan panjang dengan LaTeX tidak begitu masalah karena "sangat menduku
 
 ![Latex Tulisan Panjang](https://github.com/user-attachments/assets/a098854c-8b96-465b-b608-5c0fe96075df)
 
-# Persiapan
+# 🛠️ Persiapan
 
 Dokumen LaTeX bukanlah dokumen yang dapat disaksikan hasilnya secara langsung seperti menggunakan word processor, atau istilahnya bukan dokumen yang [_What You See Is What You Get_](https://dictionary.cambridge.org/dictionary/english/wysiwyg). Dokumen LaTeX ditulis seperti kode, kemudian melewati tahap kompilasi, dan barulah hasilnya dapat dilihat.
 
@@ -93,3 +93,94 @@ Beberapa font ini tidak wajib diinstal jika tidak ingin digunakan. Ini adalah be
 | Noto Sans | Sans-Serif | [Google Fonts](https://fonts.google.com/noto/specimen/Noto+Sans) |
 
 Jika font ini tidak ingin digunakan, cukup diganti saja dari file `main.tex`. Misalnya dari Noto Sans &rarr; Calibri, Fira Code &rarr; Lucida Console, dsb.
+
+# 𝒊 Informasi Template
+
+## 1 | Template yang Tersedia
+
+- Artikel Tugas Tutorial
+- Makalah Tugas Tutorial
+- Lembar Jawaban Diskusi (Tutorial Online)
+- Buku Jawaban Tugas Tutorial
+
+## 2 | Perbedaan Dasar Antar-jenis Template
+
+Tabel di bawah ini adalah bagian-bagian dokumen (template) yang telah tersedia secara bawaan.
+
+|                     | Artikel (Biasa) | Makalah | Lembar Jawaban Diskusi | Buku Jawaban Tugas |
+|--------------------:|:---------------:|:-------:|:----------------------:|:------------------:|
+| **Cover**           | ✔️ | ✔️ | ❌ | ✔️ |
+| **Kata Pengantar**  | ❌ | ✔️ | ❌ | ❌ |
+| **Daftar Isi**      | ❌ | ✔️ | ❌ | ✔️ |
+| **Bab**             | ❌ | ✔️ Pendahuluan<br>✔️ Kajian Teori<br>✔️ Pembahasan<br>✔️ Penutup | ❌ | ✔️ Soal<br>✔️ Jawaban |
+| **Header**          | ❌ | ❌ | ✔️ | ✔️ |
+| **Nomor Halaman**   | ✔️ Arab | ✔️ Romawi<br>✔️ Arab | ✔️ Arab | ✔️ Arab |
+
+## 3 | Struktur Direktori Template
+
+- 🗁 `image` &larr; Tempat untuk menyimpan gambar, grafik, diagram, dsb.
+- 🗁 `pdf` &larr; Tempat untuk menyimpan file PDF seperti naskah soal atau lampiran tambahan.
+- 🗁 `preset` &larr; Tempat untuk menyimpan sekumpulan setelan.
+- 🗁 `section` &larr; Tempat untuk menyimpan bagian-bagian dokumen yang terpisah.
+- 🗎 `main.tex` &larr; File utama (menyimpan setelan utama) untuk menyatukan semua bagian dan menampilkan hasilnya.
+- 🗎 `reference.bib` &larr; File yang berisi daftar-daftar pustaka.
+- 🗎 `variable.tex` &larr; File yang berisi teks bervariabel dan perintah tambahan.
+
+## 4 | Package LaTeX yang Digunakan
+
+| Package | Keterangan | Sumber |
+|---|---|---|
+| `geometry` | Mengatur tata letak halaman (margin, paper size, dsb.). | [CTAN](https://www.ctan.org/pkg/geometry) / [GitHub](https://github.com/ho-ho-ho/geometry) |
+| `hyperref` | Membuat hyperlink dalam dokumen (TOC, referensi, URL). | [CTAN](https://www.ctan.org/pkg/hyperref) / [GitHub](https://github.com/latex3/hyperref) |
+| `apacite` | Paket untuk gaya sitasi dan daftar pustaka APA. | [CTAN](https://www.ctan.org/pkg/apacite) |
+| `babel` | Memungkinkan penyesuaian bahasa dalam dokumen LaTeX. | [CTAN](https://www.ctan.org/pkg/babel) |
+| `graphicx` | Menyertakan gambar dalam berbagai format (jpg, png, pdf). | [CTAN](https://www.ctan.org/pkg/graphicx) |
+| `xcolor` | Menyediakan fungsi untuk menggunakan warna dalam dokumen. | [CTAN](https://www.ctan.org/pkg/xcolor) / [GitHub](https://github.com/latex3/xcolor) |
+| `amsmath` | Kumpulan alat untuk penulisan persamaan matematika yang canggih. | [CTAN](https://www.ctan.org/pkg/amsmath) |
+| `amsthm` | Menyediakan lingkungan untuk teorema, definisi, dan sejenisnya. | [CTAN](https://www.ctan.org/pkg/amsthm) |
+| `amssymb` | Koleksi simbol matematika tambahan. | [CTAN](https://www.ctan.org/pkg/amssymb) |
+| `xfrac` | Membuat pecahan diagonal (`xfrac`) yang lebih elegan. | [CTAN](https://www.ctan.org/pkg/xfrac) |
+| `unicode-math` | Menggunakan font Unicode untuk matematika. | [CTAN](https://www.ctan.org/pkg/unicode-math) / [GitHub](https://github.com/wspr/unicode-math) |
+| `float` | Mengontrol penempatan objek float (gambar, tabel) dengan lebih presisi. | [CTAN](https://www.ctan.org/pkg/float) |
+| `tabularray` | Cara modern dan fleksibel untuk membuat tabel yang kompleks. | [CTAN](https://www.ctan.org/pkg/tabularray) |
+| `fontenc` | Mengatur encoding font, biasanya `T1` untuk font Latin. | [CTAN](https://www.ctan.org/pkg/fontenc) |
+| `fontspec` | Menggunakan font sistem yang terinstal (seperti TrueType atau OpenType). | [CTAN](https://www.ctan.org/pkg/fontspec) |
+| `listings` | Menyertakan kode sumber dengan syntax highlighting. | [CTAN](https://www.ctan.org/pkg/listings) / [GitHub](https://github.com/latex3/listings) |
+| `lstfiracode` | Paket untuk penyesuaian `listings` agar menggunakan font Fira Code. | [CTAN](https://www.ctan.org/pkg/lstfiracode) |
+| `parskip` | Menambah spasi antar paragraf, tanpa indent. | [CTAN](https://www.ctan.org/pkg/parskip) |
+| `setspace` | Mengatur spasi baris teks (single, double, 1.5). | [CTAN](https://www.ctan.org/pkg/setspace) |
+| `caption` | Menyesuaikan tampilan caption untuk gambar dan tabel. | [CTAN](https://www.ctan.org/pkg/caption) |
+| `titlesec` | Mengatur format judul bagian (section, subsection) dengan lebih detail. | [CTAN](https://www.ctan.org/pkg/titlesec) |
+| `tocloft` | Memodifikasi daftar isi, daftar gambar, dan daftar tabel. | [CTAN](https://www.ctan.org/pkg/tocloft) |
+| `enumitem` | Mengontrol tata letak item dalam daftar (itemize, enumerate). | [CTAN](https://www.ctan.org/pkg/enumitem) |
+| `fancyhdr` | Membuat header dan footer yang customizable. | [CTAN](https://www.ctan.org/pkg/fancyhdr) / [GitHub](https://github.com/latex3/fancyhdr) |
+| `lastpage` | Digunakan untuk mengetahui nomor halaman terakhir dari dokumen. | [CTAN](https://www.ctan.org/pkg/lastpage) |
+
+## 5 | Spesifikasi Dokumen (Bawaan)
+
+| | |
+|-:|:-|
+| Document Class | Report (Buku Jawaban Tugas & Makalah)<br>Article (Artikel Biasa & Lembar Jawaban Diskusi) |
+| Ukuran Kertas | A4 |
+| Margin | 3cm (atas, bawah, kiri, kanan) |
+|||
+| Font Serif | **Times New Roman** — TeX Gyre Termes — XITS |
+| Font Sans-Serif | **Noto Sans** — Calibri |
+| Font Matematika | **XITS Math** |
+| Font Monospace | **Fira Code** — Courier New — Cascadia Code |
+| Ukuran Font | **Standar 12pt:**<br>tiny ≈ 6pt<br>scriptsize ≈ 8pt<br>footnotesize ≈ 10pt<br>small ≈ 11pt<br>normalsize = 12pt<br>large ≈ 14pt<br>Large ≈ 17pt<br>LARGE ≈ 20pt<br>huge ≈ 25pt<br>Huge ≈ 25pt |
+|||
+| Line Spacing | 1,5 (onehalfspacing) |
+| Indent | 1,24cm |
+| Indentation | Semua paragraf, kecuali paragraf pertama setelah heading. |
+| Penomoran Heading | **Alphanumeric:**<br>I. II. III. > A. B. C. > 1. 2. 3. > a. b. c. > 1) 2) 3) > a) b) c)<br><br>Multilevel<br>1. 2. 3. > 1.1 1.2 1.3 > 1.1.1 1.1.2 1.1.3 > 1.1.1.1 1.1.1.2 1.1.1.3 |
+|||
+| Reference Manager | BibTeX |
+| Citation Style | APA Edisi ke-6 |
+| Bahasa Citation | **Campuran: Singkatan dengan Bahasa Inggris, kalimat dengan Bahasa Indonesia**<br>Bahasa Inggris (seperti aslinya) |
+
+# ✍ Cara Penggunaan
+
+## 1 | Download
+
+# ⚙️ Penyetelan
