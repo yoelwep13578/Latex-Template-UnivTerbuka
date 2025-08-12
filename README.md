@@ -189,7 +189,9 @@ Tabel di bawah ini adalah bagian-bagian dokumen (template) yang telah tersedia s
 
 # ✍ Cara Penggunaan
 
-## 1 | Download
+## 1 | Penyiapan
+
+### 1.1 Download
 
 Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
 
@@ -209,7 +211,7 @@ Atau penulis dapat men-download template-nya sesuai pilihan yang diinginkan.
 [![Artikel Biasa](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
 [![Artikel Biasa](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
 
-## 2 | Ekstrak dan Simpan
+### 1.2 Ekstrak dan Simpan
 
 > [!NOTE]
 > Jika template di-download dengan cara clone menggunakan Git, artinya sekumpulan file tempate sudah tersimpan di dalam folder dan tidak perlu diekstrak. Cukup pindahkan folder template-nya ke direktori yang diinginkan.
@@ -220,9 +222,9 @@ Ekstrak dan simpanlah folder template yang telah ter-download di lokasi file (di
 
 Dengan demikian, template akan tetap terjaga karena sudah dibuatkan salinannya untuk dipakai menulis. Jika ingin menggunakan template untuk tulisan lainnya, cukup copy folder template yang ingin dipakai &rarr; rename dengan nama baru &rarr; pakai.
 
-## 3 | Buka Template-nya
+### 1.3 Buka Template-nya
 
-### 3.1 Membuka di Sarana Online (Overleaf)
+#### 1.3.1 Membuka di Sarana Online (Overleaf)
 
 Penulis dapat menggunakan salinan template-nya ke Overleaf, caranya dengan meng-upload semua isi di dalam folder salinan template tersebut. Cukup CTRL + A (select all) lalu drag-n-drop ke webapp Overleaf (diarahkan ke sidebar kiri saja).
 
@@ -231,10 +233,85 @@ Penulis dapat menggunakan salinan template-nya ke Overleaf, caranya dengan meng-
 > [!NOTE]
 > Sewaktu-waktu, Overleaf bisa gagal menerima upload-an file karena jumlah yang terlalu banyak untuk dikirim sekaligus. Jika error-nya terjadi, folder dan file perlu di-upload satu-satu.
 
-### 3.2 Membuka di Compiler Sendiri (LaTeX Editor)
+#### 1.3.2 Membuka di Compiler Sendiri (LaTeX Editor)
 
 Penulis dapat menggunakan salinan template-nya & dicompile sendiri dengan LaTeX Editor. TeX Studio atau TeX Maker biasanya hanya perlu membuka satu file utama (main) saja, tapi bisa juga membuka file lain jika diperlukan.
 
 ![Panduan Buka Template di Compiler Sendiri](https://github.com/user-attachments/assets/78dc0342-7fec-435e-a99c-32ac79c8ab7d)
+
+## 2 | Tahap Penulisan
+
+### 2.1 Ganti Isi (Value) Variabel di `variable.tex`
+
+Penulis harus mengganti isi (value) variabel terlebih dahulu sebelum menulis isi dokumen. Teks bervariabel dibuat menggunakan `\newcommand` dengan format seperti:
+
+```
+\newcommand{NAMA_VARIABEL}{ISI_VALUE}
+```
+
+Istilah yang lazim sebenarnya adalah _"perintah untuk menampilkan tulisan"_, tapi pengembang sengaja menyebutnya sebagai _"variabel untuk menampilkan tulisan"_ agar lebih familiar. Penulis juga dapat menambahkan variabel lain yang sekiranya diperlukan saat menulis dokumen.
+
+Ini adalah contoh isi `variabel.tex` yang berasal dari template makalah:
+
+```
+%======================%
+% NORMAL TEXT VARIABLE %
+%======================%
+
+\newcommand{\judul}{Judul Karya Tulis Makalah}
+
+% Informasi Mata Kuliah, Sesi, TUgas, dan Tutor
+\newcommand{\sesiKe}{3}
+\newcommand{\tugasKe}{1}
+\newcommand{\tanggalLengkap}{\today}
+\newcommand{\tahun}{\the\year}
+
+\newcommand{\namaMataKuliah}{Pengendalian Amarah Berbasis Desktop}
+\newcommand{\kodeMataKuliah}{STSI9999}
+\newcommand{\KodeMataKuliah}{STSI-9999}
+
+\newcommand{\kodeKelas}{256}
+
+\newcommand{\namaTutorPengampu}{Revi Semeesta, S.Pd., M.Pd., M.Sc.}
+
+% Informasi Mahasiswa
+\newcommand{\namaMahasiswa}{Yoeru Sentosa}
+\newcommand{\nimMahasiswa}{081298765432}
+\newcommand{\programStudi}{Sains Data}
+\newcommand{\kodeProgramStudi}{/257}
+\newcommand{\fakultas}{Sains dan Teknologi}
+\newcommand{\kodeFakultas}{/127}
+\newcommand{\utDaerah}{UT Medan}
+\newcommand{\kodeUTDaerah}{/28}
+\newcommand{\perguruanTinggi}{Universitas Terbuka}
+\newcommand{\daearhMahasiswa}{Medan}
+```
+
+### 2.2 Susun Tulisan di Setiap Bagiannya
+
+Template ini menggunakan bagian dokumen yang terpisah agar memudahkan penulis menyusun tulisannya. Setiap template memiliki bagian yang berbeda-beda dan tersimpan di dalam folder `section`. Tabel di bawah ini adalah bagian-bagian yang isinya dapat digunakan/diubah oleh penulis.
+
+|  | 1 | 2 | 3 | 4 | 5 |
+|-:|:-:|:-:|:-:|:-:|:-:|
+| **Artikel Biasa** | Pendahuluan | Kajian Teori | Pembahasan | Penutup ||
+| **Makalah** | Kata Pengantar* | Pendahuluan | Kajian Teori | Pembahasan | Penutup |
+| **Lembar Jawaban Diskusi** | Soal* | Jawaban* ||||
+| **Buku Jawaban Tugas** | Soal* | Jawaban* ||||
+
+**Keterangan:** Bagian bertanda asterisk (*) adalah bagian tanpa penomoran
+
+> [!NOTE]
+> Tulislah dan tempatkan isian yang diingankan di bawah judul bagian.
+>
+> - Tulis setelah `\chapter` jika memakai template Makalah dan Buku Jawaban Tugas
+> - Tulis setelah `\section` jika memakai template Artikel dan Lembar Jawaban Diskusi
+
+### 2.3 Lainnya
+
+- Jika memerlukan gambar, simpan gambarnya di dalam folder `image`
+- Jika ingin menyisipkan PDF (misalnya nashkah soal), simpan file-nya di dalam folder `pdf`. Jangan lupa untuk men-trim lampiran PDF-nya.
+- Jika memerlukan tabel, tuliskan tabelnya di dokumen LaTeX meskipun penulisannya akan lebih susah. Jangan pernah mengonversi tabel menjadi gambar.
+- Bagian cover tersimpan di dalam folder `section` dan sudah diatur dengan baik, sehingga tidak perlu diubah-ubah oleh penulis.
+- Bagian seperti daftar isi dan daftar pustaka hanya berupa perintah `\tableofcontents` dan `\bibliography` yang ditulis di dalam file `main.tex`. Bagian ini diatur secara otomatis.
 
 # ⚙️ Penyetelan
