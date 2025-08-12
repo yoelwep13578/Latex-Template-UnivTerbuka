@@ -49,7 +49,7 @@ Template ini dapat dikompilasi dengan sarana online seperti [Overleaf](https://o
 > [!IMPORTANT]  
 > Jangan gunakan compiler `pdfLaTeX` karena font tidak bisa diganti secara langsung, seperti yang dijelaskan dalam [post TeX StackExchange ](https://tex.stackexchange.com/questions/620919/custom-font-in-overleaf-with-pdflatex-compiler). Silakan ganti ke `LuaLaTeX` atau `XeLaTeX` dengan:
 > 
-> Klik Menu (biasanya di pojok kiri atas) &rarr; Compiler &rarr; Ganti ke `LuaLaTeX` atau `XeLaTeX`.
+> Klik ![Menu Overleaf](https://img.shields.io/badge/Menu-303030?style=for-the-badge&logoColor=white&logo=Overleaf) (biasanya di pojok kiri atas) &rarr; Compiler &rarr; Ganti ke `LuaLaTeX` atau `XeLaTeX`.
 
 > [!NOTE]
 > Overleaf yang versi gratis memiliki batas durasi compile dengan compile timed out sekitar 20 detik. Jika tulisannya panjang dan tidak dapat di-compile karena timed out, pertimbangkan untuk memilih metode Compile Sendiri.
@@ -82,6 +82,14 @@ Ini adalah beberapa TeX Distribution yang disarankan. Silakan pilih sesuai denga
 ### 2.2 LaTeX Editor
 
 LaTeX Editor akan digunakan untuk membantu proses menulis dokumen, kompilasi, dan menampilkan hasilnya. Beberapa LaTeX Editor yang disarankan adalah [TeX Studio](https://www.texstudio.org/#download) dan [TeX Maker](https://www.xm1math.net/texmaker/download.html). TeX Studio lebih disarankan bagi pemula, tapi boleh-boleh saja untuk memilih yang lain sesuai selera.
+
+> [!IMPORTANT]  
+> Jangan gunakan compiler `pdfLaTeX` karena font tidak bisa diganti secara langsung, seperti yang dijelaskan dalam [post TeX StackExchange ](https://tex.stackexchange.com/questions/620919/custom-font-in-overleaf-with-pdflatex-compiler). Silakan ganti ke `LuaLaTeX` atau `XeLaTeX`.
+> 
+> **Jika menggunakan TeX Studio:**<br>
+> Klik Options (di menu bar) &rarr; Configure TeX Studio<br>
+> Pilih bagian tab Build<br>
+> Di bagian Default Compiler, pilihlah `LuaLaTeX` atau `XeLaTeX`
 
 ### 2.3 Font Lainnya (Opsional)
 
@@ -182,5 +190,34 @@ Tabel di bawah ini adalah bagian-bagian dokumen (template) yang telah tersedia s
 # ✍ Cara Penggunaan
 
 ## 1 | Download
+
+Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
+
+[![Clone sebagai Zip](https://img.shields.io/badge/Clone_sebagai_Zip-303030?style=for-the-badge&logoColor=white&logo=Github)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/archive/refs/heads/main.zip)
+[![Download dari Release](https://img.shields.io/badge/Download_dari_Release-v1.0.0-EF2D5E?style=for-the-badge&logoColor=white&logo=Github)](#)
+
+> [!TIP]
+> Source template ini juga dapat di-clone dengan menggunakan perintah Git.
+> ```bash
+> git clone https://github.com/yoelwep13578/Latex-Template-UnivTerbuka.git
+> ```
+
+Atau penulis dapat men-download template-nya sesuai pilihan yang diinginkan.
+
+[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Artikel Biasa](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Artikel Biasa](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Artikel Biasa](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+
+## 2 | Ekstrak, Simpan, dan Siapkan
+
+> [!NOTE]
+> Jika template di-download dengan clone dari source Github, artinya sekumpulan file tempate sudah tersimpan di dalam folder dan tidak perlu diekstrak. Cukup pindahkan folder template-nya ke direktori yang diinginkan.
+
+Ekstrak dan simpanlah folder template yang telah ter-download di lokasi file (direktori) yang diinginkan. Jika penulis ingin menggunakan template tersebut, silakan copy folder template yang ingin dipakai (entah itu artikel, makalah, dll.), lalu rename-lah dengan nama yang diinginkan. Misalnya seperti contoh ini.
+
+![Window Direktori Simpanan Template](https://github.com/user-attachments/assets/4ea907ff-d6ff-4743-b037-9b9df8579e77)
+
+Dengan demikian, template akan tetap terjaga karena sudah dibuatkan salinannya untuk dipakai menulis. Jika ingin menggunakan template untuk tulisan lainnya, cukup copy folder template yang ingin dipakai &rarr; rename dengan nama baru &rarr; pakai.
 
 # ⚙️ Penyetelan
