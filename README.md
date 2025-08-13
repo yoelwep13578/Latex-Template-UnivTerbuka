@@ -313,15 +313,60 @@ Template ini menggunakan bagian dokumen yang terpisah agar memudahkan penulis me
 Font utama yang digunakan secara bawaan. Tulisan yang langsung diketik akan tampil dengan font serif.
 
 ```
-Nama “Universitas Terbuka”, terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan semangat “mencerdaskan kehidupan bangsa” yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar
+Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat yang
+diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
+semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
+landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.
 ```
 
+![Standalone_Render_FontSerif](https://github.com/user-attachments/assets/4c9518f1-6cfb-4bba-8b9f-c934299b47bc)
+
 > [!TIP]
-> Teks font serif dapat digunakan dengan perintah `\text`.
+> Teks font serif dapat digunakan dengan perintah `\text`. Gunakan perintah ini jika tampilan font teks yang diketik biasa "tidak normal"
+>
+> ```
+> \text{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat yang
+> diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
+> semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
+> landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.}
+> ```
 
 #### 3.1.2 Sans-Serif
 
+Font sans-serif dapat digunakan dengan perintah `\textsf`.
+
+```
+\textsf{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat
+yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
+semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
+landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.}
+```
+
+![Standalone_Render_FontSansSerif](https://github.com/user-attachments/assets/df540879-0146-4c21-8643-e0376069fbb9)
+
+#### 3.1.3 Monospace
+
+Font monospace dapat digunakan dengan perintah `\texttt`. Font monospace biasanya dipakai untuk teks kode atau untuk memudahkan seseorang menyalin teks dari media cetak.
+
+```
+\texttt{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat
+yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
+semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
+landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.}
+```
+
+![Standalone_Render_FontMonospace](https://github.com/user-attachments/assets/d71e0585-a9e5-4497-9fcd-8709108ba599)
+
+> [!NOTE]
+> Tont monospace seperti `\texttt` tidak bisa menggunakan tanda petik buka-tutup. Tanda petik hanya bisa menggunakan `'` atau `"`.
+
 ### 3.2 Style Font
+
+#### 3.2.1 Bold/Tulisan Tebal
+
+#### 3.2.2 Italic/Tulisan Miring
+
+#### 3.2.3 Underline/Tulisan Bergaris Bawah
 
 ### 3.3 Ukuran Font
 
