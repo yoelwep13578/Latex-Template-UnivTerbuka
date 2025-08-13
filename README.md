@@ -4,31 +4,31 @@ Repositori ini berisi template-template lembar jawaban dan buku penugasan tutori
 
 # 💭 Pendahuluan
 
-## Keistimewaan LaTeX Template
+# 🪶 Keistimewaan LaTeX Ber-template
 
-### Setelan Sudah Siap. Tinggal Dipakai
+## 1 | Setelan Sudah Siap. Tinggal Dipakai
 
 Dokumen LaTeX akan memiliki tata letak yang konsisten dan rapi meskipun masih bawaan. Penulis tidak perlu membuang waktu untuk mengatur spasi, margin, atau jenis huruf. Format-format tersebut sudah diatur oleh template LaTeX ini, sehingga dokumen dapat langsung ditulis tanpa perlu pusing dengan tampilannya.
 
 ![Latex Setelan Sudah Siap dan Tinggal Pakai](https://github.com/user-attachments/assets/a0d2e5a0-e178-4385-b660-269dc790b7f5)
 
-### Struktur Heading dan Penomoran Heading yang Otomatis
+## 2 | Struktur Heading dan Penomoran Heading yang Otomatis
 
 Hal yang cukup jengkel saat menulis di word processor yaitu struktur teks dan heading yang menjadi hancur setelah mengubah, menghapus, atau mengganti bagian tertentu. Dalam dokumen LaTeX, penulis bebas mengubah-ubah isi tulisannya tanpa perlu mengacaukan tampilannya secara tidak sengaja.
 
 ![Latex Heading Otomatis](https://github.com/user-attachments/assets/65b96d3b-5a92-4fb6-971e-ea65abcef164)
 
-### Penulisan Matematika dan Notasi yang Mudah
+## 3 | Penulisan Matematika dan Notasi yang Mudah
 
 Dalam urusan ini, memang merupakan habitat dokumen LaTeX dalam menulis karya tulis ilmiah yang mengandung matematika, fisika, dan notasinya. Semuanya tersedia secara bawaan di LaTeX. Hal ini berbeda jika menggunakan word processor karena perlu equation tools tambahan agar hasilnya "bagus."
 
-### Teks Bervariabel
+## 4 | Teks Bervariabel
 
 Teks bervariabel dapat dibuat dengan mudah di LaTeX, yaitu menamai nama variabel dan mengisi isi (value) variabel tersebut. Teks variabel sangat bagus diterapkan untuk nama, tanggal, judul, identitas, dll. supaya isinya konsisen, tidak perlu diketik kembali, dan penulis hanya perlu memanggil variabel tersebut sesuai keperluan.
 
 ![Latex Teks Bervariabel](https://github.com/user-attachments/assets/f13b7c1e-5338-45fa-ab77-26bd0ab9da59)
 
-### Sangat Andal untuk Menulis Karya Tulis yang Panjang & Kompleks
+## 5 | Sangat Andal untuk Menulis Karya Tulis yang Panjang & Kompleks
 
 Didukung dengan setelannya yang sudah siap pakai dan pemformatan dokumen yang sudah diatur, tentu saja LaTeX sangat bagus untuk menyusun karya tulis yang panjang hingga berlembar-lembar. Perbandingan menulis di LaTeX vs word processor tidak begitu terasa dalam tulisan pendek.
 
@@ -38,11 +38,13 @@ Menulis tulisan panjang dengan LaTeX tidak begitu masalah karena "sangat menduku
 
 # 🛠️ Persiapan
 
+## 1 | Pilihan Menulis (Online/Offline)
+
 Dokumen LaTeX bukanlah dokumen yang dapat disaksikan hasilnya secara langsung seperti menggunakan word processor, atau istilahnya bukan dokumen yang [_What You See Is What You Get_](https://dictionary.cambridge.org/dictionary/english/wysiwyg). Dokumen LaTeX ditulis seperti kode, kemudian melewati tahap kompilasi, dan barulah hasilnya dapat dilihat.
 
 Di bawah ini berisi dua cara untuk menulis dokumen LaTeX. Penulis dapat memilih menulis di sarana online agar lebih mudah, atau memilih menulis di perangkat sendiri agar lebih bebas.
 
-## 1 | Compile Online dengan Overleaf
+### 1.1 Compile Online dengan Overleaf
 
 Template ini dapat dikompilasi dengan sarana online seperti [Overleaf](https://overleaf.com). Dengan cara ini, penulis tidak perlu ribet menyiapkan instalasi compiler LaTeX karena sudah disediakan di Overleaf. Cukup upload sekumpulan file template ini, ubah setelannya sedikit, compile, dan jadi.
 
@@ -54,15 +56,15 @@ Template ini dapat dikompilasi dengan sarana online seperti [Overleaf](https://o
 > [!NOTE]
 > Overleaf yang versi gratis memiliki batas durasi compile dengan compile timed out sekitar 20 detik. Jika tulisannya panjang dan tidak dapat di-compile karena timed out, pertimbangkan untuk memilih metode Compile Sendiri.
 
-## 2 | Offline/Compile Sendiri
+### 1.2 Offline/Compile Sendiri
 
 Template ini dapat dikompilasi sendiri oleh penulis dengan menggunakan satu set LaTeX Compiler dan LaTeX Editor. Jika seandainya belum pernah mengenal atau menggunakan LaTeX sama sekali, penulis harus menginstal Distribusi TeX, LaTeX Editor, dan font yang diperlukan (opsional).
 
-### 2.1 Distribusi TeX
+#### 1.2.1 Distribusi TeX
 
 Ini adalah beberapa TeX Distribution yang disarankan. Silakan pilih sesuai dengan operating system yang digunakan.
 
-#### [MikTeX](https://miktex.org/download) &rarr; untuk Windows
+##### [MikTeX](https://miktex.org/download) &rarr; untuk Windows
 
 > [!TIP]
 > Penulis juga dapat menginstal MikTeX dengan `winget` melalui terminal (untuk Windows >= 10)
@@ -70,16 +72,16 @@ Ini adalah beberapa TeX Distribution yang disarankan. Silakan pilih sesuai denga
 > winget install --id=MiKTeX.MiKTeX  -e
 > ```
 
-#### [TeX Live](https://www.tug.org/texlive/quickinstall.html) &rarr; untuk Operating System Berbasis Linux
+##### [TeX Live](https://www.tug.org/texlive/quickinstall.html) &rarr; untuk Operating System Berbasis Linux
 
 > [!NOTE]
 > Cara instalasi TeX Live dapat berbeda-beda untuk setiap distro Linux. Silakan cari cara instalasinya di internet sesuai distro Linux yang digunakan.
 >
 > Contoh keyword pencarian: `install texlive on <DISTRO_LINUX>`
 
-#### [MacTeX](https://www.tug.org/mactex/mactex-download.html) &rarr; untuk MacOS
+##### [MacTeX](https://www.tug.org/mactex/mactex-download.html) &rarr; untuk MacOS
 
-### 2.2 LaTeX Editor
+#### 1.2.2 LaTeX Editor
 
 LaTeX Editor akan digunakan untuk membantu proses menulis dokumen, kompilasi, dan menampilkan hasilnya. Beberapa LaTeX Editor yang disarankan adalah [TeX Studio](https://www.texstudio.org/#download) dan [TeX Maker](https://www.xm1math.net/texmaker/download.html). TeX Studio lebih disarankan bagi pemula, tapi boleh-boleh saja untuk memilih yang lain sesuai selera.
 
@@ -91,7 +93,7 @@ LaTeX Editor akan digunakan untuk membantu proses menulis dokumen, kompilasi, da
 > Pilih bagian tab Build<br>
 > Di bagian Default Compiler, pilihlah `LuaLaTeX` atau `XeLaTeX`
 
-### 2.3 Font Lainnya (Opsional)
+#### 1.2.3 Font Lainnya (Opsional)
 
 Beberapa font ini tidak wajib diinstal jika tidak ingin digunakan. Ini adalah beberapa font tambahan yang digunakan dalam template ini secara bawaan.
 
@@ -101,6 +103,54 @@ Beberapa font ini tidak wajib diinstal jika tidak ingin digunakan. Ini adalah be
 | Noto Sans | Sans-Serif | [Google Fonts](https://fonts.google.com/noto/specimen/Noto+Sans) |
 
 Jika font ini tidak ingin digunakan, cukup diganti saja dari file `main.tex`. Misalnya dari Noto Sans &rarr; Calibri, Fira Code &rarr; Lucida Console, dsb.
+
+## 2 | Download Template
+
+Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
+
+[![Clone sebagai Zip](https://img.shields.io/badge/Clone_sebagai_Zip-303030?style=for-the-badge&logoColor=white&logo=Github)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/archive/refs/heads/main.zip)
+[![Download dari Release](https://img.shields.io/badge/Download_dari_Release-v1.0.0-EF2D5E?style=for-the-badge&logoColor=white&logo=Github)](#)
+
+> [!TIP]
+> Source template ini juga dapat di-clone dengan menggunakan perintah Git.
+> ```bash
+> git clone https://github.com/yoelwep13578/Latex-Template-UnivTerbuka.git
+> ```
+
+Atau penulis dapat men-download template-nya sesuai pilihan yang diinginkan.
+
+[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Artikel Biasa](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Artikel Biasa](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Artikel Biasa](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+
+## 3 | Ekstrak dan Simpan
+
+> [!NOTE]
+> Jika template di-download dengan cara clone menggunakan Git, artinya sekumpulan file tempate sudah tersimpan di dalam folder dan tidak perlu diekstrak. Cukup pindahkan folder template-nya ke direktori yang diinginkan.
+
+Ekstrak dan simpanlah folder template yang telah ter-download di lokasi file (direktori) yang diinginkan. Jika penulis ingin menggunakan template tersebut, silakan copy folder template yang ingin dipakai (entah itu artikel, makalah, dll.), lalu rename-lah dengan nama yang diinginkan. Misalnya seperti contoh ini.
+
+![Window Direktori Simpanan Template](https://github.com/user-attachments/assets/4ea907ff-d6ff-4743-b037-9b9df8579e77)
+
+Dengan demikian, template akan tetap terjaga karena sudah dibuatkan salinannya untuk dipakai menulis. Jika ingin menggunakan template untuk tulisan lainnya, cukup copy folder template yang ingin dipakai &rarr; rename dengan nama baru &rarr; pakai.
+
+## 4 | Buka Template-nya
+
+### 4.1 Membuka di Sarana Online (Overleaf)
+
+Penulis dapat menggunakan salinan template-nya ke Overleaf, caranya dengan meng-upload semua isi di dalam folder salinan template tersebut. Cukup CTRL + A (select all) lalu drag-n-drop ke webapp Overleaf (diarahkan ke sidebar kiri saja).
+
+![Panduan Upload Template ke Overleaf](https://github.com/user-attachments/assets/cd3c4dbf-50ef-4ad8-9c7a-3f4f9cdee884)
+
+> [!NOTE]
+> Sewaktu-waktu, Overleaf bisa gagal menerima upload-an file karena jumlah yang terlalu banyak untuk dikirim sekaligus. Jika error-nya terjadi, folder dan file perlu di-upload satu-satu.
+
+### 4.2 Membuka di Compiler Sendiri (LaTeX Editor)
+
+Penulis dapat menggunakan salinan template-nya & dicompile sendiri dengan LaTeX Editor. TeX Studio atau TeX Maker biasanya hanya perlu membuka satu file utama (main) saja, tapi bisa juga membuka file lain jika diperlukan.
+
+![Panduan Buka Template di Compiler Sendiri](https://github.com/user-attachments/assets/78dc0342-7fec-435e-a99c-32ac79c8ab7d)
 
 # 𝒊 Informasi Template
 
@@ -189,59 +239,7 @@ Tabel di bawah ini adalah bagian-bagian dokumen (template) yang telah tersedia s
 
 # ✍ Cara Penggunaan
 
-## 1 | Penyiapan
-
-### 1.1 Download
-
-Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
-
-[![Clone sebagai Zip](https://img.shields.io/badge/Clone_sebagai_Zip-303030?style=for-the-badge&logoColor=white&logo=Github)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/archive/refs/heads/main.zip)
-[![Download dari Release](https://img.shields.io/badge/Download_dari_Release-v1.0.0-EF2D5E?style=for-the-badge&logoColor=white&logo=Github)](#)
-
-> [!TIP]
-> Source template ini juga dapat di-clone dengan menggunakan perintah Git.
-> ```bash
-> git clone https://github.com/yoelwep13578/Latex-Template-UnivTerbuka.git
-> ```
-
-Atau penulis dapat men-download template-nya sesuai pilihan yang diinginkan.
-
-[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Artikel Biasa](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Artikel Biasa](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Artikel Biasa](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-
-### 1.2 Ekstrak dan Simpan
-
-> [!NOTE]
-> Jika template di-download dengan cara clone menggunakan Git, artinya sekumpulan file tempate sudah tersimpan di dalam folder dan tidak perlu diekstrak. Cukup pindahkan folder template-nya ke direktori yang diinginkan.
-
-Ekstrak dan simpanlah folder template yang telah ter-download di lokasi file (direktori) yang diinginkan. Jika penulis ingin menggunakan template tersebut, silakan copy folder template yang ingin dipakai (entah itu artikel, makalah, dll.), lalu rename-lah dengan nama yang diinginkan. Misalnya seperti contoh ini.
-
-![Window Direktori Simpanan Template](https://github.com/user-attachments/assets/4ea907ff-d6ff-4743-b037-9b9df8579e77)
-
-Dengan demikian, template akan tetap terjaga karena sudah dibuatkan salinannya untuk dipakai menulis. Jika ingin menggunakan template untuk tulisan lainnya, cukup copy folder template yang ingin dipakai &rarr; rename dengan nama baru &rarr; pakai.
-
-### 1.3 Buka Template-nya
-
-#### 1.3.1 Membuka di Sarana Online (Overleaf)
-
-Penulis dapat menggunakan salinan template-nya ke Overleaf, caranya dengan meng-upload semua isi di dalam folder salinan template tersebut. Cukup CTRL + A (select all) lalu drag-n-drop ke webapp Overleaf (diarahkan ke sidebar kiri saja).
-
-![Panduan Upload Template ke Overleaf](https://github.com/user-attachments/assets/cd3c4dbf-50ef-4ad8-9c7a-3f4f9cdee884)
-
-> [!NOTE]
-> Sewaktu-waktu, Overleaf bisa gagal menerima upload-an file karena jumlah yang terlalu banyak untuk dikirim sekaligus. Jika error-nya terjadi, folder dan file perlu di-upload satu-satu.
-
-#### 1.3.2 Membuka di Compiler Sendiri (LaTeX Editor)
-
-Penulis dapat menggunakan salinan template-nya & dicompile sendiri dengan LaTeX Editor. TeX Studio atau TeX Maker biasanya hanya perlu membuka satu file utama (main) saja, tapi bisa juga membuka file lain jika diperlukan.
-
-![Panduan Buka Template di Compiler Sendiri](https://github.com/user-attachments/assets/78dc0342-7fec-435e-a99c-32ac79c8ab7d)
-
-## 2 | Tahap Penulisan
-
-### 2.1 Ganti Isi (Value) Variabel di `variable.tex`
+# 1 | Ganti Isi (Value) Variabel di `variable.tex`
 
 Penulis harus mengganti isi (value) variabel terlebih dahulu sebelum menulis isi dokumen. Teks bervariabel dibuat menggunakan `\newcommand` dengan format seperti:
 
@@ -287,7 +285,7 @@ Ini adalah contoh isi `variabel.tex` yang berasal dari template makalah:
 \newcommand{\daearhMahasiswa}{Medan}
 ```
 
-### 2.2 Susun Tulisan di Setiap Bagiannya
+## 2 | Susun Tulisan di Setiap Bagiannya
 
 Template ini menggunakan bagian dokumen yang terpisah agar memudahkan penulis menyusun tulisannya. Setiap template memiliki bagian yang berbeda-beda dan tersimpan di dalam folder `section`. Tabel di bawah ini adalah bagian-bagian yang isinya dapat digunakan/diubah oleh penulis.
 
