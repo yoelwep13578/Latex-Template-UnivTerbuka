@@ -120,9 +120,9 @@ Silakan download template ini dengan memilih metode download yang diinginkan. Te
 Atau penulis dapat men-download template-nya sesuai pilihan yang diinginkan.
 
 [![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Artikel Biasa](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Artikel Biasa](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Artikel Biasa](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Makalah](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Lembar Jawaban Diskusi](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Buku Jawaban Tugas](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
 
 ## 3 | Ekstrak dan Simpan
 
@@ -239,7 +239,7 @@ Tabel di bawah ini adalah bagian-bagian dokumen (template) yang telah tersedia s
 
 # ✍ Cara Penggunaan
 
-# 1 | Ganti Isi (Value) Variabel di `variable.tex`
+## 1 | Ganti Isi (Value) Variabel di `variable.tex`
 
 Penulis harus mengganti isi (value) variabel terlebih dahulu sebelum menulis isi dokumen. Teks bervariabel dibuat menggunakan `\newcommand` dengan format seperti:
 
@@ -285,7 +285,7 @@ Ini adalah contoh isi `variabel.tex` yang berasal dari template makalah:
 \newcommand{\daearhMahasiswa}{Medan}
 ```
 
-## 2 | Susun Tulisan di Setiap Bagiannya
+## 2 | Menyusun Tulisan di Setiap Bagiannya
 
 Template ini menggunakan bagian dokumen yang terpisah agar memudahkan penulis menyusun tulisannya. Setiap template memiliki bagian yang berbeda-beda dan tersimpan di dalam folder `section`. Tabel di bawah ini adalah bagian-bagian yang isinya dapat digunakan/diubah oleh penulis.
 
@@ -304,7 +304,28 @@ Template ini menggunakan bagian dokumen yang terpisah agar memudahkan penulis me
 > - Tulis setelah `\chapter` jika memakai template Makalah dan Buku Jawaban Tugas
 > - Tulis setelah `\section` jika memakai template Artikel dan Lembar Jawaban Diskusi
 
-### 2.3 Lainnya
+## 3 | Pemformatan Tulisan
+
+### 3.1 Jenis Font
+
+#### 3.1.1 Serif (Utama)
+
+Font utama yang digunakan secara bawaan. Tulisan yang langsung diketik akan tampil dengan font serif.
+
+```
+Nama “Universitas Terbuka”, terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan semangat “mencerdaskan kehidupan bangsa” yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar
+```
+
+> [!TIP]
+> Teks font serif dapat digunakan dengan perintah `\text`.
+
+#### 3.1.2 Sans-Serif
+
+### 3.2 Style Font
+
+### 3.3 Ukuran Font
+
+## Menambahkan Gambar, PDF, Tabel
 
 - Jika memerlukan gambar, simpan gambarnya di dalam folder `image`
 - Jika ingin menyisipkan PDF (misalnya nashkah soal), simpan file-nya di dalam folder `pdf`. Jangan lupa untuk men-trim lampiran PDF-nya.
