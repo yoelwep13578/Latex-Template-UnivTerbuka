@@ -437,10 +437,9 @@ Tulisan underline dapat digunakan dengan perintah `\underline`.
 >
 > ![Standalone_Render_FontUnderlineComparison](https://github.com/user-attachments/assets/c5165912-2acb-49bb-a25e-13757d8a8d06)
 
-
 ### 3.3 Ukuran Font
 
-Tabel di bawah ini adalah perintah beserta ukuran font yang sebenarnya, dari standar 10pt hingga standar 12pt.
+Tabel di bawah ini adalah perintah beserta ukuran font yang sebenarnya, dari standar 10pt hingga standar 12pt. Data ini diperoleh dari [Sascha Frank](https://www.sascha-frank.com/latex-font-size.html).
 
 | Command | Standar 10pt | Standar 11pt |	Standar 12pt |
 |---------|------|------|------|
@@ -458,7 +457,89 @@ Tabel di bawah ini adalah perintah beserta ukuran font yang sebenarnya, dari sta
 > [!IMPORTANT]
 > Ukuran font sudah ditentukan dari template-nya, sehingga penulis tidak perlu mengganti ukuran font secara manual.
 
-## Menambahkan Gambar, PDF, Tabel
+## 4 | Pemformatan Kalimat/Paragraf
+
+### 4.1 Paragraf Tidak Menjorok (No Indent)
+
+Secara bawaan, paragraf kedua dan seterusnya akan dibuat menjorok ke dalam pada baris pertamanya. Jika ingin paragrafnya tidak menjorok ke dalam, gunakan perintah `\noindent` di paragraf yang diinginkan sebelum tulisan.
+
+> **Contoh: `\noindent` di paragraf kedua**
+> ```
+> Universitas Terbuka (UT) merupakan Perguruan Tinggi Negeri ke-45 di Indonesia yang diresmikan pada tanggal
+> 4 September 1984. Bertujuan untuk mengatasi ledakan lulusan SLTA yang tidak dapat terserap baik dalam dunia
+> kerja maupun perguruan tinggi, Presiden pada saat itu mengeluarkan Keputusan Presiden Republik Indonesia Nomor
+> 41 Tahun 1984 sebagai landasan berdirinya UT. Pendirian UT dimaksudkan untuk menjawab dua isu besar dalam dunia
+> pendidikan pada masa itu, yakni rendahnya mutu atau kualitas guru serta terbatasnya daya tampung pendidikan
+> tinggi. Selaras dengan semangat gerakan pendidikan terbuka dan jarak jauh yang mulai menggema di kancah dunia
+> melalui berdirinya The Open University di Inggris, Universitas Terbuka mengusung semangat akses pemerataan
+> pendidikan tinggi di kancah nasional.
+>
+> \noindent Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris,
+> mencerminkan semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka
+> dan Jarak Jauh. Terbuka merepresentasikan semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam
+> pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi landasan filosofis bahwa pendidikan merupakan hak bagi
+> setiap warga negara yang tidak dibatasi oleh usia dan masa belajar—di masa sekarang sering dikenal dengan
+> semangat ``belajar seumur hidup''. Semangat terbuka ini juga dibarengi dengan konsep pendidikan jarak jauh yang
+> memudahkan siapa saja untuk mendapatkan akses pendidikan tanpa dibatasi oleh waktu dan tempat.
+> ```
+>
+> ![Standalone_Render_IndentComparison](https://github.com/user-attachments/assets/9d6d6763-fb85-441b-a038-acd9ad027a75)
+
+### 4.2 Kutipan Tanda Petik
+
+Tanda petik yang ada pada keyboard seperti `'` dan `"` sebenarnya termasuk dalam jenis straight quote. Tanda petik yang sering muncul dalam _dokumen berkelas_ menggunakan curly quote. Curly quote memerlukan petik buka dan petik tutup, seperti yang dijelaskan dalam [Typhography for Lawyers](https://typographyforlawyers.com/straight-and-curly-quotes.html) dan tabel di bawah ini.
+
+| Tanda Petik | Nama/Jenis |
+|:-----------:|:-----------|
+| ' | Straight Single Quote |
+| " | Straight Double Quote |
+| ‘ | Opening Single Quote |
+| ’ | Closing Single Quote |
+| “ | Opening Double Quote |
+| ” | Closing Double Quote |
+
+Di word processor, tanda petik hanya perlu ditulis dengan straight quote seperti `'` atau `"`, dan langsung diubah menjadi petik buka dan petik tutup secara otomatis. Jika di LaTeX, tanda petik harus ditulis petik buka dan petik tutupnya.
+
+- **Kutipan Petik Tunggal:** Dibuka dengan satu back tick ( \` ) dan ditutup dengan satu straight single quote ( ' )
+- **Kutipan Petik Ganda:** Dibuka dengan dua back tick ( \`\` ) dan ditutup dengan dua straight single quote ( '' )
+
+> **Contoh:**
+> ```
+> Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur `The Open University' di Inggris, mencerminkan
+> semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh.
+> ```
+>
+> ![Standalone_Render_QuoteMark](https://github.com/user-attachments/assets/5a46b820-3a12-4872-bb6e-82832d36b84e)
+
+### 4.3 Blockquote
+
+Blockquote dapat dipakai untuk menuliskan paragraf kutipan dengan lebih bergaya. Untuk blockquote satu paragraf dapat menggunakan perintah environment `quote`.
+
+> **Contoh: Blockquote di paragraf kedua**
+> ```
+> Universitas Terbuka (UT) merupakan Perguruan Tinggi Negeri ke-45 di Indonesia yang diresmikan pada tanggal
+> 4 September 1984. Bertujuan untuk mengatasi ledakan lulusan SLTA yang tidak dapat terserap baik dalam dunia
+> kerja maupun perguruan tinggi, Presiden pada saat itu mengeluarkan Keputusan Presiden Republik Indonesia Nomor
+> 41 Tahun 1984 sebagai landasan berdirinya UT. Pendirian UT dimaksudkan untuk menjawab dua isu besar dalam dunia
+> pendidikan pada masa itu, yakni rendahnya mutu atau kualitas guru serta terbatasnya daya tampung pendidikan
+> tinggi. Selaras dengan semangat gerakan pendidikan terbuka dan jarak jauh yang mulai menggema di kancah dunia
+> melalui berdirinya The Open University di Inggris, Universitas Terbuka mengusung semangat akses pemerataan
+> pendidikan tinggi di kancah nasional.
+>
+> \begin{quote}
+>     Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan
+>     semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh.
+>     Terbuka merepresentasikan semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang
+>     Dasar 1945. Semangat ini menjadi landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang
+>     tidak dibatasi oleh usia dan masa belajar—di masa sekarang sering dikenal dengan semangat ``belajar seumur hidup''.
+>     Semangat terbuka ini juga dibarengi dengan konsep pendidikan jarak jauh yang memudahkan siapa saja untuk
+>     mendapatkan akses pendidikan tanpa dibatasi oleh waktu dan tempat.
+> \end{quote}
+> ```
+>
+> ![Standalone_Render_Blockquote1](https://github.com/user-attachments/assets/d215ef7d-a44b-45b6-b69d-bb8218d38911)
+
+## 5 | Menambahkan Gambar, PDF, Tabel
 
 - Jika memerlukan gambar, simpan gambarnya di dalam folder `image`
 - Jika ingin menyisipkan PDF (misalnya nashkah soal), simpan file-nya di dalam folder `pdf`. Jangan lupa untuk men-trim lampiran PDF-nya.
