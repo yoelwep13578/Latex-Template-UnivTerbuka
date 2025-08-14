@@ -312,14 +312,15 @@ Template ini menggunakan bagian dokumen yang terpisah agar memudahkan penulis me
 
 Font utama yang digunakan secara bawaan. Tulisan yang langsung diketik akan tampil dengan font serif.
 
-```
-Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat yang
-diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
-semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
-landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.
-```
-
-![Standalone_Render_FontSerif](https://github.com/user-attachments/assets/4c9518f1-6cfb-4bba-8b9f-c934299b47bc)
+> **Contoh:**
+> ```
+> Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat yang
+> diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
+> semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
+> landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.
+> ```
+>
+> ![Standalone_Render_FontSerif](https://github.com/user-attachments/assets/4c9518f1-6cfb-4bba-8b9f-c934299b47bc)
 
 > [!TIP]
 > Teks font serif dapat digunakan dengan perintah `\text`. Gunakan perintah ini jika tampilan font teks yang diketik biasa "tidak normal"
@@ -335,40 +336,127 @@ landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang 
 
 Font sans-serif dapat digunakan dengan perintah `\textsf`.
 
-```
-\textsf{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat
-yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
-semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
-landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.}
-```
-
-![Standalone_Render_FontSansSerif](https://github.com/user-attachments/assets/df540879-0146-4c21-8643-e0376069fbb9)
+> **Contoh:**
+> ```
+> \textsf{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat
+> yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
+> semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
+> landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.}
+> ```
+>
+> ![Standalone_Render_FontSansSerif](https://github.com/user-attachments/assets/df540879-0146-4c21-8643-e0376069fbb9)
 
 #### 3.1.3 Monospace
 
 Font monospace dapat digunakan dengan perintah `\texttt`. Font monospace biasanya dipakai untuk teks kode atau untuk memudahkan seseorang menyalin teks dari media cetak.
 
-```
-\texttt{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat
-yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
-semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
-landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.}
-```
-
-![Standalone_Render_FontMonospace](https://github.com/user-attachments/assets/d71e0585-a9e5-4497-9fcd-8709108ba599)
+> **Contoh:**
+> ```
+> \texttt{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat
+> yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka merepresentasikan
+> semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945. Semangat ini menjadi
+> landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi oleh usia dan masa belajar.}
+> ```
+>
+> ![Standalone_Render_FontMonospace](https://github.com/user-attachments/assets/d71e0585-a9e5-4497-9fcd-8709108ba599)
 
 > [!NOTE]
-> Tont monospace seperti `\texttt` tidak bisa menggunakan tanda petik buka-tutup. Tanda petik hanya bisa menggunakan `'` atau `"`.
+> Font monospace seperti `\texttt` tidak bisa menggunakan tanda petik buka-tutup. Tanda petik hanya bisa menggunakan `'` atau `"`.
 
 ### 3.2 Style Font
 
 #### 3.2.1 Bold/Tulisan Tebal
 
+Tulisan tebal dapat digunakan dengan perintah `\textbf`.
+
+> **Contoh:**
+> ```
+> \textbf{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan
+> semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka
+> merepresentasikan semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945.
+> Semangat ini menjadi landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi
+> oleh usia dan masa belajar.}
+> 
+> Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur \textbf{The Open University} di Inggris, mencerminkan
+> semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni \textbf{Pendidikan Terbuka dan Jarak Jauh}.
+> Terbuka merepresentasikan semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar
+> 1945. Semangat ini menjadi landasan filosofis bahwa \textbf{pendidikan merupakan hak bagi setiap warga negara yang tidak
+> dibatasi oleh usia dan masa belajar.}
+> ```
+> 
+> ![Standalone_Render FontBold](https://github.com/user-attachments/assets/24fa0888-7006-44ce-a020-1de18a7c9886)
+
 #### 3.2.2 Italic/Tulisan Miring
+
+Tulisan miring dapat digunakan dengan perintah `\textit`.
+
+> **Contoh:**
+> ```
+> \textit{Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan
+> semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan Terbuka dan Jarak Jauh. Terbuka
+> merepresentasikan semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945.
+> Semangat ini menjadi landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara yang tidak dibatasi
+> oleh usia dan masa belajar.}
+>
+> Nama \textit{``Universitas Terbuka''}, terinspirasi dari nomenklatur \textit{The Open University} di Inggris,
+> mencerminkan semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni \textit{Pendidikan Terbuka dan
+> Jarak Jauh}. Terbuka merepresentasikan semangat \textit{``mencerdaskan kehidupan bangsa''} yang termaktub dalam pembukaan
+> Undang-Undang Dasar 1945. Semangat ini menjadi landasan filosofis bahwa \textit{pendidikan merupakan hak bagi setiap warga
+> negara yang tidak dibatasi oleh usia dan masa belajar.}
+> ```
+>
+> ![Standalone_Render_FontItalic](https://github.com/user-attachments/assets/11259b57-1d45-484c-b46d-e8e00d717690)
 
 #### 3.2.3 Underline/Tulisan Bergaris Bawah
 
+Tulisan underline dapat digunakan dengan perintah `\underline`.
+
+> **Contoh:**
+> ```
+> Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris, mencerminkan semangat yang
+> diusung dalam menyelenggarakan sistem pendidikannya, yakni \underline{Pendidikan Terbuka dan Jarak Jauh}. Terbuka
+> merepresentasikan semangat ``mencerdaskan kehidupan bangsa'' yang termaktub dalam pembukaan Undang-Undang Dasar 1945.
+> Semangat ini menjadi landasan filosofis bahwa \underline{pendidikan merupakan hak bagi setiap warga negara} yang tidak
+> dibatasi oleh usia dan masa belajar.
+> ```
+>
+> ![Standalone_Render_FontUnderline](https://github.com/user-attachments/assets/21287c7c-48fe-4d3f-8259-7be413ff8de0)
+
+> [!NOTE]
+> Underline dapat terdorong lebih ke bawah jika ada [huruf descender](https://en.wikipedia.org/wiki/Descender) seperti g, j, p, q, y, atau Q. Jika ingin posisi garisnya tidak terdorong oleh huruf descender, bungkus hurufnya dengan perintah `\smash`.
+>
+> Ini adalah contoh antara underline tanpa `\smash` dan underline dengan `\smash`.
+>
+> ```
+> Semangat ini menjadi filosofis bahwa pendidikan merupakan \underline{hak bagi setiap warga negara} yang \underline{tidak
+> dibatasi} oleh usia dan masa belajar.
+>
+> Semangat ini menjadi filosofis bahwa pendidikan merupakan \underline{hak ba\smash{g}i setia\smash{p} war\smash{g}a
+> ne\smash{g}ara} yang \underline{tidak dibatasi} oleh usia dan masa belajar.
+> ```
+>
+> ![Standalone_Render_FontUnderlineComparison](https://github.com/user-attachments/assets/c5165912-2acb-49bb-a25e-13757d8a8d06)
+
+
 ### 3.3 Ukuran Font
+
+Tabel di bawah ini adalah perintah beserta ukuran font yang sebenarnya, dari standar 10pt hingga standar 12pt.
+
+| Command | Standar 10pt | Standar 11pt |	Standar 12pt |
+|---------|------|------|------|
+| `\tiny` |	5pt |	6pt |	**6pt** |
+| `\scriptsize` |	7pt |	8pt |	**8pt** |
+| `\footnotesize` |	8pt |	9pt |	**10pt** |
+| `\small` | 9pt | 10pt |	**11pt** |
+| **`\normalsize`** |	10pt | 11pt |	**12pt** |
+| `\large` | 12pt |	12pt | **14pt** |
+| `\Large` | 14pt |	14pt | **17pt** |
+| `\LARGE` | 17pt | 17pt | **20pt** |
+| `\huge` |	20pt | 20pt | **25pt** |
+| `\Huge` |	25pt | 25pt | **25pt** |
+
+> [!IMPORTANT]
+> Ukuran font sudah ditentukan dari template-nya, sehingga penulis tidak perlu mengganti ukuran font secara manual.
 
 ## Menambahkan Gambar, PDF, Tabel
 
