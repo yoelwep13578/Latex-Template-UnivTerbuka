@@ -459,6 +459,13 @@ Tabel di bawah ini adalah perintah beserta ukuran font yang sebenarnya, dari sta
 
 ## 4 | Pemformatan Kalimat/Paragraf
 
+Semua teks yang diketik merupakan paragraf. Jika ingin lanjut/lompat ke paragraf selanjutnya, cukup longkap hingga menyisakan satu baris (newline dua kali)
+```
+Paragraf satu
+
+Paragraf dua
+```
+
 ### 4.1 Paragraf Tidak Menjorok (No Indent)
 
 Secara bawaan, paragraf kedua dan seterusnya akan dibuat menjorok ke dalam pada baris pertamanya. Jika ingin paragrafnya tidak menjorok ke dalam, gunakan perintah `\noindent` di paragraf yang diinginkan sebelum tulisan.
@@ -511,6 +518,17 @@ Di word processor, tanda petik hanya perlu ditulis dengan straight quote seperti
 >
 > ![Standalone_Render_QuoteMark](https://github.com/user-attachments/assets/5a46b820-3a12-4872-bb6e-82832d36b84e)
 
+> [!NOTE]
+> Tanda straight quote ( ' atau " ) akan di-render oleh LaTeX sebagai closing quote ( ’ atau ” )
+
+> [!TIP]
+> Jika ada kata yang perlu menyelipkan tanda apostrof ( ' ), tanda apostrof tetap ditulis dengan straight single quote ( ' ). Contohnya:
+> - 17 Agustus tahun '45 (~~19~~45)
+> - Kar'na rahmat-Nya (Kar~~e~~na)
+> - Berikan 'ku segelas kopi (~~a~~ku)
+> - Kita 'kan tetap bersama (~~a~~kan)
+> - Ini cara yang bagus, 'kan? (~~bu~~kan)
+
 ### 4.3 Blockquote
 
 Blockquote dapat dipakai untuk menuliskan paragraf kutipan dengan lebih bergaya. Untuk blockquote satu paragraf dapat menggunakan perintah environment `quote`.
@@ -539,7 +557,50 @@ Blockquote dapat dipakai untuk menuliskan paragraf kutipan dengan lebih bergaya.
 >
 > ![Standalone_Render_Blockquote1](https://github.com/user-attachments/assets/d215ef7d-a44b-45b6-b69d-bb8218d38911)
 
-## 5 | Menambahkan Gambar, PDF, Tabel
+Untuk blockquote yang lebih dari satu paragraf, gunakan peirntah environment `quotation`.
+
+> **Contoh: Blockquote di paragraf kedua dan ketiga**
+> ```
+> Pendirian UT dimaksudkan untuk menjawab dua isu besar dalam dunia pendidikan pada masa itu, yakni
+> rendahnya mutu atau kualitas guru serta terbatasnya daya tampung pendidikan tinggi. Selaras dengan
+> semangat gerakan pendidikan terbuka dan jarak jauh yang mulai menggema di kancah dunia melalui
+> berdirinya The Open University di Inggris, Universitas Terbuka mengusung semangat akses pemerataan
+> pendidikan tinggi di kancah nasional.
+>
+> \begin{quotation}
+>     Nama ``Universitas Terbuka'', terinspirasi dari nomenklatur The Open University di Inggris,
+>     mencerminkan semangat yang diusung dalam menyelenggarakan sistem pendidikannya, yakni Pendidikan
+>     Terbuka dan Jarak Jauh. Terbuka merepresentasikan semangat ``mencerdaskan kehidupan bangsa'' yang
+>     termaktub dalam pembukaan Undang-Undang Dasar 1945.
+>
+>     Semangat ini menjadi landasan filosofis bahwa pendidikan merupakan hak bagi setiap warga negara
+>     yang tidak dibatasi oleh usia dan masa belajar—di masa sekarang sering dikenal dengan semangat
+>     ``belajar seumur hidup''. Semangat terbuka ini juga dibarengi dengan konsep pendidikan jarak jauh
+>     yang memudahkan siapa saja untuk mendapatkan akses pendidikan tanpa dibatasi oleh waktu dan tempat.
+> \end{quotation}
+> ```
+> 
+> ![Standalone_Render_Blockquotation](https://github.com/user-attachments/assets/f37ff338-5156-404c-a573-0cd3c29c7804)
+
+## 5 | Teks Matematika
+
+### 5.1 Perintah Dasar LaTeX Matematika
+
+### 5.2 Inline Math
+
+### 5.3 Display Math
+
+### 5.4 Display Align(ed) Math
+
+### 5.5 Pembuktian/Proof
+
+## 6 | Kode Program
+
+### 6.1 Inline Code Snippet
+
+### 6.2 Code Block
+
+## Menambahkan Gambar, PDF, Tabel
 
 - Jika memerlukan gambar, simpan gambarnya di dalam folder `image`
 - Jika ingin menyisipkan PDF (misalnya nashkah soal), simpan file-nya di dalam folder `pdf`. Jangan lupa untuk men-trim lampiran PDF-nya.
