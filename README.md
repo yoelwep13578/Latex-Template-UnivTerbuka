@@ -586,7 +586,183 @@ Untuk blockquote yang lebih dari satu paragraf, gunakan peirntah environment `qu
 
 ### 5.1 Perintah Dasar LaTeX Matematika
 
+Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang banyak digunakan. Perintah matematika LaTeX yang lebih lengkap dapat dicari sendiri di internet.
+
+#### 5.1.1 Notasi Matematika & Greek
+
+| Command | Keterangan | Hasil |
+| :--- | :--- | :--- |
+| `a_b` | Indeks (subscript) | $a_b$ |
+| `a^b` | Pangkat (superscript) | $a^b$ |
+| `\frac{a}{b}` | Pecahan | $\frac{a}{b}$ |
+| `\sqrt{x}` | Akar kuadrat | $\sqrt{x}$ |
+| `\sqrt[n]{x}` | Akar pangkat n | $\sqrt[n]{x}$ |
+| `\pm` | Plus-minus | $\pm$ |
+| `\mp` | Minus-plus | $\mp$ |
+| `\infty` | Tak terhingga (infinity) | $\infty$ |
+| `\dots` | Tiga titik di tengah | $\dots$ |
+| `\vdots` | Tiga titik vertikal | $\vdots$ |
+| `\ddots` | Tiga titik diagonal | $\ddots$ |
+| `\alpha` | Huruf Greek alpha | $\alpha$ |
+| `\beta` | Huruf Greek beta | $\beta$ |
+| `\gamma` | Huruf Greek gamma | $\gamma$ |
+| `\delta` | Huruf Greek delta | $\delta$ |
+| `\epsilon` | Huruf Greek epsilon | $\epsilon$ |
+| `\pi` | Huruf Greek pi | $\pi$ |
+| `\theta` | Huruf Greek theta | $\theta$ |
+| `\sigma` | Huruf Greek sigma | $\sigma$ |
+| `\lambda` | Huruf Greek lambda | $\lambda$ |
+
+#### 5.1.2 Operator
+
+| Command | Keterangan | Hasil |
+| :--- | :--- | :--- |
+| `+` | Penjumlahan | $+$ |
+| `-` | Pengurangan | $-$ |
+| `\times` | Perkalian | $\times$ |
+| `\cdot` | Titik perkalian | $\cdot$ |
+| `\div` | Pembagian | $\div$ |
+| `\sum` | Simbol Sigma (penjumlahan) | $\sum$ |
+| `\prod` | Simbol Pi (perkalian) | $\prod$ |
+| `\int` | Simbol integral | $\int$ |
+| `\oint` | Integral kontur | $\oint$ |
+| `\log` | Logaritma | $\log$ |
+| `\ln` | Logaritma natural | $\ln$ |
+| `\exp` | Eksponensial | $\exp$ |
+| `\sin` | Sinus | $\sin$ |
+| `\cos` | Kosinus | $\cos$ |
+| `\tan` | Tangen | $\tan$ |
+| `\sec` | Sekan | $\sec$ |
+| `\csc` | Kosekan | $\csc$ |
+| `\cot` | Kotangen | $\cot$ |
+| `\max` | Maksimum | $\max$ |
+| `\min` | Minimum | $\min$ |
+| `\lim_{a \to b}` | Limit (a mendekati b) | $\lim_{a \to b}$ |
+
+#### 5.1.3 Relasi
+
+| Command | Keterangan | Hasil |
+| :--- | :--- | :--- |
+| `=` | Sama dengan | $=$ |
+| `\neq` | Tidak sama dengan | $\neq$ |
+| `\approx` | Kira-kira sama dengan | $\approx$ |
+| `\equiv` | Ekuivalen | $\equiv$ |
+| `<` | Kurang dari | $<$ |
+| `>` | Lebih dari | $>$ |
+| `\leq` | Kurang dari atau sama dengan | $\leq$ |
+| `\geq` | Lebih dari atau sama dengan | $\geq$ |
+| `\ll` | Jauh lebih kecil | $\ll$ |
+| `\gg` | Jauh lebih besar | $\gg$ |
+
+> [!TIP]
+> Relasi juga dapat dicoret dengan menambahkan `\not` sebelum perintah relasinya. Contohnya:
+>
+> - `\not >`
+> - `\not <`
+> - `\not\leq`
+> - `\not\geq`
+
+#### 5.1.4 Himpunan
+
+| Command | Keterangan | Hasil |
+| :--- | :--- | :--- |
+| `\in` | Anggota dari | $\in$ |
+| `\notin` | Bukan anggota dari | $\notin$ |
+| `\subset` | Subset dari | $\subset$ |
+| `\subseteq` | Subset dari atau sama dengan | $\subseteq$ |
+| `\supset` | Superset dari | $\supset$ |
+| `\supseteq` | Superset dari atau sama dengan | $\supseteq$ |
+| `\emptyset` | Himpunan kosong | $\emptyset$ |
+| `\cup` | Gabungan (union) | $\cup$ |
+| `\cap` | Irisan (intersection) | $\cap$ |
+| `\setminus` | Selisih himpunan | $\setminus$ |
+| `\mathbb{N}` | Himpunan bilangan natural | $\mathbb{N}$ |
+| `\mathbb{Z}` | Himpunan bilangan bulat | $\mathbb{Z}$ |
+| `\mathbb{Q}` | Himpunan bilangan rasional | $\mathbb{Q}$ |
+| `\mathbb{R}` | Himpunan bilangan real | $\mathbb{R}$ |
+| `\mathbb{C}` | Himpunan bilangan kompleks | $\mathbb{C}$ |
+
+> [!TIP]
+> Himpunan juga dapat dicoret dengan menambahkan `\not` sebelum perintah himpunannya. Contohnya:
+>
+> - `\not\in`
+> - `\not\subset`
+> - `\not\subseteq`
+> - `\not\supset`
+> - `\not\supseteq`
+> - `\not\cup`
+> - `\not\cap`
+
+#### 5.1.5 Aljabar & Vektor
+
+| Command | Keterangan | Hasil |
+| :--- | :--- | :--- |
+| `\times` | Vektor Cross Product | $\times$ |
+| `\cdot` | Vektor Dot Product | $\cdot$ |
+| `\sum` | Penjumlahan Vektor | $\sum$ |
+| `\vec{a}` | Vektor a | $\vec{a}$ |
+| `\nabla` | Operator Del atau Nabla | $\nabla$ |
+| `\oplus` | Penjumlahan Langsung (direct sum) | $\oplus$ |
+| `\otimes` | Perkalian Tensor (tensor product) | $\otimes$ |
+| `\parallel` | Paralel | $\parallel$ |
+| `\perp` | Tegak lurus (perpendicular) | $\perp$ |
+| `|x|` | Nilai mutlak dari x | $|x|$ |
+| `\|x\|` | Norma dari x | $\|x\|$ |
+
+#### 5.1.6 Kalkulus
+
+| Command | Keterangan | Hasil |
+| :--- | :--- | :--- |
+| `\lim_{x \to a}` | Limit x mendekati a | $\lim_{x \to a}$ |
+| `\frac{dy}{dx}` | Turunan | $\frac{dy}{dx}$ |
+| `\partial` | Simbol turunan parsial | $\partial$ |
+| `\int_a^b` | Integral dari a sampai b | $\int_a^b$ |
+| `\sum_{i=1}^n` | Penjumlahan dari i=1 sampai n | $\sum_{i=1}^n$ |
+
+#### 5.1.7 Simbol Panah
+
+| Command | Keterangan | Hasil |
+| :--- | :--- | :--- |
+| `\rightarrow` | Panah ke kanan | $\rightarrow$ |
+| `\leftarrow` | Panah ke kiri | $\leftarrow$ |
+| `\leftrightarrow` | Panah dua arah | $\leftrightarrow$ |
+| `\Rightarrow` | Panah implikasi (tebal) | $\Rightarrow$ |
+| `\Leftarrow` | Panah implikasi ke kiri (tebal) | $\Leftarrow$ |
+| `\Leftrightarrow` | Panah ekuivalen (tebal) | $\Leftrightarrow$ |
+| `\mapsto` | Panah pemetaan | $\mapsto$ |
+
 ### 5.2 Inline Math
+
+Inline math umumnya digunakan untuk menuliskan teks matematika yang dapat mengikuti teks biasa (inline dengan teks). Inline math dapat digunakan dengan diapit tanda $ seperti `$...$`, dengan bagian `...` diisikan perintah matematika LaTeX.
+
+> **Contoh**
+> ```
+> Contoh sumasi (\textit{summation}) umumnya ditulis seperti $\sum_{i=1}^{n} x_i$. Contoh integral
+> dengan penentuan dari $a$ hingga $b$ biasa ditulis seperti $\int_{a}^{b} f(x) \, \deriv x$. Contoh
+> limit yang menunjukkan hasil dari $x$ mendekati 0 umumnya ditulis seperti $\lim_{x \to 0}
+> \frac{\sin x}{x}$. Contoh pecahan sederhana dapat ditulis sebagai $\frac{a}{b}$. Contoh akar kuadrat
+> dapat ditulis seperti $\sqrt{x^2 + y^2}$. Contoh sumasi lainnya dapat dilihat seperti $\sum_{i=1}^{n}
+> \frac{1}{i^2} = \frac{\pi^2}{6}$
+> ```
+>
+> ![Standalone_Render_InlineMath](https://github.com/user-attachments/assets/083d8c19-049b-425a-8fb9-d79e507a38da)
+
+> [!NOTE]
+> Semua teks matematika yang ditulis dengan inline math akan menggunakan ukuran yang lebih kecil. Hal ini dimaksudkan agar spasi barisannya tetap sama dan tidak mengganggu keterbacaannya.
+>
+> Inline math dapat 'dipaksa' untuk menggunakan ukuran asli (display style) dengan menambahkan `\displaystyle` di paling awal, yaitu seperti `$\displaystyle ... $`. Inline display style cocok digunakan pada kalimat satu baris, bukan di dalam paragraf.
+>
+> ```
+> Contoh sumasi (\textit{summation}) umumnya ditulis seperti $\displaystyle \sum_{i=1}^{n} x_i$. Contoh
+> integral dengan penentuan dari $a$ hingga $b$ biasa ditulis seperti $\displaystyle \int_{a}^{b} f(x)
+> \, \deriv x$. Contoh limit yang menunjukkan hasil dari $x$ mendekati 0 umumnya ditulis seperti
+> $\lim_{x \to 0} \frac{\sin x}{x}$. Contoh pecahan sederhana dapat ditulis sebagai $\displaystyle
+> \frac{a}{b}$. Contoh akar kuadrat dapat ditulis seperti $\displaystyle \sqrt{x^2 + y^2}$. Contoh sumasi
+> lainnya dapat dilihat seperti $\displaystyle \sum_{i=1}^{n} \frac{1}{i^2} = \frac{\pi^2}{6}$
+> ```
+>
+> ![Standalone_Render_InlineDisplayMath](https://github.com/user-attachments/assets/eddf1b67-f926-47c4-83a0-864046720fd0)
+
 
 ### 5.3 Display Math
 
