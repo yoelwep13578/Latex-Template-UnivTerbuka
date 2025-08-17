@@ -763,8 +763,33 @@ Inline math umumnya digunakan untuk menuliskan teks matematika yang dapat mengik
 >
 > ![Standalone_Render_InlineDisplayMath](https://github.com/user-attachments/assets/eddf1b67-f926-47c4-83a0-864046720fd0)
 
-
 ### 5.3 Display Math
+
+Display math umumnya digunakan untuk menulis teks matematika (dengan ukuran asli) yang diletakkan di baris baru. Display math dapat digunakan dengan diapit tanda `\[` dan `\]` seperti `\[ ... \]`, dengan bagian `...` diisikan perintah matematika LaTeX. Display math boleh juga ditulis seperti:
+```
+\[
+...
+\]
+```
+
+> **Contoh**
+> ```
+> Definisi turunan suatu fungsi $y = f(x)$ dengan notasi Leibniz (yang mengindikasikan perubahan
+> infinitesimal) dirumuskan sebagai:
+> \[
+> \frac{\deriv y}{\deriv x} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0}
+> \frac{f(x + \Delta x) - f(x)}{\Delta x}
+> \]
+>
+> Ada pula definisi turunan lain yang lebih dikenal. Definisi turunan suatu fungsi $f(x)$ di titik $x$
+> adalah:
+> \[
+> f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+> \]
+> ```
+>
+> ![Standalone_Render_DisplayMath](https://github.com/user-attachments/assets/0dfa2d29-2cba-4d42-9f2f-291c0ec849fe)
+
 
 ### 5.4 Display Align(ed) Math
 
