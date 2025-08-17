@@ -790,6 +790,44 @@ Display math umumnya digunakan untuk menulis teks matematika (dengan ukuran asli
 >
 > ![Standalone_Render_DisplayMath](https://github.com/user-attachments/assets/0dfa2d29-2cba-4d42-9f2f-291c0ec849fe)
 
+> [!TIP]
+> Teks matematika display math dapat dibuat menjadi referable dan bernomor dengan menggunakan environment `equation` seperti format di bawah ini.
+> 
+> > ```
+> > \begin{equation}
+> >     ... \label{KATA_TUNJUK}
+> >     ...
+> > \end{equation}
+> > ```
+> >
+> > Keterangan:
+> >
+> > - `...` diisi dengan perintah matematika LaTeX.
+> > - Jika ingin bagian matematika tersebut dapat ditunjuk, gunakan `\label` dan isilah `KATA_TUNJUK` dengan keyword yang diinginkan.
+>
+> ```
+> Definisi turunan suatu fungsi $y = f(x)$ dengan notasi Leibniz (yang mengindikasikan perubahan
+> infinitesimal) dirumuskan sebagai:
+> \begin{equation}
+>     \frac{\deriv y}{\deriv x} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta
+>     x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x} \label{eq:derivatif-leibniz}
+> \end{equation}
+>
+> Ada pula definisi turunan lain yang lebih dikenal. Definisi turunan suatu fungsi $f(x)$ di titik $x$
+> adalah:
+> \begin{equation}
+>     f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \label{eq:derivatif-standar}
+> \end{equation}
+>
+> Sekarang saatnya mencoba merujuk. Bisa dilihat pada \autoref{eq:derivatif-leibniz} bahwa rumusnya
+> lumayan panjang, sedangkan rumus pada \autoref{eq:derivatif-biasa} lebih ringkas dan mudah dikenal
+> bagi pelajar.
+> ```
+>
+> ![Standalone_Render_DisplayMathNumbered](https://github.com/user-attachments/assets/463b539d-6070-44fd-99b8-63610c436c21)
+
+> [!IMPORTANT]
+> Teks matematika yang memakai `\[` `\]` atau environment `equation` hanya bisa digunakan untuk satu baris.
 
 ### 5.4 Display Align(ed) Math
 
