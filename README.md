@@ -898,6 +898,30 @@ Aligned Math sejatinya hanyalah sebutan _keren_ untuk display math yang teks mat
 
 ### 5.5 Pembuktian/Proof
 
+Penulisan dalam pembuktian matematika cukup berbeda dari tulisan biasa, sebab diawali dengan kata _proof_ atau _bukti_, kemudian akan ada tanda kotak kecil di akhir sebagai tanda pembuktian telah selesai. Format pembuktian matematika dapat digunakan dengan perintah environment `proof`.
+
+> **Contoh**
+> ```
+> \noindent Buktikan bahwa bilangan $0,99999999999\dots = 1$.
+>
+> \begin{proof}
+>     Misalkan $0,99999999999\dots$ sebagai $x$, sehingga:
+>     \begin{align*}
+>         x &= 0,99999999999\dots \\
+>         10x &= 9,99999999999\dots &&\text{(dikali 10)} \\
+>         9x &= 10x - x \\
+>         &= 9,99999999999\dots - 0,99999999999\dots \\
+>         &= 9,\textcolor{gray!30}{99999999999\dots} - 0,\textcolor{gray!30}{99999999999\dots} \\
+>         9x &= 9 \\
+>         x &= 1
+>     \end{align*}
+>     Asumsi awal adalah $x = 0,99999999999\dots$, lalu hasil lain menunjukkan $x = 1$. Dengan demikian, dapat disimpulkan bahwa $0,99999999999\dots = 1$
+> \end{proof}
+> ```
+>
+> ![Standalone_Render_MathProof](https://github.com/user-attachments/assets/81a7d90b-5a05-446e-8a40-4fae412c6807)
+
+
 ## 6 | Kode Program
 
 ### 6.1 Inline Code Snippet
