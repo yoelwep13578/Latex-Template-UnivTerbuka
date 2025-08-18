@@ -831,6 +831,71 @@ Display math umumnya digunakan untuk menulis teks matematika (dengan ukuran asli
 
 ### 5.4 Display Align(ed) Math
 
+Aligned Math sejatinya hanyalah sebutan _keren_ untuk display math yang teks matematikanya dapat ditulis lebih dari sebaris dan bisa disejajarkan ke tanda tertentu. Aligned math dapat digunakan dengan perintah environment `align*`.
+
+> [!NOTE]
+> - Jika teks matematika perlu lebih dari sebaris, gunakan `\\` di akhir untuk newline.
+> - Jika ingin membuat barisan tertentu dapat berposisi sejajar, gunakan `&`. Salah satu contoh alignment yang sering dipakai adalah menyejajarkan ke tanda sama dengan menggunakan `&=`.
+
+> **Contoh**
+> ```
+> Turunan pertama dari fungsi $f(x) = 3x^2 + 5x − 7$ dapat ditentukan dengan:
+> \begin{align*}
+>     f'(x) &= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \\
+>           &= \lim_{h \to 0} \frac{[3(x+h)^2 + 5(x+h) - 7] - [3x^2 + 5x - 7]}{h} \\
+>           &= \lim_{h \to 0} \frac{[3(x^2 + 2xh + h^2) + 5x + 5h - 7] - [3x^2 + 5x - 7]}{h} \\
+>           &= \lim_{h \to 0} \frac{[3x^2 + 6xh + 3h^2 + 5x + 5h - 7] - [3x^2 + 5x - 7]}{h} \\
+>           &= \lim_{h \to 0} \frac{3x^2 + 6xh + 3h^2 + 5x + 5h - 7 - 3x^2 - 5x + 7}{h} \\
+>           &= \lim_{h \to 0} \frac{6xh + 3h^2 + 5h}{h} \\
+>           &= \lim_{h \to 0} \frac{h(6x + 3h + 5)}{h} \\
+>           &= \lim_{h \to 0} (6x + 3h + 5) \\
+>           &= 6x + 3(0) + 5 \\
+>     f'(x) &= 6x + 5
+> \end{align*}
+> ```
+>
+> ![Standalone_Render_AlignMath](https://github.com/user-attachments/assets/bea2c29a-bd1a-40f7-a66d-90bb13d57be9)
+
+> [!TIP]
+> Aligned math dapat dibuat menjadi referable dan bernomor dengan menggunakan environment `align` seperti format ini.
+>
+> > ```
+> > \begin{align}
+> >     ... \label{KATA_TUNJUK} \\
+> >     ... \nonumber \\
+> >     ....
+> > \end{align}
+> > ```
+> >
+> > Keterangan:
+> >
+> > - `...` diisi dengan perintah matematika LaTeX.
+> > - Jika ingin bagian matematika tersebut dapat ditunjuk, gunakan `\label` dan isilah `KATA_TUNJUK` dengan keyword yang diinginkan.
+> > - Jika ada bagian yang tidak ingin diberi nomor, gunakan `\nonumber`.
+>
+> ```
+> Turunan pertama dari fungsi $f(x) = 3x^2 + 5x − 7$ dapat ditentukan dengan:
+> \begin{align}
+>     f'(x) &= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \nonumber \\
+>           &= \lim_{h \to 0} \frac{[3(x+h)^2 + 5(x+h) - 7] - [3x^2 + 5x - 7]}{h} \nonumber \\
+>           &= \lim_{h \to 0} \frac{[3(x^2 + 2xh + h^2) + 5x + 5h - 7] - [3x^2 + 5x - 7]}{h} \nonumber \\
+>           &= \lim_{h \to 0} \frac{[3x^2 + 6xh + 3h^2 + 5x + 5h - 7] - [3x^2 + 5x - 7]}{h} \nonumber \\
+>           &= \lim_{h \to 0} \frac{3x^2 + 6xh + 3h^2 + 5x + 5h - 7 - 3x^2 - 5x + 7}{h} \nonumber \\
+>           &= \lim_{h \to 0} \frac{6xh + 3h^2 + 5h}{h} \label{eq:1} \\
+>           &= \lim_{h \to 0} \frac{h(6x + 3h + 5)}{h} \nonumber \\
+>           &= \lim_{h \to 0} (6x + 3h + 5) \label{eq:2} \\
+>           &= 6x + 3(0) + 5 \nonumber \\
+>     f'(x) &= 6x + 5 \nonumber
+> \end{align}
+>
+> Sekarang saatnya mencoba merujuk. \autoref{eq:1} diperoleh dengan membuang suku sama yang positif \& negatifnya
+> berlawanan, yaitu $3x^2\; -3x^2$, $5x\; -5x$, $-7\; +7$. \autoref{eq:2} diperoleh dengan membagi suku pembilang
+> dengan $h$. Mengingat $\frac{h}{h} = 1$, hasilnya menjadi $1(6x + 3h + 5)$
+> ```
+>
+> ![Standalone_Render_AlignMathNumbered](https://github.com/user-attachments/assets/4982bcc5-8efa-4cec-94eb-6fedd6c687d1)
+
+
 ### 5.5 Pembuktian/Proof
 
 ## 6 | Kode Program
