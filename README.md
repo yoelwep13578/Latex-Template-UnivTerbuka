@@ -957,6 +957,134 @@ Keterangan:
 
 ### 6.2 Code Block
 
+Code block umumnya digunakan untuk menulis kode program. Code block dapat digunakan dengan perintah environment `lstlisting`. Format yang tersedia bisa dilihat di bawah ini.
+
+```
+\begin{lstlisting}[
+    language=BAHASA_PEMROGRAMAN,
+    numbers=left,
+    ...
+]
+...
+\end{lstlisting}
+```
+
+> [!NOTE]
+> Tab dapat berpengaruh dalam hasil tampilan kodenya.
+
+> Contoh: Polosan dan Syntax Highlighted + Numbered
+>
+> ```
+> Contoh kode bahasa R dengan tampilan polosan.
+>
+> \begin{lstlisting}
+> # Program 1
+>
+> frekuensi_game <- seq(1, 40, length.out = 100)
+> peluang_tengah <- 15
+> scale <- 4
+> data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
+>
+> # Grafik
+> x11()
+> plot(frekuensi_game, data_peluang_logistik,
+> type = "l",
+> xlab = "Game/Match per Hari",
+> ylab = "Peluang untuk 'Dikasih Menang'",
+> yaxt = "n",
+> col = "red",
+> main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", �� = ", scale),
+> sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
+>
+> axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
+> \end{lstlisting}
+> ```
+>
+> ```
+> Contoh kode bahasa R dengan \textit{syntax highlighting} dan nomor baris.
+>
+> \begin{lstlisting}[language=R, numbers=left]
+> # Program 1
+>
+> frekuensi_game <- seq(1, 40, length.out = 100)
+> peluang_tengah <- 15
+> scale <- 4
+> data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
+>
+> # Grafik
+> x11()
+> plot(frekuensi_game, data_peluang_logistik,
+> type = "l",
+> xlab = "Game/Match per Hari",
+> ylab = "Peluang untuk 'Dikasih Menang'",
+> yaxt = "n",
+> col = "red",
+> main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", �� = ", scale),
+> sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
+>
+> axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
+> \end{lstlisting}
+> ```
+>
+> ![Standalone_Render_CodeBlock](https://github.com/user-attachments/assets/2c7c78eb-f921-4fa5-a555-2b5fe9d2bac8)
+
+> [!TIP]
+> Code block lstlisting dapat dibuat menjadi referable dengan menamhkan `caption` dan `label` di setelan `lstlisting`.
+>
+> > ```
+> > \begin{lstlisting}[
+> >     language=BAHASA_PROGRAM,
+> >     numbers=left,
+> >     caption={KETERANGAN},
+> >     label={KATA_TUNJUK}
+> > ]
+> > ...
+> > \end{lstlisting}
+> > \lstsource{SUMBER}
+> > ```
+> >
+> > Keterangan:
+> >
+> > - `KETERANGAN` pada `caption` diisi dengan keterangan kode yang akan ditampilkan.
+> > - Isilah `KATA_TUNJUK` pada `caption` dengan kata tunjuk yang diinginkan.
+> > - Jika ingin menyertakan keterangan sumber, gunakan `\lstsource` dan isilah `SUMBER` dengan sumbernya.
+>
+> ```
+> \begin{lstlisting}[
+>     language=R,
+>     numbers=left,
+>     caption={Gambaran Win/Lose Permainan dengan Grafik Logistik},
+>     label={code:grafik-winlose-game}
+> ]
+> # Program 1
+>
+> frekuensi_game <- seq(1, 40, length.out = 100)
+> peluang_tengah <- 15
+> scale <- 4
+> data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
+>
+> # Grafik
+> x11()
+> plot(frekuensi_game, data_peluang_logistik,
+> type = "l",
+> xlab = "Game/Match per Hari",
+> ylab = "Peluang untuk 'Dikasih Menang'",
+> yaxt = "n",
+> col = "red",
+> main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", �� = ", scale),
+> sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
+>
+> axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
+> \end{lstlisting}
+> \lstsource{Dokumen Penulis}
+>
+> Sekarang saatnya mencoba merujuk. Program yang dijalankan dengan \autoref{code:grafik-winlose-game} akan
+> menampilkan grafik peluang kemenangan yang menurun jika seseorang bermain game terus-menerus.
+> ```
+>
+> ![Standalone_Render_CodeBlockReferable](https://github.com/user-attachments/assets/47c29eda-7e1c-4281-95ab-6bd1bd043616)
+
+
 ## Menambahkan Gambar, PDF, Tabel
 
 - Jika memerlukan gambar, simpan gambarnya di dalam folder `image`
