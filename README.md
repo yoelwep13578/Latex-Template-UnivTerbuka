@@ -895,7 +895,6 @@ Aligned Math sejatinya hanyalah sebutan _keren_ untuk display math yang teks mat
 >
 > ![Standalone_Render_AlignMathNumbered](https://github.com/user-attachments/assets/4982bcc5-8efa-4cec-94eb-6fedd6c687d1)
 
-
 ### 5.5 Pembuktian/Proof
 
 Penulisan dalam pembuktian matematika cukup berbeda dari tulisan biasa, sebab diawali dengan kata _proof_ atau _bukti_, kemudian akan ada tanda kotak kecil di akhir sebagai tanda pembuktian telah selesai. Format pembuktian matematika dapat digunakan dengan perintah environment `proof`.
@@ -915,16 +914,46 @@ Penulisan dalam pembuktian matematika cukup berbeda dari tulisan biasa, sebab di
 >         9x &= 9 \\
 >         x &= 1
 >     \end{align*}
->     Asumsi awal adalah $x = 0,99999999999\dots$, lalu hasil lain menunjukkan $x = 1$. Dengan demikian, dapat disimpulkan bahwa $0,99999999999\dots = 1$
+>     Asumsi awal adalah $x = 0,99999999999\dots$, lalu hasil lain menunjukkan $x = 1$. Dengan demikian, dapat
+>     disimpulkan bahwa $0,99999999999\dots = 1$
 > \end{proof}
 > ```
 >
 > ![Standalone_Render_MathProof](https://github.com/user-attachments/assets/81a7d90b-5a05-446e-8a40-4fae412c6807)
 
-
 ## 6 | Kode Program
 
 ### 6.1 Inline Code Snippet
+
+Template ini menyediakan dua pilihan antara `verbatim` dan `listings` Code snippet verbatim dapat digunakan dengan perintah `\verb`, sedangkan code snippet listings dapat digunakan dengan perintah `\lstinline`. Keduanya sama-sama memiliki format seperti ini.
+
+```
+\verb<DELIMITER>...<DELIMITER>
+```
+
+```
+\lstlinline<DELIMITER>...<DELIMITER>
+```
+
+Keterangan:
+
+- `...` diisikan dengan kode/teks yang ingin dibuat monospace.
+- `<DELIMITER>` bisa diisikan dengan karakter apa pun yang bisa dipakai sebagai pembatas. Beberapa yang bisa dipakai di antaranya `|`, `@`, `!`, `?`, `+`, atau lainnya asalkan jangan sampai sama/mengganggu dengan kodenya.
+
+> **Contoh: Verbatim (bawah) dan Listings (atas)**
+> ```
+> Akan ada dua variabel yang dipakai untuk menghasilkan grafik produksi beras tahunan, yaitu \verb|produksi_
+> beras| dan \verb|tahun|.
+> Akan ada dua variabel yang dipakai untuk menghasilkan grafik produksi beras tahunan, yaitu \lstinline|produksi_
+> beras| dan \lstinline|tahun|.
+> ```
+>
+> ![Standalone_Render_CodeSnippet](https://github.com/user-attachments/assets/28f62fe9-86f6-48b3-96aa-6fa8734cdab3)
+
+
+> [!IMPORTANT]
+> Verbatim (`\verb`) tidak support line wrap. Seandainya code snippet berisi teks panjang, teks code snippet-nya akan bablas menembus margin.
+> Untuk mengatasinya, gunakan `\lstinline` untuk menulis teks code snippet yang panjang.
 
 ### 6.2 Code Block
 
