@@ -1029,7 +1029,7 @@ Code block umumnya digunakan untuk menulis kode program. Code block dapat diguna
 > ![Standalone_Render_CodeBlock](https://github.com/user-attachments/assets/2c7c78eb-f921-4fa5-a555-2b5fe9d2bac8)
 
 > [!TIP]
-> Code block lstlisting dapat dibuat menjadi referable dengan menamhkan `caption` dan `label` di setelan `lstlisting`.
+> Code block lstlisting dapat dibuat menjadi referable dengan menambahkan `caption` dan `label` di setelan `lstlisting`.
 >
 > > ```
 > > \begin{lstlisting}[
@@ -1084,6 +1084,96 @@ Code block umumnya digunakan untuk menulis kode program. Code block dapat diguna
 >
 > ![Standalone_Render_CodeBlockReferable](https://github.com/user-attachments/assets/47c29eda-7e1c-4281-95ab-6bd1bd043616)
 
+## 7 | Gambar
+
+> [!NOTE]
+> Siapkan gambar yang ingin disisipkan ke dokumen dengan menyimpannya di folder `image`.
+
+Gambar dapat disisipkan dengan menggunakan perintah `\includegraphics`. Format yang tersedia dapat dilihat seperti ini.
+
+> ```
+> \includegraphics[
+>     scale={...},
+>     width={...},
+>     height={...},
+>     angle=...,
+>     trim={KIRI BAWAH KANAN ATAS}
+> ]{LOKASI_FILE_GAMBAR}
+> ```
+>
+> Pilih salah satu cara mengatur ukurannya antara dengan `scale` saja, `width` saja, `height` saja, atau dengan `width` & `height`.
+
+| Setelan | Keterangan | Value yang Diisi |
+|---------|------------|------------------|
+| `scale` | Skala (besaran) dari ukuran gambar aslinya | Angka skalar<br>Misalnya `0.5` (50%), `1` (100%), dst. |
+| `width` | Ukuran lebar gambar | Ukuran satuan |
+| `height` | Ukuran tinggi gambar | Ukuran satuan |
+| `angle` | Kemiringan gambar | Angka derajat<br>Misal `90` (rotate kanan), `180` (rotate sampai terbalik), dst. |
+| `trim` | Crop gambar | Ukuran satuan |
+
+Namun, format yang lebih sering digunakan adalah gambar berukuran setengah (50%) dari lebar baris teks seperti:
+
+```
+\includegraphics[width=0.5\linewidth]{LOKASI_FILE_GAMBAR}
+```
+
+`0.5` bisa diganti dengan angka lain di rentang `0` hingga `1` untuk menyesuaikan ukuran gambar yang diinginkan nanti.
+
+> **Contoh**
+> 
+> ```
+> Gambar yang disisipkan dengan cara polosan akan telihat seperti ini. Gambar diletakkan sesuai dengan
+> posisi perintahnya dan tentu \textit{left-aligned} seperti menulis teks.
+> 
+> \includegraphics[width=.3\linewidth]{image/Logo_Universitas_Terbuka.png}
+> 
+> Beginilah gambarnya \includegraphics[width=3em]{image/Logo_Universitas_Terbuka.png} jika ditulis
+> sebaris dengan teks.
+> ```
+> 
+> ![Standalone_Render_Image](https://github.com/user-attachments/assets/3a3f1de4-f2fd-4119-b649-f4684437aa13)
+
+> [!TIP]
+> Gambar dapat dibuat menjadi referable dengan menggunakan `\includegraphics`, `\caption`, dan `\label` di dalam environment `figure` seperti format ini.
+>
+> > ```
+> > \begin{figure}[H]
+> >     \centering
+> >     \includegraphics[width=...]{...}
+> >     \caption{KETERANGAN}
+> >     \label{KATA_TUNJUK}
+> >     \figuresource{SUMBER}
+> > \end{figure}
+> > ```
+> >
+> > Keterangan:
+> >
+> > - Tuliskan keterangan gambar pada bagian `KETERANGAN` di `\caption`
+> > - Isilah `KATA_TUNJUK` dengan keyword yang diinginkan
+> > - Jika ingin menulis sumber, gunakan `\figuresource` dan isikan `SUMBER` dengan sumber gambar tersebut
+> 
+> ```
+> Gambar yang disisipkan dengan cara ``ilmiah'' dan rapi akan terlihat seperti ini. Gambar akan diberi
+> nomor, keterangan, dan ditempatkan di bawah paragraf ini.
+> 
+> \begin{figure}[H]
+>     \centering
+>     \includegraphics[width=0.4\linewidth]{image/Logo_Universitas_Terbuka.png}
+>     \caption{Logo Universitas Terbuka}
+>     \label{fig:logo-ut}
+>     \figuresource{Berkas Gambar Wikipedia}
+> \end{figure}
+> 
+> Sekarang saatnya mencoba merujuk. \autoref{fig:logo-ut} merupakan logo Universitas Terbuka yang diunduh dari situs
+> berkas gambar Wikipedia.
+> ```
+>
+> ![Standalone_Render_ImageReferable](https://github.com/user-attachments/assets/d04e32ef-3ae7-42be-a711-a5b01dfd65a0)
+
+
+## 8 | Lampiran PDF
+
+## 9 | Tabel
 
 ## Menambahkan Gambar, PDF, Tabel
 
