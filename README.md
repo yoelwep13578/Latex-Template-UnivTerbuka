@@ -1170,10 +1170,22 @@ Namun, format yang lebih sering digunakan adalah gambar berukuran setengah (50%)
 >
 > ![Standalone_Render_ImageReferable](https://github.com/user-attachments/assets/d04e32ef-3ae7-42be-a711-a5b01dfd65a0)
 
-
 ## 8 | Lampiran PDF
 
+> [!NOTE]
+> Simpanlah PDF yang ingin dilampirkan di dalam folder `pdf`.
+
 ## 9 | Tabel
+
+Selain menggunakan tabel bawaan `tabular`, template ini juga menyediakan tabel versi `tabularray` yang lebih enak di-custom oleh penulis. Penulis dapat memilih cara menulis tabelnya sesuai keinginan.
+
+### 9.1 Tabel Biasa `tabular`
+
+### 9.2 Tabel Tabularray `tblr`
+
+### 9.3 Tabel Tabularray Mandiri `talltblr`
+
+### 9.4 Tabel Tabularray Mandiri `longtblr`
 
 ## Menambahkan Gambar, PDF, Tabel
 
