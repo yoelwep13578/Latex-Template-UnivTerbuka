@@ -1177,15 +1177,171 @@ Namun, format yang lebih sering digunakan adalah gambar berukuran setengah (50%)
 
 ## 9 | Tabel
 
-Selain menggunakan tabel bawaan `tabular`, template ini juga menyediakan tabel versi `tabularray` yang lebih enak di-custom oleh penulis. Penulis dapat memilih cara menulis tabelnya sesuai keinginan.
+Selain menggunakan tabel bawaan `tabular`, template ini juga menyediakan tabel versi `tabularray` yang lebih enak di-custom oleh penulis. Penulis dapat memilih cara yang sesuai dengan keinginan.
 
 ### 9.1 Tabel Biasa `tabular`
+
+Tabel `tabular` adalah tabel bawaan LaTeX yang biasa saja, penggunaannya pun juga cocok untuk membuat tabel sederhana atau sekadar membuat teks sejajar dengan tanda titik dua. Menulis tabel di LaTeX agak berbeda dari biasanya, tapi tabel `tabular` dapat dibuat dengan mudah menggunakan tools LaTeX Tabular Generator seperti [Tables Generator](https://www.tablesgenerator.com/) atau menggunakan bantuan AI.
+
+Jika tabular ingin digunakan untuk menulis teks sejajar, tabelnya dapat dibuat dengan format seperti ini.
+
+```
+\begin{tabular}{@{}l @{\;}c@{\;} l}
+    ... &:& ... \\
+    ... &:& ... \\
+    ...
+\end{tabular}
+```
+
+Jika tabular ingin digunakan untuk menulis tabel, format yang disarankan adalah seperti ini.
+
+```
+\begin{tabular}{KOLOM}
+    \hline
+    KOLOM_HEADER_1 & KOLOM_HEADER_2 & ... \\
+    \hline
+    ISIAN_KOLOM_1 & ISIAN_KOLOM_2 & ... \\
+    ... \\
+    \hline
+\end{tabular}
+```
+
+Format tersebut lebih mudah dibuat karena hanya menggunakan garis (hline) pada atas tabel, bawah header, dan bawah tabel. Hasilnya juga bagus seperti format tabel karya ilmiah.
+
+- `KOLOM` diisi dengan huruf alignment seperti `l`eft, `c`enter, atau `r`ight. Setiap huruf adalah jumlah kolom. Misalnya diisi `l c l` berarti ada 3 kolom dengan kolom ke-1 left, kolom ke-2 center, dan kolom ke-3 left.
+- `\hline` hanya untuk garis horizontal (dalam contoh digunakan untuk bagian paling atas, pembatas antara header dan isi, dan bagian paling bawah).
+- Kolom berikutnya/pembatas kolom ditandai dengan `&`.
+- Baris berikutnya ditandai dengan `\\`.
+
+> **Contoh: Tab-aligned Text, Tabel Sesuai Teks, dan Tabel di Tengah.**
+> 
+> ```
+> Teks sejajar \textit{tab-aligned} yang ditulis dengan menggunakan tabular akan tampil seperti ini.
+> 
+> \begin{tabular}{@{}l @{\;}c@{\;} l@{}}
+>      Nama Proyek &:& Proyek Coba-coba \\
+>      Durasi &:& 30 Hari \\
+>      Lokasi Pengerjaan &:& Sekolah
+> \end{tabular}
+> 
+> Tabel tabular yang ditulis biasa akan tampil seperti ini. Posisi tabelnya akan sebaris mengikuti
+> teksnya.
+> 
+> \begin{tabular}{c l r}
+>     \hline
+>     No. & Provinsi & Jemaah Haji \\
+>     \hline
+>     1 & Jawa Barat & 39753 \\
+>     2 & Jawa Timur & 36980 \\
+>     3 & Jawa Tengah & 31757 \\
+>     4 & Banten & 10244 \\
+>     5 & Sumatera Utara & 8516 \\
+>     \hline
+> \end{tabular}
+> 
+> Tabel polosan ini juga dapat diletakkan di tengah seperti ini.
+> 
+> \begin{center}
+>     \begin{tabular}{c l r}
+>         \hline
+>         No. & Provinsi & Jemaah Haji \\
+>         \hline
+>         1 & Jawa Barat & 39753 \\
+>         2 & Jawa Timur & 36980 \\
+>         3 & Jawa Tengah & 31757 \\
+>         4 & Banten & 10244 \\
+>         5 & Sumatera Utara & 8516 \\
+>         \hline
+>     \end{tabular}
+> \end{center}
+> ```
+> 
+> ![Standalone_Render_Tabular (1)](https://github.com/user-attachments/assets/fff04b16-a905-4581-be81-d8aaec499e61)
+
+> [!TIP]
+> Tabel `tabular` dapat dibuat menjadi referable dengan menggunakan `\caption`, `\label`, `\tablesource`, dan `\tabular` di dalam environment `table` seperti format ini.
+>
+> > ```
+> > \begin{table}[H]
+> >     \centering
+> >     \caption{KETERANGAN}
+> >     \longcaption{KETERANGAN \\ KETERANGAN_BARIS_KEDUA \\ ...}
+> >     \label{KATA_TUNJUK}
+> >     \begin{tabular}{...}
+> >         ...
+> >     \end{tabular}
+> >     \tablesource{SUMBER}
+> >     \tablesourceleft{INDENT}{SUMBER}
+> > \end{table}
+> > ```
+> >
+> > Keterangan:
+> >
+> > - Pilihlah salah satu antara mengguakan `\caption` atau `\longcaption`. `KETERANGAN` pada `\caption` atau `\longcaption` diisi dengan keterangan tabel. Jika keterangannya panjang dan lebih dari sebaris, disarankan menggunakan `\longcaption`.
+> > - Isilah `KATA_TUNJUK` pada `\label` dengan keyword yang diinginkan.
+> > - Jika ingin menyertakan sumber, pilih salah satu antara menggunakan `\tablesource` atau `\tablesourceleft`. `\tablesource` menempatkan teks sumber di tengah, sedangkan `\tablesourceleft` teks sumbernya bisa digeser ke kiri dengan jarak yang diisi pada bagian `INDENT`.
+> 
+> ```
+> Tabel tabular yang ditulis dengan cara ``ilmiah'' dan rapi akan terlihat seperti ini. Tabel
+> memiliki keterangan dan sumber, dan diletakkan di bawah paragraf. Ini contoh jika keterangannya
+> singkat dan sumbernya ditulis di tengah.
+> 
+> \begin{table}
+>     \centering
+>     \caption{Jemaah Haji Berdasarkan Provinsi}
+>     \label{table:jemaah-haji-1}
+>     \begin{tabular}{c l r}
+>         \hline
+>         No. & Provinsi & Jemaah Haji \\
+>         \hline
+>         1 & Jawa Barat & 39753 \\
+>         2 & Jawa Timur & 36980 \\
+>         3 & Jawa Tengah & 31757 \\
+>         4 & Banten & 10244 \\
+>         5 & Sumatera Utara & 8516 \\
+>         \hline
+>     \end{tabular}
+>     \tablesource{Badan Pusat Statistik}
+> \end{table}
+> 
+> Ini adalah contoh tabel yang memiliki keterangan panjang dan sumber yang ditulis dari kiri.
+> 
+> \begin{table}
+>     \centering
+>     \longcaption{Lima Provinsi dengan Jumlah \\ Jemaah Haji Terbanyak yang \\ Diberangkatkan ke Tanah Suci \\ Mekah (2024)}
+>     \label{table:jemaah-haji-2}
+>     \begin{tabular}{c l r}
+>         \hline
+>         No. & Provinsi & Jemaah Haji \\
+>         \hline
+>         1 & Jawa Barat & 39753 \\
+>         2 & Jawa Timur & 36980 \\
+>         3 & Jawa Tengah & 31757 \\
+>         4 & Banten & 10244 \\
+>         5 & Sumatera Utara & 8516 \\
+>         \hline
+>     \end{tabular}
+>     \tablesourceleft{-1.5cm}{Badan Pusat Statistik}
+> \end{table}
+> 
+> Sekarang saatnya mencoba merujuk. Data yang ditampilkan pada \autoref{table:jemaah-haji-1} dan
+> \autoref{table:jemaah-haji-2} diperoleh dari Badan Pusat Statistik Indonesia.
+> ```
+>
+> ![Standalone_Render_TabularReferable](https://github.com/user-attachments/assets/4c15b8a6-04d3-460b-8e39-28808165679f)
+
 
 ### 9.2 Tabel Tabularray `tblr`
 
 ### 9.3 Tabel Tabularray Mandiri `talltblr`
 
+> [!IMPORTANT]
+> `talltblr` tidak perlu dibungkus environment `table` karena sudah memiliki fitur caption tersendiri, dan `caption` wajib diisi.
+
 ### 9.4 Tabel Tabularray Mandiri `longtblr`
+
+> [!IMPORTANT]
+> `longtblr` tidak perlu dibungkus environment `table` karena sudah memiliki fitur caption tersendiri, dan `caption` wajib diisi.
 
 ## Menambahkan Gambar, PDF, Tabel
 
