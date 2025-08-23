@@ -1175,6 +1175,20 @@ Namun, format yang lebih sering digunakan adalah gambar berukuran setengah (50%)
 > [!NOTE]
 > Simpanlah PDF yang ingin dilampirkan di dalam folder `pdf`.
 
+Dalam template ini, hanya file PDF satu halaman yang dapat dilampirkan di sini. Mirip layaknya melampirkan gambar, file PDF satu halaman dapat dilampirkan dengan perintah `\includegraphics` dan formatnya sama saja dengan pemakaian `includegraphics` untuk menyisipkan gambar. Contoh format yang cocok digunakan untuk lampiran PDF satu halaman adalah seperti ini.
+
+```
+\includegraphics[trim={KIRI BAWAH KANAN ATAS}]{LOKASI_FILE}
+```
+
+Ukuran trim `KIRI`, `KANAN`, dan `ATAS` bisa disamakan dengan ukuran margin yang digunakan dalam template ini, yaitu 3cm. Namun, ukuran untuk `ATAS` dan `BAWAH` bisa disesuaikan lagi untuk membuang (trim) jarak kosong yang ada pada file PDF tersebut.
+
+**Contoh: Melampirkan Naskah Soal**
+
+```
+\includegraphics[trim={3cm 10cm 3cm 3cm}]{pdf/naskah-soal-tugas1-kalkulus.pdf}
+```
+
 ## 9 | Tabel
 
 Selain menggunakan tabel bawaan `tabular`, template ini juga menyediakan tabel versi `tabularray` yang lebih enak di-custom oleh penulis. Penulis dapat memilih cara yang sesuai dengan keinginan.
