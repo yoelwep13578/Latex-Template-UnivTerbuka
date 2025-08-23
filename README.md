@@ -1588,6 +1588,8 @@ Format di atas hanya menggunakan garis horizontal untuk bagian atas tabel, bawah
 > \autoref{table:jumlah-jemaah-haji-1} dan \autoref{table:jumlah-jemaah-haji-2} diperoleh dari
 > Badan Pusat Statistik Indonesia.
 > ```
+>
+> ![Standalone_Render_Talltblr](https://github.com/user-attachments/assets/0dbc6091-9e6e-4cfa-8511-a1e8e78845e3)
 
 ### 9.4 Tabel Tabularray Mandiri `longtblr`
 
