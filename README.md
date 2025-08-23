@@ -1332,7 +1332,7 @@ Format tersebut lebih mudah dibuat karena hanya menggunakan garis (hline) pada a
 
 ### 9.2 Tabel Tabularray `tblr`
 
-Tabel tabularray `tblr` adalah tabel biasa yang lebih mudah untuk dikustomisasi. Tabel tabularray sangat disarankan untuk menulis tabel sederhana ataupun tabel yang kompleks. Tabel tabularray dapat digunakan secara jitu dengan [membaca dokumentasi tabularray](http://mirrors.ctan.org/macros/latex/contrib/tabularray/tabularray.pdf) atau lebih mudah lagi dengan menggunakan AI. Mengapa begitu? Sebab masih sedikit tools table generator yang membantu tabularray, dan lebih banyak membantu untuk tabel tabular saja. Meski cara penyetelannya sedikit berbeda dari tabel tabular, tabel tabularray tetap lebih enak dan mudah dikustomisasi.
+Tabel tabularray `tblr` adalah tabel biasa yang lebih mudah untuk dikustomisasi. Tabel tabularray sangat disarankan untuk menulis tabel sederhana ataupun tabel yang kompleks. Tabel tabularray dapat digunakan secara jitu dengan membaca [dokumentasi tabularray](http://mirrors.ctan.org/macros/latex/contrib/tabularray/tabularray.pdf), salah satu artikel di [chongkai.site](https://chongkai.site/docs/posts/2023-03-05-Understanding%20the%20best%20table%20package%20for%20latex%20--%20tabularray) atau lebih mudah lagi dengan menggunakan AI. Mengapa begitu? Sebab masih sedikit tools table generator yang membantu tabularray, dan lebih banyak membantu untuk tabel tabular saja. Meski cara penyetelannya sedikit berbeda dari tabel tabular, tabel tabularray tetap lebih enak dan mudah dikustomisasi.
 
 Beberapa format penyetelan yang tersedia dapat dilihat seperti ini.
 
@@ -1479,8 +1479,115 @@ Format di atas hanya menggunakan garis horizontal untuk bagian atas tabel, bawah
 
 ### 9.3 Tabel Tabularray Mandiri `talltblr`
 
-> [!IMPORTANT]
-> `talltblr` tidak perlu dibungkus environment `table` karena sudah memiliki fitur caption tersendiri, dan `caption` wajib diisi.
+> [!NOTE]
+> `talltblr` memiliki fitur caption dan note tersendiri, tapi caption harus diisi. `talltblr` tetap bisa digunakan di dalam environment `table`.
+
+Tabel tabularray `talltblr` cocok digunakan untuk tabel biasa yang sangat memerlukan teks keterangan yang rapi dan catatan tabel. Tabel tabularray sangat disarankan untuk menulis tabel sederhana ataupun tabel yang kompleks. Tabel tabularray dapat digunakan secara jitu dengan membaca [dokumentasi tabularray](http://mirrors.ctan.org/macros/latex/contrib/tabularray/tabularray.pdf), salah satu artikel di [chongkai.site](https://chongkai.site/docs/posts/2023-03-05-Understanding%20the%20best%20table%20package%20for%20latex%20--%20tabularray) atau lebih mudah lagi dengan menggunakan AI. Mengapa begitu? Sebab masih sedikit tools table generator yang membantu tabularray, dan lebih banyak membantu untuk tabel tabular saja. Meski cara penyetelannya sedikit berbeda dari tabel tabular, tabel tabularray tetap lebih enak dan mudah dikustomisasi.
+
+Beberapa format penyetelan yang tersedia dapat dilihat seperti ini.
+
+```
+\begin{talltblr}[
+    caption={...},
+    label={...},
+    note{...}={...},
+    remark{...}={...},
+    ...
+]{
+    colspec={SPESIFIKASI_KOLOM},
+    hline{BARIS}={STYLE},
+    hline{BARIS}={KOLOM}{STYLE},
+    vline{KOLOM}={STYLE},
+    vline{KOLOM}={BARIS}{STYLE},
+    colsep={UKURAN},
+    rowsep={UKURAN},
+    ...
+}
+    ISI_KOLOM_1 & ISI_KOLOM_2 & ... \\
+    ... \\
+    ...
+\end{talltblr}
+```
+
+| Setelan | Isian | Contoh |
+|---------|-------|--------|
+|`colspec`|SPESIFIKASI_KOLOM:<br>`l`eft, `c`enter, `r`ight, `X`tended, `p`aragraph<br>|`colspec={c l r}`<br>3 kolom dengan kolom ke-1 center, kolom ke-2 left, kolom ke-3 right|
+|`hline`|BARIS/KOLOM:<br>Dari awal: `1` `2` `3` `4` ...<br>Dari akhir: huruf kapital `Z`<br><br>STYLE:<br>`solid`, `dashed`|`hline{1-2, Z}={solid}`<br>Garis horizontal di baris 1 sampai 2 dan baris terakhir|
+|`vline`|BARIS/KOLOM:<br>Dari awal: `1` `2` `3` `4` ...<br>Dari akhir: huruf kapital `Z`<br><br>STYLE:<br>`solid`, `dashed`|`vline{1-Z}={solid}`<br>Garis vertikal di kolom 1 sampai kolom terakhir|
+|`colsep`|UKURAN: bawaan 2pt|`colsep={4pt}`<br>Jarak horizontal antar-kolom sebesar 4pt|
+|`rowsep`|UKURAN: bawaan 2pt|`rolsep={4pt}`<br>Jarak vertikal antar-baris sebesar 4pt|
+
+- Kolom baru/pembatas kolom ditandai dengan `&`
+- Barus baru ditandai dengan `\\`
+
+Jika ingin membuat tabel dengan format seperti dokumen ilmiah (minim garis yang mengganggu), format yang disarankan adalah seperti ini.
+
+```
+\begin{table}[H]
+    \centering
+    \begin{talltblr}[
+        caption{KETERANGAN},
+        label={KATA_TUNJUK},
+        remark{Sumber}={SUMBER}
+    ]{colspec={SPESIFIKASI_KOLOM}, hline{1-2,Z}={solid}}
+        ...
+    \end{talltblr}
+\end{table}
+```
+
+Format di atas hanya menggunakan garis horizontal untuk bagian atas tabel, bawah baris header, dan bawah tabel. Keterangan tabel dapat ditulis pada bagian `KETERANGAN` di `caption` beserta keyword-nya pada `KATA_TUNJUK` di `label`. Sementara itu, sumber dapat ditulis pada bagian `SUMBER` di `remark{Sumber}`.
+
+> **Contoh: Tabel Biasa dan Tabel di dalam Env. `table`**
+> 
+> ```
+> Tabel talltblr akan terlihat seperti ini jika ditulis polosan. Tabel tetap memiliki
+> keterangan dan sumber, dan bisa diletakkan sebaris tergantung teksnya.
+> 
+> \begin{talltblr}[
+>     caption={Sepuluh Provinsi Teratas dengan Jumlah Jemaah Haji Terbanyak yang Diberangkatkan ke Tanah Suci Mekah (2024)},
+>     label={table:jumlah-jemaah-haji-1},
+>     remark{Sumber}={Badan Pusat Statistik}
+> ]{colspec={c l l}, hline{1-2,Z}={solid}}
+>     No. & Provinsi & Jemaah Haji \\
+>     1 & Aceh & 4593 \\
+>     2 & Bali & 725 \\
+>     3 & Banten & 10244 \\
+>     4 & Bengkulu & 1685 \\
+>     5 & DI Yogyakarta & 3306 \\
+>     6 & DKI Jakarta & 7885 \\
+>     7 & Gorontalo & 999 \\
+>     8 & Jambi & 3051 \\
+>     9 & Jawa Barat & 39753 \\
+>     10 & Jawa Tengah & 31757 \\
+> \end{talltblr}
+> 
+> Tabel talltblr yang ditulis di dalam \textit{environment} table akan terlihat seperti ini.
+> 
+> \begin{table}[H]
+>     \centering
+>     \begin{talltblr}[
+>         caption={Sepuluh Provinsi Teratas dengan Jumlah Jemaah Haji Terbanyak yang Diberangkatkan ke Tanah Suci Mekah (2024)},
+>         label={table:jumlah-jemaah-haji-2},
+>         remark{Sumber}={Badan Pusat Statistik}
+>     ]{colspec={c l l}, hline{1-2,Z}={solid}}
+>         No. & Provinsi & Jemaah Haji \\
+>         1 & Aceh & 4593 \\
+>         2 & Bali & 725 \\
+>         3 & Banten & 10244 \\
+>         4 & Bengkulu & 1685 \\
+>         5 & DI Yogyakarta & 3306 \\
+>         6 & DKI Jakarta & 7885 \\
+>         7 & Gorontalo & 999 \\
+>         8 & Jambi & 3051 \\
+>         9 & Jawa Barat & 39753 \\
+>         10 & Jawa Tengah & 31757 \\
+>     \end{talltblr}
+> \end{table}
+> 
+> Sekarang saatnya mencoba merujuk. Data yang ditampilkan pada
+> \autoref{table:jumlah-jemaah-haji-1} dan \autoref{table:jumlah-jemaah-haji-2} diperoleh dari
+> Badan Pusat Statistik Indonesia.
+> ```
 
 ### 9.4 Tabel Tabularray Mandiri `longtblr`
 
