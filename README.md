@@ -1593,8 +1593,116 @@ Format di atas hanya menggunakan garis horizontal untuk bagian atas tabel, bawah
 
 ### 9.4 Tabel Tabularray Mandiri `longtblr`
 
-> [!IMPORTANT]
-> `longtblr` tidak perlu dibungkus environment `table` karena sudah memiliki fitur caption tersendiri, dan `caption` wajib diisi.
+> [!NOTE]
+> `longtblr` sudah memiliki fitur caption dan note tersendiri, tetapi `caption` wajib diisi. `longtblr` tidak perlu ditulis di dalam environment `table`.
+
+Tabel tabularray `longtblr` cocok digunakan untuk tabel dengan data yang sangat banyak hingga perlu lebih dari satu halaman. Tabel tabularray sangat disarankan untuk menulis tabel sederhana ataupun tabel yang kompleks. Tabel tabularray dapat digunakan secara jitu dengan membaca [dokumentasi tabularray](http://mirrors.ctan.org/macros/latex/contrib/tabularray/tabularray.pdf), salah satu artikel di [chongkai.site](https://chongkai.site/docs/posts/2023-03-05-Understanding%20the%20best%20table%20package%20for%20latex%20--%20tabularray) atau lebih mudah lagi dengan menggunakan AI. Mengapa begitu? Sebab masih sedikit tools table generator yang membantu tabularray, dan lebih banyak membantu untuk tabel tabular saja. Meski cara penyetelannya sedikit berbeda dari tabel tabular, tabel tabularray tetap lebih enak dan mudah dikustomisasi.
+
+Beberapa format penyetelan yang tersedia dapat dilihat seperti ini.
+
+```
+\begin{longtblr}[
+    caption={...},
+    label={...},
+    note{...}={...},
+    remark{...}={...},
+    ...
+]{
+    colspec={SPESIFIKASI_KOLOM},
+    hline{BARIS}={STYLE},
+    hline{BARIS}={KOLOM}{STYLE},
+    vline{KOLOM}={STYLE},
+    vline{KOLOM}={BARIS}{STYLE},
+    colsep={UKURAN},
+    rowsep={UKURAN},
+    ...
+}
+    ISI_KOLOM_1 & ISI_KOLOM_2 & ... \\
+    ... \\
+    ...
+\end{longtblr}
+```
+
+| Setelan | Isian | Contoh |
+|---------|-------|--------|
+|`colspec`|SPESIFIKASI_KOLOM:<br>`l`eft, `c`enter, `r`ight, `X`tended, `p`aragraph<br>|`colspec={c l r}`<br>3 kolom dengan kolom ke-1 center, kolom ke-2 left, kolom ke-3 right|
+|`hline`|BARIS/KOLOM:<br>Dari awal: `1` `2` `3` `4` ...<br>Dari akhir: huruf kapital `Z`<br><br>STYLE:<br>`solid`, `dashed`|`hline{1-2, Z}={solid}`<br>Garis horizontal di baris 1 sampai 2 dan baris terakhir|
+|`vline`|BARIS/KOLOM:<br>Dari awal: `1` `2` `3` `4` ...<br>Dari akhir: huruf kapital `Z`<br><br>STYLE:<br>`solid`, `dashed`|`vline{1-Z}={solid}`<br>Garis vertikal di kolom 1 sampai kolom terakhir|
+|`colsep`|UKURAN: bawaan 2pt|`colsep={4pt}`<br>Jarak horizontal antar-kolom sebesar 4pt|
+|`rowsep`|UKURAN: bawaan 2pt|`rolsep={4pt}`<br>Jarak vertikal antar-baris sebesar 4pt|
+
+- Kolom baru/pembatas kolom ditandai dengan `&`
+- Barus baru ditandai dengan `\\`
+
+Jika ingin membuat tabel dengan format seperti dokumen ilmiah (minim garis yang mengganggu), format yang disarankan adalah seperti ini.
+
+```
+\begin{longtblr}[
+    caption{KETERANGAN},
+    label={KATA_TUNJUK},
+    remark{Sumber}={SUMBER}
+]{colspec={SPESIFIKASI_KOLOM}, hline{1-2,Z}={solid}}
+    ...
+\end{longtblr}
+```
+
+Format di atas hanya menggunakan garis horizontal untuk bagian atas tabel, bawah baris header, dan bawah tabel. Keterangan tabel dapat ditulis pada bagian `KETERANGAN` di `caption` beserta keyword-nya pada `KATA_TUNJUK` di `label`. Sementara itu, sumber dapat ditulis pada bagian `SUMBER` di `remark{Sumber}`.
+
+> **Contoh**
+> 
+> ```
+> Tabel long akan terlihat seperti ini. Tabel memiliki keterangan dan sumber, dan diletakkan di
+> bawah paragraf. Seandainya ini digunakan pada ukuran kertas, tabel tetap ditampilkan secara utuh
+> dengan memecahnya ke halaman berikutnya.
+> 
+> \begin{longtblr}[
+>     caption={Jumlah Jemaah Haji Terbanyak yang Diberangkatkan ke Tanah Suci Mekah (2024)},
+>     label={table:jumlah-jemaah-haji},
+>     remark{Sumber}={Badan Pusat Statistik}
+> ]{colspec={c l r}, hline{1-2,Z}={solid}}
+>     No. & Provinsi & Jemaah Haji \\
+>     1 & Aceh & 4593 \\
+>     2 & Bali & 725 \\
+>     3 & Banten & 10244 \\
+>     4 & Bengkulu & 1685 \\
+>     5 & DI Yogyakarta & 3306 \\
+>     6 & DKI Jakarta & 7885 \\
+>     7 & Gorontalo & 999 \\
+>     8 & Jambi & 3051 \\
+>     9 & Jawa Barat & 39753 \\
+>     10 & Jawa Tengah & 31757 \\
+>     11 & Jawa Timur & 36980 \\
+>     12 & Kalimantan Barat & 2588 \\
+>     13 & Kalimantan Selatan & 4040 \\
+>     14 & Kalimantan Tengah & 1672 \\
+>     15 & Kalimantan Timur & 2716 \\
+>     16 & Kalimantan Utara & 436 \\
+>     17 & Kepulauan Bangka Belitung & 1098 \\
+>     18 & Kepulauan Riau & 1305 \\
+>     19 & Lampung & 7152 \\
+>     20 & Maluku & 1080 \\
+>     21 & Maluku Utara & 1102 \\
+>     22 & Nusa Tenggara Barat & 4750 \\
+>     23 & Nusa Tenggara Timur & 689 \\
+>     24 & Papua & 1070 \\
+>     25 & Papua Barat & 739 \\
+>     26 & Riau & 5252 \\
+>     27 & Sulawesi Barat & 1508 \\
+>     28 & Sulawesi Selatan & 7758 \\
+>     29 & Sulawesi Tengah & 2055 \\
+>     30 & Sulawesi Tenggara & 2098 \\
+>     31 & Sulawesi Utara & 711 \\
+>     32 & Sumatera Barat & 4780 \\
+>     33 & Sumatera Selatan & 7205 \\
+>     34 & Sumatera Utara & 8516 \\
+>     & Indonesia & 211298 
+> \end{longtblr}
+>
+> Sekarang saatnya mencoba merujuk. Data yang ditampilkan pada Tabel 1 diperoleh dari
+> Badan Pusat Statistik Indonesia.
+> ```
+>
+> ![Standalone_Render_Longtblr](https://github.com/user-attachments/assets/a9cefa43-9d3d-4218-9ad9-8095dc74f755)
 
 ## Menambahkan Gambar, PDF, Tabel
 
