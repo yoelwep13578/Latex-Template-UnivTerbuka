@@ -1376,7 +1376,7 @@ Beberapa format penyetelan yang tersedia dapat dilihat seperti ini.
 |`rowsep`|UKURAN: bawaan 2pt|`rolsep={4pt}`<br>Jarak vertikal antar-baris sebesar 4pt|
 
 - Kolom baru/pembatas kolom ditandai dengan `&`
-- Barus baru ditandai dengan `\\`
+- baris baru ditandai dengan `\\`
 
 Jika ingin membuat tabel dengan format seperti dokumen ilmiah (minim garis yang mengganggu), format yang disarankan adalah seperti ini.
 
@@ -1532,7 +1532,7 @@ Beberapa format penyetelan yang tersedia dapat dilihat seperti ini.
 |`rowsep`|UKURAN: bawaan 2pt|`rolsep={4pt}`<br>Jarak vertikal antar-baris sebesar 4pt|
 
 - Kolom baru/pembatas kolom ditandai dengan `&`
-- Barus baru ditandai dengan `\\`
+- baris baru ditandai dengan `\\`
 
 Jika ingin membuat tabel dengan format seperti dokumen ilmiah (minim garis yang mengganggu), format yang disarankan adalah seperti ini.
 
@@ -1646,7 +1646,7 @@ Beberapa format penyetelan yang tersedia dapat dilihat seperti ini.
 |`rowsep`|UKURAN: bawaan 2pt|`rolsep={4pt}`<br>Jarak vertikal antar-baris sebesar 4pt|
 
 - Kolom baru/pembatas kolom ditandai dengan `&`
-- Barus baru ditandai dengan `\\`
+- baris baru ditandai dengan `\\`
 
 Jika ingin membuat tabel dengan format seperti dokumen ilmiah (minim garis yang mengganggu), format yang disarankan adalah seperti ini.
 
