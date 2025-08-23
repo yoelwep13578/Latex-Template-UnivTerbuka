@@ -1330,8 +1330,152 @@ Format tersebut lebih mudah dibuat karena hanya menggunakan garis (hline) pada a
 >
 > ![Standalone_Render_TabularReferable](https://github.com/user-attachments/assets/4c15b8a6-04d3-460b-8e39-28808165679f)
 
-
 ### 9.2 Tabel Tabularray `tblr`
+
+Tabel tabularray `tblr` adalah tabel biasa yang lebih mudah untuk dikustomisasi. Tabel tabularray sangat disarankan untuk menulis tabel sederhana ataupun tabel yang kompleks. Tabel tabularray dapat digunakan secara jitu dengan [membaca dokumentasi tabularray](http://mirrors.ctan.org/macros/latex/contrib/tabularray/tabularray.pdf) atau lebih mudah lagi dengan menggunakan AI. Mengapa begitu? Sebab masih sedikit tools table generator yang membantu tabularray, dan lebih banyak membantu untuk tabel tabular saja. Meski cara penyetelannya sedikit berbeda dari tabel tabular, tabel tabularray tetap lebih enak dan mudah dikustomisasi.
+
+Beberapa format penyetelan yang tersedia dapat dilihat seperti ini.
+
+```
+\begin{tblr}{
+    colspec={SPESIFIKASI_KOLOM},
+    hline{BARIS}={STYLE},
+    hline{BARIS}={KOLOM}{STYLE},
+    vline{KOLOM}={STYLE},
+    vline{KOLOM}={BARIS}{STYLE},
+    colsep={UKURAN},
+    rowsep={UKURAN},
+    ...
+}
+    ISI_KOLOM_1 & ISI_KOLOM_2 & ... \\
+    ... \\
+    ...
+\end{tblr}
+```
+
+| Setelan | Isian | Contoh |
+|---------|-------|--------|
+|`colspec`|SPESIFIKASI_KOLOM:<br>`l`eft, `c`enter, `r`ight, `X`tended, `p`aragraph<br>|`colspec={c l r}`<br>3 kolom dengan kolom ke-1 center, kolom ke-2 left, kolom ke-3 right|
+|`hline`|BARIS/KOLOM:<br>Dari awal: `1` `2` `3` `4` ...<br>Dari akhir: huruf kapital `Z`<br><br>STYLE:<br>`solid`, `dashed`|`hline{1-2, Z}={solid}`<br>Garis horizontal di baris 1 sampai 2 dan baris terakhir|
+|`vline`|BARIS/KOLOM:<br>Dari awal: `1` `2` `3` `4` ...<br>Dari akhir: huruf kapital `Z`<br><br>STYLE:<br>`solid`, `dashed`|`vline{1-Z}={solid}`<br>Garis vertikal di kolom 1 sampai kolom terakhir|
+|`colsep`|UKURAN: bawaan 2pt|`colsep={4pt}`<br>Jarak horizontal antar-kolom sebesar 4pt|
+|`rowsep`|UKURAN: bawaan 2pt|`rolsep={4pt}`<br>Jarak vertikal antar-baris sebesar 4pt|
+
+- Kolom baru/pembatas kolom ditandai dengan `&`
+- Barus baru ditandai dengan `\\`
+
+Jika ingin membuat tabel dengan format seperti dokumen ilmiah (minim garis yang mengganggu), format yang disarankan adalah seperti ini.
+
+```
+\begin{tblr}{colspec={SPESIFIKASI_KOLOM}, hline{1-2,Z}={solid}}
+    ...
+\end{tblr}
+```
+
+Format di atas hanya menggunakan garis horizontal untuk bagian atas tabel, bawah baris header, dan bawah tabel.
+
+> **Contoh**
+> 
+> ```
+> Tabel tabular yang ditulis biasa akan tampil seperti ini. Posisi tabelnya akan sebaris mengikuti
+> teksnya.
+> 
+> \begin{tblr}{
+>     colspec={c l r},
+>     hline{1-2, Z}={solid}
+> }
+>     No. & Provinsi & Jemaah Haji \\
+>     1 & Jawa Barat & 39753 \\
+>     2 & Jawa Timur & 36980 \\
+>     3 & Jawa Tengah & 31757 \\
+>     4 & Banten & 10244 \\
+>     5 & Sumatera Utara & 8516
+> \end{tblr}
+> 
+> Tabel polosan ini juga dapat diletakkan di tengah seperti ini.
+> 
+> \begin{center}
+>     \begin{tblr}{
+>         colspec={c l r},
+>         hline{1-2, Z}={solid}
+>     }
+>         No. & Provinsi & Jemaah Haji \\
+>         1 & Jawa Barat & 39753 \\
+>         2 & Jawa Timur & 36980 \\
+>         3 & Jawa Tengah & 31757 \\
+>         4 & Banten & 10244 \\
+>         5 & Sumatera Utara & 8516
+>     \end{tblr}
+> \end{center}
+> ```
+>
+> ![Standalone_Render_Tblr](https://github.com/user-attachments/assets/65c58709-a531-46ce-81a5-cf7e1fbb9299)
+
+> [!TIP]
+> Tabel `tblr` dapat dibuat menjadi referable dengan menggunakan `\caption`, `\label`, `\tablesource`, dan `tblr` di dalam environment `table` seperti format ini.
+>
+> > ```
+> > \begin{table}[H]
+> >     \centering
+> >     \caption{KETERANGAN}
+> >     \longcaption{KETERANGAN \\ KETERANGAN_BARIS_KEDUA \\ ...}
+> >     \label{KATA_TUNJUK}
+> >     \begin{tblr}{...}
+> >         ...
+> >     \end{tblr}
+> >     \tablesource{SUMBER}
+> >     \tablesourceleft{INDENT}{SUMBER}
+> > \end{table}
+> > ```
+> >
+> > Keterangan:
+> >
+> > - Pilihlah salah satu antara mengguakan `\caption` atau `\longcaption`. `KETERANGAN` pada `\caption` atau `\longcaption` diisi dengan keterangan tabel. Jika keterangannya panjang dan lebih dari sebaris, disarankan menggunakan `\longcaption`.
+> > - Isilah `KATA_TUNJUK` pada `\label` dengan keyword yang diinginkan.
+> > - Jika ingin menyertakan sumber, pilih salah satu antara menggunakan `\tablesource` atau `\tablesourceleft`. `\tablesource` menempatkan teks sumber di tengah, sedangkan `\tablesourceleft` teks sumbernya bisa digeser ke kiri dengan jarak yang diisi pada bagian `INDENT`.
+>
+> ```
+> Tabel tblr yang ditulis dengan cara ``ilmiah'' dan rapi akan terlihat seperti ini. Tabel
+> memiliki keterangan dan sumber, dan diletakkan di bawah paragraf. Ini contoh jika keterangannya
+> singkat dan sumbernya ditulis di tengah.
+> 
+> \begin{table}
+>     \centering
+>     \caption{Jemaah Haji Berdasarkan Provinsi}
+>     \label{table:jemaah-haji-1}
+>     \begin{tblr}{colspec={c l l}, hline{1-2,Z}={solid}}
+>         No. & Provinsi & Jemaah Haji \\
+>         1 & Jawa Barat & 39753 \\
+>         2 & Jawa Timur & 36980 \\
+>         3 & Jawa Tengah & 31757 \\
+>         4 & Banten & 10244 \\
+>         5 & Sumatera Utara & 8516 \\
+>     \end{tblr}
+>     \tablesource{Badan Pusat Statistik}
+> \end{table}
+> 
+> Ini adalah contoh tabel yang memiliki keterangan panjang dan sumber yang ditulis dari kiri.
+> 
+> \begin{table}
+>     \centering
+>     \longcaption{Lima Provinsi dengan Jumlah \\ Jemaah Haji Terbanyak yang \\ Diberangkatkan ke Tanah Suci \\ Mekah (2024)}
+>     \label{table:jemaah-haji-2}
+>     \begin{tblr}{colspec={c l l}, hline{1-2,Z}={solid}}
+>         No. & Provinsi & Jemaah Haji \\
+>         1 & Jawa Barat & 39753 \\
+>         2 & Jawa Timur & 36980 \\
+>         3 & Jawa Tengah & 31757 \\
+>         4 & Banten & 10244 \\
+>         5 & Sumatera Utara & 8516 \\
+>     \end{tblr}
+>     \tablesourceleft{-1.5cm}{Badan Pusat Statistik}
+> \end{table}
+> 
+> Sekarang saatnya mencoba merujuk. Data yang ditampilkan pada \autoref{table:jemaah-haji-1} dan
+> \autoref{table:jemaah-haji-2} diperoleh dari Badan Pusat Statistik Indonesia.
+> ```
+>
+> ![Standalone_Render_TblrReferable](https://github.com/user-attachments/assets/324a452d-91ae-457e-81c2-99db611925d7)
 
 ### 9.3 Tabel Tabularray Mandiri `talltblr`
 
