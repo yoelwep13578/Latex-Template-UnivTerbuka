@@ -1722,6 +1722,78 @@ Format di atas hanya menggunakan garis horizontal untuk bagian atas tabel, bawah
 
 ### 10.1 Daftar Tidak Berurutan (Unordered List)
 
+Unordered list akan menampilkan daftar dengan tanda poin/bullet, yang dapat dibuat dengan menggunakan perintah environment `itemize`. Beberapa format yang tersedia adalah seperti ini.
+
+```
+\begin{itemize}[nosep, label=LABEL]
+    \item Daftar satu
+    \item Daftar dua
+    \item ...
+    ...
+\end{itemize}
+```
+
+- Satu daftar bisa ditulis dengan panjang---entah itu lebih dari sebaris, satu paragraf, bahkan beberapa paragraf sekaligus.
+- Daftar dibuat dengan cara menambahkan `\item` di bagian awal teks.
+- Secara bawaan, setiap daftar akan diberikan jarak (spasi). Jika tidak ingin ada spasi di antara daftarnya, gunakan `nosep`.
+- Simbol bullet dapat diganti dengan memakai `label` lalu mengisi bagian `LABEL` dengan karakter/simbol bebas yang diinginkan. Contohnya `--`, `$\diamond$`, `$\ast$`, dsb.
+
+> **Contoh: List Singkat, List Panjang, dan List Berparagraf**
+> 
+> ```
+> Daftar yang ditulis singkat tanpa spasi tambahan akan terlihat seperti ini.
+> 
+> \begin{itemize}[nosep]
+>     \item Buat jadwal belajar 
+>     \item Jaga kesehatan fisik dan mental 
+>     \item Tidur yang cukup 
+>     \item Mulai dari soal yang paling mudah 
+>     \item Kelola waktu dengan baik 
+>     \item Periksa kembali jawabannya
+> \end{itemize}
+> 
+> \vspace{2\baselineskip}
+> 
+> Daftar yang ditulis panjang dengan membiarkan spasi tambahannya dan menggunakan simbol
+> asterisk akan terlihat seperti ini.
+> 
+> \begin{itemize}[label=$\ast$]
+>     \item Untuk persiapan ujian yang efektif, penting untuk memulai dengan membuat
+>     jadwal belajar yang terperinci dan mengelola waktu dengan bijak. 
+>     \item Pastikan untuk menjaga kesehatan fisik dan mental dengan tidur yang cukup,
+>     makan makanan bergizi, dan berolahraga secara teratur. 
+>     \item Saat mengerjakan ujian, mulailah dengan menjawab soal yang paling mudah
+>     terlebih dahulu untuk membangun kepercayaan diri. 
+>     \item Baca instruksi dengan teliti dan kelola waktu Anda agar tidak terlalu lama
+>     terpaku pada satu soal. 
+>     \item Setelah selesai, luangkan waktu untuk meninjau kembali semua jawaban Anda
+>     dengan cermat sebelum mengumpulkannya.
+> \end{itemize}
+> 
+> \vspace{2\baselineskip}
+> 
+> Daftar yang ditulis panjang lebih dari satu paragraf dan menggunakan simbol
+> \textit{diamond} akan terlihat seperti ini.
+> 
+> \begin{itemize}[label=$\diamond$]
+>     \item Untuk persiapan ujian yang efektif, penting untuk memulai dengan membuat jadwal
+>     belajar yang terperinci dan mengelola waktu dengan bijak. Pastikan untuk menjaga kesehatan
+>     fisik dan mental dengan tidur yang cukup, makan makanan bergizi, dan berolahraga secara
+>     teratur. 
+>     
+>     Saat mengerjakan ujian, mulailah dengan menjawab soal yang paling mudah terlebih dahulu
+>     untuk membangun kepercayaan diri. Baca instruksi dengan teliti dan kelola waktu Anda agar
+>     tidak terlalu lama terpaku pada satu soal. 
+>     
+>     \item Setelah selesai, luangkan waktu untuk meninjau kembali semua jawaban Anda dengan
+>     cermat sebelum mengumpulkannya.
+> 
+>     Kurang lebih seperti itulah instruksi untuk menghadapi ujian. Selamat mengerjakan.
+> \end{itemize}
+> ```
+>
+> ![Standalone_Render_Itemize](https://github.com/user-attachments/assets/918b2bda-de62-488a-8da4-31f6c3a76618)
+
 ### 10.2 Daftar Berurutan (Ordered List)
 
 ### 10.3 Daftar Soal/Jawaban Esai
