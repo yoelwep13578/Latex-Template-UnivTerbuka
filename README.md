@@ -1718,12 +1718,24 @@ Format di atas hanya menggunakan garis horizontal untuk bagian atas tabel, bawah
 >
 > ![Standalone_Render_Longtblr](https://github.com/user-attachments/assets/a9cefa43-9d3d-4218-9ad9-8095dc74f755)
 
-## Menambahkan Gambar, PDF, Tabel
+## 10 | Teks Daftar
 
-- Jika memerlukan gambar, simpan gambarnya di dalam folder `image`
-- Jika ingin menyisipkan PDF (misalnya nashkah soal), simpan file-nya di dalam folder `pdf`. Jangan lupa untuk men-trim lampiran PDF-nya.
-- Jika memerlukan tabel, tuliskan tabelnya di dokumen LaTeX meskipun penulisannya akan lebih susah. Jangan pernah mengonversi tabel menjadi gambar.
-- Bagian cover tersimpan di dalam folder `section` dan sudah diatur dengan baik, sehingga tidak perlu diubah-ubah oleh penulis.
-- Bagian seperti daftar isi dan daftar pustaka hanya berupa perintah `\tableofcontents` dan `\bibliography` yang ditulis di dalam file `main.tex`. Bagian ini diatur secara otomatis.
+### 10.1 Daftar Tidak Berurutan (Unordered List)
+
+### 10.2 Daftar Berurutan (Ordered List)
+
+### 10.3 Daftar Soal/Jawaban Esai
+
+## 11 | Mengelola Daftar Pustaka
+
+## 12 | Referensi Silang (Cross-Reference)
+
+### 12.1 Xref: Lampiran Gambar, Tabel, dan Kode Program
+
+### 12.2 Xref: Daftar Pustaka
+
+#### 12.2.1 Narrative Citation
+
+#### 12.2.2 Parenthetical Citation
 
 # ⚙️ Penyetelan
