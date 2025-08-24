@@ -1796,6 +1796,86 @@ Unordered list akan menampilkan daftar dengan tanda poin/bullet, yang dapat dibu
 
 ### 10.2 Daftar Berurutan (Ordered List)
 
+Ordered list akan menampilkan daftar dengan tanda urutan seperti nomor, huruf, dsb., yang dapat dibuat dengan menggunakan perintah environment `enumerate`. Karena merupakan sama-sama list, formatnya tidak berbeda jauh-jauh seperti ini.
+
+```
+\begin{enumerate}[nosep, label=LABEL]
+    \item Daftar satu
+    \item Daftar dua
+    \item ...
+    ...
+\end{enumerate}
+```
+
+- Satu daftar bisa ditulis dengan panjang---entah itu lebih dari sebaris, satu paragraf, bahkan beberapa paragraf sekaligus.
+- Daftar dibuat dengan cara menambahkan `\item` di bagian awal teks.
+- Secara bawaan, setiap daftar akan diberikan jarak (spasi). Jika tidak ingin ada spasi di antara daftarnya, gunakan `nosep`.
+- Tanda urutan dapat diganti dengan memakai `label` lalu mengisi bagian `LABEL` dengan jenis urutan dan format yang diinginkan.
+
+| Label | Jenis | Contoh Format |
+|-------|-------|---------------|
+| `\arabic*` (default) | Angka Arab | `label=\arabic*.`<br>1.  2.  3.  4.  5.  6.  7.  ...<br><br>`label=\arabic*)`<br>1)  2)  3)  4)  5)  6)  7)  ...<br><br>`label=(\arabic*)`<br>(1)  (2)  (3)  (4)  (5)  (6)  (7)  ... |
+| `\alph*` | Alfabet Kecil | `label=\alph*.`<br>a.  b.  c.  d.  e.  f.  g.  ...<br><br>`label=\alph*)`<br>a)  b)  c)  d)  e)  f)  g)  ...<br><br>`label=(\alph*)`<br>(a)  (b)  (c)  (d)  (e)  (f)  (g)  ... |
+| `\Alph*` | Alfabet Besar | `label=\Alph*.`<br>A.  B.  C.  D.  E.  F.  G.  ...<br><br>`label=\Alph*)`<br>A)  B)  C)  D)  E)  F)  G)  ...<br><br>`label=(\Alph*)`<br>(A)  (B)  (C)  (D)  (E)  (F)  (G)  ... |
+| `\roman*` | Romawi Kecil | `label=\roman*.`<br>i.  ii.  iii.  iv.  v.  vi.  vii.  ...<br><br>`label=\roman*)`<br>i)  ii)  iii)  iv)  v)  vi)  vii)  ...<br><br>`label=(\roman*)`<br>(i)  (ii)  (iii)  (iv)  (v)  (vi)  (vii)  ... |
+| `\Roman*` | Romawi Besar | `label=\Roman*.`<br>I.  II.  III.  IV.  V.  VI.  VII.  ...<br><br>`label=\Roman*)`<br>I)  II)  III)  IV)  V)  VI)  VII)  ...<br><br>`label=(\Roman*)`<br>(I)  (II)  (III)  (IV)  (V)  (VI)  (VII)  ... |
+
+> **Contoh: List Singkat, List Panjang, dan List Berparagraf**
+> 
+> ```
+> Daftar yang ditulis singkat tanpa spasi tambahan akan terlihat seperti ini.
+> 
+> \begin{enumerate}[nosep]
+>     \item Buat jadwal belajar 
+>     \item Jaga kesehatan fisik dan mental 
+>     \item Tidur yang cukup 
+>     \item Mulai dari soal yang paling mudah 
+>     \item Kelola waktu dengan baik 
+>     \item Periksa kembali jawabannya
+> \end{enumerate}
+> 
+> \vspace{2\baselineskip}
+> 
+> Daftar yang ditulis panjang dengan membiarkan spasi tambahannya dan menggunakan urutan
+> huruf kecil akan terlihat seperti ini.
+> 
+> \begin{enumerate}[label=\alph*.]
+>     \item Untuk persiapan ujian yang efektif, penting untuk memulai dengan membuat
+>     jadwal belajar yang terperinci dan mengelola waktu dengan bijak. 
+>     \item Pastikan untuk menjaga kesehatan fisik dan mental dengan tidur yang cukup,
+>     makan makanan bergizi, dan berolahraga secara teratur. 
+>     \item Saat mengerjakan ujian, mulailah dengan menjawab soal yang paling mudah
+>     terlebih dahulu untuk membangun kepercayaan diri. 
+>     \item Baca instruksi dengan teliti dan kelola waktu Anda agar tidak terlalu lama
+>     terpaku pada satu soal. 
+>     \item Setelah selesai, luangkan waktu untuk meninjau kembali semua jawaban Anda
+>     dengan cermat sebelum mengumpulkannya.
+> \end{enumerate}
+> 
+> \vspace{2\baselineskip}
+> 
+> Daftar yang ditulis panjang lebih dari satu paragraf dan menggunakan urutan
+> angka romawi besar akan terlihat seperti ini.
+> 
+> \begin{enumerate}[label=\Roman*.]
+>     \item Untuk persiapan ujian yang efektif, penting untuk memulai dengan membuat jadwal
+>     belajar yang terperinci dan mengelola waktu dengan bijak. Pastikan untuk menjaga kesehatan
+>     fisik dan mental dengan tidur yang cukup, makan makanan bergizi, dan berolahraga secara
+>     teratur. 
+>     
+>     Saat mengerjakan ujian, mulailah dengan menjawab soal yang paling mudah terlebih dahulu
+>     untuk membangun kepercayaan diri. Baca instruksi dengan teliti dan kelola waktu Anda agar
+>     tidak terlalu lama terpaku pada satu soal. 
+>     
+>     \item Setelah selesai, luangkan waktu untuk meninjau kembali semua jawaban Anda dengan
+>     cermat sebelum mengumpulkannya.
+> 
+>     Kurang lebih seperti itulah instruksi untuk menghadapi ujian. Selamat mengerjakan.
+> \end{enumerate}
+> ```
+>
+> ![Standalone_Render_Enumerate](https://github.com/user-attachments/assets/5d07b311-d0fd-45d9-962f-12044c60c04d)
+
 ### 10.3 Daftar Soal/Jawaban Esai
 
 ## 11 | Mengelola Daftar Pustaka
