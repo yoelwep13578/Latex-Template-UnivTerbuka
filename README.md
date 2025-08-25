@@ -2093,7 +2093,7 @@ Ketika menulis keterangan kutipan (nama penulis dan tahun), keterangan tersebut 
 
 Narrative citation biasanya ditulis sebagai bagian dalam kalimat. Narrative citation dapat digunakan dengan perintah `\citeA{KATA_TUNJUK}`.
 
-> **Contoh:**
+> **Contoh**
 > 
 > ```
 > Menurut \citeA{fitriani-2024:pelatihan-latex}, ``Salah satu kelebihan utama LaTeX adalah kemampuannya
@@ -2114,13 +2114,13 @@ Narrative citation biasanya ditulis sebagai bagian dalam kalimat. Narrative cita
 
 Parenthetical citation biasanya ditulis dengan diapit tanda kurung kemudian diletakkan pada akhir kalimat kutipan. Parenthetical citation dapat digunakan dengan perintah `\cite{KATA_TUNJUK}`.
 
-**Contoh**
-
-```
-Salah satu kelebihan utama LaTeX adalah kemampuannya untuk membuat dokumen yang kompleks, seperti laporan
-penelitian, makalah ilmiah, dan buku teks, dengan sangat efisien dan mudah diatur. LaTeX membuat konten
-dokumen yang lebih terstruktur dan berkualitas \cite{fitriani-2024:pelatihan-latex}.
-```
+> **Contoh**
+> 
+> ```
+> Salah satu kelebihan utama LaTeX adalah kemampuannya untuk membuat dokumen yang kompleks, seperti laporan
+> penelitian, makalah ilmiah, dan buku teks, dengan sangat efisien dan mudah diatur. LaTeX membuat konten
+> dokumen yang lebih terstruktur dan berkualitas \cite{fitriani-2024:pelatihan-latex}.
+> ```
 
 > [!NOTE]
 > Keterangan kutipan hanya ditulis lengkap untuk kutipan pertama saja. Jika kutipan disebutkan lagi, keterannya akan disingkat.
