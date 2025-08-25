@@ -2129,3 +2129,108 @@ Parenthetical citation biasanya ditulis dengan diapit tanda kurung kemudian dile
 > - Keterangan rujukan kutipan kedua & seterusnya: `(Penulis 1 et al., 2021)` atau `(Penulis 1 dkk., 2021)`
 
 # ⚙️ Penyetelan
+
+## Mengatur Margin Kertas
+
+Margin yang digunakan pada template ini adalah 3cm untuk semua sisi. Jika ada keperluan untuk mengganti ukuran margin, setelannya dapat diubah di dalam file `main.tex`
+
+Kode bagian `main.tex`
+
+```
+% Margin & Geometry
+\usepackage[
+    left=3cm,
+    right=3cm,
+    top=3cm,
+    bottom=3cm
+]{geometry}
+```
+
+## Mengganti Font
+
+Font default yang digunakan adalah Times New Roman, Calibri, Fira Code, dan XITS Math. Setelan font dapat diganti di dalam file `main.tex`. Buang tanda `%` pada font yang ingin digunakan, lalu berikan tanda `%` pada font yang tidak ingin digunakan.
+
+> [!TIP]
+> Penulis bisa menambahkan/menggunakan font sendiri untuk Main Font, Sans Font, Monospace, atau Math Font dengan syntax seperti:
+>
+> ```
+> \setmainfont{FONT_PILIHANMU}
+> \setsansfont{FONT_PILIHANMU}
+> \setmonofont{FONT_PILIHANMU}
+> \setmathfont{FONT_PILIHANMU}
+> ```
+
+Kode bagian di `main.tex`
+
+```
+%========================%
+% FONT & FONT SELECTIONS %
+%========================%
+
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
+% Serif/Main Font --------------------------- %
+\setmainfont{Times New Roman}[Ligatures=Rare] % TNR + Ligature
+%\setmainfont{TeX Gyre Termes}                % Alternatif Mirip TNR
+%\setmainfont{XITS}                           % Alternatif Mirip TNR
+
+% Sans-Serif ---------------------------------%
+\setsansfont{Noto Sans}[Scale=MatchLowercase] % Noto Sans
+%\setsansfont{Calibri}[Scale=MatchUppercase]  % Calibri
+
+% Monospace ------------------------------------ % 
+%\setmonofont{Courier New}[Scale=MatchLowercase] % Courier New (Windows < 10)
+%\setmonofont{Cascadia Code Light}[              % Cascadia Code (Windows >= 10)
+%    BoldFont={Cascadia Code Bold},
+%    ItalicFont={Cascadia Code Light Italic},
+%    BoldItalicFont={Cascadia Code Bold Italic},
+%    Scale=MatchLowercase
+%]
+\setmonofont{Fira Code Light}[                  % Fira Code (must installed)
+    BoldFont={Fira Code Medium},
+    Contextuals=Alternate,
+    Scale=MatchLowercase
+]
+
+% Font Matematika -----
+\setmathfont{XITS Math}
+```
+
+## Indent Paragraf
+
+![Indent Paragraf](https://github.com/user-attachments/assets/8867f82c-3ecb-4eaf-ab6b-5830d0a74920)
+
+Ukuran indent paragraf bawaan yang digunakan adalah 1,24cm. Indent paragraf dapat diubah di dalam file `main.tex`
+
+```
+%============================%
+% FORMATTING TEKS & PARAGRAF %
+%============================%
+
+% Parskip Paragraf
+\usepackage[indent=1.24cm]{parskip}
+```
+
+> [!CAUTION]
+> Jangan gunakan tanda koma `,` sebagai pemisah desimal. Gunakanlah tanda titik `.`
+
+## Penomoran Heading
+
+![Numbering Heaidng](https://github.com/user-attachments/assets/0a3440c8-c1c4-42ec-9de2-dec3fdb4dc13)
+
+Template ini menyediakan penomoran heading alphanumeric dan multilevel. Penomoran heading bawaan yang digunakan adalah alphanumeric. Penomoran ini dapat diganti di dalam file `main.tex`. Pilih salah satu dengan menghapus tanda `%` pada bagian yang ingin digunakan dan berikan tanda `%` pada bagian yang tidak ingin digunakan.
+
+```
+%============================%
+% FORMATTING TEKS & PARAGRAF %
+%============================%
+
+...
+
+% PILIH SATU ---------
+% Alphanumeric Numbering
+\input{preset/alphanumeric-numbering-heading.tex}
+% Multilevel Numbering
+%\input{preset/multilevel-numbering-heading.tex}
+```
