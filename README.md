@@ -1971,8 +1971,76 @@ Jika soal/jawaban esainya beranak, cukup gunakan `essaylist` di dalam `essaylist
 >
 > ![Standalone_Render_Essaylist](https://github.com/user-attachments/assets/f83c5b48-0a11-4783-9ee1-c1e2b0d64b96)
 
-
 ## 11 | Mengelola Daftar Pustaka
+
+Isi daftar referensi disimpan dalam file `reference.bib`. Daftar referensi ditulis dengan format BibTeX seperti contoh ini.
+
+```
+ENTRY_TYPE{KATA_TUNJUK,
+    FIELD_OPSI={ISI},
+    ...
+    FIELD_OPSI={ISI}
+}
+```
+
+Sebagian kecil dari entry type dan field yang tersedia dapat dilihat di tabel bawah ini.
+
+| Jenis Entri | Peruntukan |
+| --- | --- |
+| `@article` | Digunakan untuk artikel dalam jurnal, majalah, atau koran. |
+| `@book` | Digunakan untuk buku yang diterbitkan dengan penulis yang jelas. |
+| `@inbook` | Digunakan untuk bagian dari buku, seperti bab atau esai. |
+| `@booklet` | Digunakan untuk dokumen cetak yang tidak memiliki penerbit atau penulis yang terikat. |
+| `@collection` | Digunakan untuk kumpulan tulisan yang diterbitkan sebagai satu volume (misal, kumpulan esai). |
+| `@incollection` | Digunakan untuk artikel atau bab dalam sebuah koleksi. |
+| `@proceedings` | Digunakan untuk kumpulan artikel dari konferensi. |
+| `@inproceedings` | Digunakan untuk artikel tunggal dalam prosiding konferensi. |
+| `@manual` | Digunakan untuk panduan teknis atau manual. |
+| `@mastersthesis` | Digunakan untuk tesis master. |
+| `@phdthesis` | Digunakan untuk disertasi doktoral. |
+| `@online` | Digunakan untuk dokumen yang diterbitkan secara daring, seperti halaman web atau blog. |
+| `@report` | Digunakan untuk laporan teknis yang dikeluarkan oleh institusi. |
+| `@techreport` | Sama seperti `@report`, tetapi lebih spesifik untuk laporan teknis. |
+| `@unpublished` | Digunakan untuk karya yang belum diterbitkan, seperti manuskrip. |
+| `@misc` | Digunakan untuk jenis entri apa pun yang tidak cocok dengan kategori lainnya. |
+
+| Opsi Field | Keterangan | Contoh |
+| :--- | :--- | :--- |
+| `author` | Nama penulis. | `author={Nama Penulis}`<br>`author={Penulis1 and Penulis2}`<br>`author={Penulis1 and Penulis2 and Penulis3 and ...}`<br>`author={{Nama Instansi}}` |
+| `editor` | Nama editor. | `editor={Nama Editor}` |
+| `title` | Judul karya. | `title={Judul Tulisan}` |
+| `journal` | Judul jurnal tempat artikel diterbitkan. | `journaltitle={Nama Jurnal}` |
+| `booktitle` | Judul buku tempat bagian atau artikel diterbitkan. | `booktitle={Judul Buku}` |
+| `year` | Tahun publikasi. | `year={2023}` |
+| `month` | Bulan publikasi. | `month={3}`<br>`month={mar}`<br>`month={Maret}` |
+| `day` | Hari publikasi. | `day={15}` |
+| `publisher` | Nama penerbit. | `publisher={Nama Penerbit}` |
+| `address` | Lokasi penerbitan. | `location={Kota}` |
+| `volume` | Nomor volume jurnal atau buku. | `volume={10}` |
+| `number` | Nomor terbitan jurnal. | `number={2}` |
+| `pages` | Rentang halaman. | `pages={23--45}` |
+| `url` | URL dokumen daring. | `url={https://example.com}` |
+| `urldate` | Tanggal akses URL dokumen daring. | `urldate={2024-03-15}`<br>`urldate={Maret 15, 2024}`<br>`urldate={15 Maret 2024}` |
+| `doi` | Digital Object Identifier (DOI) untuk dokumen digital. | `doi={10.xxxx/xxxx}` |
+| `note` | Catatan tambahan. | `note={Catatan tambahan}` |
+| `abstract` | Ringkasan singkat atau abstrak dari karya. | `abstract={Ringkasan karya}` |
+
+Daftar referensi berformat bibtex dapat dibuat dengan mudah melalui website karya tulis yang menyediakan sitasi BibTeX, sarana penyedia karya tulis, atau menggunakan bantuan AI.
+
+> **Contoh: Daftar Referensi Buku**
+> 
+> Ini adalah contoh daftar referensi dari buku "Aljabar Linear Elementer I" yang ditulis oleh Rasjidin Jainudin Pamuntjak dan Warsito.
+> 
+> ```
+> @book{warsito-2022:ALE,
+>     author = {Rasjidin Jainudin Pamuntjak and Warsito},
+>     year = {2022},
+>     title = {{Aljabar Linear Elementer I}},
+>     edition = {3},
+>     address = {Tangerang Selatan},
+>     publisher = {Universitas Terbuka}
+> }
+> ```
 
 ## 12 | Referensi Silang (Cross-Reference)
 
