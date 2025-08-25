@@ -1878,6 +1878,100 @@ Ordered list akan menampilkan daftar dengan tanda urutan seperti nomor, huruf, d
 
 ### 10.3 Daftar Soal/Jawaban Esai
 
+Ada kalanya jawaban ditulis dalam bentuk daftar yang tidak memerlukan sistematika penulisan sub-bagian sama sekali, seperti jawaban esai/pengayaan yang hanya menggunakan nomor sebagai bagiannya. Daftar esai dapat dibuat dengan perintah environment `essaylist`. Formatnya sama saja seperti `itemize` atau `enumerate`.
+
+```
+\begin{essaylist}[nosep]
+    \item Daftar satu
+    \item Daftar dua
+    ...
+\end{essaylist}
+```
+
+Jika soal/jawaban esainya beranak, cukup gunakan `essaylist` di dalam `essaylist` (multilevel)
+
+```
+\begin{essaylist}[...]
+    \item Daftar satu
+    \begin{essaylist}[...]
+        \item Daftar satu, bagian a
+        \item Daftar satu, bagian b
+        ...
+    \end{essaylist}
+    \item Daftar dua
+    \begin{essaylist}[...]
+        \item Daftar dua, bagian a
+        \item Daftar dua, bagian b
+        ...
+    \end{essaylist}
+    ...
+\end{essaylist}
+```
+
+- Satu daftar bisa ditulis dengan panjang---entah itu lebih dari sebaris, satu paragraf, bahkan beberapa paragraf sekaligus.
+- Daftar dibuat dengan cara menambahkan `\item` di bagian awal teks.
+- Secara bawaan, setiap daftar akan diberikan jarak (spasi). Jika tidak ingin ada spasi di antara daftarnya, gunakan `nosep`.
+- Penomoran yang digunakan di level satu adalah nomor Arab seperti 1. 2. 3. 4. ...
+- Penomoran yang digunakan di level dua adalah gabungan nomor & huruf seperti 1.a. 1.b. ...
+
+> **Contoh: Esai Tunggal dan Esai Beranak**
+> 
+> ```
+> Daftar esai dengan jawaban/soal tunggal akan terlihat seperti ini.
+> 
+> \begin{essaylist}
+>     \item Teknologi telah mengubah komunikasi modern secara fundamental dengan memfasilitasi
+>     interaksi instan dan global. Platform digital seperti media sosial, email, dan aplikasi
+>     pesan memungkinkan individu untuk terhubung tanpa batasan geografis. Hal ini tidak hanya
+>     mempercepat pertukaran informasi, tetapi juga menciptakan cara baru untuk berbagi ide dan
+>     membangun komunitas.
+>     
+>     \item Perubahan iklim memiliki dampak serius pada ekosistem laut. Peningkatan suhu air laut
+>     menyebabkan pemutihan karang, yang dapat menghancurkan terumbu karang. Selain itu, penyerapan
+>     karbon dioksida berlebih oleh laut meningkatkan keasaman air, mengancam kehidupan organisme
+>     laut dengan cangkang kalsium karbonat, seperti kerang dan teripang.
+> 
+>     \item Mempelajari sejarah memberikan pemahaman tentang bagaimana masa lalu membentuk dunia kita
+>     saat ini. Dengan meninjau peristiwa dan keputusan di masa lalu, kita dapat mengidentifikasi pola,
+>     belajar dari kesalahan, dan menghargai pencapaian. Sejarah juga membantu menumbuhkan identitas
+>     budaya dan nasional, serta mengembangkan pemikiran kritis untuk menganalisis isu-isu kompleks.
+> \end{essaylist}
+> 
+> \vspace{2\baselineskip}
+> 
+> Daftar esai dengan jawaban/soal beranak (multilevel) akan terlihat seperti ini.
+> 
+> \begin{essaylist}
+>     \item Kewarganegaraan digital
+>     \begin{essaylist}
+>         \item Kewarganegaraan digital adalah kemampuan individu untuk berpartisipasi dalam masyarakat
+>         online secara etis dan bertanggung jawab. Hal ini mencakup pemahaman tentang hak, kewajiban,
+>         dan potensi risiko yang terkait dengan penggunaan teknologi digital.
+> 
+>         \item Dua contoh etika dalam kewarganegaraan digital adalah tidak menyebarkan berita palsu (hoax)
+>         dan menghormati privasi orang lain dengan tidak membagikan informasi pribadi tanpa izin.
+>     \end{essaylist}
+>     
+>     \item Sumber energi terbarukan
+>     \begin{essaylist}
+>         \item Energi terbarukan adalah energi yang berasal dari sumber daya alam yang dapat diperbarui
+>         terus-menerus, sehingga tidak akan habis.
+>         
+>         \item Contohnya adalah energi surya (matahari) dan energi angin.
+> 
+>         \item Energi terbarukan penting untuk masa depan karena dapat mengurangi ketergantungan pada
+>         bahan bakar fosil yang terbatas, membantu melawan perubahan iklim, dan menciptakan lingkungan
+>         yang lebih bersih dan berkelanjutan.
+>     \end{essaylist}
+> 
+>     \item Sarapan penting karena menyediakan nutrisi dan energi yang dibutuhkan tubuh untuk memulai hari,
+>     meningkatkan metabolisme, dan mempersiapkan tubuh serta otak untuk beraktivitas.
+> \end{essaylist}
+> ```
+>
+> ![Standalone_Render_Essaylist](https://github.com/user-attachments/assets/f83c5b48-0a11-4783-9ee1-c1e2b0d64b96)
+
+
 ## 11 | Mengelola Daftar Pustaka
 
 ## 12 | Referensi Silang (Cross-Reference)
