@@ -2044,12 +2044,88 @@ Daftar referensi berformat bibtex dapat dibuat dengan mudah melalui website kary
 
 ## 12 | Referensi Silang (Cross-Reference)
 
-### 12.1 Xref: Lampiran Gambar, Tabel, dan Kode Program
+Referensi silang biasanya digunakan di dalam sebuah dokumen untuk mengarahkan pembaca ke bagian lain, seperti tabel, gambar, judul, pustaka, dan lainnya, yang terdapat di dalam dokumen. Referensi silang dapat dijumpai pada karya tulis yang menunjuk suatu bagian seperti "lihat Gambar 1", "pada Tabel 2", "pada Pernyataan 3", dsb.
+
+### 12.1 Xref: Otomatis (Bagian Matematika, Lampiran Gambar, Tabel, dan Kode Program)
+
+Matematika, gambar, tabel, dan kode program dapat ditunjuk dengan sangat mudah menggunakan perintah `\autoref`. Pembaca nantinya dapat mengeklik tulisan tunjuk tersebut dan langsung ter-scroll ke posisi rujukannya. Di bagian sebelumnya, `\autoref{KATA_TUNJUK}` sangat berkaitan dengan `\label{KATA_TUNJUK}`/`label={KATA_TUNJUK}` yang sudah berkali-kali digunakan & dibahas.
+
+> **Contoh**
+> 
+> ```
+> \begin{align}
+>     ... \label{eq:contoh-matematika} \\
+>     ...
+> \end{align}
+> 
+> \begin{figure}[H]
+>     \centering
+>     ...
+>     \caption{Contoh Gambar}
+>     \label{fig:contoh-gambar}
+>     ...
+> \end{figure}
+> 
+> \begin{table}[H]
+>     \centering
+>     \caption{Contoh Tabel}
+>     \label{table:contoh-tabel}
+>     ...
+> \end{table}
+> 
+> \begin{lstlisting}{
+>     caption={Contoh Kode},
+>     label={code:contoh-kode}
+> }
+>     ...
+> \end{lstlisting}
+> 
+> Kita bisa melihat gambar pada \autoref{fig:contoh-gambar}. Kita bisa melihat bagian matematika pada
+> \autoref{eq:contoh-matematika}. Kita bisa melihat tabel pada \autoref{table:contoh-tabel}. Kita bisa
+> melihat kode pada \autoref{code:contoh-kode}
+> ```
 
 ### 12.2 Xref: Daftar Pustaka
 
+Ketika menulis keterangan kutipan (nama penulis dan tahun), keterangan tersebut bisa dijadikan cross-reference agar pembaca dapat mengeklik keterangan itu dan langsung ter-scroll ke rujukan di daftar pustaka.
+
 #### 12.2.1 Narrative Citation
 
+Narrative citation biasanya ditulis sebagai bagian dalam kalimat. Narrative citation dapat digunakan dengan perintah `\citeA{KATA_TUNJUK}`.
+
+> **Contoh:**
+> 
+> ```
+> Menurut \citeA{fitriani-2024:pelatihan-latex}, ``Salah satu kelebihan utama LaTeX adalah kemampuannya
+> untuk membuat dokumen yang kompleks, seperti laporan penelitian, makalah ilmiah, dan buku teks, dengan
+> sangat efisien dan mudah diatur. LaTeX membuat konten dokumen yang lebih terstruktur dan berkualitas.''
+> 
+> Menurut \citeA{fitriani-2024:pelatihan-latex}, LaTeX sangat bagus untuk menulis karya tulis dan dokumen
+> ilmiah karena bagian-bagian isi tulisan dan lampiran dapat diatur dengan mudah.
+> ```
+
+> [!NOTE]
+> Keterangan kutipan hanya ditulis lengkap untuk kutipan pertama saja. Jika kutipan disebutkan lagi, keterannya akan disingkat.
+>
+> - Keterangan rujukan kutipan pertama: `Penulis 1, Penulis 2, ..., & Penulis Terakhir (2021)`
+> - Keterangan rujukan kutipan kedua & seterusnya: `Penulis 1 et al. (2021)` atau `Penulis 1 dkk. (2021)`
+
 #### 12.2.2 Parenthetical Citation
+
+Parenthetical citation biasanya ditulis dengan diapit tanda kurung kemudian diletakkan pada akhir kalimat kutipan. Parenthetical citation dapat digunakan dengan perintah `\cite{KATA_TUNJUK}`.
+
+**Contoh**
+
+```
+Salah satu kelebihan utama LaTeX adalah kemampuannya untuk membuat dokumen yang kompleks, seperti laporan
+penelitian, makalah ilmiah, dan buku teks, dengan sangat efisien dan mudah diatur. LaTeX membuat konten
+dokumen yang lebih terstruktur dan berkualitas \cite{fitriani-2024:pelatihan-latex}.
+```
+
+> [!NOTE]
+> Keterangan kutipan hanya ditulis lengkap untuk kutipan pertama saja. Jika kutipan disebutkan lagi, keterannya akan disingkat.
+>
+> - Keterangan rujukan kutipan pertama: `(Penulis 1, Penulis 2, ..., & Penulis Terakhir, 2021)`
+> - Keterangan rujukan kutipan kedua & seterusnya: `(Penulis 1 et al., 2021)` atau `(Penulis 1 dkk., 2021)`
 
 # ⚙️ Penyetelan
