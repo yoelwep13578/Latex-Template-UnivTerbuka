@@ -19,6 +19,10 @@
 \usepackage{apacite}
 \bibliographystyle{apacite}
 
+% Bahasa APA 6
+%\input{preset/APA-bahasa-indonesia.tex}
+\input{preset/APA-bahasa-campuran.tex}
+
 % Bahasa & Istilah
 \usepackage[indonesian]{babel}
 
@@ -38,6 +42,11 @@
 
 % Tabel
 \usepackage{tabularray}
+
+\SetTblrStyle{caption}{font=\vspace{-\baselineskip}\singlespacing\small}
+\SetTblrStyle{capcont}{font=\vspace{-\baselineskip}\singlespacing\small}
+\SetTblrStyle{note}{font=\small}
+\SetTblrStyle{remark}{font=\small}
 
 %========================%
 % FONT & FONT SELECTIONS %
@@ -119,7 +128,7 @@
 \usepackage{setspace}
 
 % Keterangan
-\usepackage{caption}
+\usepackage[font=small]{caption}
 
 %============================%
 % FORMATTING TEKS & PARAGRAF %

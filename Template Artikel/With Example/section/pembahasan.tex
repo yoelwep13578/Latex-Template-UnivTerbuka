@@ -650,4 +650,18 @@ Gaya sitasi dalam \textit{template} ini menggunakan APA 6 yang sedikit dimodifik
     \item Retrieved ... from ... $\longrightarrow$ Diakses ... dari ...
 \end{enumerate}
 
-Jika Anda kurang menyukai penggantian sebagian istilah ini atau lebih memilih mempertahankan bahasa Inggris, Anda dapat membuka \textit{file} \texttt{variable.tex} dan menghapus semua kode yang ada dalam bagian ``ISTILAH DALAM APA 6 DAFTAR PUSTAKA''
+Lalu ada juga versi modifikasi yang ikut menerjamahkan istilah singkatan menjadi Bahasa Indonesia, seperti:
+
+\begin{enumerate}[nosep]
+    \item et al. $\longrightarrow$ dkk.
+\end{enumerate}
+
+Anda dapat memilihnya dengan membuka \textit{file} \texttt{main.tex} lalu mengganti \textit{comment} yang ada pada bagian berikut.
+
+\begin{lstlisting}
+% Bahasa APA 6
+\input{preset/APA-bahasa-indonesia.tex}
+%\input{preset/APA-bahasa-campuran.tex}
+\end{lstlisting}
+
+Jika Anda kurang menyukai penggantian sebagian istilah ini atau lebih memilih mempertahankan bahasa Inggris, Anda dapat membuka \textit{file} \texttt{main.tex} dan memberikan \textit{comment} pada semua pilihan tersebut.
