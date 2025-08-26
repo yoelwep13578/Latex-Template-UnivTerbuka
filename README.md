@@ -2234,3 +2234,115 @@ Template ini menyediakan penomoran heading alphanumeric dan multilevel. Penomora
 % Multilevel Numbering
 %\input{preset/multilevel-numbering-heading.tex}
 ```
+
+<table>
+<tr>
+<th>
+Numbering
+</th>
+<th>
+Contoh Kode Setelan
+</th>
+</tr>
+
+<tr>
+
+<td>
+Alphanumeric
+</td>
+
+<td>
+<pre>
+% PILIH SATU ---------
+% Alphanumeric Numbering
+\input{preset/alphanumeric-numbering-heading.tex}
+% Multilevel Numbering
+%\input{preset/multilevel-numbering-heading.tex}
+</pre>
+</td>
+
+<tr>
+
+<td>
+Multilevel
+</td>
+
+<td>
+<pre>
+% PILIH SATU ---------
+% Alphanumeric Numbering
+%\input{preset/alphanumeric-numbering-heading.tex}
+% Multilevel Numbering
+\input{preset/multilevel-numbering-heading.tex}
+</pre>
+</td>
+</table>
+
+## Terjemahan Bahasa APA 6
+
+Template ini menyediakan 3 jenis bahasa untuk APA style-nya, yaitu versi murni bahasa Inggris, campuran bahasa Indonesia, dan versi bahasa Indonesia.
+
+- **Bahasa Indonesia:** Istilah dari kalimat hingga singkatan diterjemahkan ke bahasa Indonesia. Misalnya et al. menjadi dkk.<br>_*masih terdapat kelemahan yang belum bisa menerjamahkan semua istilah singkatan. Contohnya 3rd ed. tidak dapat diterjemah menjadi Edisi ke-3_
+- **Bahasa Campuran:** Kalimat diterjemahkan ke bahasa Indonesia, tapi istilah singkatan tetap berbahasa Inggris.
+- **Murni Bahasa Inggris:** Setelan bahasa bawaan `apacite`
+
+Default yang dipakai adalah bahasa campuran. Setelan bahasa ini dapat diubah di dalam file `main.tex`
+
+```
+% Bahasa APA 6
+%\input{preset/APA-bahasa-indonesia.tex}
+\input{preset/APA-bahasa-campuran.tex}
+```
+
+<table>
+<tr>
+<th>
+Bahasa
+</th>
+<th>
+Contoh Kode Setelan
+</th>
+</tr>
+
+<tr>
+
+<td>
+Bahasa Indonesia
+</td>
+
+<td>
+<pre>
+% Bahasa APA 6
+\input{preset/APA-bahasa-indonesia.tex}
+%\input{preset/APA-bahasa-campuran.tex}
+</pre>
+</td>
+
+<tr>
+
+<td>
+Bahasa Campuran
+</td>
+
+<td>
+<pre>
+% Bahasa APA 6
+%\input{preset/APA-bahasa-indonesia.tex}
+\input{preset/APA-bahasa-campuran.tex}
+</pre>
+</td>
+
+<tr>
+
+<td>
+Bahasa Inggris
+</td>
+
+<td>
+<pre>
+% Bahasa APA 6
+%\input{preset/APA-bahasa-indonesia.tex}
+%\input{preset/APA-bahasa-campuran.tex}
+</pre>
+</td>
+</table>
