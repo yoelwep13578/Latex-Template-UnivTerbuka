@@ -2280,6 +2280,8 @@ Multilevel
 
 ## Terjemahan Bahasa APA 6
 
+![Terjemahan APA](https://github.com/user-attachments/assets/e49b3c4e-adbd-422d-85f7-c95e65739581)
+
 Template ini menyediakan 3 jenis bahasa untuk APA style-nya, yaitu versi murni bahasa Inggris, campuran bahasa Indonesia, dan versi bahasa Indonesia.
 
 - **Bahasa Indonesia:** Istilah dari kalimat hingga singkatan diterjemahkan ke bahasa Indonesia. Misalnya et al. menjadi dkk.<br>_*masih terdapat kelemahan yang belum bisa menerjamahkan semua istilah singkatan. Contohnya 3rd ed. tidak dapat diterjemah menjadi Edisi ke-3_
