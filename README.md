@@ -109,7 +109,7 @@ Jika font ini tidak ingin digunakan, cukup diganti saja dari file `main.tex`. Mi
 Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
 
 [![Clone sebagai Zip](https://img.shields.io/badge/Clone_sebagai_Zip-303030?style=for-the-badge&logoColor=white&logo=Github)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/archive/refs/heads/main.zip)
-[![Download dari Release](https://img.shields.io/badge/Download_dari_Release-v1.0.0-EF2D5E?style=for-the-badge&logoColor=white&logo=Github)](#)
+[![Download dari Release](https://img.shields.io/badge/Download_dari_Release-v1.1.0-EF2D5E?style=for-the-badge&logoColor=white&logo=Github)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/tag/v1.1.0)
 
 > [!TIP]
 > Source template ini juga dapat di-clone dengan menggunakan perintah Git.
@@ -119,10 +119,10 @@ Silakan download template ini dengan memilih metode download yang diinginkan. Te
 
 Atau penulis dapat men-download template-nya sesuai pilihan yang diinginkan.
 
-[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Makalah](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Lembar Jawaban Diskusi](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
-[![Buku Jawaban Tugas](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](#)
+[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.1.0/Template.Artikel--Simple--v1.1.0.zip)
+[![Makalah](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.1.0/Template.Makalah--Simple--v1.1.0.zip)
+[![Lembar Jawaban Diskusi](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.1.0/Template.Diskusi.Tuton--Simple--v1.1.0.zip)
+[![Buku Jawaban Tugas](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.1.0/Template.Tugas.Tuton--Simple--v1.1.0.zip)
 
 ## 3 | Ekstrak dan Simpan
 
