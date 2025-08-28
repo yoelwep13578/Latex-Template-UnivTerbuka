@@ -2104,6 +2104,14 @@ Narrative citation biasanya ditulis sebagai bagian dalam kalimat. Narrative cita
 > ilmiah karena bagian-bagian isi tulisan dan lampiran dapat diatur dengan mudah.
 > ```
 
+> [!TIP]
+> Keterangan kutipan dapat ditambahi halaman dengan tambahan perintah dari `\citeA{...}` menjadi `\citeA[...]{...}`
+
+| Contoh Bahasa Inggris | Contoh Bahasa Indonesia |
+|-----------------------|-------------------------|
+| `\citeA[p. 128]{...}` | `\citeA[h. 128]{...}` |
+| `\citeA[pp. 127--191]{...}` | `\citeA[hlm. 128--191]{...}` |
+
 > [!NOTE]
 > Keterangan kutipan hanya ditulis lengkap untuk kutipan pertama saja. Jika kutipan disebutkan lagi, keterannya akan disingkat.
 >
@@ -2121,6 +2129,14 @@ Parenthetical citation biasanya ditulis dengan diapit tanda kurung kemudian dile
 > penelitian, makalah ilmiah, dan buku teks, dengan sangat efisien dan mudah diatur. LaTeX membuat konten
 > dokumen yang lebih terstruktur dan berkualitas \cite{fitriani-2024:pelatihan-latex}.
 > ```
+
+> [!TIP]
+> Keterangan kutipan dapat ditambahi halaman dengan tambahan perintah dari `\cite{...}` menjadi `\cite[...]{...}`
+
+| Contoh Bahasa Inggris | Contoh Bahasa Indonesia |
+|-----------------------|-------------------------|
+| `\cite[p. 128]{...}` | `\cite[h. 128]{...}` |
+| `\cite[pp. 127--191]{...}` | `\cite[hlm. 128--191]{...}` |
 
 > [!NOTE]
 > Keterangan kutipan hanya ditulis lengkap untuk kutipan pertama saja. Jika kutipan disebutkan lagi, keterannya akan disingkat.
