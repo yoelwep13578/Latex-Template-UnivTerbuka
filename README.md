@@ -593,11 +593,122 @@ Untuk blockquote yang lebih dari satu paragraf, gunakan peirntah environment `qu
 
 ## 5 | Teks Matematika
 
-### 5.1 Perintah Dasar LaTeX Matematika
+### 5.1 Aturan Penulisan Teks Matematika (Lewati Saja Jika Kurang Penting)
+
+Sebagai catatan, penulis dapat menemui suatu aturan yang menyarankan beberapa notasi untuk jangan ditulis miring, sebab notasi bertulis miring diartikan sebagai variabel. Jika ini terjadi saat di dalam \textit{math mode}, dapat diatasi dengan:
+
+- Mencobai perintah yang tersedia seperti `\det`, `\sin`, `\cos`, `\tan|`, dan lain sebagainya;
+- Menambahkan \verb|up| sebelum nama notasi --- seperti `\pi` menjadi `\uppi`;
+- Membungkus notasi menggunakan `\mathrm{NOTASI}`; atau
+- Membungkus notasi menggunakan `\text{NOTASI}`.
+
+Semua konstanta, operator/fungsi, satuan (ukuran), dan keterangan harus ditulis dengan huruf tegak.
+
+> [!NOTE]
+> Aturan ini bukanlah suatu paksaan, tetapi hanya sebagai panduan agar tulisan matematikanya _sesuai standar_. Ini semua kembali bergantung pada keinginan/aturan dosen pengampunya.
+
+#### 5.1.1 Konstanta (Nilai Tetap)
+
+Beberapa contoh konstanta matematika yang disarankan ditulis tegak:
+
+| Lambang | Nama Konstanta | Nilai Tetap |
+|---|---|---|
+| π | Pi | ≈ 3.1415926535 |
+| e | Bilangan Euler | ≈ 2.7182818284 |
+| φ | Rasio Emas (Golden Ratio) | ≈ 1.6180339887 |
+| i | Satuan imajiner | √-1 |
+| γ | Konstanta Euler–Mascheroni | ≈ 0.5772156649 |
+| ζ | Konstanta Apéry | ≈ 1.2020569031 |
+| c | Kecepatan cahaya dalam vakum | 299,792,458 m/s |
+| k | Konstanta Boltzmann | 1.380649 × 10⁻²³ J/K |
+
+Beberapa contoh konstanta fisika yang disarankan ditulis tegak:
+
+| Lambang | Nama Konstanta | Nilai Tetap |
+|---|---|---|
+| c | Kecepatan cahaya di ruang hampa | 299,792,458 m/s (tepat) |
+| h | Konstanta Planck | 6.62607015 × 10⁻³⁴ J·s (tepat) |
+| k | Konstanta Boltzmann | 1.380649 × 10⁻²³ J/K (tepat) |
+| G | Konstanta Gravitasi Universal | ≈ 6.67430 × 10⁻¹¹ m³/(kg·s²) |
+| Nₐ | Konstanta Avogadro | 6.02214076 × 10²³ mol⁻¹ (tepat) |
+| R | Konstanta gas ideal (molar) | 8.314462618 J/(mol·K) |
+| σ | Konstanta Stefan–Boltzmann | 5.670374419 × 10⁻⁸ W/(m²·K⁴) |
+| ε₀ | Permitivitas ruang hampa | 8.8541878128 × 10⁻¹² F/m |
+| μ₀ | Permeabilitas ruang hampa | 4π × 10⁻⁷ H/m (tepat) |
+| e | Muatan elementer | 1.602176634 × 10⁻¹⁹ C (tepat) |
+| F | Konstanta Faraday | 96485.33212 C/mol |
+| $m_e$ | Massa elektron | 9.1093837015 × 10⁻³¹ kg |
+| $m_p$ | Massa proton | 1.67262192369 × 10⁻²⁷ kg |
+
+#### 5.1.2 Operator
+
+Beberapa contoh operator matematika yang disarankan untuk ditulis tegak:
+
+| Lambang | Nama | Keterangan |
+|---|---|---|
+| Σ | Sigma (Penjumlahan) | Menunjukkan penjumlahan beruntun dari serangkaian nilai. |
+| Π | Pi (Perkalian) | Menunjukkan perkalian beruntun dari serangkaian nilai. |
+| ∂ | Turunan Parsial | Menunjukkan turunan fungsi terhadap salah satu variabelnya. |
+| d | Turunan | Menunjukkan turunan fungsi |
+
+#### 5.1.3 Nama Fungsi
+
+Beberapa contoh fungsi matematika yang disarankan ditulis tegak:
+
+| Lambang | Nama | Keterangan |
+|---|---|---|
+| sin | Sinus | Fungsi trigonometri yang menghubungkan sudut dalam segitiga siku-siku dengan rasio sisi yang berhadapan. |
+| cos | Cosinus | Fungsi trigonometri yang menghubungkan sudut dalam segitiga siku-siku dengan rasio sisi yang berdampingan. |
+| tan | Tangen | Fungsi trigonometri yang menghubungkan sudut dalam segitiga siku-siku dengan rasio sisi yang berhadapan terhadap sisi yang berdampingan. |
+| log | Logaritma | Fungsi invers dari eksponen, menentukan pangkat yang diperlukan untuk mendapatkan suatu angka. |
+| ln | Logaritma natural | Logaritma dengan basis bilangan Euler (e). |
+| exp | Eksponensial | Fungsi yang menaikkan konstanta e ke suatu pangkat. Umumnya ditulis sebagai eˣ. |
+| abs | Nilai mutlak | Jarak dari x ke nol di garis bilangan, selalu non-negatif. |
+| ceil | Ceiling | Membulatkan x ke bilangan bulat terdekat yang lebih besar atau sama dengan x. |
+| floor | Floor | Membulatkan x ke bilangan bulat terdekat yang lebih kecil atau sama dengan x. |
+| max | Maksimum | Mengembalikan nilai terbesar dari dua atau lebih nilai. |
+| min | Minimum | Mengembalikan nilai terkecil dari dua atau lebih nilai. |
+| sgn | Signum | Mengembalikan -1 jika x negatif, 1 jika x positif, dan 0 jika x adalah nol. |
+| mod | Modulo | Mengembalikan sisa pembagian a oleh n. |
+| sqrt | Akar kuadrat | Mengembalikan akar kuadrat dari x. |
+| sinh | Sinus hiperbolik | Fungsi hiperbolik analog dengan fungsi sinus. |
+| cosh | Cosinus hiperbolik | Fungsi hiperbolik analog dengan fungsi cosinus. |
+| tanh | Tangen hiperbolik | Fungsi hiperbolik analog dengan fungsi tangen. |
+| det | Determinan | Fungsi matriks untuk menghitung nilai skalar dari unsur-unsur matriks persegi. |
+| adj | Adjoin/Adjugat | Fungsi matriks yang mementukan transpos dari matriks kofaktornya. |
+
+#### 5.1.4 Satuan (Ukuran)
+
+Beberapa contoh satuan ukuran yang disarankan (bahkan **harus**) untuk ditulis tegak:
+
+| Lambang | Nama | Keterangan |
+|---|---|---|
+| ° | Derajat | Satuan pengukuran sudut; 1 putaran penuh = 360°. |
+| rad | Radian | Satuan pengukuran sudut, terutama dalam matematika yang lebih tinggi; 1 putaran penuh = 2π radian. |
+| m | Meter | Satuan dasar panjang dalam sistem SI. |
+| kg | Kilogram | Satuan dasar massa dalam sistem SI. |
+| s | Sekon | Satuan dasar waktu dalam sistem SI. |
+| A | Ampere | Satuan dasar arus listrik dalam sistem SI. |
+| K | Kelvin | Satuan dasar suhu termodinamika dalam sistem SI. |
+| mol | Mol | Satuan dasar jumlah zat dalam sistem SI. |
+| cd | Candela | Satuan dasar intensitas cahaya dalam sistem SI. |
+| Hz | Hertz | Satuan frekuensi (s⁻¹). |
+| N | Newton | Satuan gaya dalam sistem SI. |
+| J | Joule | Satuan energi, kerja, atau panas dalam sistem SI. |
+| W | Watt | Satuan daya dalam sistem SI (J/s). |
+| V | Volt | Satuan beda potensial listrik. |
+| Ω | Ohm | Satuan hambatan listrik. |
+| F | Farad | Satuan kapasitas listrik. |
+| C | Coulomb | Satuan muatan listrik. |
+| Pa | Pascal | Satuan tekanan. |
+| L | Liter | Satuan volume. |
+| ha | Hektar | Satuan area. |
+
+### 5.2 Perintah Dasar LaTeX Matematika
 
 Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang banyak digunakan. Perintah matematika LaTeX yang lebih lengkap dapat dicari sendiri di internet.
 
-#### 5.1.1 Notasi Matematika & Greek
+#### 5.2.1 Notasi Matematika & Greek
 
 | Command | Keterangan | Hasil |
 | :--- | :--- | :--- |
@@ -622,7 +733,7 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 | `\sigma` | Huruf Greek sigma | $\sigma$ |
 | `\lambda` | Huruf Greek lambda | $\lambda$ |
 
-#### 5.1.2 Operator
+#### 5.2.2 Operator
 
 | Command | Keterangan | Hasil |
 | :--- | :--- | :--- |
@@ -648,7 +759,7 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 | `\min` | Minimum | $\min$ |
 | `\lim_{a \to b}` | Limit (a mendekati b) | $\lim_{a \to b}$ |
 
-#### 5.1.3 Relasi
+#### 5.2.3 Relasi
 
 | Command | Keterangan | Hasil |
 | :--- | :--- | :--- |
@@ -671,7 +782,7 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 > - `\not\leq`
 > - `\not\geq`
 
-#### 5.1.4 Himpunan
+#### 5.2.4 Himpunan
 
 | Command | Keterangan | Hasil |
 | :--- | :--- | :--- |
@@ -702,7 +813,7 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 > - `\not\cup`
 > - `\not\cap`
 
-#### 5.1.5 Aljabar & Vektor
+#### 5.2.5 Aljabar & Vektor
 
 | Command | Keterangan | Hasil |
 | :--- | :--- | :--- |
@@ -718,7 +829,7 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 | `|x|` | Nilai mutlak dari x | $|x|$ |
 | `\|x\|` | Norma dari x | $\|x\|$ |
 
-#### 5.1.6 Kalkulus
+#### 5.2.6 Kalkulus
 
 | Command | Keterangan | Hasil |
 | :--- | :--- | :--- |
@@ -728,7 +839,7 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 | `\int_a^b` | Integral dari a sampai b | $\int_a^b$ |
 | `\sum_{i=1}^n` | Penjumlahan dari i=1 sampai n | $\sum_{i=1}^n$ |
 
-#### 5.1.7 Simbol Panah
+#### 5.2.7 Simbol Panah
 
 | Command | Keterangan | Hasil |
 | :--- | :--- | :--- |
@@ -740,7 +851,7 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 | `\Leftrightarrow` | Panah ekuivalen (tebal) | $\Leftrightarrow$ |
 | `\mapsto` | Panah pemetaan | $\mapsto$ |
 
-### 5.2 Inline Math
+### 5.3 Inline Math
 
 Inline math umumnya digunakan untuk menuliskan teks matematika yang dapat mengikuti teks biasa (inline dengan teks). Inline math dapat digunakan dengan diapit tanda $ seperti `$...$`, dengan bagian `...` diisikan perintah matematika LaTeX.
 
@@ -772,7 +883,7 @@ Inline math umumnya digunakan untuk menuliskan teks matematika yang dapat mengik
 >
 > ![Standalone_Render_InlineDisplayMath](https://github.com/user-attachments/assets/eddf1b67-f926-47c4-83a0-864046720fd0)
 
-### 5.3 Display Math
+### 5.4 Display Math
 
 Display math umumnya digunakan untuk menulis teks matematika (dengan ukuran asli) yang diletakkan di baris baru. Display math dapat digunakan dengan diapit tanda `\[` dan `\]` seperti `\[ ... \]`, dengan bagian `...` diisikan perintah matematika LaTeX. Display math boleh juga ditulis seperti:
 ```
@@ -838,7 +949,7 @@ Display math umumnya digunakan untuk menulis teks matematika (dengan ukuran asli
 > [!IMPORTANT]
 > Teks matematika yang memakai `\[` `\]` atau environment `equation` hanya bisa digunakan untuk satu baris.
 
-### 5.4 Display Align(ed) Math
+### 5.5 Display Align(ed) Math
 
 Aligned Math sejatinya hanyalah sebutan _keren_ untuk display math yang teks matematikanya dapat ditulis lebih dari sebaris dan bisa disejajarkan ke tanda tertentu. Aligned math dapat digunakan dengan perintah environment `align*`.
 
@@ -904,7 +1015,7 @@ Aligned Math sejatinya hanyalah sebutan _keren_ untuk display math yang teks mat
 >
 > ![Standalone_Render_AlignMathNumbered](https://github.com/user-attachments/assets/4982bcc5-8efa-4cec-94eb-6fedd6c687d1)
 
-### 5.5 Pembuktian/Proof
+### 5.6 Pembuktian/Proof
 
 Penulisan dalam pembuktian matematika cukup berbeda dari tulisan biasa, sebab diawali dengan kata _proof_ atau _bukti_, kemudian akan ada tanda kotak kecil di akhir sebagai tanda pembuktian telah selesai. Format pembuktian matematika dapat digunakan dengan perintah environment `proof`.
 
