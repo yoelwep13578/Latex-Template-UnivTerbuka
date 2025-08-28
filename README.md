@@ -466,6 +466,15 @@ Paragraf satu
 Paragraf dua
 ```
 
+Namun, jika teks kalimat hanya ingin dipotong ke baris berikutnya (newline), cukup gunakan `\\`.
+```
+Bisa ditulis seperti kalimat baris 1 \\ Baris 2 \\ Baris 3
+
+Atau seperti kalimat baris 1 \\
+Baris 2 \\
+Baris 3
+```
+
 ### 4.1 Paragraf Tidak Menjorok (No Indent)
 
 Secara bawaan, paragraf kedua dan seterusnya akan dibuat menjorok ke dalam pada baris pertamanya. Jika ingin paragrafnya tidak menjorok ke dalam, gunakan perintah `\noindent` di paragraf yang diinginkan sebelum tulisan.
