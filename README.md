@@ -851,6 +851,15 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 | `\Leftrightarrow` | Panah ekuivalen (tebal) | $\Leftrightarrow$ |
 | `\mapsto` | Panah pemetaan | $\mapsto$ |
 
+#### 5.2.8 Perintah Tambahan dari Template
+
+| Command | Keterangan |
+|---------|------------|
+|`\deriv`| Derivatif (d) |
+|`\adj`| Adjoin (adj) |
+|`\euler`| Euler (e) |
+|`\imaginary`| Imajiner (i) |
+
 ### 5.3 Inline Math
 
 Inline math umumnya digunakan untuk menuliskan teks matematika yang dapat mengikuti teks biasa (inline dengan teks). Inline math dapat digunakan dengan diapit tanda $ seperti `$...$`, dengan bagian `...` diisikan perintah matematika LaTeX.
