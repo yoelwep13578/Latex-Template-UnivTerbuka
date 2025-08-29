@@ -2493,3 +2493,58 @@ Bahasa Inggris
 </pre>
 </td>
 </table>
+
+## Compile Mark (Watermark)
+
+Compile mark bisa digunakan untuk menampilkan keterangan _Di-compile dengan LaTeX pada ..._ di halaman terakhir (atau di bagian terbawah daftar pustaka). Default-nya, compile mark ini tidak digunakan. Compile mark dapat digunakan/diaktifkan sendiri dengan membuang tanda `%` pada bagian ini di `main.tex`
+
+```
+%============+&
+% ISI DOKUMEN &
+%=============&
+
+...
+% Compile Mark
+%\vfill
+%{\footnotesize\noindent Di-\textit{compile} dengan \LaTeX\ pada \tanggalLengkap}
+```
+
+<table>
+<tr>
+<th>
+Tanpa Compile Mark (Default)
+</th>
+<th>
+Dengan Compile Mark
+</th>
+</tr>
+
+<tr>
+
+<td>
+<pre>
+%============+&
+% ISI DOKUMEN &
+%=============&
+
+...
+% Compile Mark
+%\vfill
+%{\footnotesize\noindent Di-\textit{compile} dengan \LaTeX\ pada \tanggalLengkap}
+</pre>
+</td>
+
+<td>
+<pre>
+%============+&
+% ISI DOKUMEN &
+%=============&
+
+...
+% Compile Mark
+\vfill
+{\footnotesize\noindent Di-\textit{compile} dengan \LaTeX\ pada \tanggalLengkap}
+</pre>
+</td>
+
+</table>
