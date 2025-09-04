@@ -265,6 +265,7 @@ Ini adalah contoh isi `variabel.tex` yang berasal dari template makalah:
 \newcommand{\judul}{Judul Karya Tulis Makalah}
 
 % Informasi Mata Kuliah, Sesi, TUgas, dan Tutor
+\newcommand{\skemaTutorial}{Tutorial \textit{Online}}
 \newcommand{\sesiKe}{3}
 \newcommand{\tugasKe}{1}
 \newcommand{\tanggalLengkap}{\today}
