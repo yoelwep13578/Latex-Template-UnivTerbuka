@@ -4,6 +4,12 @@ Repositori ini berisi template-template lembar jawaban dan buku penugasan tutori
 
 # 💭 Pendahuluan
 
+Proses penulisan karya tulis seperti makalah, skripsi, atau tesis sering kali membutuhkan format penulisan yang baku dan konsisten. Konsistensi ini meliputi gaya penulisan, penomoran halaman, daftar isi, daftar pustaka, hingga format kutipan. Alat yang banyak digunakan oleh penulis untuk menyusun karya tulis adalah menggunakan Word Processor seperti Microsoft Word, LibreOffice Writer, WPS Writer, dsb. 
+
+Namun, tidak sedikit juga penulis yang masih menghadapi kesulitan dalam mengatur format karya tulis di Word Processornya secara manual, terutama ketika terjadi perubahan pada isi dokumen---dengan contoh klasik seperti mengganti nomor subjudul, format tulisan untuk judul yang berbeda-beda, nomor gambar/tabel, indentasi paragraf, hingga mengatur daftar referensi. Pengaturan format manual ini tidak hanya memakan waktu, tetapi juga rentan terhadap kesalahan, sehingga penulis dapat mengalami rasa pusing berlebih akibat sibuk mengatur isi tulisan dan tampilannya secara bersamaan.
+
+Dari masalah tersebut, penggunaan LaTeX menawarkan solusi yang efektif untuk mengatasi masalah ini. LaTeX dirancang untuk menghasilkan dokumen berkualitas tinggi dengan tata letak yang profesional dan konsisten. Dengan memanfaatkan class atau template yang sudah ada, penulis dapat memisahkan fokus antara isi tulisan dan tampilan. Nomor subjudul, nomor gambar/tabel, tata letak, hingga daftar pustaka sudah diatur di template ini. Oleh karenanya, dibuatlah template LaTeX yang dapat memudahkan proses penulisan karya tulis, sehingga penulis dapat lebih fokus pada isi tulisan dan penelitian yang dilakukan.
+
 # 🪶 Keistimewaan LaTeX Ber-template
 
 ## 1 | Setelan Sudah Siap. Tinggal Dipakai
@@ -2316,15 +2322,19 @@ Kode bagian di `main.tex`
 \usepackage{fontspec}
 
 % Serif/Main Font --------------------------- %
+%\setmainfont{Latin Modern Roman}             % LM (ada di TeXLive)
 \setmainfont{Times New Roman}[Ligatures=Rare] % TNR + Ligature
-%\setmainfont{TeX Gyre Termes}                % Alternatif Mirip TNR
-%\setmainfont{XITS}                           % Alternatif Mirip TNR
+%\setmainfont{TeX Gyre Termes}                % Alternatif Mirip TNR (ada di TeXLive)
+%\setmainfont{XITS}                           % Alternatif Mirip TNR (ada di TeXLive)
 
-% Sans-Serif ---------------------------------%
-\setsansfont{Noto Sans}[Scale=MatchLowercase] % Noto Sans
-%\setsansfont{Calibri}[Scale=MatchUppercase]  % Calibri
+% Sans-Serif ----------------------------------------- %
+\setsansfont{Latin Modern Sans}[Scale=MatchLowercase]  % LM (ada di TeXLive)
+%\setsansfont{Alegreya Sans}[Scale=MatchLowercase]     % Alegreya (ada di TeXLive)
+%\setsansfont{Noto Sans}[Scale=MatchLowercase]         % Noto
+%\setsansfont{Calibri}[Scale=MatchUppercase]           % Calibri
 
-% Monospace ------------------------------------ % 
+% Monospace ----------------------------------------------- % 
+\setmonofont{Latin Modern Mono Light}[Scale=MatchLowercase] % LM (ada di TeXLive)
 %\setmonofont{Courier New}[Scale=MatchLowercase] % Courier New (Windows < 10)
 %\setmonofont{Cascadia Code Light}[              % Cascadia Code (Windows >= 10)
 %    BoldFont={Cascadia Code Bold},
@@ -2332,14 +2342,15 @@ Kode bagian di `main.tex`
 %    BoldItalicFont={Cascadia Code Bold Italic},
 %    Scale=MatchLowercase
 %]
-\setmonofont{Fira Code Light}[                  % Fira Code (must installed)
-    BoldFont={Fira Code Medium},
-    Contextuals=Alternate,
-    Scale=MatchLowercase
-]
+%\setmonofont{Fira Code Light}[                  % Fira Code (must installed)
+%    BoldFont={Fira Code Medium},
+%    Contextuals=Alternate,
+%    Scale=MatchLowercase
+%]
 
-% Font Matematika -----
-\setmathfont{XITS Math}
+% Font Matematika -------------- %
+%\setmathfont{Latin Modern Math} % Samaan dgn Latin Modern
+\setmathfont{XITS Math}          % Samaan dgn Times/TNR
 ```
 
 ## Indent Paragraf
@@ -2422,6 +2433,27 @@ Multilevel
 </pre>
 </td>
 </table>
+
+Namun, template untuk Lembar Jawaban Diskusi dan Tugas Tutorial juga menyediakan versi tambahan untuk alphanumeric dan multilevel, yaitu berupa versi Big First Level yang mengubah ukuran font subjudul section/chapter menjadi besar dan italic.
+
+```
+%============================%
+% FORMATTING TEKS & PARAGRAF %
+%============================%
+
+...
+
+% PILIH SATU ---------------------------------------------
+
+% Alphanumeric Numbering (biasa/besar)
+\input{preset/alphanumeric-numbering-heading.tex}
+%\input{preset/alphanumeric-numbering-heading-bigfirst.tex}
+
+% Multilevel Numbering (biasa/besar)
+%\input{preset/multilevel-numbering-heading.tex}
+%\input{preset/multilevel-numbering-heading-bigfirst.tex}
+
+```
 
 ## Terjemahan Bahasa APA 6
 
