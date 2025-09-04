@@ -2280,6 +2280,16 @@ Parenthetical citation biasanya ditulis dengan diapit tanda kurung kemudian dile
 > - Keterangan rujukan kutipan pertama: `(Penulis 1, Penulis 2, ..., & Penulis Terakhir, 2021)`
 > - Keterangan rujukan kutipan kedua & seterusnya: `(Penulis 1 et al., 2021)` atau `(Penulis 1 dkk., 2021)`
 
+## 13 | Halaman Landscape
+
+Halaman landscape umumnya digunakan untuk menampilkan gambar, diagram, atau tabel berukuran besar secara utuh. Jika ada bagian yang ingin ditampikan di halaman landscape (baru), cukup gunakan environment `landscape` dan isilah bagian dalamanya dengan bagain yang ingin ditampilkan.
+
+```
+\begin{landscape}
+    Tulis dan lampirkan apa pun di sini. 
+\end{landscape}
+```
+
 # ⚙️ Penyetelan
 
 ## Mengatur Margin Kertas
