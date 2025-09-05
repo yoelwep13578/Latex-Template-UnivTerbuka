@@ -2388,7 +2388,7 @@ Ukuran indent paragraf bawaan yang digunakan adalah 1,24cm. Indent paragraf dapa
 
 ## Penomoran Heading
 
-![Numbering Heaidng](https://github.com/user-attachments/assets/0a3440c8-c1c4-42ec-9de2-dec3fdb4dc13)
+![Format Heading](https://github.com/user-attachments/assets/a004a2b8-944d-41dc-a28c-335da458cf29)
 
 Template ini menyediakan penomoran heading alphanumeric dan multilevel. Penomoran heading bawaan yang digunakan adalah alphanumeric. Penomoran ini dapat diganti di dalam file `main.tex`. Pilih salah satu dengan menghapus tanda `%` pada bagian yang ingin digunakan dan berikan tanda `%` pada bagian yang tidak ingin digunakan.
 
