@@ -867,6 +867,10 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 |`\euler`| Euler (e) |
 |`\imaginary`| Imajiner (i) |
 
+#### 5.2.9 Perintah Tambahan Lambang Huruf Tegak
+
+Lambang huruf tegak juga bisa dipakai dengan menggunakan perintah seperti `\aa`, `\bb`, `\cc`, hingga `\zz`.
+
 ### 5.3 Inline Math
 
 Inline math umumnya digunakan untuk menuliskan teks matematika yang dapat mengikuti teks biasa (inline dengan teks). Inline math dapat digunakan dengan diapit tanda $ seperti `$...$`, dengan bagian `...` diisikan perintah matematika LaTeX.
