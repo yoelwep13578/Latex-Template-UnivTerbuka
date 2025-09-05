@@ -869,7 +869,7 @@ Beberapa tabel di bawah ini adalah beberapa perintah matematika dasar LaTeX yang
 
 #### 5.2.9 Perintah Tambahan Lambang Huruf Tegak
 
-Lambang huruf tegak juga bisa dipakai dengan menggunakan perintah seperti `\aa`, `\bb`, `\cc`, hingga `\zz`.
+Untuk lambang huruf kecil tegak, gunakan perintah berformat `upx` yang mencakup dari a `\upa` hingga x `\upz`. Begitu juga untuk lambang huruf besar tegak, gunakan perintah berformat `\upX` yang mencakup dari A `\upA` hingga Z `\upZ`.
 
 ### 5.3 Inline Math
 
