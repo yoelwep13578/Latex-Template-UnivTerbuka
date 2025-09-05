@@ -40,6 +40,9 @@
 % Float
 \usepackage{float}
 
+% PDF Landscape
+\usepackage{pdflscape}
+
 % Tabel
 \usepackage{tabularray}
 
@@ -56,15 +59,19 @@
 \usepackage{fontspec}
 
 % Serif/Main Font --------------------------- %
+%\setmainfont{Latin Modern Roman}             % LM (ada di TeXLive)
 \setmainfont{Times New Roman}[Ligatures=Rare] % TNR + Ligature
-%\setmainfont{TeX Gyre Termes}                % Alternatif Mirip TNR
-%\setmainfont{XITS}                           % Alternatif Mirip TNR
+%\setmainfont{TeX Gyre Termes}                % Alternatif Mirip TNR (ada di TeXLive)
+%\setmainfont{XITS}                           % Alternatif Mirip TNR (ada di TeXLive)
 
-% Sans-Serif ---------------------------------%
-\setsansfont{Noto Sans}[Scale=MatchLowercase] % Noto Sans
-%\setsansfont{Calibri}[Scale=MatchUppercase]  % Calibri
+% Sans-Serif ----------------------------------------- %
+\setsansfont{Latin Modern Sans}[Scale=MatchLowercase]  % LM (ada di TeXLive)
+%\setsansfont{Alegreya Sans}[Scale=MatchLowercase]     % Alegreya (ada di TeXLive)
+%\setsansfont{Noto Sans}[Scale=MatchLowercase]         % Noto
+%\setsansfont{Calibri}[Scale=MatchUppercase]           % Calibri
 
-% Monospace ------------------------------------ % 
+% Monospace ----------------------------------------------- % 
+\setmonofont{Latin Modern Mono Light}[Scale=MatchLowercase] % LM (ada di TeXLive)
 %\setmonofont{Courier New}[Scale=MatchLowercase] % Courier New (Windows < 10)
 %\setmonofont{Cascadia Code Light}[              % Cascadia Code (Windows >= 10)
 %    BoldFont={Cascadia Code Bold},
@@ -72,14 +79,15 @@
 %    BoldItalicFont={Cascadia Code Bold Italic},
 %    Scale=MatchLowercase
 %]
-\setmonofont{Fira Code Light}[                  % Fira Code (must installed)
-    BoldFont={Fira Code Medium},
-    Contextuals=Alternate,
-    Scale=MatchLowercase
-]
+%\setmonofont{Fira Code Light}[                  % Fira Code (must installed)
+%    BoldFont={Fira Code Medium},
+%    Contextuals=Alternate,
+%    Scale=MatchLowercase
+%]
 
-% Font Matematika -----
-\setmathfont{XITS Math}
+% Font Matematika -------------- %
+%\setmathfont{Latin Modern Math} % Samaan dgn Latin Modern
+\setmathfont{XITS Math}          % Samaan dgn Times/TNR
 
 %============%
 % CODE BLOCK %
@@ -136,11 +144,15 @@
 
 \usepackage{titlesec}
 
-% PILIH SATU
-% Alphanumeric Numbering
+% PILIH SATU ---------------------------------------------
+
+% Alphanumeric Numbering (biasa/besar)
 \input{preset/alphanumeric-numbering-heading.tex}
-% Multilevel Numbering
+%\input{preset/alphanumeric-numbering-heading-bigfirst.tex}
+
+% Multilevel Numbering (biasa/besar)
 %\input{preset/multilevel-numbering-heading.tex}
+%\input{preset/multilevel-numbering-heading-bigfirst.tex}
 
 % Spacing Heading
 \titlespacing*{\section}{0pt}{*4}{*3}
