@@ -83,7 +83,7 @@ Ini adalah beberapa TeX Distribution yang disarankan. Silakan pilih sesuai denga
 > [!NOTE]
 > Cara instalasi TeX Live dapat berbeda-beda untuk setiap distro Linux. Silakan cari cara instalasinya di internet sesuai distro Linux yang digunakan.
 >
-> Contoh keyword pencarian: `install texlive on <DISTRO_LINUX>`
+> Contoh keyword pencarian: `install texlive full on <DISTRO_LINUX>`
 
 ##### [MacTeX](https://www.tug.org/mactex/mactex-download.html) &rarr; untuk MacOS
 
