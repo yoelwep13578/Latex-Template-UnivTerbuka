@@ -115,7 +115,7 @@ Jika font ini tidak ingin digunakan, cukup diganti saja dari file `main.tex`. Mi
 Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
 
 [![Clone Main sebagai Zip](https://img.shields.io/badge/Main-Clone_sebagai_Zip-303030?style=for-the-badge&logoColor=white&logo=git)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/archive/refs/heads/main.zip)
-[![Download dari Release](https://img.shields.io/badge/Download_dari_Release-v1.1.1-EF2D5E?style=for-the-badge&logoColor=white&logo=Github)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/tag/v1.1.1)
+[![Download dari Release](https://img.shields.io/badge/Download_dari_Release-v1.2.0-EF2D5E?style=for-the-badge&logoColor=white&logo=Github)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/tag/v1.2.0)
 
 > [!TIP]
 > Source template ini juga dapat di-clone dengan menggunakan perintah Git.
@@ -125,10 +125,10 @@ Silakan download template ini dengan memilih metode download yang diinginkan. Te
 
 Atau penulis dapat men-download template-nya sesuai pilihan yang diinginkan.
 
-[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.1.1/Template.Artikel---Simple---v1.1.1.zip)
-[![Makalah](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.1.1/Template.Makalah---Simple---v1.1.1.zip)
-[![Lembar Jawaban Diskusi](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.1.1/Template.Diskusi.Tuton---Simple---v1.1.1.zip)
-[![Buku Jawaban Tugas](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.1.1/Template.Tugas.Tutorial---Simple---v1.1.1.zip)
+[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.2.0/Template.Artikel---Simple---v1.2.0.zip)
+[![Makalah](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.2.0/Template.Makalah---Simple---v1.2.0.zip)
+[![Lembar Jawaban Diskusi](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_TUTON-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.2.0/Template.Diskusi.Tuton---Simple---v1.2.0.zip)
+[![Buku Jawaban Tugas](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.2.0/Template.Tugas.Tutorial---Simple---v1.2.0.zip)
 
 ## 3 | Ekstrak dan Simpan
 
@@ -237,7 +237,7 @@ Tabel di bawah ini adalah bagian-bagian dokumen (template) yang telah tersedia s
 | Line Spacing | 1,5 (onehalfspacing) |
 | Indent | 1,24cm |
 | Indentation | Semua paragraf, kecuali paragraf pertama setelah heading. |
-| Penomoran Heading | **Alphanumeric:**<br>I. II. III. > A. B. C. > 1. 2. 3. > a. b. c. > 1) 2) 3) > a) b) c)<br><br>Multilevel<br>1. 2. 3. > 1.1 1.2 1.3 > 1.1.1 1.1.2 1.1.3 > 1.1.1.1 1.1.1.2 1.1.1.3 |
+| Penomoran Heading | **Alphanumeric:**<br>I. II. III. > A. B. C. > 1. 2. 3. > a. b. c. > 1) 2) 3) > a) b) c)<br><br>Multilevel<br>1. 2. 3. > 1.1 1.2 1.3 > 1.2.0 1.1.2 1.1.3 > 1.2.0.1 1.2.0.2 1.2.0.3 |
 |||
 | Reference Manager | BibTeX |
 | Citation Style | APA Edisi ke-6 |
