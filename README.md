@@ -1069,7 +1069,7 @@ Contoh matematika dapat dituliskan dengan menggunakan perintah environment `exam
 >
 > ```
 > \begin{example}
->     Jika $n$ bilangan bulat positif, maka $n - 1 \geq 0$. Misalnya #n = 0# maka $0 - 1 \not\geq 0$
+>     Jika $n$ bilangan bulat positif, maka $n - 1 \geq 0$. Misalnya $n = 0$ maka $0 - 1 \not\geq 0$
 > \end{example}
 > ```
 
