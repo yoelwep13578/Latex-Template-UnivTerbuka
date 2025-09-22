@@ -1,0 +1,279 @@
+% !TEX program = lualatex
+
+% Template Makalah Tugas Tutorial
+% Versi 1.3.0
+
+%==========%
+% PREAMBLE %
+%==========%
+
+\documentclass[a4paper, 12pt]{report}
+
+% Margin & Geometry
+\usepackage[
+    left=3cm,
+    right=3cm,
+    top=3cm,
+    bottom=3cm
+]{geometry}
+
+% Linking & Reffering
+\usepackage[hidelinks]{hyperref}
+\AtBeginDocument{
+    \urlstyle{APACrm} % Apacite Roman
+}
+
+% Daftar Pustaka & APA 6
+\usepackage{apacite}
+\bibliographystyle{apacite}
+
+% Bahasa APA 6
+%\input{preset/APA-bahasa-indonesia.tex}
+\input{preset/APA-bahasa-campuran.tex}
+
+% Bahasa & Istilah
+\usepackage[indonesian]{babel}
+
+% Grafis
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Matematika / Math Mode
+\usepackage{amsmath,amsthm,amssymb}
+%\usepackage{MnSymbol}
+\usepackage{xfrac}
+\usepackage{unicode-math}
+
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}[theorem]{Definisi}
+\newtheorem{example}[theorem]{Contoh}
+
+% Float
+\usepackage{float}
+
+% PDF Landscape
+\usepackage{pdflscape}
+
+% Tabel
+\usepackage{tabularray}
+
+\SetTblrStyle{caption}{font=\vspace{-\baselineskip}\singlespacing\small}
+\SetTblrStyle{capcont}{font=\vspace{-\baselineskip}\singlespacing\small}
+\SetTblrStyle{note}{font=\small}
+\SetTblrStyle{remark}{font=\small}
+
+%========================%
+% FONT & FONT SELECTIONS %
+%========================%
+
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
+% Serif/Main Font --------------------------- %
+%\setmainfont{Latin Modern Roman}             % LM (ada di TeXLive)
+\setmainfont{Times New Roman}[Ligatures=Rare] % TNR + Ligature
+%\setmainfont{TeX Gyre Termes}                % Alternatif Mirip TNR (ada di TeXLive)
+%\setmainfont{XITS}                           % Alternatif Mirip TNR (ada di TeXLive)
+
+% Sans-Serif ----------------------------------------- %
+\setsansfont{Latin Modern Sans}[Scale=MatchLowercase]  % LM (ada di TeXLive)
+%\setsansfont{Alegreya Sans}[Scale=MatchLowercase]     % Alegreya (ada di TeXLive)
+%\setsansfont{Noto Sans}[Scale=MatchLowercase]         % Noto
+%\setsansfont{Calibri}[Scale=MatchUppercase]           % Calibri
+
+% Monospace ----------------------------------------------- % 
+\setmonofont{Latin Modern Mono Light}[Scale=MatchLowercase] % LM (ada di TeXLive)
+%\setmonofont{Courier New}[Scale=MatchLowercase] % Courier New (Windows < 10)
+%\setmonofont{Cascadia Code Light}[              % Cascadia Code (Windows >= 10)
+%    BoldFont={Cascadia Code Bold},
+%    ItalicFont={Cascadia Code Light Italic},
+%    BoldItalicFont={Cascadia Code Bold Italic},
+%    Scale=MatchLowercase
+%]
+%\setmonofont{Fira Code Light}[                  % Fira Code
+%    BoldFont={Fira Code Medium},
+%    Contextuals=Alternate,
+%    Scale=MatchLowercase
+%]
+%\setmonofont{JetBrains Mono Thin}[              % JetBrains Mono
+%    Contextuals={Alternate},
+%    BoldFont={JetBrains Mono Bold},
+%    BoldItalicFont={JetBrains Mono Bold Italic},
+%    ItalicFont={JetBrains Mono Thin Italic},
+%    Scale=MatchLowercase
+%]
+
+% Font Matematika -------------- %
+%\setmathfont{Latin Modern Math} % Samaan dgn Latin Modern
+\setmathfont{XITS Math}          % Samaan dgn Times/TNR
+
+%============%
+% CODE BLOCK %
+%============%
+
+\usepackage{listings}
+%\usepackage{lstfiracode}
+
+\lstdefinelanguage{JavaScript}{ % Setting utk JavaScript karena tdk support
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstset{
+    %style=FiraCodeStyle,
+    basicstyle=\ttfamily,
+    numberstyle=\footnotesize\color{gray},
+    numberbychapter=false,
+    captionpos=t,
+    breaklines=true,
+    frame={top|bottom},
+    showstringspaces=false,
+    commentstyle=\itshape\color{monokai-comment},
+    keywordstyle=\bfseries\color{monokai-purple},
+    keywordstyle={[2]{\itshape\bfseries\color{monokai-purple}}},
+    keywordstyle={[3]{\itshape\bfseries\color{monokai-blue}}},
+    ndkeywordstyle=\itshape\bfseries\color{monokai-orange},
+    stringstyle=\color{monokai-green},
+    identifierstyle=\color{black},
+}
+
+%============================%
+% FORMATTING TEKS & PARAGRAF %
+%============================%
+
+% Parskip Paragraf
+\usepackage[indent=1.24cm]{parskip}
+%\setlength{\parskip}{.5\baselineskip}
+
+% Line Spacing
+\usepackage{setspace}
+
+% Keterangan
+\usepackage[font=small]{caption}
+
+%============================%
+% FORMATTING TEKS & PARAGRAF %
+%============================%
+
+\usepackage{titlesec}
+
+% PILIH SATU -------------------------------------
+% Alphanumeric Numbering
+\input{preset/alphanumeric-numbering-heading.tex}
+% Multilevel Numbering
+%\input{preset/multilevel-numbering-heading.tex}
+
+% Spacing Heading
+\titlespacing*{\chapter}{0pt}{*-6}{\baselineskip}
+\titlespacing*{\section}{0pt}{*2}{*1.5}
+\titlespacing*{\subsection}{0pt}{*2}{*1.5}
+\titlespacing*{\subsubsection}{0pt}{*2}{*1.5}
+\titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
+\titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+
+% Label Counter
+\counterwithout{table}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{equation}{chapter}
+
+% List
+\usepackage{enumitem}
+
+\setlist[enumerate]{leftmargin=\parindent}
+\setlist[itemize]{leftmargin=\parindent}
+
+\newlist{enumerateLeft}{enumerate}{5}
+\setlist[enumerateLeft]{
+    label=\arabic*.,
+    align=left, 
+    labelsep=0pt, 
+    labelwidth=\parindent, 
+    leftmargin=\parindent
+}
+\newlist{itemizeLeft}{itemize}{5}
+\setlist[itemizeLeft]{
+    label=\textbullet,
+    align=left, 
+    labelsep=0pt, 
+    labelwidth=\parindent, 
+    leftmargin=\parindent
+}
+
+\newlist{essaylist}{enumerate}{2}
+\setlist[essaylist,1]{
+    leftmargin=\parindent, 
+    labelwidth=\parindent, 
+    labelsep=0pt, 
+    align=left, 
+    label=\arabic*.
+    }
+\setlist[essaylist,2]{
+    leftmargin=0pt, 
+    labelwidth=\parindent, 
+    labelsep=0pt, 
+    align=left, 
+    label=\arabic{essaylisti}. \alph*.
+    }
+
+%============%
+% PAGE STYLE %
+%============%
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\fancypagestyle{fancy}{
+    \fancyhead{}
+    \renewcommand{\headrulewidth}{0pt}
+}
+\fancypagestyle{plain}[fancy]{}
+
+%============%
+% DAFTAR ISI %
+%============%
+
+\usepackage[titles]{tocloft}
+\setcounter{tocdepth}{5}
+%\tocloftpagestyle{fancy}
+
+% Load Variabel
+\input{variable.tex}
+
+%============+&
+% ISI DOKUMEN &
+%=============&
+
+\begin{document}
+    
+    % Line Spacing 1,5
+    \onehalfspacing
+    
+    % Load Bagian
+    \input{section/cover.tex}
+    
+    \pagestyle{fancy}
+    \pagenumbering{roman}
+    \input{section/kata-pengantar.tex}
+    \tableofcontents
+    
+    \clearpage
+    
+    \pagenumbering{arabic}
+    \input{section/pendahuluan.tex}
+    \input{section/kajian-teori.tex}
+    \input{section/pembahasan.tex}
+    \input{section/penutup.tex}
+    
+    % Daftar Pustaka
+    \nocite{*}
+    \bibliography{reference}
+    
+\end{document}
