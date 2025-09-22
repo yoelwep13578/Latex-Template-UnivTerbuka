@@ -1,0 +1,49 @@
+  /‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾/
+ /   INFORMASI KARYA TULIS   /
+/___________________________/
+
+Penulis         : [1] Yoeru Sandaru
+                  
+Status Penulis  : [1] Mahasiswa
+                  
+Alamat Afiliasi : [1] Program Studi Sistem Informasi,
+                      Fakultas Sains dan Teknologi,
+                      Universitas Terbuka
+
+Korespondensi   : - (tidak ada)
+
+Judul           : Peran Mahasiswa dalam Mewujudkan Indonesia Maju
+
+   /‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾/
+  /                DIFF: HEADING                /
+ /   [+ ditambah]  [- dihapus]  [--> diubah]   /
+/_____________________________________________/
+
+ I    PENDAHULUAN
+       A. Latar Belakang
+       B. Rumusan Masalah
+       C. Tujuan
+-II   KAJIAN TEORI
+ II   PEMBAHASAN
+      +A. Peran Mahasiswa dalam Mewujudkan Indonesia Maju
+          +1. Pendidikan
+          +2. Masyarakat Sosial
+          +3. Ekonomi
+          +4. Politik
+          +5. Kebudayaan
+      +B. Kendala dalam Mewujudkan Indonesia Maju
+          +1. Faktor Internal Mahasiswa
+          +2. Faktor Pendidikan
+          +3. Faktor Seni Budaya
+ III  PENUTUP
+       A. Kesimpulan
+       B. Saran
+REFERENSI --> DAFTAR RUJUKAN
+
+  /‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾/
+ /   SETELAN TEMPLATE   /
+/______________________/
+
+Penomoran Heaidng : Alphanumeric Numbering
+Citation Style    : APA 6
+Bahasa Citation   : Inggris-Indonesia (singkatan Bahasa Inggris dipertahankan)
