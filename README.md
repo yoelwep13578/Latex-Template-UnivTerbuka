@@ -2487,7 +2487,7 @@ Multilevel
 </td>
 </table>
 
-Namun, template untuk Lembar Jawaban Diskusi dan Tugas Tutorial juga menyediakan versi tambahan untuk alphanumeric dan multilevel, yaitu berupa versi Big First Level yang mengubah ukuran font subjudul section/chapter menjadi besar dan italic.
+Template untuk Lembar Jawaban Diskusi dan Tugas Tutorial juga menyediakan versi tambahan untuk alphanumeric dan multilevel, yaitu berupa versi Big First Level yang mengubah ukuran font subjudul section/chapter menjadi besar dan italic.
 
 ```
 %============================%
@@ -2506,6 +2506,18 @@ Namun, template untuk Lembar Jawaban Diskusi dan Tugas Tutorial juga menyediakan
 %\input{preset/multilevel-numbering-heading.tex}
 %\input{preset/multilevel-numbering-heading-bigfirst.tex}
 
+```
+
+Khusus untuk Template Artikel Ilmiah, disediakan versi tambahan berupa Low Level yang menghilangkan nomor pada section hingga subsubsection. Numbering hanya digunakan untuk level rendah seperti paragraph dan subparagraph.
+
+```
+% PILIH SATU ------------------------------------
+% Numbering Alphanumeric
+%\input{preset/alphanumeric-numbering-heading.tex}
+% Numbering Multilevel Number
+\input{preset/multilevel-numbering-heading.tex}
+% Numbering Hanya untuk Level Rendah
+%\input{preset/lowlevel-numbering-heading.tex}
 ```
 
 ## Terjemahan Bahasa APA 6
