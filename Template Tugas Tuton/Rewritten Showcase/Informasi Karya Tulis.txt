@@ -1,0 +1,25 @@
+  /‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾/
+ /   INFORMASI KARYA TULIS   /
+/___________________________/
+
+Penulis         : [1] Yoeru Sandaru
+                  
+Status Penulis  : [1] Mahasiswa
+                  
+Alamat Afiliasi : [1] Program Studi Sistem Informasi,
+                      Fakultas Sains dan Teknologi,
+                      Universitas Terbuka
+
+Korespondensi   : - (tidak ada)
+
+Judul           : Tugas Tutorial Online 3
+
+Tahun           : 2025
+
+  /‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾/
+ /   SETELAN TEMPLATE   /
+/______________________/
+
+Penomoran Heaidng : Multilevel Numbering (Big First Level)
+Citation Style    : APA 6
+Bahasa Citation   : Inggris-Indonesia (singkatan Bahasa Inggris dipertahankan)
