@@ -81,7 +81,7 @@ Template ini dapat dikompilasi dengan sarana online seperti [Overleaf](https://o
 > Klik ![Menu Overleaf](https://img.shields.io/badge/Menu-303030?style=for-the-badge&logoColor=white&logo=Overleaf) (biasanya di pojok kiri atas) &rarr; Compiler &rarr; Ganti ke `LuaLaTeX` atau `XeLaTeX`.
 
 > [!NOTE]
-> Overleaf yang versi gratis memiliki batas durasi compile dengan compile timed out sekitar 10 detik. Jika tulisannya panjang dan tidak dapat di-compile karena timed out, pertimbangkan untuk memilih metode Compile Sendiri.
+> Overleaf yang versi gratis memiliki batas durasi compile dengan compile timed out sekitar 10 detik. Jika tulisannya panjang dan tidak dapat di-compile karena timed out, pertimbangkan untuk memakai Crixet atau memilih metode Compile Sendiri.
 
 #### 1.1.2 Crixet
 
