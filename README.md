@@ -2,25 +2,6 @@
 
 Repositori ini berisi template-template lembar jawaban dan buku penugasan tutorial online di Universitas Terbuka.
 
-# 🔰 Contoh Demo: Duplicate & Coba Sendiri
-
-> [!NOTE]
-> Contoh tulisan yang memakai template ini disimpan di Crixet
-
-Sejak versi 1.3.0, semua template memiliki edisi Rewritten Showcse. Edisi ini difokuskan untuk menunjukkan (showcase) contoh penggunaan template ini, yaitu dengan menulis kembali (rewrite) artikel/tulisan yang diterbitkan dengan template ini.
-
-### Artikel, Makalah, dan Kegiatan Belajar di Tutorial
-
-[![Artikel Tugas](https://img.shields.io/badge/Artikel_Tugas-Pendidikan_Kewarganegaraan-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=ca2f55bb-70ad-432b-9ff2-e1d6b7ad74a6&pg=1&m=main.tex&d=7)
-[![Makalah Tugas](https://img.shields.io/badge/Makalah_Tugas-Bahasa_Indonesia-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=b0986b9f-bd8d-4f21-b614-fba1e734453e&pg=1&m=main.tex&d=7)
-[![Lembar Jawaban Tutorial](https://img.shields.io/badge/Lembar_Jawaban_Diskusi-Komputer_1-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=16ac98c0-cded-4485-880a-c19b2f93ba7a&pg=1&m=main.tex)
-[![Buku Tugas Tutorial](https://img.shields.io/badge/Buku_Tugas_Tutorial-Manajemen-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=80cda949-1bb4-4286-8f36-c15526743a89&pg=1&m=main.tex&d=7)
-
-### Artikel Ilmiah
-
-[![Artikel Ilmiahi](https://img.shields.io/badge/Artikel_Ilmiah-Kapabilitas_Proses_Kinerja_Layanan_Mal_Pelayanan_Publik_Kota_Bogor-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=c6757643-482b-4976-9e45-7ca5fcaa41f8&pg=1&m=main.tex&d=7)
-[![Artikel Ilmiahi](https://img.shields.io/badge/Artikel_Ilmiah-Metode_Klasifikasi_Jaringan_Syaraf_Tiruan_Backpropagation_pada_M...-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=333065a5-4d01-49a6-a82a-58ef805d6270&pg=1&m=main.tex&d=7)
-
 # 💭 Pendahuluan
 
 Proses penulisan karya tulis seperti makalah, skripsi, atau tesis sering kali membutuhkan format penulisan yang baku dan konsisten. Konsistensi ini meliputi gaya penulisan, penomoran halaman, daftar isi, daftar pustaka, hingga format kutipan. Alat yang banyak digunakan oleh penulis untuk menyusun karya tulis adalah menggunakan Word Processor seperti Microsoft Word, LibreOffice Writer, WPS Writer, dsb. 
@@ -60,6 +41,25 @@ Didukung dengan setelannya yang sudah siap pakai dan pemformatan dokumen yang su
 Menulis tulisan panjang dengan LaTeX tidak begitu masalah karena "sangat mendukung" dan sudah dituntut untuk fokus menulis dibanding repot mengurusi tampilan. Namun, jika word processor digunakan untuk menulis tulisan yang panjang, sebenarnya bisa-bisa saja, tapi penulis akan pusing karena harus menghadapi word processor yang semakin lag, format yang harus dihafal & diterapkan satu-satu, menghafalkan urutan nomor gambar & tabel, dsb.
 
 ![Latex Tulisan Panjang](https://github.com/user-attachments/assets/a098854c-8b96-465b-b608-5c0fe96075df)
+
+# 🔰 Contoh Demo: Duplicate & Coba Sendiri
+
+> [!NOTE]
+> Contoh tulisan yang memakai template ini disimpan di Crixet
+
+Sejak versi 1.3.0, semua template memiliki edisi Rewritten Showcse. Edisi ini difokuskan untuk menunjukkan (showcase) contoh penggunaan template ini, yaitu dengan menulis kembali (rewrite) artikel/tulisan yang diterbitkan dengan template ini.
+
+### Artikel, Makalah, dan Kegiatan Belajar di Tutorial [Rewritten Showcase]
+
+[![Artikel Tugas](https://img.shields.io/badge/Artikel_Tugas-Pendidikan_Kewarganegaraan-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=ca2f55bb-70ad-432b-9ff2-e1d6b7ad74a6&pg=1&m=main.tex&d=7)
+[![Makalah Tugas](https://img.shields.io/badge/Makalah_Tugas-Bahasa_Indonesia-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=b0986b9f-bd8d-4f21-b614-fba1e734453e&pg=1&m=main.tex&d=7)
+[![Lembar Jawaban Tutorial](https://img.shields.io/badge/Lembar_Jawaban_Diskusi-Komputer_1-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=16ac98c0-cded-4485-880a-c19b2f93ba7a&pg=1&m=main.tex)
+[![Buku Tugas Tutorial](https://img.shields.io/badge/Buku_Tugas_Tutorial-Manajemen-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=80cda949-1bb4-4286-8f36-c15526743a89&pg=1&m=main.tex&d=7)
+
+### Artikel Ilmiah [Rewritten Showcase]
+
+[![Artikel Ilmiahi](https://img.shields.io/badge/Artikel_Ilmiah-Kapabilitas_Proses_Kinerja_Layanan_Mal_Pelayanan_Publik_Kota_Bogor-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=c6757643-482b-4976-9e45-7ca5fcaa41f8&pg=1&m=main.tex&d=7)
+[![Artikel Ilmiahi](https://img.shields.io/badge/Artikel_Ilmiah-Metode_Klasifikasi_Jaringan_Syaraf_Tiruan_Backpropagation_pada_M...-303030?style=for-the-badge&logoColor=white&logo=files)](https://app.crixet.com/?u=333065a5-4d01-49a6-a82a-58ef805d6270&pg=1&m=main.tex&d=7)
 
 # 🛠️ Persiapan
 
