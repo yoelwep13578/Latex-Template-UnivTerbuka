@@ -69,7 +69,9 @@ Dokumen LaTeX bukanlah dokumen yang dapat disaksikan hasilnya secara langsung se
 
 Di bawah ini berisi dua cara untuk menulis dokumen LaTeX. Penulis dapat memilih menulis di sarana online agar lebih mudah, atau memilih menulis di perangkat sendiri agar lebih bebas.
 
-### 1.1 Compile Online dengan Overleaf
+### 1.1 Compile Online
+
+#### 1.1.1 Overleaf
 
 Template ini dapat dikompilasi dengan sarana online seperti [Overleaf](https://overleaf.com). Dengan cara ini, penulis tidak perlu ribet menyiapkan instalasi compiler LaTeX karena sudah disediakan di Overleaf. Cukup upload sekumpulan file template ini, ubah setelannya sedikit, compile, dan jadi.
 
@@ -79,7 +81,11 @@ Template ini dapat dikompilasi dengan sarana online seperti [Overleaf](https://o
 > Klik ![Menu Overleaf](https://img.shields.io/badge/Menu-303030?style=for-the-badge&logoColor=white&logo=Overleaf) (biasanya di pojok kiri atas) &rarr; Compiler &rarr; Ganti ke `LuaLaTeX` atau `XeLaTeX`.
 
 > [!NOTE]
-> Overleaf yang versi gratis memiliki batas durasi compile dengan compile timed out sekitar 20 detik. Jika tulisannya panjang dan tidak dapat di-compile karena timed out, pertimbangkan untuk memilih metode Compile Sendiri.
+> Overleaf yang versi gratis memiliki batas durasi compile dengan compile timed out sekitar 10 detik. Jika tulisannya panjang dan tidak dapat di-compile karena timed out, pertimbangkan untuk memilih metode Compile Sendiri.
+
+#### 1.1.2 Crixet
+
+Jika penulis merasa muak dengan Overleaf karena compile timeout, mungkin penulis bisa mencoba Crixet. [Crixet](https://crixet.com/) sedikit mirip dengan Overleaf karena memang digadang-gadang sebagai alternatif dari Overleaf. Dengan cara ini, penulis tidak perlu ribet menyiapkan instalasi compiler LaTeX karena sudah disediakan di Crixet. Cukup upload sekumpulan file template ini, ubah setelannya sedikit, compile, dan jadi.
 
 ### 1.2 Offline/Compile Sendiri
 
