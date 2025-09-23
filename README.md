@@ -47,7 +47,7 @@ Menulis tulisan panjang dengan LaTeX tidak begitu masalah karena "sangat menduku
 > [!NOTE]
 > Contoh tulisan yang memakai template ini disimpan di Crixet
 
-Sejak versi 1.3.0, semua template memiliki edisi Rewritten Showcse. Edisi ini difokuskan untuk menunjukkan (showcase) contoh penggunaan template ini, yaitu dengan menulis kembali (rewrite) artikel/tulisan yang diterbitkan dengan template ini.
+Sejak versi 1.3.0, semua template memiliki edisi Rewritten Showcase. Edisi ini difokuskan untuk menunjukkan (showcase) contoh penggunaan template ini, yaitu dengan menulis kembali (rewrite) artikel/tulisan yang diterbitkan dengan template ini.
 
 ### Artikel, Makalah, dan Kegiatan Belajar di Tutorial [Rewritten Showcase]
 
