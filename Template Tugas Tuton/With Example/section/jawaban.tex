@@ -252,6 +252,26 @@ Sebagian contoh notasi bertulis tegak yang ditunjukkan pada \autoref{table:notas
     Sekarang kita coba tunjuk. \autoref{eq:3} diperoleh dengan membuang suku sama yang positif \& negatifnya berlawanan, yaitu $3x^2\; -3x^2$, $5x\; -5x$, $-7\; +7$. Kemudian \autoref{eq:4} diperoleh dengan membagi suku pembilang dengan $h$. Mengingat $\frac{h}{h} = 1$, hasilnya menjadi $1(6x + 3h + 5)$
 \end{enumerate}
 
+\subsection{Teorema, Lema, Definisi, dan Contoh Matematika}
+
+Penulisan bagian-bagian ini nantinya akan diawali dengan nama dan nomor. Nomor ini akan terus bertambah seiring teorema/lema/definisi/contoh-nya ditambahkan.
+
+\begin{definition}
+    Untuk menulis definisi matematika, Anda dapat menggunakan \textit{perintah environment} \texttt{definition} dan mengisikan definisi di dalamnya. Definisi matematika yang telah ditulis akan muncul seperti ini.
+\end{definition}
+
+\begin{theorem}
+    Untuk menulis teorema, Anda dapat menggunakan \textit{perintah environment} \texttt{theorem} dan mengisikan teorema di dalamnya. Teorema yang telah ditulis akan muncul seperti ini.
+\end{theorem}
+
+\begin{lemma}
+    Untuk menulis lema, Anda dapat menggunakan \textit{perintah environment} \texttt{lemma} dan mengisikan lema di dalamnya. Lema yang telah ditulis akan muncul seperti ini.
+\end{lemma}
+
+\begin{example}
+    Untuk menulis contoh matematika, Anda dapat menggunakan \textit{perintah environment} \texttt{example} dan mengisikan contoh di dalamnya. Contoh yang telah ditulis akan muncul seperti ini.
+\end{example}
+
 \subsection{Pembuktian/\textit{Proof} Matematika}
 
 Penulisan dalam pembuktian matematika cukup berbeda dari tulisan biasa, sebab diawali dengan kata ``proof'' atau ``bukti'', kemudian akan ada tanda kotak kecil di akhir sebagai tanda bahwa pembuktian telah selesai. Anda dapat menggunakannya dengan \textit{environment} \texttt{proof}. Jika ingin menambahkan keterangan dalam \textit{mathmode} \texttt{align}, bisa tambahkan \verb|&&\text{KETERANGAN}| di akhir.
@@ -526,7 +546,15 @@ Ada kalanya jawaban berbentuk esai yang hanya berisi nomor soal dan jawaban, nam
 
 \section{Kode Program}
 
-Kode program dapat disipkan dengan menggunakan \texttt{lstlisting}. Anda dapat menyetelnya sesuka hati dengan beberapa opsi yang tersedia seperti:
+Kode, perintah, atau teks \textit{inline} yang ingin ditulis dengan \textit{monospace} dapat dibuat dengan menggunakan perintah \verb"\lstinline|KODE|". Tanda ``|'' bisa diganti dengan simbol lain yang tidak mengganggu kodenya. Misalnya saja seperti ini:
+
+Dalam contoh program kami, ada tiga variabel yang digunakan, yaitu \lstinline|namaLengkap|, \lstinline|usia|, dan \lstinline|jenisKelamin|. Untuk me-\textit{restart} layanan jarigan di Linux, biasanya dapat dilakukan dengan menjalankan \lstinline|sudo systemctl restart networkManager|.
+
+Kode \textit{inline} juga bisa dibuat dengan \textit{style} seperti \textit{markdown} berupa kode yang di-\textit{highlight} dengan warna abu-abu. Sayangnya, \textit{style} ini mengorbankan kemampuan \textit{linebreak}-nya sehingga bila teksnya penuh, kode tidak akan terpenggal dan justru melewati \textit{margin}. Untuk memakainya, Anda bisa gunakan perintah \verb|\inlinesnippet{KODE}|. Misalnya saja seperti ini:
+
+Dalam contoh program kami, ada tiga variabel yang digunakan, yaitu \inlinesnippet{namaLengkap}, \inlinesnippet{usia}, dan \inlinesnippet{jenisKelamin}. Untuk me-\textit{restart} layanan jarigan di Linux, biasanya dapat dilakukan dengan menjalankan \inlinesnippet{sudo systemctl restart networkManager}.
+
+Kode program utuh dapat disipkan dengan menggunakan \texttt{lstlisting}. Anda dapat menyetelnya sesuka hati dengan beberapa opsi yang tersedia seperti:
 
 \begin{verbatim}
 \begin{lstlisting}[

@@ -99,17 +99,6 @@ LaTeX Editor akan digunakan untuk membantu proses menulis dokumen, kompilasi, da
 > Pilih bagian tab Build<br>
 > Di bagian Default Compiler, pilihlah `LuaLaTeX` atau `XeLaTeX`
 
-#### 1.2.3 Font Lainnya (Opsional)
-
-Beberapa font ini tidak wajib diinstal jika tidak ingin digunakan. Ini adalah beberapa font tambahan yang digunakan dalam template ini secara bawaan.
-
-| Font      | Jenis      | Download                        |
-|-----------|------------|---------------------------------|
-| Fira Code | Monospace  | [Google Fonts](https://fonts.google.com/specimen/Fira+Code) / [GitHub](https://github.com/tonsky/FiraCode) |
-| Noto Sans | Sans-Serif | [Google Fonts](https://fonts.google.com/noto/specimen/Noto+Sans) |
-
-Jika font ini tidak ingin digunakan, cukup diganti saja dari file `main.tex`. Misalnya dari Noto Sans &rarr; Calibri, Fira Code &rarr; Lucida Console, dsb.
-
 ## 2 | Download Template
 
 Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
@@ -1035,7 +1024,56 @@ Aligned Math sejatinya hanyalah sebutan _keren_ untuk display math yang teks mat
 >
 > ![Standalone_Render_AlignMathNumbered](https://github.com/user-attachments/assets/4982bcc5-8efa-4cec-94eb-6fedd6c687d1)
 
-### 5.6 Pembuktian/Proof
+### 5.6 Definisi
+
+Definisi matematika dapat dituliskan dengan menggunakan perintah environment `definition`
+
+> **Contoh**
+>
+> ```
+> \begin{definition}
+>     Suatu bilangan bulat $x$ disebut bilangan genap jika dan hanya jika sisa hasil bagi $x$ oleh 2 adalah 0.
+> \end{definition}
+> ```
+
+### 5.7 Teorema
+
+Teorema matematika dapat dituliskan dengan menggunakan perintah environment `theorem`
+
+> **Contoh**
+>
+> ```
+> \begin{theorem}
+>     Jika terdapat persamaan kuadrat $ax^2 = bx + c, \; a \not= 0$ maka akarnya adalah
+>     $x = \frac{-b \pm \sqrt{v^2 - 4ac}}{2a}$
+> \end{theorem}
+> ```
+
+### 5.8 Lema
+
+Lema matematika dapat dituliskan dengan menggunakan perintah environment `lemma`
+
+> **Contoh**
+>
+> ```
+> \begin{lemma}
+>     Jika $n$ bilangan bulat positif, maka $n - 1 \geq 0$
+> \end{lemma}
+> ```
+
+### 5.9 Contoh
+
+Contoh matematika dapat dituliskan dengan menggunakan perintah environment `example`
+
+> **Contoh**
+>
+> ```
+> \begin{example}
+>     Jika $n$ bilangan bulat positif, maka $n - 1 \geq 0$. Misalnya $n = 0$ maka $0 - 1 \not\geq 0$
+> \end{example}
+> ```
+
+### 5.10 Pembuktian/Proof
 
 Penulisan dalam pembuktian matematika cukup berbeda dari tulisan biasa, sebab diawali dengan kata _proof_ atau _bukti_, kemudian akan ada tanda kotak kecil di akhir sebagai tanda pembuktian telah selesai. Format pembuktian matematika dapat digunakan dengan perintah environment `proof`.
 
@@ -2449,7 +2487,7 @@ Multilevel
 </td>
 </table>
 
-Namun, template untuk Lembar Jawaban Diskusi dan Tugas Tutorial juga menyediakan versi tambahan untuk alphanumeric dan multilevel, yaitu berupa versi Big First Level yang mengubah ukuran font subjudul section/chapter menjadi besar dan italic.
+Template untuk Lembar Jawaban Diskusi dan Tugas Tutorial juga menyediakan versi tambahan untuk alphanumeric dan multilevel, yaitu berupa versi Big First Level yang mengubah ukuran font subjudul section/chapter menjadi besar dan italic.
 
 ```
 %============================%
@@ -2468,6 +2506,18 @@ Namun, template untuk Lembar Jawaban Diskusi dan Tugas Tutorial juga menyediakan
 %\input{preset/multilevel-numbering-heading.tex}
 %\input{preset/multilevel-numbering-heading-bigfirst.tex}
 
+```
+
+Khusus untuk Template Artikel Ilmiah, disediakan versi tambahan berupa Low Level yang menghilangkan nomor pada section hingga subsubsection. Numbering hanya digunakan untuk level rendah seperti paragraph dan subparagraph.
+
+```
+% PILIH SATU ------------------------------------
+% Numbering Alphanumeric
+%\input{preset/alphanumeric-numbering-heading.tex}
+% Numbering Multilevel Number
+\input{preset/multilevel-numbering-heading.tex}
+% Numbering Hanya untuk Level Rendah
+%\input{preset/lowlevel-numbering-heading.tex}
 ```
 
 ## Terjemahan Bahasa APA 6

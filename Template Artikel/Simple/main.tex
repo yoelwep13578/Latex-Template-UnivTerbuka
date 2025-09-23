@@ -1,3 +1,8 @@
+% !TEX program = lualatex
+
+% Template Artikel Tugas Tutorial
+% Versi 1.3.0
+
 %==========%
 % PREAMBLE %
 %==========%
@@ -14,6 +19,9 @@
 
 % Linking & Reffering
 \usepackage[hidelinks]{hyperref}
+\AtBeginDocument{
+    \urlstyle{APACrm} % Apacite Roman
+}
 
 % Daftar Pustaka & APA 6
 \usepackage{apacite}
@@ -35,7 +43,13 @@
 %\usepackage{MnSymbol}
 \usepackage{xfrac}
 \usepackage{unicode-math}
+
 \allowdisplaybreaks
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}[theorem]{Definisi}
+\newtheorem{example}[theorem]{Contoh}
 
 % Float
 \usepackage{float}
@@ -79,9 +93,16 @@
 %    BoldItalicFont={Cascadia Code Bold Italic},
 %    Scale=MatchLowercase
 %]
-%\setmonofont{Fira Code Light}[                  % Fira Code (must installed)
+%\setmonofont{Fira Code Light}[                  % Fira Code
 %    BoldFont={Fira Code Medium},
 %    Contextuals=Alternate,
+%    Scale=MatchLowercase
+%]
+%\setmonofont{JetBrains Mono Thin}[              % JetBrains Mono
+%    Contextuals={Alternate},
+%    BoldFont={JetBrains Mono Bold},
+%    BoldItalicFont={JetBrains Mono Bold Italic},
+%    ItalicFont={JetBrains Mono Thin Italic},
 %    Scale=MatchLowercase
 %]
 
@@ -94,7 +115,7 @@
 %============%
 
 \usepackage{listings}
-\usepackage{lstfiracode}
+%\usepackage{lstfiracode}
 
 \lstdefinelanguage{JavaScript}{ % Setting utk JavaScript karena tdk support
     keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
@@ -107,7 +128,7 @@
 }
 
 \lstset{
-    style=FiraCodeStyle,
+    %style=FiraCodeStyle,
     basicstyle=\ttfamily,
     numberstyle=\footnotesize\color{gray},
     numberbychapter=false,
@@ -162,6 +183,23 @@
 
 \setlist[enumerate]{leftmargin=\parindent}
 \setlist[itemize]{leftmargin=\parindent}
+
+\newlist{enumerateLeft}{enumerate}{5}
+\setlist[enumerateLeft]{
+    label=\arabic*.,
+    align=left, 
+    labelsep=0pt, 
+    labelwidth=\parindent, 
+    leftmargin=\parindent
+}
+\newlist{itemizeLeft}{itemize}{5}
+\setlist[itemizeLeft]{
+    label=\textbullet,
+    align=left, 
+    labelsep=0pt, 
+    labelwidth=\parindent, 
+    leftmargin=\parindent
+}
 
 \newlist{essaylist}{enumerate}{2}
 \setlist[essaylist,1]{

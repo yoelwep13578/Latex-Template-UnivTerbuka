@@ -17,7 +17,7 @@
 
 \newcommand{\kodeKelas}{256}
 
-\newcommand{\namaTutorPengampu}{Revi Soekatno, S.Pd., M.Pd., M.Sc.}
+\newcommand{\namaTutorPengampu}{Revo Wibowo, S.Pd., M.Pd., M.Sc.}
 
 % Informasi Mahasiswa
 \newcommand{\namaMahasiswa}{Yoeru Sandaru}
@@ -107,6 +107,13 @@
 \newcommand{\upY}{\mathrm{Y}}
 \newcommand{\upZ}{\mathrm{Z}}
 
+% Code Snippet Berwarna
+\newcommand{\inlinesnippet}[1]{\colorbox{gray!10}{\lstinline‖#1‖}}
+\newcommand{\verbsnippet}[1]{\colorbox{gray!10}{\verb|#1|}}
+
+% Email AutoLink
+\newcommand{\emailref}[1]{\href{mailto:#1}{#1}}
+
 %=====================%
 % PENGGANTIAN ISTILAH %
 %=====================%
@@ -114,10 +121,16 @@
 \addto\captionsindonesian{\renewcommand{\bibname}{Referensi}} % Bibliography
 \addto\captionsindonesian{\renewcommand{\refname}{Referensi}} % Reference
 
+\renewcommand{\chapterautorefname}{Bab}
+\renewcommand{\sectionautorefname}{Bagian}
+\renewcommand{\subsectionautorefname}{Sub-bagian}
+\renewcommand{\subsubsectionautorefname}{Sub-sub-bagian}
+\renewcommand{\paragraphautorefname}{Paragraf}
+\renewcommand{\subparagraphautorefname}{Sub-paragraf}
+
 \renewcommand{\figureautorefname}{Gambar}
 \renewcommand{\tableautorefname}{Tabel}
-\renewcommand{\equationautorefname}{Pernyataan}
-
+\renewcommand{\equationautorefname}{Persamaan}
 \renewcommand{\lstlistingname}{Kode}
 
 \DeclareTblrTemplate{contfoot-text}{normal}{Lanjutan di halaman berikutnya}

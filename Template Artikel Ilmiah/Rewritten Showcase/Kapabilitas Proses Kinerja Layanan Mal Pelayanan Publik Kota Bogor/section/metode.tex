@@ -1,0 +1,88 @@
+\section{Metode} % Dapat diganti menjadi "Kerangka Pikir" jika perlu
+
+%=========================================================%
+%           TULIS METODE/KERANGKA PIKIR DI SINI           %
+% Jangan Lupa untuk Menghapus Contoh Tulisan di Bawah Ini %
+%=========================================================%
+
+Data yang digunakan dalam \textit{paper} ini adalah pelayanan kesesuaian waktu terbit perizinan yang dikelola oleh MPP ``Grha Tiyasa'' dan persepsi atau penilaian konsumen terhadap layanan yang di berikan di MPP ``Grha Tiyasa'' Kota Bogor. Data jenis perizinan yang diperoleh dari Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu (DPMPTSP) Kota Bogor ada sebanyak 91 jenis. Jenis perizinan tersebut dikelompokkan ke dalam izin operasional dan izin pemanfaatan ruang. Dari 91 jenis perizinan yang dapat dianalisis hanya sebanyak 63 data. Hal ini karena terdapat data yang tidak lengkap (\textit{missing data}). \textit{Missing data} dikeluarkan dari analisis.
+
+Sementara itu, persepsi konsumen terhadap layanan MPP ``Grha Tiyasa'' adalah penilaian konsumen yang diambil selama tiga bulan berturut-turut, yaitu dari bulan Oktober sampai dengan Desember 2019. Persepsi tersebut berupa jawaban responden atas pertanyaan yang diberikan selama survei yang dilakukan DPMPTSP. Jumlah peserta survei selama kurun waktu tiga bulan tersebut masing-masing sebanyak 659 orang. 611 orang, dan 489 orang. Nilai Indeks Kepuasan Masyarakat di ketiga bulan tersebut berturut-turut adalah: 83,61; 84,12; dan 83,49.
+
+Kriteria yang digunakan dalam analisis ini adalah penyebaran variabilitas yang dialami dalam proses layanan dengan penyebaran batas variabilitas yang ditetapkan. Kriteria ini dinamakan indeks kapabilitas proses ($C_{\mathrm{p}}$) dengan formulasi sebagai berikut \cite{montgomery2013, wooluru2014process}.
+
+\begin{equation}
+    C_{\mathrm{p}} = \frac{\text{USL} - \text{LSL}}{\text{UCL} - \text{LCL}} = \frac{\text{USL} - \text{LSL}}{6\sigma}
+\end{equation}
+
+\noindent Dengan:
+
+\begin{tabbing}
+    USL \= = \textit{Upper Specification Limit}, yakni batas atas spesifikasi \\
+    LSL \> = \textit{Lower Specification Limit}, yakni batas bawah spesifikasi \\
+    UCL \> = \textit{Upper Control Limit}, yakni batas atas kontrol/kendali \\
+    LCL \> = \textit{Lower Control Limit}, yakni batas bawah kontrol/kendali \\
+    $\sigma$ \> = Standar Deviasi Proses
+\end{tabbing}
+
+Suatu proses dikatakan mampu menghasilkan suatu produk/jasa layanan yang diharapkan konsumen apabila produk/jasa layanan yang dihasilkan melampaui batas minimal yang disyaratkan. Dalam hal ini, jika nilai $C_{\mathrm{p}} > 1$ artinya proses tersebut mampu memenuhi standar yang diharapkan oleh konsumen. Suatu proses dikatakan tidak mampu menghasilkan produk/jasa layanan jika standar batas yang ditentukan lebih kecil dari batas kendali atau nilai $C_{\mathrm{p}} < 1$. Sementara itu, jika batas standar yang ditentukan sama dengan batas kendali atau nilai $C_{\mathrm{p}} = 1$ hal ini menyatakan bahwa produk/jasa layanan berpotensi hanya menghasilkan produk/jasa layanan yang tidak cacat/rusak sesuai target yang ditentukan.
+
+Kriteria lainnya yang digunakan dalam analisis kapabilitas proses adalah seperti definisi \citeA{montgomery2013, zhang2010conditional, wooluru2014process} berikut.
+
+\begin{equation}
+    C_{\mathrm{pk}} = \frac{\text{min}\left\{\text{USL} - \mu,\; \mu - \text{LSL}\right\}}{3\sigma}
+\end{equation}
+
+\noindent Dengan: 
+
+\begin{tabbing}
+    $\mu$ \= = Rata-rata data
+\end{tabbing}
+
+Nilai $C_{\mathrm{pk}}$ mengukur berapa banyak proses produksi yang benar-benar sesuai dengan spesifikasi standar. Nilai ini pada umumnya digunakan untuk memperkirakan kemampuan proses dalam memproduksi sesuatu dengan mempertimbangkan bahwa kemungkinan rata-rata proses tidak terpusat di antara batas spesifikasi \cite{bordignon2002statistical}. \citeA{gildeh2014estimation} menyatakan bahwa nilai $C_{\mathrm{pk}}$ digunakan jika data terdistribusi normal. Kriteria kapabilitas proses untuk $C_{\mathrm{p}}$ dan $C_{\mathrm{pk}}$ adalah sebagai berikut.
+
+\begin{enumerate}[label=\alph*., nosep, align=left, labelwidth=\parindent, labelsep=0pt]
+    \item Nilai $C_{\mathrm{p}} = C_{\mathrm{pk}}$ menunjukkan bahwa proses tersebut berada di tengah-tengah spesifikasinya.
+    \item Nilai $C_{\mathrm{p}} > 1{,}33$ menunjukkan kapabilitas proses sangat baik.
+    \item Nilai $C_{\mathrm{p}} < 1{,}00$ menunjukkan bahwa proses tersebut menghasilkan produk yang tidak sesuai dengan spesifikasi dan tidak \textit{capable}.
+    \item Nilai $C_{\mathrm{pk}}$ negatif menunjukkan rata-rata proses berada di luar batas spesifikasi.
+    \item Nilai $C_{\mathrm{pk}} = 1{,}0$ menunjukkan satu variasi proses berada pada salah satu batas spesifikasi.
+    \item Nilai $C_{\mathrm{pk}} < 1{,}0$ menunjukkan bahwa proses menghasilkan produk yang tidak sesuai dengan spesifikasi.
+    \item Nilai $C_{\mathrm{pk}} = 0$ menunjukkan rata-rata, nilai $C_{\mathrm{pk}}$ sama dengan 1 berarti sama dengan batas spesifikasi.
+\end{enumerate}
+
+Jika data tidak berdistribusi normal, maka kriteria kapabilitas proses diukur dengan menggunakan indeks $P_{\mathrm{PL}}$, $P_{\mathrm{PU}}$, $P_{\mathrm{pk}}$ \cite{lahcene2018}. Indeks $P_{\upP\upU}$ dan $P_{\upP\upL}$ dihitung dengan menggunakan nilai parameter atau estimasi yang menggunakan metode \textit{maximum likehood} untuk distribusi yang digunakan dalam analisis. Formulasi untuk kedua indeks tersebut adalah sebagai berikut.
+
+\begin{equation}
+    P_{\upP\upU} = \frac{(\text{USL} - \mu)}{3\sigma_{\text{overall}}}  \label{eq:3}
+\end{equation}
+
+\begin{equation}
+    P_{\upP\upL} = \frac{\mu - \text{USL}}{3\sigma_{\text{overall}}}  \label{eq:4}
+\end{equation}
+
+Sementara itu, indeks $P_{\upp\upk}$ menunjukkan nilai kemampuan secara keseluruhan (\textit{overall}). Indeks $P_{\upp\upk}$ dihitung dengan formulasi sebagai berikut.
+
+\begin{equation}
+    P_{\upp\upk} = \text{min}\left\{ P_{\upP\upU},\; P_{\upP\upL} \right\}  \label{eq:5}
+\end{equation}
+
+Kriteria yang digunakan berdasarkan ketiga indeks kapabilitas proses pada persamaan \eqref{eq:3}, \eqref{eq:4}, dan \eqref{eq:5} adalah sebagai berikut: indeks kapabilitas proses sama dengan 1,00 dan indeks kapabilitas proses sama dengan 1,33 dapat dikatakan cukup baikdan telah baik dalam batas 3 sigma. Menurut \citeA{ariani2004} dapat disimpulkan ada tiga kejadian yang berkenaan dengan nilai $P_\upp$ yaitu:
+
+\begin{enumerate}[label=\alph*., align=left, nosep, labelsep=0pt, labelwidth=\parindent]
+    \item Jika $P_\upp = 1$, maka sebaran pengamatan atau lebar proses sama dengan lebar spesifikasi. Dalam hal ini proses dikatakan sudah baik, tetapi masih dapat ditingkatkan kualitasnya.
+    \item Jika $P_\upp < 1$, maka sebaran pengamatan atau lebar proses lebih besar daripada lebar spesifikasi. Sehingga dikatakan proses kurang baik, karena banyak produk yang kualitasnya di luar batas spesifikasi. Perbaikan proses harus dilakukan agar $P_\upp$ minimal lebih besar dari 1.
+    \item Jika $P_\upp > 1$, maka sebaran pengamatan atau lebar proses lebih kecil daripada lebar spesifikasi. Dalam hal ini proses dikatakan cukup baik tetapi perlu dilakukan perbaikan agar $P_\upp$ minimal 1,33 \cite{gasperz2004production}.
+\end{enumerate}
+
+Selain itu, kriteria yang digunakan untuk nilai $P_{\mathrm{pk}}$ adalah sebagai berikut \cite{ariani2004}.
+
+\begin{enumerate}[label=\alph*., align=left, nosep, labelsep=0pt, labelwidth=\parindent]
+    \item Nilai $P_{\mathrm{pk}} < 0$, menunjukkan rata-rata dari proses diluar batas spesifikasi.
+    \item Nilai $P_{\mathrm{pk}} = 0$, menunjukkan rata-rata dari proses sama dengan salah satu dari batas spesifikasinya.
+    \item Nilai $P_{\mathrm{pk}}$ terletak antara 0 dan 1 menunjukkan rata-rata dari proses dalam batas spesifikasi, tetapi sebagian dari variasi proses berada di luar batas-batas spesifikasinya.
+    \item Nilai $P_{\mathrm{pk}}$ sama dengan 1 salah satu ujung dari variasi proses berada dalam batas spesifikasi.
+    \item Nilai $P_{\mathrm{pk}}$ lebih dari 1 maka semuanya dalam batas spesifikasi.
+\end{enumerate}
+
+Tahapan analisis data yang dilakukan dalam kajian \textit{paper} adalah: (1) Memeriksa distribusi data yang dikaji, apakah data berdistribusi normal atau tidak; (2) Menentukan distribusi yang sesuai untuk data yang dianalisis; dan (3) Menganalisis kapabilitas proses sesuai distribusi data. Perangkat lunak yang digunakan untuk menganalisis data adalah Minitab 16.0.

@@ -97,9 +97,9 @@ Sebagian contoh notasi bertulis tegak yang ditunjukkan pada \autoref{table:notas
     \item \textbf{Bernomor \& Dapat Ditunjuk}. Gunakan \textit{environment} \texttt{equation} dan tambahkan \verb|\label| di akhir seperti:
     
     \begin{lstlisting}
-        \begin{equation}
-            TULISAN_MATEMATIKA_LATEX \label{eq:KATA_TUNJUK}
-        \end{equation}    
+\begin{equation}
+    TULISAN_MATEMATIKA_LATEX \label{eq:KATA_TUNJUK}
+\end{equation}    
     \end{lstlisting}
     
     Definisi turunan suatu fungsi $y = f(x)$ dengan notasi Leibniz (yang mengindikasikan perubahan infinitesimal) dirumuskan sebagai:
@@ -137,10 +137,10 @@ Sebagian contoh notasi bertulis tegak yang ditunjukkan pada \autoref{table:notas
     \item \textbf{Bernomor \& Dapat Ditunjuk}. Gunakan \textit{environment} \texttt{align}. Untuk lanjut ke baris berikutnya, cukup tambahkan \verb|\\| di akhir. Bagian yang ingin ditunjuk harus menambahkan \verb|\label| di akhir. Jika ada bagian yang tidak ingin diberi nomor, tambahkan \verb|\nonumber| di akhir. Misalnya format ini:
     
     \begin{lstlisting}
-        \begin{align}
-            TULISAN_MATEMATIKA_LATEX \label{eq:KATA_TUNJUK} \\
-            TULISAN_MATEMATIKA_LATEX \nonumber 
-        \end{align}    
+\begin{align}
+    TULISAN_MATEMATIKA_LATEX \label{eq:KATA_TUNJUK} \\
+    TULISAN_MATEMATIKA_LATEX \nonumber 
+\end{align}    
     \end{lstlisting}
     
     Turunan pertama dari fungsi $f(x) = 3x^2 + 5x − 7$ dapat ditentukan dengan:
@@ -159,17 +159,37 @@ Sebagian contoh notasi bertulis tegak yang ditunjukkan pada \autoref{table:notas
     Sekarang kita coba tunjuk. \autoref{eq:3} diperoleh dengan membuang suku sama yang positif \& negatifnya berlawanan, yaitu $3x^2\; -3x^2$, $5x\; -5x$, $-7\; +7$. Kemudian \autoref{eq:4} diperoleh dengan membagi suku pembilang dengan $h$. Mengingat $\frac{h}{h} = 1$, hasilnya menjadi $1(6x + 3h + 5)$
 \end{enumerate}
 
+\subsubsection{Teorema, Lema, Definisi, dan Contoh Matematika}
+
+Penulisan bagian-bagian ini nantinya akan diawali dengan nama dan nomor. Nomor ini akan terus bertambah seiring teorema/lema/definisi/contoh-nya ditambahkan.
+
+\begin{definition}
+    Untuk menulis definisi matematika, Anda dapat menggunakan \textit{perintah environment} \texttt{definition} dan mengisikan definisi di dalamnya. Definisi matematika yang telah ditulis akan muncul seperti ini.
+\end{definition}
+
+\begin{theorem}
+    Untuk menulis teorema, Anda dapat menggunakan \textit{perintah environment} \texttt{theorem} dan mengisikan teorema di dalamnya. Teorema yang telah ditulis akan muncul seperti ini.
+\end{theorem}
+
+\begin{lemma}
+    Untuk menulis lema, Anda dapat menggunakan \textit{perintah environment} \texttt{lemma} dan mengisikan lema di dalamnya. Lema yang telah ditulis akan muncul seperti ini.
+\end{lemma}
+
+\begin{example}
+    Untuk menulis contoh matematika, Anda dapat menggunakan \textit{perintah environment} \texttt{example} dan mengisikan contoh di dalamnya. Contoh yang telah ditulis akan muncul seperti ini.
+\end{example}
+
 \subsubsection{Pembuktian/\textit{Proof} Matematika}
 
 Penulisan dalam pembuktian matematika cukup berbeda dari tulisan biasa, sebab diawali dengan kata ``proof'' atau ``bukti'', kemudian akan ada tanda kotak kecil di akhir sebagai tanda bahwa pembuktian telah selesai. Anda dapat menggunakannya dengan \textit{environment} \texttt{proof}. Jika ingin menambahkan keterangan dalam \textit{mathmode} \texttt{align}, bisa tambahkan \verb|&&\text{KETERANGAN}| di akhir.
 
 \begin{lstlisting}[]
-    \begin{proof}
-        TEKS_BIASA
-        \begin{align*}
-            TEKS_MATEMATIKA_LATEX &&\text{KETERANGAN}
-        \end{align*}
-    \end{proof}
+\begin{proof}
+    TEKS_BIASA
+    \begin{align*}
+        TEKS_MATEMATIKA_LATEX &&\text{KETERANGAN}
+    \end{align*}
+\end{proof}
 \end{lstlisting}
 
 \noindent Buktikan bahwa bilangan $0,99999999999\dots = 1$.
@@ -229,7 +249,7 @@ Ada kalanya jawaban berbentuk esai yang hanya berisi nomor soal dan jawaban, nam
 \begin{enumerate}[]
     \item \textbf{Polosan}. Cukup gunakan \verb|\includegraphics| dengan contoh format:
     \begin{lstlisting}
-        \includegraphics[width=UKURAN_LEBAR]{LOKASI_FILE_GAMBAR}
+\includegraphics[width=UKURAN_LEBAR]{LOKASI_FILE_GAMBAR}
     \end{lstlisting}
     
     \begin{center}
@@ -238,13 +258,13 @@ Ada kalanya jawaban berbentuk esai yang hanya berisi nomor soal dan jawaban, nam
     
     \item \textbf{Ber-\textit{caption} dan Dapat Dirujuk}. Anda dapat menggunakan \textit{environment} \texttt{figure}, dengan beberapa format \& opsi yang tersedia seperti:
     \begin{lstlisting}
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=UKURAN_LEBAR]{LOKASI_FILE_GAMBAR}
-            \caption{ISI_KETERANGAN}
-            \label{fig:KATA_TUNJUK}
-            \figuresource{SUMBER_GAMBAR}
-        \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=UKURAN_LEBAR]{LOKASI_FILE_GAMBAR}
+    \caption{ISI_KETERANGAN}
+    \label{fig:KATA_TUNJUK}
+    \figuresource{SUMBER_GAMBAR}
+\end{figure}
     \end{lstlisting}
     
     \begin{figure}[H]
@@ -282,17 +302,17 @@ Ada kalanya jawaban berbentuk esai yang hanya berisi nomor soal dan jawaban, nam
     
     \item \textbf{Ber-\textit{caption} dan Dapat Dirujuk}. Bungkuslah \textit{environment} \texttt{tabular} dengan \textit{environment} \texttt{table}, dengan format dan beberapa opsi seperti:
     \begin{lstlisting}[]
-        \begin{table}[H]
-            \centering
-            \caption{KETERANGAN}
-            \longcaption{KETERANGAN_BARIS_1 \\ KETERANGAN_BARIS_2}
-            \label{table:KATA_TUNJUK}
-            \begin{tabular}{...}
-                ...
-            \end{tabular}
-            \tablesource{SUMBER_DATA}
-            \tablesourceleft{JARAK_INDENT_KE_KANAN}{SUMBER_DATA}
-        \end{table}
+\begin{table}[H]
+    \centering
+    \caption{KETERANGAN}
+    \longcaption{KETERANGAN_BARIS_1 \\ KETERANGAN_BARIS_2}
+    \label{table:KATA_TUNJUK}
+    \begin{tabular}{...}
+        ...
+    \end{tabular}
+    \tablesource{SUMBER_DATA}
+    \tablesourceleft{JARAK_INDENT_KE_KANAN}{SUMBER_DATA}
+\end{table}
     \end{lstlisting}
     
     Anda harus memakai salah satu antara \verb|\caption| atau \verb|\longcaption|, demikian juga untuk \verb|\tablesource| atau \verb|\tablesourceleft|.
@@ -340,17 +360,17 @@ Ada kalanya jawaban berbentuk esai yang hanya berisi nomor soal dan jawaban, nam
     
     \item \textbf{Ber-\textit{caption} dan Dapat Dirujuk}. Bungkuslah \textit{environment} \texttt{tblr} dengan \textit{environment} \texttt{table}, dengan format dan beberapa opsi seperti:
     \begin{lstlisting}
-        \begin{table}[H]
-            \centering
-            \caption{KETERANGAN}
-            \longcaption{KETERANGAN_BARIS_1 \\ KETERANGAN_BARIS_2}
-            \label{table:KATA_TUNJUK}
-            \begin{tblr}{...}
-                ...
-            \end{tblr}
-            \tablesource{SUMBER_DATA}
-            \tablesourceleft{JARAK_INDENT_KE_KANAN}{SUMBER_DATA}
-        \end{table}
+\begin{table}[H]
+    \centering
+    \caption{KETERANGAN}
+    \longcaption{KETERANGAN_BARIS_1 \\ KETERANGAN_BARIS_2}
+    \label{table:KATA_TUNJUK}
+    \begin{tblr}{...}
+        ...
+    \end{tblr}
+    \tablesource{SUMBER_DATA}
+    \tablesourceleft{JARAK_INDENT_KE_KANAN}{SUMBER_DATA}
+\end{table}
     \end{lstlisting}
     
     Anda harus memakai salah satu antara \verb|\caption| atau \verb|\longcaption|, demikian juga untuk \verb|\tablesource| atau \verb|\tablesourceleft|.
@@ -377,15 +397,15 @@ Ada kalanya jawaban berbentuk esai yang hanya berisi nomor soal dan jawaban, nam
 
 \textit{Long Tblr} dapat digunakan untuk membuat tabel yang panjang hingga lebih dari satu halaman, tetapi boleh-boleh saja jika ingin digunakan sebagai pengganti \textit{tabular} atau \textit{tblr}. Anda dapat menggunakannya dengan \textit{environment} \texttt{longtblr} disertai dengan format dan opsi seperti:
 \begin{lstlisting}
-    \begin{longtblr}[
-        caption={KETERANGAN},
-        label={table:KATA_TUNJUK},
-        remark{Sumber}={SUMBER_DATA}
-        ]{
-            ...
-        }
+\begin{longtblr}[
+    caption={KETERANGAN},
+    label={table:KATA_TUNJUK},
+    remark{Sumber}={SUMBER_DATA}
+    ]{
         ...
-    \end{longtblr}
+    }
+    ...
+\end{longtblr}
 \end{lstlisting}
 
 \begin{longtblr}[
@@ -433,96 +453,104 @@ Ada kalanya jawaban berbentuk esai yang hanya berisi nomor soal dan jawaban, nam
 
 \subsection{Kode Program}
 
-Kode program dapat disipkan dengan menggunakan \texttt{lstlisting}. Anda dapat menyetelnya sesuka hati dengan beberapa opsi yang tersedia seperti:
+Kode, perintah, atau teks \textit{inline} yang ingin ditulis dengan \textit{monospace} dapat dibuat dengan menggunakan perintah \verb"\lstinline|KODE|". Tanda ``|'' bisa diganti dengan simbol lain yang tidak mengganggu kodenya. Misalnya saja seperti ini:
+
+Dalam contoh program kami, ada tiga variabel yang digunakan, yaitu \lstinline|namaLengkap|, \lstinline|usia|, dan \lstinline|jenisKelamin|. Untuk me-\textit{restart} layanan jarigan di Linux, biasanya dapat dilakukan dengan menjalankan \lstinline|sudo systemctl restart networkManager|.
+
+Kode \textit{inline} juga bisa dibuat dengan \textit{style} seperti \textit{markdown} berupa kode yang di-\textit{highlight} dengan warna abu-abu. Sayangnya, \textit{style} ini mengorbankan kemampuan \textit{linebreak}-nya sehingga bila teksnya penuh, kode tidak akan terpenggal dan justru melewati \textit{margin}. Untuk memakainya, Anda bisa gunakan perintah \verb|\inlinesnippet{KODE}|. Misalnya saja seperti ini:
+
+Dalam contoh program kami, ada tiga variabel yang digunakan, yaitu \inlinesnippet{namaLengkap}, \inlinesnippet{usia}, dan \inlinesnippet{jenisKelamin}. Untuk me-\textit{restart} layanan jarigan di Linux, biasanya dapat dilakukan dengan menjalankan \inlinesnippet{sudo systemctl restart networkManager}.
+
+Kode program utuh dapat disipkan dengan menggunakan \texttt{lstlisting}. Anda dapat menyetelnya sesuka hati dengan beberapa opsi yang tersedia seperti:
 
 \begin{verbatim}
-    \begin{lstlisting}[
-        language=BAHASA_PROGRAM, 
-        numbers=left, 
-        caption={KETERANGAN}, 
-        label={code:KATA_TUNJUK}
-        ]
-        ...
-    \end{lstlisting}
-    \lstsource{SUMBER}
+\begin{lstlisting}[
+    language=BAHASA_PROGRAM, 
+    numbers=left, 
+    caption={KETERANGAN}, 
+    label={code:KATA_TUNJUK}
+    ]
+    ...
+\end{lstlisting}
+\lstsource{SUMBER}
 \end{verbatim}
 
 \begin{enumerate}[]
     \item \textbf{Polosan}. Cukup gunakan \textit{environment} \texttt{lstlisting} tanpa perlu disetel.
     
     \begin{lstlisting}
-        # Program 1
-        
-        frekuensi_game <- seq(1, 40, length.out = 100)
-        peluang_tengah <- 15
-        scale <- 4
-        data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
-        
-        # Grafik
-        x11()
-        plot(frekuensi_game, data_peluang_logistik,
-        type = "l",
-        xlab = "Game/Match per Hari",
-        ylab = "Peluang untuk 'Dikasih Menang'",
-        yaxt = "n",
-        col = "red",
-        main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", 𝒔 = ", scale),
-        sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
-        
-        axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
+# Program 1
+
+frekuensi_game <- seq(1, 40, length.out = 100)
+peluang_tengah <- 15
+scale <- 4
+data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
+
+# Grafik
+x11()
+plot(frekuensi_game, data_peluang_logistik,
+type = "l",
+xlab = "Game/Match per Hari",
+ylab = "Peluang untuk 'Dikasih Menang'",
+yaxt = "n",
+col = "red",
+main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", 𝒔 = ", scale),
+sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
+
+axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
     \end{lstlisting}
     
     \item \textbf{\textit{Formatted}}. Kode program ditulis dengan menambahkan setelan. Misalnya contoh kode tersebut menggunakan bahasa R. Kode yang disetel bahasanya menjadi R, lalu ditambahkan nomor barisnya dapat terlihat seperti:
     
     \begin{lstlisting}[language=R, numbers=left]
-        # Program 1
-        
-        frekuensi_game <- seq(1, 40, length.out = 100)
-        peluang_tengah <- 15
-        scale <- 4
-        data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
-        
-        # Grafik
-        x11()
-        plot(frekuensi_game, data_peluang_logistik,
-        type = "l",
-        xlab = "Game/Match per Hari",
-        ylab = "Peluang untuk 'Dikasih Menang'",
-        yaxt = "n",
-        col = "red",
-        main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", 𝒔 = ", scale),
-        sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
-        
-        axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
+# Program 1
+
+frekuensi_game <- seq(1, 40, length.out = 100)
+peluang_tengah <- 15
+scale <- 4
+data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
+
+# Grafik
+x11()
+plot(frekuensi_game, data_peluang_logistik,
+type = "l",
+xlab = "Game/Match per Hari",
+ylab = "Peluang untuk 'Dikasih Menang'",
+yaxt = "n",
+col = "red",
+main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", 𝒔 = ", scale),
+sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
+
+axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
     \end{lstlisting}
     
     \item \textbf{Ber-\textit{caption} dan Dapat Dirujuk}. 
     
     \begin{lstlisting}[
-        language=R, 
-        numbers=left,
-        caption={Gambaran Win/Lose Permainan dengan Grafik Logistik},
-        label={code:grafik-winlose-game}
-        ]
-        # Program 1
-        
-        frekuensi_game <- seq(1, 40, length.out = 100)
-        peluang_tengah <- 15
-        scale <- 4
-        data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
-        
-        # Grafik
-        x11()
-        plot(frekuensi_game, data_peluang_logistik,
-        type = "l",
-        xlab = "Game/Match per Hari",
-        ylab = "Peluang untuk 'Dikasih Menang'",
-        yaxt = "n",
-        col = "red",
-        main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", 𝒔 = ", scale),
-        sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
-        
-        axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
+language=R, 
+numbers=left,
+caption={Gambaran Win/Lose Permainan dengan Grafik Logistik},
+label={code:grafik-winlose-game}
+]
+# Program 1
+
+frekuensi_game <- seq(1, 40, length.out = 100)
+peluang_tengah <- 15
+scale <- 4
+data_peluang_logistik <- 1 - plogis(frekuensi_game, peluang_tengah, scale)
+
+# Grafik
+x11()
+plot(frekuensi_game, data_peluang_logistik,
+type = "l",
+xlab = "Game/Match per Hari",
+ylab = "Peluang untuk 'Dikasih Menang'",
+yaxt = "n",
+col = "red",
+main = paste0("Peluang Kemenangan Game Online | Dist. Logistik: μ = ", peluang_tengah, ", 𝒔 = ", scale),
+sub = "(Semakin Sering Main, Semakin Rendah Peluang Kemenangannya)")
+
+axis(side = 2, at = seq(0, 1, by = 0.2), labels = paste0(seq(0, 1, by = 0.2) * 100, "%"), las = 1)
     \end{lstlisting}
     \lstsource{Dokumen Penulis}
     
@@ -534,11 +562,11 @@ Kode program dapat disipkan dengan menggunakan \texttt{lstlisting}. Anda dapat m
 Isi daftar referensi disimpan dalam \textit{file} \texttt{reference.bib}. Daftar referensi ditulis dengan format BibTeX atau BibLaTeX seperti contoh ini.
 
 \begin{lstlisting}
-    ENTRY_TYPE{KATA_TUNJUK,
-        FIELD_OPSI={ISI},
-        ...
-        FIELD_OPSI={ISI}
-    }
+ENTRY_TYPE{KATA_TUNJUK,
+    FIELD_OPSI={ISI},
+    ...
+    FIELD_OPSI={ISI}
+}
 \end{lstlisting}
 
 Anda dapat melihat sebagian kecil dari \textit{entry type} dan \textit{field} yang tersedia pada \autoref{table:entry-type-bibtex} dan \autoref{table:field-opsi-bibtex}.
@@ -596,14 +624,14 @@ Anda dapat melihat sebagian kecil dari \textit{entry type} dan \textit{field} ya
 Ini adalah contoh daftar referensi dari buku ``Aljabar Linear Elementer I'' yang ditulis oleh Rasjidin Jainudin Pamuntjak dan Warsito.
 
 \begin{lstlisting}
-    @book{warsito-2022:ALE,
-        author = {Rasjidin Jainudin Pamuntjak and Warsito},
-        year = {2022},
-        title = {{Aljabar Linear Elementer I}},
-        edition = {3},
-        address = {Tangerang Selatan},
-        publisher = {Universitas Terbuka}
-    }
+@book{warsito-2022:ALE,
+    author = {Rasjidin Jainudin Pamuntjak and Warsito},
+    year = {2022},
+    title = {{Aljabar Linear Elementer I}},
+    edition = {3},
+    address = {Tangerang Selatan},
+    publisher = {Universitas Terbuka}
+}
 \end{lstlisting}
 
 \subsection{Kutipan}
@@ -648,9 +676,9 @@ Salah satu kelebihan utama LaTeX adalah kemampuannya untuk membuat dokumen yang 
     Untuk menggunakan halaman landscape seperti ini, Anda dapat menulis semua bagian yang perlu di-\textit{landscape} di dalam \textit{environment} \verb|landscape|.
     
     \begin{lstlisting}
-        \begin{landscape}
-            Tulis apa pun di sini.
-        \end{landscape}
+\begin{landscape}
+    Tulis apa pun di sini.
+\end{landscape}
     \end{lstlisting}
 \end{landscape}
 
