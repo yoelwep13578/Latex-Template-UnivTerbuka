@@ -1,6 +1,12 @@
 # Latex-Template-UnivTerbuka
 
+![Badge Release](https://img.shields.io/github/v/release/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=008800)
+![Badge Open Issue](https://img.shields.io/github/issues-raw/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=ffff00)
+![Badge Closed Issue](https://img.shields.io/github/issues-closed-raw/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=3344ff)
+
 Repositori ini berisi template-template lembar jawaban dan buku penugasan tutorial online di Universitas Terbuka.
+
+![Baca Wiki](https://img.shields.io/badge/Dalam%20Pengerjaan...-Wiki?style=for-the-badge&logo=wikibooks&label=Baca%20Wiki&labelColor=111111&color=000000)
 
 # 💭 Pendahuluan
 
