@@ -1,7 +1,7 @@
 % !TEX program = lualatex
 
 % Template Artikel Tugas Tutorial
-% Versi 1.3.0
+% Versi 1.3.1
 
 %==========%
 % PREAMBLE %
@@ -143,6 +143,47 @@
     ndkeywordstyle=\itshape\bfseries\color{monokai-orange},
     stringstyle=\color{monokai-green},
     identifierstyle=\color{black},
+}
+
+%==========%
+% TEXT BOX %
+%==========%
+
+\usepackage[most]{tcolorbox}
+
+% Block Quote
+\newtcolorbox{blockquote}{
+    parbox=false,
+    boxrule=0pt,
+    frame hidden,
+    colback=gray!3,
+    enhanced,
+    sharp corners,
+    borderline west={2pt}{0pt}{black}
+}
+
+% Block Quote Indent
+\newtcolorbox{indentbquote}{
+    size=minimal,
+    parbox=false,
+    boxrule=0pt,
+    frame hidden,
+    colback=gray!3,
+    enhanced,
+    sharp corners,
+    left=1.24cm,
+    right=1.24cm,
+    top=10pt,
+    bottom=10pt,
+    borderline west={2pt}{0pt}{black}
+}
+
+% Text Box
+\newtcolorbox{textbox}{
+    parbox=false,
+    sharp corners,
+    colback=white,
+    boxrule=1pt
 }
 
 %============================%
