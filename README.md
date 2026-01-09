@@ -234,6 +234,7 @@ Tabel di bawah ini adalah bagian-bagian dokumen (template) yang telah tersedia s
 | `enumitem` | Mengontrol tata letak item dalam daftar (itemize, enumerate). | [CTAN](https://www.ctan.org/pkg/enumitem) |
 | `fancyhdr` | Membuat header dan footer yang customizable. | [CTAN](https://www.ctan.org/pkg/fancyhdr) / [GitHub](https://github.com/latex3/fancyhdr) |
 | `lastpage` | Digunakan untuk mengetahui nomor halaman terakhir dari dokumen. | [CTAN](https://www.ctan.org/pkg/lastpage) |
+| `tcolorbox` | Membuat box dan frame dengan teks di dalamnya. | [CTAN](https://ctan.org/pkg/tcolorbox) |
 
 ## 5 | Spesifikasi Dokumen (Bawaan)
 
