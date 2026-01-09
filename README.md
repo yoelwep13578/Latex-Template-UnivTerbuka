@@ -129,7 +129,7 @@ LaTeX Editor akan digunakan untuk membantu proses menulis dokumen, kompilasi, da
 Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
 
 [![Clone Main sebagai Zip](https://img.shields.io/badge/Main-Clone_sebagai_Zip-303030?style=for-the-badge&logoColor=white&logo=git)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/archive/refs/heads/main.zip)
-[![Download dari Release](https://img.shields.io/badge/Download_dari_Release-v1.3.0-EF2D5E?style=for-the-badge&logoColor=white&logo=Github)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/tag/v1.3.1)
+[![Download dari Release](https://img.shields.io/github/v/tag/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&logo=github&label=Download%20dari%20Release&color=EF2D5E)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/tag/v1.3.1)
 
 > [!TIP]
 > Source template ini juga dapat di-clone dengan menggunakan perintah Git.
