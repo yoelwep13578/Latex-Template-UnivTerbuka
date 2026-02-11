@@ -123,6 +123,14 @@
 \addto\captionsindonesian{\renewcommand{\bibname}{Daftar Pustaka}} % Bibliography
 \addto\captionsindonesian{\renewcommand{\refname}{Daftar Pustaka}} % Reference
 
+% Bulan Bahasa Indonesia
+\renewcommand{\dateindonesian}{%
+    \def\today{\number\day~\ifcase\month\or
+        Januari\or Februari\or Maret\or April\or Mei\or Juni\or
+        Juli\or Agustus\or September\or Oktober\or November\or Desember\fi
+        \space\number\year}%
+}
+
 \renewcommand{\chapterautorefname}{Bab}
 \renewcommand{\sectionautorefname}{Bagian}
 \renewcommand{\subsectionautorefname}{Sub-bagian}

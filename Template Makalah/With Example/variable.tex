@@ -111,6 +111,14 @@
 \newcommand{\inlinesnippet}[1]{\colorbox{gray!10}{\lstinline‖#1‖}}
 \newcommand{\verbsnippet}[1]{\colorbox{gray!10}{\verb|#1|}}
 
+% Bulan Bahasa Indonesia
+\renewcommand{\dateindonesian}{%
+    \def\today{\number\day~\ifcase\month\or
+        Januari\or Februari\or Maret\or April\or Mei\or Juni\or
+        Juli\or Agustus\or September\or Oktober\or November\or Desember\fi
+        \space\number\year}%
+}
+
 % Email AutoLink
 \newcommand{\emailref}[1]{\href{mailto:#1}{#1}}
 
