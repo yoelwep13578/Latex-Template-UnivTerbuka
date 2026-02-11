@@ -6,7 +6,7 @@
 
 Repositori ini berisi template-template lembar jawaban dan buku penugasan tutorial online di Universitas Terbuka.
 
-[![Baca Wiki](https://img.shields.io/badge/Dalam%20Pengerjaan...-Wiki?style=for-the-badge&logo=wikibooks&label=Baca%20Wiki&labelColor=111111&color=000000)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/wiki)
+[![Baca Wiki](https://img.shields.io/badge/Akses%20Awal-Wiki?style=for-the-badge&logo=wikibooks&label=Baca%20Wiki&labelColor=111111&color=000000)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/wiki)
 
 # 💭 Pendahuluan
 
