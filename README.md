@@ -135,7 +135,7 @@ LaTeX Editor akan digunakan untuk membantu proses menulis dokumen, kompilasi, da
 Silakan download template ini dengan memilih metode download yang diinginkan. Template dapat di-download dari sumbernya dengan:
 
 [![Clone Main sebagai Zip](https://img.shields.io/badge/Main-Clone_sebagai_Zip-303030?style=for-the-badge&logoColor=white&logo=git)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/archive/refs/heads/main.zip)
-[![Download dari Release](https://img.shields.io/github/v/tag/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&logo=github&label=Download%20dari%20Release&color=EF2D5E)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/tag/v1.3.1)
+[![Download dari Release](https://img.shields.io/github/v/tag/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&logo=github&label=Download%20dari%20Release&color=EF2D5E)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/latest)
 
 > [!TIP]
 > Source template ini juga dapat di-clone dengan menggunakan perintah Git.
@@ -145,11 +145,11 @@ Silakan download template ini dengan memilih metode download yang diinginkan. Te
 
 Atau penulis dapat men-download template-nya sesuai pilihan yang diinginkan.
 
-[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.3.1/Template.Artikel---Simple---v1.3.1.zip)
-[![Artikel Ilmiah](https://img.shields.io/badge/Artikel_Ilmiah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.3.1/Template.Artikel.Ilmiah---Simple---v1.3.1.zip)
-[![Makalah](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.3.1/Template.Makalah---Simple---v1.3.1.zip)
-[![Lembar Jawaban Diskusi](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.3.1/Template.Diskusi.Tutorial---Simple---v1.3.1.zip)
-[![Buku Jawaban Tugas](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/download/v1.3.1/Template.Tugas.Tutorial---Simple---v1.3.1.zip)
+[![Artikel Biasa](https://img.shields.io/badge/Artikel_Biasa-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/latest/download/Template.Artikel---Simple---v1.3.2.zip)
+[![Artikel Ilmiah](https://img.shields.io/badge/Artikel_Ilmiah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/latest/download/Template.Artikel.Ilmiah---Simple---v1.3.2.zip)
+[![Makalah](https://img.shields.io/badge/Makalah-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/latest/download/Template.Makalah---Simple---v1.3.2.zip)
+[![Lembar Jawaban Diskusi](https://img.shields.io/badge/Lembar_Jawaban_Diskusi_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/latest/download/Template.Diskusi.Tutorial---Simple---v1.3.2.zip)
+[![Buku Jawaban Tugas](https://img.shields.io/badge/Buku_Jawaban_Tugas_Tutorial-303030?style=for-the-badge&logoColor=white&logo=GoogleDocs)](https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/releases/latest/download/Template.Tugas.Tutorial---Simple---v1.3.2.zip)
 
 ## 3 | Ekstrak dan Simpan
 
