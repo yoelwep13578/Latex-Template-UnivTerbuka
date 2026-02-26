@@ -16,6 +16,6 @@ Dengan membuat isu ini:
 
 (Apakah usulan ini berawal dari keresahanmu? adakah kejelekan yang ingin kamu tambal? Tuliskan saja dengan bebas di sini. Misalnya: Saya gemas ketika ...)
 
-Apa usulan yang kamu harapkan untuk terjadi?
+**Apa usulan yang kamu harapkan untuk terjadi?**
 
-(Gambarkan/presentasikan usulanmu. Akan lebih bagus jika ada screenshot.)
+(Gambarkan/presentasikan usulanmu. Akan lebih bagus jika ada _screenshot_.)
