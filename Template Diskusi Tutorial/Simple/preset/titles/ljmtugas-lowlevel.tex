@@ -1,0 +1,85 @@
+\ifdef{\chapter}{
+    %====================%
+    %     Dengan Bab     %
+    %====================%
+    
+    \setcounter{secnumdepth}{6}
+    
+    \renewcommand{\theparagraph}{\alph{paragraph}}
+    \renewcommand{\thesubparagraph}{\arabic{paragraph}}
+    
+    \titleformat{\chapter}[block]
+    {\setstretch{1}\normalfont\bfseries\centering\LARGE}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\section}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\Large}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\theparagraph)\hfill}}}
+    {0em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries(\thesubparagraph)\hfill}}}
+    {0em}
+    {\smartperiod}
+}{
+    %===================%
+    %     Tanpa Bab     %
+    %===================%
+    
+    \setcounter{secnumdepth}{5}
+    
+    \renewcommand{\theparagraph}{\alph{paragraph}}
+    \renewcommand{\thesubparagraph}{\arabic{subparagraph}}
+    
+    \titleformat{\section}[block]
+    {\setstretch{1}\normalfont\bfseries\centering\Large}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\theparagraph)\hfill}}}
+    {0em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries(\thesubparagraph)\hfill}}}
+    {0em}
+    {\smartperiod}
+}
