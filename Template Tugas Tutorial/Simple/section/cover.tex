@@ -3,7 +3,27 @@
     \centering
     
     % Judul
-    {\Large\textbf{\MakeUppercase{\judul}}}
+%    \ifundef{\judul}{
+%        \ifundef{\captionsindonesian}{
+%            {\setstretch{1}\Large\textbf{\MakeUppercase{\skemaTutorial\ \Tugas\ \tugasKe}}}
+%        }{
+%            {\setstretch{1}\Large\textbf{\MakeUppercase{\Tugas\ \skemaTutorial \tugasKe}}}
+%        }
+%    }{
+%        {\setstretch{1}\Large\textbf{\MakeUppercase{\judul}}}
+%    }
+    
+    {\setstretch{1}\Large\textbf{\MakeUppercase{
+        \ifundef{\judul}{
+            \ifundef{\captionsindonesian}{
+                \skemaTutorial\ \Tugas\ \tugasKe
+            }{
+                \Tugas\ \skemaTutorial \tugasKe
+            }
+        }{
+            \judul
+        }
+    }}}
     
     \large
     \textbf{\MakeUppercase{Mata Kuliah \namaMataKuliah}} \\

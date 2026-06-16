@@ -1,3 +1,14 @@
+% --- Cover ---
+%
+%     Ini adalah halaman sampul. Jangan mengubah apa pun
+%     yang ada di dalam sini, kecuali bila Anda sudah mahir
+%     menulis kode LaTeX. 
+%
+%     Untuk mengganti nama Anda, nama tutor, mata kuliah,
+%     NIM, dan sebagainya, jangan diubah dari sini. Isilah data
+%     dari file variable.tex!
+%
+
 \begin{titlepage}
     
     \centering
@@ -7,17 +18,17 @@
     
     % Judul
     \ifundef{\judul}{
-        \ifundef{\captionsenglish}{
-            \LARGE\textbf{\LembarJawaban\ \skemaTutorial} \\
-        }{
+        \ifundef{\captionsindonesian}{
             \LARGE\textbf{\skemaTutorial\ \LembarJawaban} \\
+        }{
+            \LARGE\textbf{\LembarJawaban\ \skemaTutorial} \\
         }
     }{\LARGE\textbf{\judul} \\}
     %
-    \ifundef{\captionsenglish}{
-        \textbf{\DiskusiKe\sesiKe}
-    }{
+    \ifundef{\captionsindonesian}{
         \textbf{\DiskusiKe\ \sesiKe}
+    }{
+        \textbf{\DiskusiKe\sesiKe}
     }
     
     \normalsize
