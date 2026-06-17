@@ -1,0 +1,277 @@
+%========================%
+%     Bahasa Inggris     %
+%========================%
+
+% --- Skema Pembelajaran ---
+\newcommand{\TutorialOnline}{Online Tutorial}
+\newcommand{\TutorialWebinar}{Webinar Tutorial}
+\newcommand{\TutorialTatapMuka}{Face-to-Face Tutorial}
+%
+% --- Data ---
+%
+\newcommand{\LembarJawaban}{Answer Sheet}
+\newcommand{\Tugas}{Assignment}
+\newcommand{\Sesi}{Session}
+\newcommand{\Diskusi}{Discussion}
+\newcommand{\DiskusiKe}{Discussion}
+%
+\newcommand{\DisusunOleh}{Prepared by}
+\newcommand{\Nama}{Name}
+\newcommand{\NomorIndukM}{Student ID}
+\newcommand{\ProgramStudi}{Study Program}
+\newcommand{\Fakultas}{Faculty}
+\newcommand{\TutorPengampu}{Tutor}
+\newcommand{\MataKuliah}{Subject/Course}
+\newcommand{\KelasOnlineKe}{Class}
+\newcommand{\KodeKelas}{Class}
+\newcommand{\UPBJJ}{Regional Office}
+%
+% --- Judul Biasa ---
+%
+\newcommand{\Soal}{Questions}
+\newcommand{\Jawaban}{Answers}
+%
+% --- Judul Ilmiah ---
+%
+\newcommand{\KataPengantar}{Preface}
+% --- Bab/Bagian 1
+\newcommand{\Pendahuluan}{Introduction}
+\newcommand{\LatarBelakang}{Background}
+\newcommand{\LatarBelakangPenelitian}{Background of the Study}
+\newcommand{\RumusanMasalah}{Problem Statement}
+\newcommand{\RumusanMasalahPoin}{Research Questions}
+\newcommand{\Tujuan}{Objectives}
+\newcommand{\TujuanPenelitian}{Research Objectives}
+% --- Bab/Bagian 2
+\newcommand{\KajianTeori}{Theoretical Framework}
+\newcommand{\KajianPustaka}{Literature Review}
+\newcommand{\Metode}{Methods}
+\newcommand{\MetodePenelitian}{Research Methods}
+\newcommand{\Metodologi}{Methodology}
+\newcommand{\MetodologiPenelitian}{Research Methodology}
+% --- Bab/Bagian 3
+\newcommand{\Pembahasan}{Discussion}
+\newcommand{\HasilDanPembahasan}{Results and Discussion}
+\newcommand{\TemuanDanPembahasan}{Findings and Discussion}
+% --- Bab/Bagian 4
+\newcommand{\Penutup}{Closure}
+\newcommand{\Kesimpulan}{Conclusions}
+\newcommand{\Saran}{Suggestions}
+\newcommand{\Rekomendasi}{Recommendations}
+% --- Lampiran
+\newcommand{\LampiranSatu}{Appendix}
+\newcommand{\LampiranBanyak}{Appendices}
+%
+% --- Teorema Matematika ----
+%
+\newcommand{\Teorema}{Theorem}
+\newcommand{\Lema}{Lemma}
+\newcommand{\Definisi}{Definition}
+\newcommand{\Contoh}{Example}
+%
+% --- Nama Lampiran ---
+%
+%     Penamaan untuk gambar, tabel, matematika, dan kode yang ada
+%     di keterangan lampiran maupun dirujuk di dalam kalimat; 
+%     contohnya
+%     lihat Gambar 2, lihat Tabel 3, Persamaan 4 menunjukkan, 
+%     lihat Kode 5.
+%
+%     Bawaan Tanpa Disetel: 
+%     Figure, Table, Equation, Listing
+%
+%     Bahasa Inggris: 
+%     Figure, Table, Equation, Code
+%
+\ifundef{\captionsamerican}{}{
+    \addto\captionsamerican{
+        \renewcommand{\lstlistingname}{Code}
+    }
+}
+\ifundef{\captionsbritish}{}{
+    \addto\captionsbritish{
+        \renewcommand{\lstlistingname}{Code}
+    }
+}
+
+
+
+%==========================%
+%     Bahasa Indonesia     %
+%==========================%
+
+\ifundef{\captionsindonesian}{}{
+    % --- Skema Pembelajaran ---
+    \renewcommand{\TutorialOnline}{Tutorial \textit{Online}}
+    \renewcommand{\TutorialWebinar}{Tutorial \textit{Webinar}}
+    \renewcommand{\TutorialTatapMuka}{Tutorial Tatap Muka}
+    %
+    % --- Data ---
+    %
+    \renewcommand{\LembarJawaban}{Lembar Jawaban}
+    \renewcommand{\Tugas}{Tugas}
+    \renewcommand{\Sesi}{Sesi}
+    \renewcommand{\Diskusi}{Diskusi}
+    \renewcommand{\DiskusiKe}{Diskusi ke-}
+    %
+    \renewcommand{\DisusunOleh}{Disusun Oleh}
+    \renewcommand{\Nama}{Nama}
+    \renewcommand{\NomorIndukM}{NIM}
+    \renewcommand{\ProgramStudi}{Program Studi}
+    \renewcommand{\Fakultas}{Fakultas}
+    \renewcommand{\TutorPengampu}{Tutor Pengampu}
+    \renewcommand{\MataKuliah}{Mata Kuliah}
+    \renewcommand{\KelasOnlineKe}{Kelas \textit{Online} ke-}
+    \renewcommand{\KodeKelas}{Kode Kelas}
+    \renewcommand{\UPBJJ}{UPBJJ}
+    %
+    % --- Judul Biasa ---
+    %
+    \renewcommand{\Soal}{Soal}
+    \renewcommand{\Jawaban}{Jawaban}
+    %
+    % --- Judul Ilmiah ---
+    %
+    \renewcommand{\KataPengantar}{Kata Pengantar}
+    % --- Bab/Bagian 1
+    \renewcommand{\Pendahuluan}{Pendahuluan}
+    \renewcommand{\LatarBelakang}{Latar Belakang}
+    \renewcommand{\LatarBelakangPenelitian}{Latar Belakang Penelitian}
+    \renewcommand{\RumusanMasalah}{Rumusan Masalah}
+    \renewcommand{\RumusanMasalahPoin}{Rumusan Masalah}
+    \renewcommand{\Tujuan}{Tujuan}
+    \renewcommand{\TujuanPenelitian}{Tujuan Penelitian}
+    % --- Bab/Bagian 2
+    \renewcommand{\KajianTeori}{Kajian Teori}
+    \renewcommand{\KajianPustaka}{Kajian Pustaka}
+    \renewcommand{\Metode}{Metode}
+    \renewcommand{\MetodePenelitian}{Metode Penelitian}
+    \renewcommand{\Metodologi}{Metodologi}
+    \renewcommand{\MetodologiPenelitian}{Metodologi Penelitian}
+    % --- Bab/Bagian 3
+    \renewcommand{\Pembahasan}{Pembahasan}
+    \renewcommand{\HasilDanPembahasan}{Hasil dan Pembahasan}
+    \renewcommand{\TemuanDanPembahasan}{Hasil Temuan dan Pembahasan}
+    % --- Bab/Bagian 4
+    \renewcommand{\Penutup}{Penutup}
+    \renewcommand{\Kesimpulan}{Kesimpulan}
+    \renewcommand{\Saran}{Saran}
+    \renewcommand{\Rekomendasi}{Rekomendasi}
+    % --- Lampiran
+    \renewcommand{\LampiranSatu}{Lampiran}
+    \renewcommand{\LampiranBanyak}{Lampiran}
+    %
+    % --- Teorema Matematika ----
+    %
+    \renewcommand{\Teorema}{Teorema}
+    \renewcommand{\Lema}{Lema}
+    \renewcommand{\Definisi}{Definisi}
+    \renewcommand{\Contoh}{Contoh}
+    %
+    % --- Nama Bulan dalam Bahasa Indonesia ---
+    %
+    %     Pengubahan nama bulan dalam Babel Bahasa Indonesia yang masih
+    %     menggunakan pelafalan lokal, seperti Pebuari dan Nopember.
+    %
+    \renewcommand{\dateindonesian}{%
+        \def\today{\number\day~\ifcase\month\or
+            Januari\or Februari\or Maret\or April\or Mei\or Juni\or
+            Juli\or Agustus\or September\or Oktober\or November\or Desember\fi
+            \space\number\year}%
+    }
+    
+    \addto\captionsindonesian{
+        %
+        % --- Judul Abstrak ---
+        %
+        %     Abstrak dalam Babel Bahasa Indonesia menggunakan
+        %     "Ringkasan" daripada "Abstrak"
+        %
+        %     Anda dapat mengembalikannya menjadi "Ringkasan" jika mau
+        %
+        \renewcommand{\abstractname}{Abstrak}
+        %
+        % --- Judul Bibliografi/Daftar Pustaka/Referensi ---
+        %
+        % Bibliography ---
+        % 
+        %     "Bibliography" digunakan untuk document class yang 
+        %     menggunakan Bab. "Reference" digunakan untuk document class
+        %     tanpa Bab.
+        %
+        %     Judul bawaannya adalah "Bibliography"
+        %     Judul bawaan dalam Bahasa Indonesia adalah "Bibliografi"
+        %     Judul untuk Bahasa Indonesia pada template ini adalah
+        %     "Referensi"
+        %
+        %     Anda juga bisa menggantinya menjadi "Daftar Pustaka" atau
+        %     judul lain
+        %
+        \renewcommand{\bibname}{Referensi} % Bibliography
+        \renewcommand{\refname}{Referensi} % Reference
+        %
+        % --- Nama Level Bagian untuk \autoref ---
+        %
+        %     Penamaan untuk level Chapter hingga Subparagraph saat 
+        %     dirujuk
+        %     di dalam kalimat, contohnya lihat Bagian 2.5.
+        %
+        %     [NOTE] Rujukan level bagian hanya efektif untuk penomoran 
+        %            heading Multilevel (bernomor 1, 1.1, 1.1.1, 1.1.1.1)
+        %
+        %     Bawaan Tanpa Disetel:
+        %     Chapter > Section > Subsection > Subsubsection > Paragraph %     > Subparagraph
+        %
+        %     Bahasa Indonesia (Terjemahan Paksa):
+        %     Bab > Seksi > Subseksi > Subsubseksi > Paragraf >
+        %     Subparagraf
+        %
+        %     Bahasa Indonesia (Terjemahan Paksa 2):
+        %     Bab > Bagian > Subbagian > Subsubbagian > Paragraf > 
+        %     Subparagraf
+        %
+        %     Bahasa Indonesia (Penyesuaian 1):
+        %     Bab > Subbab > Bagian > Bagian > Bagian > Paragraf > 
+        %     Subparagraf
+        %
+        %     Bahasa Indonesia (Penyesuaian 2) [Digunakan]:
+        %     Bab > Bagian > Bagian > Bagian > Bagian > Paragraf > 
+        %     Subparagraf
+        %
+        \renewcommand{\chapterautorefname}{Bab}
+        \renewcommand{\sectionautorefname}{Bagian}
+        \renewcommand{\subsectionautorefname}{Bagian}
+        \renewcommand{\subsubsectionautorefname}{Bagian}
+        \renewcommand{\paragraphautorefname}{Paragraf}
+        \renewcommand{\subparagraphautorefname}{Subparagraf}
+        %
+        % --- Nama Lampiran ---
+        %
+        %     Penamaan untuk gambar, tabel, matematika, dan kode yang ada
+        %     di keterangan lampiran maupun dirujuk di dalam kalimat; 
+        %     contohnya lihat Gambar 2, lihat Tabel 3, Persamaan 4 
+        %     menunjukkan, lihat Kode 5.
+        %
+        %     Bahasa Indonesia:
+        %     Gambar, Tabel, Persamaan, Kode
+        %
+        \renewcommand{\figureautorefname}{Gambar}
+        \renewcommand{\tableautorefname}{Tabel}
+        \renewcommand{\equationautorefname}{Persamaan}
+        \renewcommand{\lstlistingname}{Kode}
+        %
+        % --- Nama Lanjutan Tabel Tabularray di Halaman Berikutnya ---
+        %
+        %     Penamaan untuk "Continued to next page..." dan "(Continued)"
+        %     pada Tabel Tabularray longtblr
+        %
+        %     Bawaan Tanpa Disetel: Continued to next page --- (Continued)
+        %
+        %     Bahasa Indonesia: Lanjutan di halaman berikutnya --- (Lanjutan)
+        %
+        \DeclareTblrTemplate{contfoot-text}{normal}{Lanjutan di halaman berikutnya}
+        \SetTblrTemplate{contfoot-text}{normal}
+        \DeclareTblrTemplate{conthead-text}{normal}{(Lanjutan)}
+        \SetTblrTemplate{conthead-text}{normal}
+    }
+}
