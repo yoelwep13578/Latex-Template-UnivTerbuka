@@ -1,0 +1,32 @@
+\newlist{enumerateLeft}{enumerate}{5}
+\setlist[enumerateLeft]{
+    label=\arabic*.,
+    align=left, 
+    labelsep=0pt, 
+    labelwidth=\parindent, 
+    leftmargin=\parindent
+}
+\newlist{itemizeLeft}{itemize}{5}
+\setlist[itemizeLeft]{
+    label=\textbullet,
+    align=left, 
+    labelsep=0pt, 
+    labelwidth=\parindent, 
+    leftmargin=\parindent
+}
+
+\newlist{essaylist}{enumerate}{2}
+\setlist[essaylist,1]{
+    leftmargin=\parindent, 
+    labelwidth=\parindent, 
+    labelsep=0pt, 
+    align=left, 
+    label=\arabic*.
+}
+\setlist[essaylist,2]{
+    leftmargin=0pt, 
+    labelwidth=\parindent, 
+    labelsep=0pt, 
+    align=left, 
+    label=\arabic{essaylisti}. \alph*.
+}

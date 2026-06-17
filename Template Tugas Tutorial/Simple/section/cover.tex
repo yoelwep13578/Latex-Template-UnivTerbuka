@@ -1,48 +1,50 @@
+% --- Cover ---
+%
+%     Ini adalah halaman sampul. Jangan mengubah apa pun
+%     yang ada di dalam sini, kecuali bila Anda sudah mahir
+%     menulis kode LaTeX. 
+%
+%     Untuk mengganti nama Anda, nama tutor, mata kuliah,
+%     NIM, dan sebagainya, jangan diubah dari sini. Isilah data
+%     dari file variable.tex!
+%
 \begin{titlepage}
     
     \centering
     
     % Judul
-%    \ifundef{\judul}{
-%        \ifundef{\captionsindonesian}{
-%            {\setstretch{1}\Large\textbf{\MakeUppercase{\skemaTutorial\ \Tugas\ \tugasKe}}}
-%        }{
-%            {\setstretch{1}\Large\textbf{\MakeUppercase{\Tugas\ \skemaTutorial \tugasKe}}}
-%        }
-%    }{
-%        {\setstretch{1}\Large\textbf{\MakeUppercase{\judul}}}
-%    }
-    
     {\setstretch{1}\Large\textbf{\MakeUppercase{
         \ifundef{\judul}{
             \ifundef{\captionsindonesian}{
                 \skemaTutorial\ \Tugas\ \tugasKe
             }{
-                \Tugas\ \skemaTutorial \tugasKe
+                \Tugas\ \skemaTutorial\ \tugasKe
             }
         }{
             \judul
         }
+    }}\par}
+    
+    {\setstretch{1}\large
+    \textbf{\MakeUppercase{
+        \ifundef{\captionsindonesian}{\namaMataKuliah}{\MataKuliah\ \namaMataKuliah}
     }}}
     
-    \large
-    \textbf{\MakeUppercase{Mata Kuliah \namaMataKuliah}} \\
-    \textbf{\kodeMataKuliah}
+    {\setstretch{1}\large\textbf{\kodeMataKuliah}}
     
-    \normalsize 
-    
-    % Logo Perguruan Tinggi
+    % --- Logo Perguruan Tinggi ---
     \vfill
     \includegraphics[width=.4\linewidth]{image/Logo_Universitas_Terbuka.png}
     \vfill
     
-    {\large \textbf{TUTOR PENGAMPU}} \\
+    % --- Tutor Pengampu dan Mahasiswa ---
+    {\large \textbf{\MakeUppercase{\TutorPengampu}}} \\
     
     \namaTutorPengampu
     
     \linesskip{1}
     
-    {\large \textbf{DISUSUN OLEH}}
+    {\large \textbf{\MakeUppercase{\DisusunOleh}}}
     
     \begin{tblr}{
             colspec={l c l}, 
@@ -50,19 +52,27 @@
             rowsep=0pt, 
             column{2}={colsep=4pt}
             }
-        Nama &:& \namaMahasiswa \\
-        NIM &:& \nimMahasiswa \\
-        Kode Kelas &:& \kodeKelas
+        \Nama &:& \namaMahasiswa \\
+        \NomorIndukM &:& \nimMahasiswa \\
+        \KodeKelas &:& \kodeKelas
     \end{tblr}
     
     \linesskip{2}
     
     \large
-    \textbf{\MakeUppercase{Program Studi \programStudi}} \\
-    \textbf{\MakeUppercase{Fakultas \fakultas}} \\
-    \textbf{\MakeUppercase{UPBJJ \utDaerah}} \\
-    \textbf{\MakeUppercase{\perguruanTinggi}} \\
-    \textbf{\tahun}
+    \ifundef{\captionsindonesian}{
+        \textbf{\MakeUppercase{\programStudi\ \ProgramStudi}} \\
+        \textbf{\MakeUppercase{\Fakultas\ of \fakultas}} \\
+        \textbf{\MakeUppercase{\utDaerah\ \UPBJJ}} \\
+        \textbf{\MakeUppercase{\perguruanTinggi}} \\
+        \textbf{\tahun}
+    }{
+        \textbf{\MakeUppercase{\ProgramStudi\ \programStudi}} \\
+        \textbf{\MakeUppercase{\Fakultas\ \fakultas}} \\
+        \textbf{\MakeUppercase{\UPBJJ\ \utDaerah}} \\
+        \textbf{\MakeUppercase{\perguruanTinggi}} \\
+        \textbf{\tahun}
+    }
     
     \normalsize
     
