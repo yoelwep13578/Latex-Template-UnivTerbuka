@@ -148,6 +148,16 @@
                 \end{tblr} \hspace*{-2.6cm}
             }
         }
+        
+        \fancypagestyle{plain}{
+            \fancyhf{}
+            \renewcommand{\headrulewidth}{0pt}
+            \setlength{\topmargin}{-1.2cm}
+            \setlength{\headsep}{1.5cm}
+            \fancyhead[R]{
+                \textcolor{gray}{\thepage\ / \pageref{LastPage}} \hspace*{-2cm}
+            }
+        }
     }
     
     % --- Header Ringkas dengan Footer Nomor Halaman ---
@@ -169,6 +179,12 @@
         }
         \fancyfoot[C]{\footnotesize \thepage}
         \renewcommand{\headrulewidth}{0.5pt}
+        
+        \fancypagestyle{plain}{
+            \fancyhf{}
+            \fancyfoot[C]{\footnotesize \thepage}
+            \renewcommand{\headrulewidth}{0pt}
+        }
     }
     %
     %     Nama Penulis (098765432)                 Mata Kuliah
@@ -188,6 +204,12 @@
         }
         \fancyfoot[C]{\footnotesize \thepage\ / \pageref{LastPage}}
         \renewcommand{\headrulewidth}{0.5pt}
+        
+        \fancypagestyle{plain}{
+            \fancyhf{}
+            \fancyfoot[C]{\footnotesize \thepage\ / \pageref{LastPage}}
+            \renewcommand{\headrulewidth}{0pt}
+        }
     }
     
     % --- Footer Nomor Halaman Saja ---
