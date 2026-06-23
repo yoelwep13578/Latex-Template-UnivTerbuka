@@ -47,11 +47,11 @@
     
     \setcounter{secnumdepth}{-2}
     
-    \titleformat{\section}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\Large}
+    \titleformat{\section}[block]
+    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
     {}
     {0em}
-    {\MakeUppercase}
+    {}
     
     \titleformat{\subsection}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\large}
@@ -67,13 +67,13 @@
     
     \titleformat{\paragraph}[runin]
     {\normalfont\bfseries\normalsize}
-    {}
+    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\theparagraph)\hfill}}}
     {1em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
     {\normalfont\bfseries\itshape\normalsize}
-    {}
+    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries(\thesubparagraph)\hfill}}}
     {1em}
     {\smartperiod}
 }

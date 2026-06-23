@@ -4,9 +4,15 @@
 % Versi 2.0.0 Beta
 
 % --- Panduan Setelan Document Class ---
+%
+%     0. soaljawab
+%     Template akan membuat heading 1 menjadi di tengah
+%     dan tidak bernomor.
+%     [NOTE] Hanya boleh digunakan untuk template yang
+%            berisi Soal dan Jawaban.
 %     
 %     1. heading
-%     Penomoran untuk heading
+%     Penomoran dan format untuk heading
 %
 %     Pilihan yang tersedia:
 %      - alpha     --- Penomoran alphanumeric I. > A. > 1. > a. 
@@ -18,7 +24,7 @@
 %                      > 1.1.1.1 > 1.1.1.1.1 > 1.1.1.1.1.1
 %      - multi-mag --- Penomoran multilevel dengan teks besar 
 %                      di level 1
-%      - lowlevel  --- Tanpa penomoran. Nomor hanya ada di level
+%      - apalike   --- Tanpa penomoran seperti APA 7
 %                      \paragraph dan \subparagraph
 %      - [kosong]  --- Memakai pilihan alpha
 %
@@ -110,6 +116,24 @@
 %     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
 %     Microtype dapat digunakan setelah pengerjaan selesai (final).
 %
+%     8. apppagenum
+%     Format nomor halaman untuk bagian Lampiran (setelah daftar
+%     pustaka)
+%
+%     Pilihan yang tersedia:
+%      - arabic    --- Nomor berlanjut. Dapat dipakai untuk
+%                      jumlah halaman yang tidak terlalu banyak
+%                      (<= 15 halaman)
+%      - arabicone --- Nomor diulang dari 1
+%      - roman     --- Romawi dari i. Dapat dipakai bila
+%                      Lampiran diperlakukan sebagai Back Matter
+%      - gabungan  --- Berformat A-1, A-2, B-1, ...
+%                      Bagian ABCDEF berasal dari lampiran (
+%                      Lampiran A, Lampiran B)
+%                      Nomor 123456 adalah halaman dari setiap
+%                      lampiran (ABCDEF punya halaman sendiri)
+%      - [kosong]  --- Memakai pilihan arabic
+%
 \documentclass[heading=alpha, mainfont=times, apa=campuran]{makalah}
 
 %==================%
@@ -155,8 +179,9 @@
 %     [NOTE] Hanya bisa digunakan untuk lualatex
 \usepackage{fontspec}
 
-% --- Penyetelan Heading ---
+% --- Penyetelan Heading & Daftar Isi ---
 \usepackage{titlesec}
+\usepackage{titletoc}
 
 % --- Spasi Barisan Teks ---
 \usepackage{setspace}
@@ -298,12 +323,27 @@
     %     foot-pagelast ---
     %     Footer berisi halaman saat ini dan halaman terakhir
     %
-    \pagestyle{foot-page}
+    \pagestyle{head-info}
     
     % Halaman Sebelum Isi Bahasan
-    \pagenumbering{roman}
-    \input{section/kata-pengantar.tex}
-    \tableofcontents
+    \begin{pagestylenolastpage}
+        \pagenumbering{roman}
+        
+        % Kata Pengantar
+        \input{section/kata-pengantar.tex}
+        
+        % Daftar Isi
+        \tableofcontents
+        
+        % Daftar Gambar
+        %\listoffigures
+        
+        % Daftar Tabel
+        %\listoftables
+        
+        % Daftar Kode/Listings
+        %\lstlistoflistings
+    \end{pagestylenolastpage}
     
     \clearpage
     
@@ -317,6 +357,9 @@
     % Daftar Pustaka Tampil Tanpa Dikutip
     \nocite{*}
     \bibliography{reference}
+    
+    % Lampiran
+    \input{section/lampiran.tex}
     
     % Compile Mark
     %\vfill {\footnotesize\noindent Di-\textit{compile} dengan \LaTeX\ pada \tanggalLengkap}
