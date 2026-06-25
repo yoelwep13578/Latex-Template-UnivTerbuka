@@ -202,6 +202,9 @@
 % --- Text Box [On/Off] ---
 %\usepackage[most]{tcolorbox}
 
+% --- Glosarium [On/Off] ---
+%\usepackage[automake, toc, nopostdot, nonumberlist]{glossaries-extra}
+
 %-------------------------------------------%
 
 % --- Daftar/List ---
@@ -231,6 +234,9 @@
 \input{preset/custom-listing.tex}
 \input{preset/custom-tcolorbox.tex}
 \input{preset/languagelist.tex}
+
+% --- Daftar Istilah Glosarium ---
+\input{glossary.tex}
 
 %=================================%
 %     Pilihan Gaya Selingkung     %
@@ -361,6 +367,9 @@
     % Daftar Pustaka Tampil Tanpa Dikutip
     \nocite{*}
     \bibliography{reference}
+    
+    % Glosarium
+    \ifdef{\printglossaries}{\printglossaries}{}
     
     % Lampiran
     %\input{section/lampiran.tex}
