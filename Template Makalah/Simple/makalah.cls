@@ -71,6 +71,7 @@
 % --- LaTeX Programming Tool ---
 \RequirePackage{etoolbox}
 \RequirePackage{letltxmacro}
+\RequirePackage{ltxcmds}
 \RequirePackage{xparse}
 
 %==================================%
@@ -400,34 +401,6 @@
 
 \setlist[enumerate]{leftmargin=\parindent}
 \setlist[itemize]{leftmargin=\parindent}
-
-%==================================%
-%     Codeblock & Code Listing     %
-%==================================%
-
-% --- Setelan Listing ---
-\lstset{
-    %style=FiraCodeStyle,
-    aboveskip=\baselineskip,
-    belowskip=.9\baselineskip,
-    xleftmargin=1em,
-    xrightmargin=1em,
-    basicstyle=\ttfamily,
-    numberstyle=\footnotesize\color{gray},
-    numberbychapter=false,
-    captionpos=b,
-    breaklines=true,
-    frame={top|bottom},
-    rulecolor=\color{black!60},
-    showstringspaces=false,
-    commentstyle=\itshape\color{monokai-comment},
-    keywordstyle=\bfseries\color{monokai-purple},
-    keywordstyle={[2]{\itshape\bfseries\color{monokai-purple}}},
-    keywordstyle={[3]{\itshape\bfseries\color{monokai-blue}}},
-    ndkeywordstyle=\itshape\bfseries\color{monokai-orange},
-    stringstyle=\color{monokai-green},
-    identifierstyle=\color{black},
-}
 
 %==========================%
 %     Tabularray Table     %

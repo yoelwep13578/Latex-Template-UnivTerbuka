@@ -118,7 +118,7 @@
 %
 %     8. apppagenum
 %     Format nomor halaman untuk bagian Lampiran (setelah daftar
-%     pustaka)
+%     pustaka atau glosarium)
 %
 %     Pilihan yang tersedia:
 %      - arabic    --- Nomor berlanjut. Dapat dipakai untuk
@@ -192,8 +192,8 @@
 % --- Pendeteksian Nomor Halaman Terakhir ---
 \usepackage{lastpage}
 
-% --- Lampiran Kode Program ---
-\usepackage{listings}
+% --- Lampiran Kode Program [On/Off] ---
+%\usepackage{listings}
 
 % --- Daftar/List ---
 \usepackage{enumitem}
@@ -207,10 +207,8 @@
 % --- Posisi Float Lampiran Gambar/Tabel ---
 \usepackage{float}
 
-% --- Text Box ---
-\usepackage[most]{tcolorbox}
-\tcbuselibrary{listings}
-\tcbuselibrary{theorems}
+% --- Text Box [On/Off] ---
+%\usepackage[most]{tcolorbox}
 
 % --- Menu Keys & Dir ---
 \usepackage{menukeys}
@@ -323,7 +321,7 @@
     %     foot-pagelast ---
     %     Footer berisi halaman saat ini dan halaman terakhir
     %
-    \pagestyle{head-info}
+    \pagestyle{foot-page}
     
     % Halaman Sebelum Isi Bahasan
     \begin{pagestylenolastpage}

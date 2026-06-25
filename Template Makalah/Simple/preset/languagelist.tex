@@ -1,3 +1,37 @@
+%===============================%
+%     Bahasa untuk Listings     %
+%===============================%
+
+\ifdef{\lstlistingname}{
+    
+    % --- Bahasa Inggris Amerika ---
+    \ifundef{\captionsamerican}{}{
+        \addto\captionsamerican{
+            \renewcommand{\lstlistingname}{Code}
+            \renewcommand{\lstlistlistingname}{List of Code}
+        }
+    }
+    
+    % --- Bahasa Inggris ---
+    \ifundef{\captionsbritish}{}{
+        \addto\captionsbritish{
+            \renewcommand{\lstlistingname}{Code}
+            \renewcommand{\lstlistlistingname}{List of Code}
+        }
+    }
+    
+    % --- Bahasa Indonesia ---
+    \ifundef{\captionsindonesian}{}{
+        \addto\captionsindonesian{
+            \renewcommand{\lstlistingname}{Kode}
+            \renewcommand{\lstlistlistingname}{Daftar Kode}
+        }
+    }
+    
+}{}
+
+
+
 %========================%
 %     Bahasa Inggris     %
 %========================%
@@ -70,37 +104,6 @@
 \newcommand{\Lema}{Lemma}
 \newcommand{\Definisi}{Definition}
 \newcommand{\Contoh}{Example}
-%
-% --- Nama Lampiran ---
-%
-%     Penamaan untuk gambar, tabel, matematika, dan kode yang ada
-%     di keterangan lampiran maupun dirujuk di dalam kalimat; 
-%     contohnya
-%     lihat Gambar 2, lihat Tabel 3, Persamaan 4 menunjukkan, 
-%     lihat Kode 5.
-%
-%     Bawaan Tanpa Disetel: 
-%     Figure, Table, Equation, Listing
-%
-%     Bahasa Inggris: 
-%     Figure, Table, Equation, Code
-%
-\ifundef{\captionsamerican}{}{
-    \addto\captionsamerican{
-        \renewcommand{\lstlistingname}{Code}
-        \ifdef{\lstlistoflistings}{
-            \renewcommand{\lstlistlistingname}{List of Code}
-        }{}
-    }
-}
-\ifundef{\captionsbritish}{}{
-    \addto\captionsbritish{
-        \renewcommand{\lstlistingname}{Code}
-        \ifdef{\lstlistoflistings}{
-            \renewcommand{\lstlistlistingname}{List of Code}
-        }{}
-    }
-}
 
 
 
@@ -141,9 +144,6 @@
     % --- Judul Ilmiah ---
     %
     \renewcommand{\KataPengantar}{Kata Pengantar}
-    \ifdef{\lstlistoflistings}{
-        \renewcommand{\lstlistlistingname}{Daftar Kode}
-    }{}
     % --- Bab/Bagian 1
     \renewcommand{\Pendahuluan}{Pendahuluan}
     \renewcommand{\LatarBelakang}{Latar Belakang}
@@ -271,7 +271,6 @@
         \renewcommand{\figureautorefname}{Gambar}
         \renewcommand{\tableautorefname}{Tabel}
         \renewcommand{\equationautorefname}{Persamaan}
-        \renewcommand{\lstlistingname}{Kode}
         %
         % --- Nama Lanjutan Tabel Tabularray di Halaman Berikutnya ---
         %

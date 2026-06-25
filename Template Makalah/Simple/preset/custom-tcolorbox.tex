@@ -1,3 +1,6 @@
+\makeatletter
+\ltx@ifpackageloaded{tcolorbox}{
+
 %===========================%
 %     Textbox Tcolorbox     %
 %===========================%
@@ -130,3 +133,8 @@
     breakable,
     lines before break=2
 }{ex}
+
+}{
+\typeout{Template Info: tcolorbox not used.}
+}
+\makeatother
