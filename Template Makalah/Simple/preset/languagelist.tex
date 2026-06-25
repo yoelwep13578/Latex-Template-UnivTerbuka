@@ -88,11 +88,17 @@
 \ifundef{\captionsamerican}{}{
     \addto\captionsamerican{
         \renewcommand{\lstlistingname}{Code}
+        \ifdef{\lstlistoflistings}{
+            \renewcommand{\lstlistlistingname}{List of Code}
+        }{}
     }
 }
 \ifundef{\captionsbritish}{}{
     \addto\captionsbritish{
         \renewcommand{\lstlistingname}{Code}
+        \ifdef{\lstlistoflistings}{
+            \renewcommand{\lstlistlistingname}{List of Code}
+        }{}
     }
 }
 
@@ -135,6 +141,9 @@
     % --- Judul Ilmiah ---
     %
     \renewcommand{\KataPengantar}{Kata Pengantar}
+    \ifdef{\lstlistoflistings}{
+        \renewcommand{\lstlistlistingname}{Daftar Kode}
+    }{}
     % --- Bab/Bagian 1
     \renewcommand{\Pendahuluan}{Pendahuluan}
     \renewcommand{\LatarBelakang}{Latar Belakang}

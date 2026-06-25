@@ -231,6 +231,48 @@
 \renewcommand{\thetable}{\template@captionprefix\arabic{table}}
 \ifdef{\thelstlisting}{\renewcommand{\thelstlisting}{\template@captionprefix\arabic{lstlisting}}}{}
 
+%====================================%
+%     Untitled Table of Contents     %
+%====================================%
+
+% --- Daftar Gambar ---
+\LetLtxMacro\template@originallistoffigures\listoffigures
+\RenewDocumentCommand{\listoffigures}{}{%
+    \template@originallistoffigures
+    
+    \ifdef{\chapter}{
+        \ifdefstring{\template@soaljawab}{true}{}{%
+            \addcontentsline{toc}{chapter}{\listfigurename}%
+        }%
+    }{}
+}
+
+% --- Daftar Tabel ---
+\LetLtxMacro\template@originallistoftables\listoftables
+\RenewDocumentCommand{\listoftables}{}{%
+    \template@originallistoftables
+    
+    \ifdef{\chapter}{
+        \ifdefstring{\template@soaljawab}{true}{}{%
+            \addcontentsline{toc}{chapter}{\listtablename}%
+        }%
+    }{}
+}
+
+% --- Daftar Kode Listing ---
+\ifdef{\lstlistoflistings}{
+    \LetLtxMacro\template@originallistoflistings\lstlistoflistings
+    \RenewDocumentCommand{\lstlistoflistings}{}{%
+        \template@originallistoflistings
+        
+        \ifdef{\chapter}{
+            \ifdefstring{\template@soaljawab}{true}{}{%
+                \addcontentsline{toc}{chapter}{\lstlistlistingname}%
+            }%
+        }{}
+    }
+}{}
+
 %======================================%
 %     Page Style (Header & Footer)     %
 %======================================%
