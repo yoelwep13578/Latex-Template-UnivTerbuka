@@ -183,29 +183,14 @@
 \usepackage{titlesec}
 \usepackage{titletoc}
 
-% --- Spasi Barisan Teks ---
-\usepackage{setspace}
-
 % --- Penyetelan Footer dan Header ---
 \usepackage{fancyhdr}
 
 % --- Pendeteksian Nomor Halaman Terakhir ---
 \usepackage{lastpage}
 
-%===========================================%
-%     Package yang Aman untuk Dimatikan     %
-%===========================================%
-
-% --- Lampiran Kode Program [On/Off] ---
-%\usepackage{listings}
-
-% --- Text Box [On/Off] ---
-%\usepackage[most]{tcolorbox}
-
-% --- Glosarium [On/Off] ---
-%\usepackage[automake, toc, nopostdot, nonumberlist]{glossaries-extra}
-
-%-------------------------------------------%
+% --- Spasi Barisan Teks ---
+\usepackage{setspace}
 
 % --- Daftar/List ---
 \usepackage{enumitem}
@@ -221,6 +206,21 @@
 
 % --- Menu Keys & Dir ---
 \usepackage{menukeys}
+
+%===========================================%
+%     Package yang Aman untuk Dimatikan     %
+%===========================================%
+
+% --- Lampiran Kode Program [On/Off] ---
+%\usepackage{listings}
+
+% --- Text Box [On/Off] ---
+%\usepackage[most]{tcolorbox}
+
+% --- Glosarium [On/Off] ---
+%\usepackage[automake, numberedsection=false, nopostdot, nonumberlist]{glossaries-extra}
+
+%-------------------------------------------%
 
 %========================%
 %     File Pendukung     %
@@ -365,7 +365,7 @@
     \input{section/penutup.tex}
     
     % Daftar Pustaka
-    %\nocite{*} % Tampil tanpa dikutip
+    %\nocite{*} % <-- Tampil tanpa dikutip
     \bibliography{reference}
     
     % Glosarium
