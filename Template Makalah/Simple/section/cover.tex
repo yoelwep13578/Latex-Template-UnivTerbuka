@@ -12,7 +12,7 @@
     
     \centering
     
-    % Judul
+    % --- Judul ---
     {\setstretch{1}\Large\textbf{\MakeUppercase{
         \ifundef{\judul}{
             \ifundef{\captionsindonesian}{
@@ -31,6 +31,12 @@
     }}}
     
     {\setstretch{1}\large\textbf{\kodeMataKuliah}}
+
+    % --- Pernyataan Maksud/Tujuan Dokumen ---
+    \ifdef{\keteranganTujuanKarya}{
+        \vspace{1.5cm}
+        \small \textit{\keteranganTujuanKarya}
+    }{}
     
     % --- Logo Perguruan Tinggi ---
     \vfill
@@ -38,13 +44,13 @@
     \vfill
     
     % --- Tutor Pengampu dan Mahasiswa ---
-    {\large \textbf{\MakeUppercase{\TutorPengampu}}} \\
+    {\textbf{\MakeUppercase{\TutorPengampu}}} \\
     
     \namaTutorPengampu
     
     \linesskip{1}
     
-    {\large \textbf{\MakeUppercase{\DisusunOleh}}}
+    {\textbf{\MakeUppercase{\DisusunOleh}}}
     
     \begin{tblr}{
             colspec={l c l}, 
@@ -59,7 +65,7 @@
     
     \linesskip{2}
     
-    \large
+    {\large
     \ifundef{\captionsindonesian}{
         \textbf{\MakeUppercase{\programStudi\ \ProgramStudi}} \\
         \textbf{\MakeUppercase{\Fakultas\ of \fakultas}} \\
@@ -73,7 +79,6 @@
         \textbf{\MakeUppercase{\perguruanTinggi}} \\
         \textbf{\tahun}
     }
-    
-    \normalsize
+    }
     
 \end{titlepage}

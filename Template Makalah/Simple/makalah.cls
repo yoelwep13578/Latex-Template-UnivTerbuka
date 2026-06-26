@@ -309,21 +309,17 @@
     \setlength{\topmargin}{-1.5cm}
     \setlength{\headsep}{1.5cm}
     \fancyhead[R]{
-        \ifundef{\judul}{
-            \begin{tblr}{colspec={r l}, vline{2}={1}{solid, gray}, colsep=14pt, columns={fg=gray}, cells={valign=m}}
-                {\textit{\skemaTutorial} | \textit{\Sesi\ \sesiKe} \\ \textit{\KodeMataKuliah} | \textit{\kodeKelas} | \textit{\namaMataKuliah}} & {\thepagefull}
-            \end{tblr} \hspace*{-2.6cm}
-        }{
-            \begin{tblr}{colspec={r l}, vline{2}={1}{solid, gray}, colsep=14pt, columns={fg=gray}, cells={valign=m}}
-                {\textit{\judul} | \textit{\Sesi\ \sesiKe} \\ \textit{\KodeMataKuliah} | \textit{\kodeKelas} | \textit{\namaMataKuliah}} & {\thepagefull}
-            \end{tblr} \hspace*{-2.6cm}
-        }
+        \color{gray}
+        \begin{tabular}{r @{\hspace*{15pt}}|@{\hspace*{15pt}} l}
+            \ifundef{\judul}{\textit{\skemaTutorial}}{\textit{\judul}} $\mid$ \textit{\Sesi\ \sesiKe} & \multirow{2}{*}{\thepagefull} \\
+            \textit{\KodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah} &
+        \end{tabular}\hspace*{-2.1cm}
     }
     
     \fancypagestyle{plain}{
         \fancyhf{}
         \renewcommand{\headrulewidth}{0pt}
-        \setlength{\topmargin}{-1.2cm}
+        \setlength{\topmargin}{-1.25cm}
         \setlength{\headsep}{1.5cm}
         \fancyhead[R]{
             \textcolor{gray}{\thepagefull} \hspace*{-2cm}
