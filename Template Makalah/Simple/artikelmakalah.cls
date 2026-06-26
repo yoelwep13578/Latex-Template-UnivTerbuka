@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{makalah}[2026/06/15 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/06/26 v2.0 Template Artikel dan Makalah UT]
 
 %==========================%
 %     Key Value Options    %
