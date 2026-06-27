@@ -1,12 +1,18 @@
 % !TEX program = lualatex
 
-% Template Lembar Jawaban Diskusi Tutorial
+% Template Lembar Jawaban Mingguan
 % Versi 2.0.0 Beta
 
 % --- Panduan Setelan Document Class ---
+%
+%     0. soaljawab
+%     Template akan membuat heading 1 menjadi di tengah
+%     dan tidak bernomor.
+%     [NOTE] Hanya boleh digunakan untuk template yang
+%            berisi Soal dan Jawaban.
 %     
 %     1. heading
-%     Penomoran untuk heading
+%     Penomoran dan format untuk heading
 %
 %     Pilihan yang tersedia:
 %      - alpha     --- Penomoran alphanumeric I. > A. > 1. > a. 
@@ -18,7 +24,7 @@
 %                      > 1.1.1.1 > 1.1.1.1.1 > 1.1.1.1.1.1
 %      - multi-mag --- Penomoran multilevel dengan teks besar 
 %                      di level 1
-%      - lowlevel  --- Tanpa penomoran. Nomor hanya ada di level
+%      - apalike   --- Tanpa penomoran seperti APA 7
 %                      \paragraph dan \subparagraph
 %      - [kosong]  --- Memakai pilihan alpha
 %
@@ -110,7 +116,25 @@
 %     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
 %     Microtype dapat digunakan setelah pengerjaan selesai (final).
 %
-\documentclass[heading=alpha, mainfont=times, apa=campuran]{ljmtugas}
+%     8. apppagenum
+%     Format nomor halaman untuk bagian Lampiran (setelah daftar
+%     pustaka atau glosarium)
+%
+%     Pilihan yang tersedia:
+%      - arabic    --- Nomor berlanjut. Dapat dipakai untuk
+%                      jumlah halaman yang tidak terlalu banyak
+%                      (<= 15 halaman)
+%      - arabicone --- Nomor diulang dari 1
+%      - roman     --- Romawi dari i. Dapat dipakai bila
+%                      Lampiran diperlakukan sebagai Back Matter
+%      - gabungan  --- Berformat A-1, A-2, B-1, ...
+%                      Bagian ABCDEF berasal dari lampiran (
+%                      Lampiran A, Lampiran B)
+%                      Nomor 123456 adalah halaman dari setiap
+%                      lampiran (ABCDEF punya halaman sendiri)
+%      - [kosong]  --- Memakai pilihan arabic
+%
+\documentclass[soaljawab, heading=alpha, mainfont=times, apa=campuran]{artikelmakalah}
 
 %==================%
 %     Preamble     %
@@ -148,18 +172,17 @@
 % --- Line Break Display Matematika ---
 \allowdisplaybreaks
 
-% --- Tabel Pengganti tabular ---
+% --- Tabel Pelengkap & Pengganti tabular ---
+\usepackage{multirow}
 \usepackage{tabularray}
 
 % --- Pembacaan Font Sistem dan Setelan Font ---
 %     [NOTE] Hanya bisa digunakan untuk lualatex
 \usepackage{fontspec}
 
-% --- Penyetelan Heading ---
+% --- Penyetelan Heading & Daftar Isi ---
 \usepackage{titlesec}
-
-% --- Spasi Barisan Teks ---
-\usepackage{setspace}
+\usepackage{titletoc}
 
 % --- Penyetelan Footer dan Header ---
 \usepackage{fancyhdr}
@@ -167,8 +190,8 @@
 % --- Pendeteksian Nomor Halaman Terakhir ---
 \usepackage{lastpage}
 
-% --- Lampiran Kode Program ---
-\usepackage{listings}
+% --- Spasi Barisan Teks ---
+\usepackage{setspace}
 
 % --- Daftar/List ---
 \usepackage{enumitem}
@@ -182,13 +205,23 @@
 % --- Posisi Float Lampiran Gambar/Tabel ---
 \usepackage{float}
 
-% --- Text Box ---
-\usepackage[most]{tcolorbox}
-\tcbuselibrary{listings}
-\tcbuselibrary{theorems}
-
 % --- Menu Keys & Dir ---
 \usepackage{menukeys}
+
+%===========================================%
+%     Package yang Aman untuk Dimatikan     %
+%===========================================%
+
+% --- Lampiran Kode Program [On/Off] ---
+%\usepackage{listings}
+
+% --- Text Box [On/Off] ---
+%\usepackage[most]{tcolorbox}
+
+% --- Glosarium [On/Off] ---
+%\usepackage[automake, numberedsection=false, nopostdot, nonumberlist]{glossaries-extra}
+
+%-------------------------------------------%
 
 %========================%
 %     File Pendukung     %
@@ -203,11 +236,14 @@
 \input{preset/custom-tcolorbox.tex}
 \input{preset/languagelist.tex}
 
-%=================================%
-%     Pilihan Gaya Selingkung     %
-%=================================%
+% --- Daftar Istilah Glosarium ---
+\input{glossary.tex}
+
+%===========================================%
+%     Pilihan Gaya Selingkung Referensi     %
+%===========================================%
 %
-% --- Gaya Selingkung APA 6 ---
+% --- Gaya Selingkung Referensi APA 6 ---
 %
 %     Kutipan di Awal: \citeA{keyword}
 %
@@ -224,14 +260,11 @@
 %     Penulis. (2077). _Judul karya tulis buku_. Alamat Penerbit:
 %          Nama Penerbit.
 %
-%     [NOTE] Pastikan semua file auxiliary sudah dihapus sebelum
-%            mengganti gaya selingkung.
-%
 \usepackage{apacite}
 \bibliographystyle{apacite}
-% ------------------------------- %
+% ----------------------------------------- %
 %
-% --- Gaya Selingkung IEEE ---
+% --- Gaya Selingkung Referensi IEEE ---
 %
 %     Kutipan di Awal: \cite{keyword}
 %
@@ -254,19 +287,16 @@
 %     [NOTE] Jangan gunakan setelan bahasa APA di \documentclass 
 %            saat menggunakan gaya selingkung IEEE.
 %
-%     [NOTE] Pastikan semua file auxiliary sudah dihapus sebelum
-%            mengganti gaya selingkung.
-%
 %\usepackage{cite}
 %\bibliographystyle{ieeetr}
-% ------------------------------- %
+% ----------------------------------------- %
 
 \begin{document}
     
     % Line Spacing 1,5
     \onehalfspacing
     
-    % Load Bagian untuk Bahasa Indonesia
+    % Halaman Sampul
     \input{section/cover.tex}
     
     %============================%
@@ -290,7 +320,7 @@
     %
     %                              12
     %
-    %     simple-pagelast
+    %     simple-pagelast ---
     %     Sama seperti simple, namun ada halaman terakhir
     %
     %     Nama Penulis (098765432)                 Mata Kuliah
@@ -306,12 +336,39 @@
     %
     \pagestyle{head-info}
     
+    % Halaman Sebelum Isi Bahasan
+    \begin{pagestylenolastpage}
+        \pagenumbering{roman}
+        
+        % Daftar Isi
+        %\tableofcontents
+        
+        % Daftar Gambar
+        %\listoffigures
+        
+        % Daftar Tabel
+        %\listoftables
+        
+        % Daftar Kode/Listings
+        %\lstlistoflistings
+    \end{pagestylenolastpage}
+    
+    \clearpage
+    
+    % Halaman Isi Bahasan
+    \pagenumbering{arabic}
     \input{section/soal.tex}
     \input{section/jawaban.tex}
     
-    % Daftar Pustaka Tampil Tanpa Dikutip
-    \nocite{*}
+    % Daftar Pustaka
+    %\nocite{*} % <-- Tampil tanpa dikutip
     \bibliography{reference}
+    
+    % Glosarium
+    \ifdef{\printglossaries}{\printglossaries}{}
+    
+    % Lampiran
+    %\input{section/lampiran.tex}
     
     % Compile Mark
     %\vfill {\footnotesize\noindent Di-\textit{compile} dengan \LaTeX\ pada \tanggalLengkap}

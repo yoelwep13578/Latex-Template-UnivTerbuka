@@ -1,3 +1,37 @@
+%===============================%
+%     Bahasa untuk Listings     %
+%===============================%
+
+\ifdef{\lstlistingname}{
+    
+    % --- Bahasa Inggris Amerika ---
+    \ifundef{\captionsamerican}{}{
+        \addto\captionsamerican{
+            \renewcommand{\lstlistingname}{Code}
+            \renewcommand{\lstlistlistingname}{List of Code}
+        }
+    }
+    
+    % --- Bahasa Inggris ---
+    \ifundef{\captionsbritish}{}{
+        \addto\captionsbritish{
+            \renewcommand{\lstlistingname}{Code}
+            \renewcommand{\lstlistlistingname}{List of Code}
+        }
+    }
+    
+    % --- Bahasa Indonesia ---
+    \ifundef{\captionsindonesian}{}{
+        \addto\captionsindonesian{
+            \renewcommand{\lstlistingname}{Kode}
+            \renewcommand{\lstlistlistingname}{Daftar Kode}
+        }
+    }
+    
+}{}
+
+
+
 %========================%
 %     Bahasa Inggris     %
 %========================%
@@ -70,31 +104,6 @@
 \newcommand{\Lema}{Lemma}
 \newcommand{\Definisi}{Definition}
 \newcommand{\Contoh}{Example}
-%
-% --- Nama Lampiran ---
-%
-%     Penamaan untuk gambar, tabel, matematika, dan kode yang ada
-%     di keterangan lampiran maupun dirujuk di dalam kalimat; 
-%     contohnya
-%     lihat Gambar 2, lihat Tabel 3, Persamaan 4 menunjukkan, 
-%     lihat Kode 5.
-%
-%     Bawaan Tanpa Disetel: 
-%     Figure, Table, Equation, Listing
-%
-%     Bahasa Inggris: 
-%     Figure, Table, Equation, Code
-%
-\ifundef{\captionsamerican}{}{
-    \addto\captionsamerican{
-        \renewcommand{\lstlistingname}{Code}
-    }
-}
-\ifundef{\captionsbritish}{}{
-    \addto\captionsbritish{
-        \renewcommand{\lstlistingname}{Code}
-    }
-}
 
 
 
@@ -206,13 +215,22 @@
         %     Judul bawaannya adalah "Bibliography"
         %     Judul bawaan dalam Bahasa Indonesia adalah "Bibliografi"
         %     Judul untuk Bahasa Indonesia pada template ini adalah
-        %     "Referensi"
+        %     "Daftar Pustaka"
         %
-        %     Anda juga bisa menggantinya menjadi "Daftar Pustaka" atau
+        %     Anda juga bisa menggantinya menjadi "Referensi" atau
         %     judul lain
         %
-        \renewcommand{\bibname}{Referensi} % Bibliography
-        \renewcommand{\refname}{Referensi} % Reference
+        \renewcommand{\bibname}{Daftar Pustaka} % Bibliography
+        \renewcommand{\refname}{Daftar Pustaka} % Reference
+        %
+        % --- Judul Glosarium ---
+        %
+        %     Glosarium dalam Babel Bahasa Indonesia menggunakan
+        %     "Daftar Istilah"
+        %
+        %     Anda dapat menggantinya menjadi "Glosarium" jika mau
+        %
+        \renewcommand{\glossaryname}{Daftar Istilah}
         %
         % --- Nama Level Bagian untuk \autoref ---
         %
@@ -262,7 +280,6 @@
         \renewcommand{\figureautorefname}{Gambar}
         \renewcommand{\tableautorefname}{Tabel}
         \renewcommand{\equationautorefname}{Persamaan}
-        \renewcommand{\lstlistingname}{Kode}
         %
         % --- Nama Lanjutan Tabel Tabularray di Halaman Berikutnya ---
         %
