@@ -311,7 +311,7 @@
     \fancyhead[R]{
         \color{gray}
         \begin{tabular}{r @{\hspace*{15pt}}|@{\hspace*{15pt}} l}
-            \ifundef{\judul}{\textit{\skemaTutorial}}{\textit{\judul}} $\mid$ \textit{\Sesi\ \sesiKe} & \multirow{2}{*}{\thepagefull} \\
+            \ifundef{\judul}{\textit{\skemaTutorial\ $\mid$ \textit{\Sesi\ \sesiKe}}}{\textit{\judul}} & \multirow{2}{*}{\thepagefull} \\
             \textit{\KodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah} &
         \end{tabular}\hspace*{-2.1cm}
     }
