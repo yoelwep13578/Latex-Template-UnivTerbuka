@@ -5,18 +5,15 @@
     
     \setcounter{secnumdepth}{3}
     
-    \renewcommand{\thesection}{\arabic{section}}
-    \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
-    
-    \titleformat{\chapter}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\LARGE}
-    {}
-    {0em}
-    {}
+    \titleformat{\chapter}[display]
+    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
+    {\setstretch{1}\MakeUppercase{\chaptername\ \thechapter}}
+    {-.5ex}
+    {\MakeUppercase}
     
     \titleformat{\section}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\Large}
-    {\normalfont\bfseries\thesection.}
+    {\normalfont\bfseries\thesection}
     {1em}
     {}
     
@@ -50,14 +47,11 @@
     
     \setcounter{secnumdepth}{2}
     
-    \renewcommand{\thesubsection}{\arabic{subsection}}
-    \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
-    
-    \titleformat{\section}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
-    {}
-    {0em}
-    {}
+    \titleformat{\section}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\Large}
+    {\normalfont\bfseries\thesection.}
+    {1em}
+    {\MakeUppercase}
     
     \titleformat{\subsection}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\large}

@@ -1,3 +1,30 @@
+\makeatletter
+\ltx@ifpackageloaded{listings}{
+
+% --- Setelan Listing ---
+\lstset{
+    %style=FiraCodeStyle,
+    aboveskip=\baselineskip,
+    belowskip=.9\baselineskip,
+    xleftmargin=1em,
+    xrightmargin=1em,
+    basicstyle=\ttfamily,
+    numberstyle=\footnotesize\color{gray},
+    numberbychapter=false,
+    captionpos=b,
+    breaklines=true,
+    frame={top|bottom},
+    rulecolor=\color{black!60},
+    showstringspaces=false,
+    commentstyle=\itshape\color{monokai-comment},
+    keywordstyle=\bfseries\color{monokai-purple},
+    keywordstyle={[2]{\itshape\bfseries\color{monokai-purple}}},
+    keywordstyle={[3]{\itshape\bfseries\color{monokai-blue}}},
+    ndkeywordstyle=\itshape\bfseries\color{monokai-orange},
+    stringstyle=\color{monokai-green},
+    identifierstyle=\color{black},
+}
+
 %===============================================%
 %     Pelengkapan Bahasa Program lstlisting     %
 %===============================================%
@@ -60,3 +87,8 @@
     %
     , morekeywords=[5]{assert!, assert_eq!, assert_ne!, cfg!, column!, compile_error!, concat!, concat_idents!, debug_assert!, debug_assert_eq!, debug_assert_ne!, env!, eprint!, eprintln!, file!, format!, format_args!, include!, include_bytes!, include_str!, line!, module_path!, option_env!, panic!, print!, println!, select!, stringify!, thread_local!, try!, unimplemented!, unreachable!, vec!, write!, writeln!}  % prelude macros
 }%
+
+}{
+\typeout{Template Info: listings not used.}
+}
+\makeatother
