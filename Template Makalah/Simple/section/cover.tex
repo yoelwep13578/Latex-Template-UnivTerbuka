@@ -66,22 +66,18 @@
     
     \linesskip{1}
     
-    {\textbf{\MakeUppercase{\DisusunOleh}}}
+    {\setstretch{1}\textbf{\MakeUppercase{\DisusunOleh}}}
     
-    \begin{tblr}{
-            colspec={l c l}, 
-            colsep=0pt, 
-            rowsep=0pt, 
-            column{2}={colsep=4pt}
-            }
+    {\setstretch{1}
+    \begin{tabular}{@{}l@{\;}c@{\;}l}
         \Nama &:& \namaMahasiswa \\
         \NomorIndukM &:& \nimMahasiswa \\
         \KodeKelas &:& \kodeKelas
-    \end{tblr}
+    \end{tabular}}
     
-    \linesskip{2}
+    \vfill
     
-    {\large
+    {\setstretch{1}\large
     \ifundef{\captionsindonesian}{
         \textbf{\MakeUppercase{\programStudi\ \ProgramStudi}} \\
         \textbf{\MakeUppercase{\Fakultas\ of \fakultas}} \\
