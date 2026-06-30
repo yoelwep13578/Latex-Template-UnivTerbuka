@@ -1,0 +1,87 @@
+% --- Cover ---
+%
+%     Ini adalah halaman sampul. Jangan mengubah apa pun
+%     yang ada di dalam sini, kecuali bila Anda sudah mahir
+%     menulis kode LaTeX.
+%
+%     Saat ini, logo institusi perguruan tinggi tidak disertakan
+%     seperti dahulu atas alasan hukum kekayaan merek dan kebudayaan
+%     open-source. Perlu diketahui bahwa logo merek tidak bisa
+%     sembarang diperoleh. Bila template ini dikembangkan
+%     , digandakan, maupun di-fork oleh pihak lain (dengan logo
+%     yang masih ada), hal tersebut sudah melenceng dari tujuan
+%     pendidikan dan beralih fungsi menjadi distributor.
+%
+%       1.  Kunjungi https://link-menuju-repository.
+%       2.  Download logo institusi pendidikan resmi sesuai 
+%           kebutuhan.
+%       3.  Ubah/berikan nama file-nya menjadi "logo-kampus".
+%       4.  Masukkan logo tersebut ke dalam folder image 
+%           dan timpa file "logo-kampus" yang ada di dalam 
+%           template ini.
+%
+%     Untuk mengganti nama Anda, nama tutor, mata kuliah,
+%     NIM, dan sebagainya, jangan diubah dari sini. Isilah data
+%     dari file variable.tex!
+%
+\begin{titlepage}
+    
+    \centering
+    
+    % --- Judul ---
+    {\setstretch{1}\Large\textbf{\MakeUppercase{
+        \ifundef{\judul}{
+            \ifundef{\captionsindonesian}{
+                \skemaTutorial\ \Tugas\ \tugasKe
+            }{
+                \Tugas\ \skemaTutorial\ \tugasKe
+            }
+        }{
+            \judul
+        }
+    }}\par}
+    
+    % --- Subjudul ---
+    \vspace{1cm}
+    {\setstretch{1}\textbf{\MakeUppercase{
+        Tugas Akhir Program Skema Skripsi
+    }}}
+
+    % --- Pernyataan Maksud/Tujuan Dokumen ---
+    \ifdef{\keteranganTujuanKarya}{
+        \vspace{1cm}
+        {\setstretch{1}\textbf{\keteranganTujuanKarya}}
+    }{}
+    
+    % --- Logo Perguruan Tinggi ---
+    \vfill
+    \includegraphics[width=5cm]{image/logo-kampus.png}
+    \vfill
+    
+    % --- Mahasiswa ---
+    {\setstretch{1}\textbf{\DisusunOleh:}}
+    
+    {\setstretch{1}\bfseries
+    \begin{tabular}{@{}l@{\hspace{4pt}}c@{\hspace{4pt}}l}
+        \Nama &:& \namaMahasiswa \\
+        \NomorIndukM &:& \nimMahasiswa \\
+        \ProgramStudi &:& \programStudi
+    \end{tabular}}
+    
+    \vfill
+    
+    {\setstretch{1}\large
+    \ifundef{\captionsindonesian}{
+        \textbf{\MakeUppercase{\Fakultas\ of \fakultas}} \\
+        \textbf{\MakeUppercase{\perguruanTinggi}} \\
+        \textbf{\MakeUppercase{\utDaerah}} \\
+        \textbf{\tahun}
+    }{
+        \textbf{\MakeUppercase{\Fakultas\ \fakultas}} \\
+        \textbf{\MakeUppercase{\perguruanTinggi}} \\
+        \textbf{\MakeUppercase{\utDaerah}} \\
+        \textbf{\tahun}
+    }
+    }
+    
+\end{titlepage}

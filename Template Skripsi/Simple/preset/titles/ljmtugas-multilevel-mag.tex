@@ -1,0 +1,85 @@
+\ifdef{\chapter}{
+    %====================%
+    %     Dengan Bab     %
+    %====================%
+    
+    \setcounter{secnumdepth}{3}
+    
+    \renewcommand{\thesection}{\arabic{section}}
+    \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+    
+    \titleformat{\chapter}[block]
+    {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\section}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\Large}
+    {\normalfont\bfseries\thesection.}
+    {1em}
+    {}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\normalfont\bfseries\thesubsection}
+    {1em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\normalfont\bfseries\thesubsubsection}
+    {1em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {\normalfont\bfseries\theparagraph}
+    {1em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {\normalfont\bfseries\thesubparagraph}
+    {1em}
+    {\smartperiod}
+}{
+    %===================%
+    %     Tanpa Bab     %
+    %===================%
+    
+    \setcounter{secnumdepth}{2}
+    
+    \renewcommand{\thesubsection}{\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
+    
+    \titleformat{\section}[block]
+    {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\normalfont\bfseries\thesubsection}
+    {1em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\normalfont\bfseries\thesubsubsection}
+    {1em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {\normalfont\bfseries\theparagraph}
+    {1em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {\normalfont\bfseries\thesubparagraph}
+    {1em}
+    {\smartperiod}
+}
