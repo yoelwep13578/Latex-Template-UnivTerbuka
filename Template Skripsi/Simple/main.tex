@@ -1,6 +1,4 @@
-% !TEX program = lualatex
-
-% Template Makalah
+% Template Skripsi Berbasis Makalah (Report)
 % Versi 2.0.0 Beta
 
 % --- Panduan Setelan Document Class ---
@@ -94,6 +92,7 @@
 %     Pilihan untuk font monospace
 %     
 %     Pilihan yang tersedia:
+%      - courier-new --- Courier New [Windows]
 %      - cascadia  --- Cascadia Code [Windows >= 10]
 %      - consolas  --- Consolas [Windows]
 %      - fira      --- Fira Code
@@ -174,7 +173,8 @@
 \usepackage{graphicx, xcolor}
 
 % --- Matematika ---
-\usepackage{amsmath, amsthm, amssymb, unicode-math}
+%\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsmath}
 \usepackage{xfrac}
 
 % --- Line Break Display Matematika ---
@@ -186,7 +186,7 @@
 
 % --- Pembacaan Font Sistem dan Setelan Font ---
 %     [NOTE] Hanya bisa digunakan untuk lualatex
-\usepackage{fontspec}
+%\usepackage{fontspec}
 
 % --- Penyetelan Heading & Daftar Isi ---
 \usepackage{titlesec}
@@ -213,17 +213,35 @@
 % --- Posisi Float Lampiran Gambar/Tabel ---
 \usepackage{float}
 
-% --- Menu Keys & Dir ---
-\usepackage{menukeys}
-
 %===========================================%
 %     Package yang Aman untuk Dimatikan     %
 %===========================================%
 
-% --- Lampiran Kode Program [On/Off] ---
+% --- Sisipan Kode Program [On/Off] ---
+%
+%     Environment yang terpengaruh:
+%     - lstlisting --- Kode program berbentuk blok (codeblock)
+%     - lstcode --- lstlisting yang terintegrasi tcolorbox
+%
+%     Perintah yang terpengaruh:
+%     - lstinline --- Kode sebaris
+%     - inlinesnippet --- Kode sebaris berwarna seperti
+%                         markdown
+%
 %\usepackage{listings}
 
 % --- Text Box [On/Off] ---
+%
+%     Environment yang terpengaruh:
+%     - lstcode --- lstlisting yang terintegrasi tcolorbox
+%     - blockquote ---┐ Kutipan bergaris vertikal di kiri
+%     - indentbquote -┘
+%     - textbox --- Kotak teks
+%     - theorembox ---┐ Kotak teorema
+%     - lemmabox      |
+%     - definitionbox |
+%     - example ------┘
+%
 %\usepackage[most]{tcolorbox}
 
 % --- Glosarium [On/Off] ---
@@ -349,17 +367,17 @@
         \pagenumbering{roman}
         
         % Abstrak
-        \input{section/abstract-en.tex}
-        \input{section/abstrak-id.tex}
+        \include{section/abstract-en.tex}
+        \include{section/abstrak-id.tex}
         
         % Lembar Pengesahan
-        \input{section/lembar-pengesahan.tex}
+        \include{section/lembar-pengesahan.tex}
         
         % Lembar Pernyataan Anti/Bebas Plagiasi
-        \input{section/lembar-pernyataan-anti-plagiasi.tex}
+        \include{section/lembar-pernyataan-anti-plagiasi.tex}
         
         % Kata Pengantar
-        \input{section/kata-pengantar.tex}
+        \include{section/kata-pengantar.tex}
         
         % Daftar Isi
         \tableofcontents
@@ -373,7 +391,8 @@
         % Daftar Kode/Listings
         %\lstlistoflistings
         
-        % Daftar Lampiran
+        % Daftar Lampiran 
+        % (Hanya Muncul Saat Memakai listappendix)
         \listofappendices
     \end{pagestylenolastpage}
     
@@ -381,11 +400,11 @@
     
     % Halaman Isi Bahasan
     \pagenumbering{arabic}
-    \input{section/pendahuluan.tex}
-    \input{section/landasan-teori.tex}
-    \input{section/metode.tex}
-    \input{section/hasil-dan-pembahasan.tex}
-    \input{section/kesimpulan-dan-saran.tex}
+    \include{section/pendahuluan.tex}
+    \include{section/landasan-teori.tex}
+    \include{section/metode.tex}
+    \include{section/hasil-dan-pembahasan.tex}
+    \include{section/kesimpulan-dan-saran.tex}
     
     % Daftar Pustaka
     %\nocite{*} % <-- Tampil tanpa dikutip
@@ -395,7 +414,7 @@
     \ifdef{\printglossaries}{\printglossaries}{}
     
     % Lampiran
-    \input{section/lampiran.tex}
+    \include{section/lampiran.tex}
     
     % Compile Mark
     %\vfill {\footnotesize\noindent Di-\textit{compile} dengan \LaTeX\ pada \tanggalLengkap}
