@@ -1,9 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/06/26 v2.0 Template Artikel dan Makalah UT]
+\ProvidesClass{artikelmakalah}[2026/06/26 v2.0 Template Artikel dan Makalah]
 
-%==========================%
-%     Key Value Options    %
-%==========================%
+%===========================%
+%     Key Value Options     %
+%===========================%
 
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{family=template, prefix=template@}
@@ -82,11 +82,177 @@
 \RequirePackage{ltxcmds}
 \RequirePackage{xparse}
 
-%==================================%
-%     Document Class & Preamble    %
-%==================================%
+%===================================%
+%     Document Class & Preamble     %
+%===================================%
 
 \LoadClass[a4paper, 12pt]{report}
+
+% --- PDFTeX Conditional ---
+\RequirePackage{iftex}
+
+\ifpdftex
+
+%=================================%
+%     PDFTeX Font Conditional     %
+%=================================%
+
+\RequirePackage[T1]{fontenc}
+
+% --- Pemilihan Font Utama & Matematika ---
+\ifdefstring{\template@mainfont}{times}{
+	\RequirePackage{newtxtext}
+	\RequirePackage{newtxmath}
+}{
+	\ifdefstring{\template@mainfont}{tex-gyre-termes}{
+		\RequirePackage{tgtermes}
+		\RequirePackage{newtxmath}
+	}{
+		\ifdefstring{\template@mainfont}{xits}{
+			\RequirePackage{newtxtext} % Alt
+			\RequirePackage{newtxmath}
+		}{
+			\ifdefstring{\template@mainfont}{garamond}{
+				\RequirePackage[lining, tabular]{ebgaramond}
+				%\RequirePackage{ebgaramond-maths}
+				\usepackage[ebgaramond]{newtxmath}
+			}{
+				\ifdefstring{\template@mainfont}{libertinus}{
+					\RequirePackage{libertine}
+					\RequirePackage{libertinust1math}
+				}{
+					% Default Fallback
+					\RequirePackage{lmodern}
+				}
+			}
+		}
+	}
+}
+
+% --- Pemilihan Font Sans ---
+\ifdefstring{\template@sansfont}{aptos}{
+	\RequirePackage[scaled=0.92]{sourcesanspro} % Alt
+}{
+	\ifdefstring{\template@sansfont}{calibri}{
+		\RequirePackage{carlito} % Alt
+	}{
+		\ifdefstring{\template@sansfont}{alegreya}{
+			\RequirePackage{AlegreyaSans}
+		}{
+			\ifdefstring{\template@sansfont}{noto}{
+				\RequirePackage[scaled=0.85]{noto-sans}
+			}{
+				% Default Fallback
+				\renewcommand{\sfdefault}{lmss}
+			}
+		}
+	}
+}
+
+% --- Pemilihan Font Monospace ---
+\ifdefstring{\template@monofont}{courier-new}{
+	\RequirePackage{courier}
+}{
+	\ifdefstring{\template@monofont}{consolas}{
+		\RequirePackage[scaled=0.97]{inconsolata}
+	}{
+		\ifdefstring{\template@monofont}{cascadia}{
+			\RequirePackage[scaled=0.85]{FiraMono} % Alt
+		}{
+			\ifdefstring{\template@monofont}{fira}{
+				\RequirePackage[scaled=0.85]{FiraMono}
+			}{
+				\ifdefstring{\template@monofont}{jetbrains}{
+					\RequirePackage[scaled=0.8]{beramono}
+				}{
+					% Default Fallback
+					\renewcommand{\ttdefault}{lmtt}
+				}
+			}
+		}
+	}
+}
+
+\else
+
+%=================================%
+%     PDFTeX Font Conditional     %
+%=================================%
+
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+
+% --- Pemilihan Font Monospace ---
+\ifdefstring{\template@monofont}{courier-new}{
+	\setmonofont{Courier New}[Scale=MatchLowercase]
+}{}
+\ifdefstring{\template@monofont}{consolas}{
+	\setmonofont{Consolas}[Scale=MatchLowercase]
+}{}
+\ifdefstring{\template@monofont}{cascadia}{
+	\setmonofont{Cascadia Code Light}[
+	BoldFont={Cascadia Code Bold},
+	ItalicFont={Cascadia Code Light Italic},
+	BoldItalicFont={Cascadia Code Bold Italic},
+	Scale=MatchLowercase
+	]
+}{}
+\ifdefstring{\template@monofont}{fira}{
+	\setmonofont{Fira Code Light}[
+	BoldFont={Fira Code Medium},
+	Contextuals=Alternate,
+	Scale=MatchLowercase
+	]
+}{}
+\ifdefstring{\template@monofont}{jetbrains}{
+	\setmonofont{JetBrains Mono Thin}[
+	Contextuals={Alternate},
+	BoldFont={JetBrains Mono Bold},
+	BoldItalicFont={JetBrains Mono Bold Italic},
+	ItalicFont={JetBrains Mono Thin Italic},
+	Scale=MatchLowercase
+	] 
+}{}
+
+% --- Pemilihan Font Utama dan Font Matematika ---
+\ifdefstring{\template@mainfont}{times}{
+	\setmainfont{Times New Roman}[Ligatures=Rare]
+	\setmathfont{XITS Math}
+}{}
+\ifdefstring{\template@mainfont}{tex-gyre-termes}{
+	\setmainfont{TeX Gyre Termes}
+	\setmathfont{XITS Math}
+}{}
+\ifdefstring{\template@mainfont}{xits}{
+	\setmainfont{XITS}
+	\setmathfont{XITS Math}
+}{}
+\ifdefstring{\template@mainfont}{garamond}{
+	\setmainfont{EB Garamond}
+	\setmathfont{Garamond-Math}
+}{}
+\ifdefstring{\template@mainfont}{libertinus}{
+	\setmainfont{Libertinus Serif}
+	\setmathfont{Libertinus Math}
+}{}
+
+% --- Pemilihan Font Sans ---
+\ifdefstring{\template@sansfont}{aptos}{
+	\setsansfont{Aptos}[Scale=MatchLowercase]
+}{}
+\ifdefstring{\template@sansfont}{calibri}{
+	\setsansfont{Calibri}[Scale=MatchLowercase]
+}{}
+\ifdefstring{\template@sansfont}{alegreya}{
+	\setsansfont{Alegreya Sans}[Scale=MatchLowercase]
+}{}
+\ifdefstring{\template@sansfont}{noto}{
+	\setsansfont{Noto Sans}[Scale=MatchLowercase]
+}{}
+
+\fi
+
+
 
 \AtBeginDocument{
     
@@ -437,21 +603,6 @@
 }
 \SetTblrTemplate{remark-tag}{normal}
 
-%===================%
-%     Menu Keys     %
-%===================%
-
-\renewmenumacro{\keys}[+]{angularkeys}
-\renewmenumacro{\menu}[>]{angularmenus}
-\renewmenumacro{\directory}[/]{paths}
-\newmenumacro{\windirectory}[bslash]{paths}
-
-% --- Warna ---
-\newmenucolortheme{lightgray}{named}{graybg}{graybr}{black}[graybg][black][black]
-
-\changemenucolortheme{angularkeys}{lightgray}
-\changemenucolortheme{angularmenus}{lightgray}
-
 %========================================%
 %     More Non-Autocomplete Commands     %
 %========================================%
@@ -466,74 +617,6 @@
 % --- Pemilihan URL Style ---
 \ifdefstring{\template@urlstyle}{roman}{
     \AtBeginDocument{\urlstyle{APACrm}}
-}{}
-
-% --- Pemilihan Font Monospace ---
-\ifdefstring{\template@monofont}{courier-new}{
-    \setmonofont{Courier New}[Scale=MatchLowercase]
-}{}
-\ifdefstring{\template@monofont}{consolas}{
-    \setmonofont{Consolas}[Scale=MatchLowercase]
-}{}
-\ifdefstring{\template@monofont}{cascadia}{
-    \setmonofont{Cascadia Code Light}[
-        BoldFont={Cascadia Code Bold},
-        ItalicFont={Cascadia Code Light Italic},
-        BoldItalicFont={Cascadia Code Bold Italic},
-        Scale=MatchLowercase
-    ]
-}{}
-\ifdefstring{\template@monofont}{fira}{
-    \setmonofont{Fira Code Light}[
-        BoldFont={Fira Code Medium},
-        Contextuals=Alternate,
-        Scale=MatchLowercase
-    ]
-}{}
-\ifdefstring{\template@monofont}{jetbrains}{
-    \setmonofont{JetBrains Mono Thin}[
-        Contextuals={Alternate},
-        BoldFont={JetBrains Mono Bold},
-        BoldItalicFont={JetBrains Mono Bold Italic},
-        ItalicFont={JetBrains Mono Thin Italic},
-        Scale=MatchLowercase
-    ] 
-}{}
-
-% --- Pemilihan Font Utama dan Font Matematika ---
-\ifdefstring{\template@mainfont}{times}{
-    \setmainfont{Times New Roman}[Ligatures=Rare]
-    \setmathfont{XITS Math}
-}{}
-\ifdefstring{\template@mainfont}{tex-gyre-termes}{
-    \setmainfont{TeX Gyre Termes}
-    \setmathfont{XITS Math}
-}{}
-\ifdefstring{\template@mainfont}{xits}{
-    \setmainfont{XITS}
-    \setmathfont{XITS Math}
-}{}
-\ifdefstring{\template@mainfont}{garamond}{
-    \setmainfont{EB Garamond}
-    \setmathfont{Garamond-Math}
-}{}
-\ifdefstring{\template@mainfont}{libertinus}{
-    \setmainfont{Libertinus Serif}
-    \setmathfont{Libertinus Math}
-}{}
-
-% --- Pemilihan Font Sans ---
-\ifdefstring{\template@sansfont}{aptos}{
-    \setsansfont{Aptos}[Scale=MatchLowercase]
-}{}
-\ifdefstring{\template@sansfont}{calibri}{
-    \setsansfont{Calibri}[Scale=MatchLowercase]
-}{}
-\ifdefstring{\template@sansfont}{alegreya}{
-    \setsansfont{Alegreya Sans}[Scale=MatchLowercase]
-}{}
-\ifdefstring{\template@sansfont}{noto}{
-    \setsansfont{Noto Sans}[Scale=MatchLowercase]
 }{}
 
 % --- Pemilihan Bahasa APA ---
