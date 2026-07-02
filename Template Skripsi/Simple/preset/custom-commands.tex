@@ -32,7 +32,7 @@
 \newcommand{\euler}{\mathrm{e}}     % Euler
 \newcommand{\imaginary}{\mathrm{i}} % Imajiner
 
-% Huruf Tegak Matematika a hingga z
+% --- Huruf Tegak Matematika a hingga z ---
 \newcommand{\upa}{\mathrm{a}}
 \newcommand{\upb}{\mathrm{b}}
 \newcommand{\upc}{\mathrm{c}}
@@ -60,7 +60,7 @@
 \newcommand{\upy}{\mathrm{y}}
 \newcommand{\upz}{\mathrm{z}}
 
-% Huruf Tegak Matematika A hingga Z
+% --- Huruf Tegak Matematika A hingga Z ---
 \newcommand{\upA}{\mathrm{A}}
 \newcommand{\upB}{\mathrm{B}}
 \newcommand{\upC}{\mathrm{C}}
@@ -95,8 +95,67 @@
 %==============%
 
 % --- Kode Sebaris Ber-highlight (Markdown Style) ---
-\newcommand{\inlinesnippet}[1]{\fcolorbox{graybr}{graybg}{\lstinline‖#1‖}}
-\newcommand{\verbsnippet}[1]{\fcolorbox{graybr}{graybg}{\verb|#1|}}
+\newcommand{\inlinesnippet}[1]{%
+	{%
+	\setlength{\fboxsep}{2pt}%
+	\fcolorbox{graybr}{graybg}{\small\vphantom{gH}\lstinline{#1}}%
+	}%
+}
+
+
+
+%=======================%
+%     Keyboard Keys     %
+%=======================%
+
+\newcommand{\keys}[1]{%
+	{%
+	\setlength{\fboxsep}{2pt}%
+	\fcolorbox{graybr}{graybg}{\hspace{2pt}\footnotesize\ttfamily\vphantom{gH}#1\hspace{2pt}}%
+	}%
+}
+
+\newcommand{\arrowkeys}[1]{%
+	{%
+	\setlength{\fboxsep}{2.4pt}%
+	\fcolorbox{graybr}{graybg}{%
+		\makebox[1.2em]{%
+			\scriptsize\vphantom{gH}#1%
+		}%
+	}%
+	}%
+}
+
+% --- Modifiers ---
+\newcommand{\Ctrl}{\keys{Ctrl}}
+\newcommand{\Shift}{\keys{Shift}}
+\newcommand{\Alt}{\keys{Alt}}
+\newcommand{\AltGr}{\keys{AltGr}}
+\newcommand{\Altgr}{\AltGr}
+
+% --- Common Navigation & Actions ---
+\newcommand{\Esc}{\keys{Esc}}
+\newcommand{\Enter}{\keys{Enter}}
+\newcommand{\Tab}{\keys{Tab}}
+\newcommand{\Space}{\keys{Space}}
+\newcommand{\Backspace}{\keys{Backspace}}
+\newcommand{\Capslock}{\keys{Caps Lock}}
+
+% --- Right Side Navigation & Actions ---
+\newcommand{\Insert}{\keys{Ins}}
+\newcommand{\Delete}{\keys{Del}}
+\newcommand{\PgUp}{\keys{PgUp}}
+\newcommand{\PgDn}{\keys{PgDn}}
+\newcommand{\Home}{\keys{Home}}
+\newcommand{\End}{\keys{End}}
+
+\newcommand{\Up}{\arrowkeys{\(\uparrow\)}}
+\newcommand{\Down}{\arrowkeys{\(\downarrow\)}}
+\newcommand{\Left}{\arrowkeys{\(\leftarrow\)}}
+\newcommand{\Right}{\arrowkeys{\(\rightarrow\)}}
+
+% --- F Key ---
+\newcommand{\Fn}{\keys{Fn}}
 
 
 
