@@ -263,6 +263,15 @@
 \setlength{\parindent}{\template@indent}
 \newcommand{\titleindent}{\template@indent}
 
+%============================================%
+%     pdflscape Landscape Page Rotataion     %
+%============================================%
+
+% --- Balik Rotasi Body (lscape) ---
+\patchcmd{\LS@rot}{90}{-90}{}{}
+% --- Balik Rotasi PDF Page (pdflscape) ---
+\patchcmd{\landscape}{\PLS@Rotate{90}}{\PLS@Rotate{-90}}{}{}
+
 %=========================%
 %     Section/Heading     %
 %=========================%
