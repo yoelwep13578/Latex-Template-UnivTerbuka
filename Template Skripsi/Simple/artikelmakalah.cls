@@ -74,6 +74,10 @@
 %     Default: arabic
 \DeclareStringOption[arabic]{apppagenum}[arabic]
 
+% --- Pilihan Pemunculan Nama Label di Daftar Label ---
+%     Default: -
+\DeclareStringOption[false]{showlabelname}[true]
+
 \ProcessKeyvalOptions*
 
 % --- LaTeX Programming Tool ---
@@ -255,428 +259,477 @@
 
 
 \AtBeginDocument{
-    
-%=====================%
-%     Indentation     %
-%=====================%
-
-\setlength{\parindent}{\template@indent}
-\newcommand{\titleindent}{\template@indent}
-
-%============================================%
-%     pdflscape Landscape Page Rotataion     %
-%============================================%
-
-% --- Balik Rotasi Body (lscape) ---
-\patchcmd{\LS@rot}{90}{-90}{}{}
-% --- Balik Rotasi PDF Page (pdflscape) ---
-\patchcmd{\landscape}{\PLS@Rotate{90}}{\PLS@Rotate{-90}}{}{}
-
-%=========================%
-%     Section/Heading     %
-%=========================%
-
-% --- Spacing Heading ---
-% 
-% \titlespacing{command}{left}{before-sep}{after-sep}[right]
-%
-% command   : Heading yang mau disetel
-% left      : Margin kiri
-% before-sep: Spasi sebelum atau di atas heading
-% after-sep : Spasi setelah, sebelah kanan, atau di bawah heading
-% right     : Margin kanan
-% 
-
-\ifdef{\chapter}{
-    \titlespacing*{\chapter}
-        {0pt}
-        {-30pt}
-        {36pt plus 4pt minus 2pt}
-    
-    \titlespacing*{\section}
-        {0pt}
-        {3.5ex plus 1ex minus .2ex}
-        {1.5ex plus .2ex}
-    
-    \titlespacing*{\subsection}
-        {0pt}
-        {2.8ex plus .8ex minus .2ex}
-        {1.5ex plus .2ex}
-    
-    \ifdefstring{\template@heading}{apalike}{
-        \titlespacing*{\subsubsection}{\titleindent}{*1.5}{.5em}
-        \titlespacing*{\paragraph}{\titleindent}{*1.5}{.5em}
-    }{
-        \titlespacing*{\subsubsection}
-            {0pt}
-            {2.2ex plus .5ex minus .1ex}
-            {1.5ex plus .2ex}
-            
-        \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
-        \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
-    }
-}{
-    \titlespacing*{\section}
-    {0pt}
-    {3.5ex plus 1ex minus .2ex}
-    {1.5ex plus .2ex}
-    
-    \titlespacing*{\subsection}
-    {0pt}
-    {2.8ex plus .8ex minus .2ex}
-    {1.5ex plus .2ex}
-    
-    \titlespacing*{\subsubsection}
-    {0pt}
-    {2.2ex plus .5ex minus .1ex}
-    {1.5ex plus .2ex}
-    
-    \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
-    \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
-}
-
-%===========================%
-%     Table of Contents     %
-%===========================%
-
-\ifdef{\chapter}{
-	% --- Format Daftar Lampiran ---
-	\titlecontents{appendix}[0pt]
-	{\addvspace{1.5ex plus 1pt}}
-	{\thecontentslabel\quad}
-	{}
-	{\nopagebreak\titlerule*[0.5pc]{.}\contentspage}
+	%=====================%
+	%     Indentation     %
+	%=====================%
 	
-    % --- Dengan Bab ---
-    \LetLtxMacro\template@originalchapter\chapter
-    \RenewDocumentCommand{\chapter}{s o m}{%
-        \IfBooleanTF{#1}{
-            \template@originalchapter*{#3}
+	\setlength{\parindent}{\template@indent}
+	\newcommand{\titleindent}{\template@indent}
+	
+	%============================================%
+	%     pdflscape Landscape Page Rotataion     %
+	%============================================%
+	
+	% --- Balik Rotasi Body (lscape) ---
+	\patchcmd{\LS@rot}{90}{-90}{}{}
+	% --- Balik Rotasi PDF Page (pdflscape) ---
+	\patchcmd{\landscape}{\PLS@Rotate{90}}{\PLS@Rotate{-90}}{}{}
+	
+	%=========================%
+	%     Section/Heading     %
+	%=========================%
+	
+	% --- Spacing Heading ---
+	% 
+	% \titlespacing{command}{left}{before-sep}{after-sep}[right]
+	%
+	% command   : Heading yang mau disetel
+	% left      : Margin kiri
+	% before-sep: Spasi sebelum atau di atas heading
+	% after-sep : Spasi setelah, sebelah kanan, atau di bawah heading
+	% right     : Margin kanan
+	% 
+	
+	\ifdef{\chapter}{
+	    \titlespacing*{\chapter}
+	        {0pt}
+	        {-30pt}
+	        {36pt plus 4pt minus 2pt}
+	    
+	    \titlespacing*{\section}
+	        {0pt}
+	        {3.5ex plus 1ex minus .2ex}
+	        {1.5ex plus .2ex}
+	    
+	    \titlespacing*{\subsection}
+	        {0pt}
+	        {2.8ex plus .8ex minus .2ex}
+	        {1.5ex plus .2ex}
+	    
+	    \ifdefstring{\template@heading}{apalike}{
+	        \titlespacing*{\subsubsection}{\titleindent}{*1.5}{.5em}
+	        \titlespacing*{\paragraph}{\titleindent}{*1.5}{.5em}
+	    }{
+	        \titlespacing*{\subsubsection}
+	            {0pt}
+	            {2.2ex plus .5ex minus .1ex}
+	            {1.5ex plus .2ex}
+	            
+	        \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
+	        \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+	    }
+	}{
+	    \titlespacing*{\section}
+	    {0pt}
+	    {3.5ex plus 1ex minus .2ex}
+	    {1.5ex plus .2ex}
+	    
+	    \titlespacing*{\subsection}
+	    {0pt}
+	    {2.8ex plus .8ex minus .2ex}
+	    {1.5ex plus .2ex}
+	    
+	    \titlespacing*{\subsubsection}
+	    {0pt}
+	    {2.2ex plus .5ex minus .1ex}
+	    {1.5ex plus .2ex}
+	    
+	    \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
+	    \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+	}
+    
+    %========================%
+    %     Caption Number     %
+    %========================%
+    
+    \ifdef{\chapter}{
+        \ifboolexpr{ test {\ifstrequal{\template@soaljawab}{true}} or test {\ifstrequal{\template@heading}{apalike}} }{
+            \counterwithout{figure}{chapter}
+            \counterwithout{table}{chapter}
+            \counterwithout{equation}{chapter}
+            %\counterwithout{lstlisting}{chapter}
         }{
-            \IfValueTF{#2}{
-                \template@originalchapter[#2]{#3}
-            }{
-                \template@originalchapter{#3}
-            }
+            \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+            \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+            \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+            %\renewcommand{\thelstlisting}{\arabic{chapter}.\arabic{lstlisting}}
         }
+    }{}
+    
+	%====================================%
+	%     Untitled Table of Contents     %
+	%====================================%
+	
+	% --- Daftar Gambar ---
+	\LetLtxMacro\template@originallistoffigures\listoffigures
+	\RenewDocumentCommand{\listoffigures}{}{%
+	    \template@originallistoffigures
+	    
+	    \ifdef{\chapter}{
+	        \ifdefstring{\template@soaljawab}{true}{}{%
+	            \addcontentsline{toc}{chapter}{\listfigurename}%
+	        }%
+	    }{}
+	}
+	
+	% --- Daftar Tabel ---
+	\LetLtxMacro\template@originallistoftables\listoftables
+	\RenewDocumentCommand{\listoftables}{}{%
+	    \template@originallistoftables
+	    
+	    \ifdef{\chapter}{
+	        \ifdefstring{\template@soaljawab}{true}{}{%
+	            \addcontentsline{toc}{chapter}{\listtablename}%
+	        }%
+	    }{}
+	}
+	
+	% --- Daftar Kode Listing ---
+    \newbool{listoflistingsused}
+	\ifdef{\lstlistoflistings}{
+	    \LetLtxMacro\template@originallistoflistings\lstlistoflistings
+	    \RenewDocumentCommand{\lstlistoflistings}{}{%
+	        \template@originallistoflistings
+	        \booltrue{listoflistingsused}
+            
+	        \ifdef{\chapter}{
+	            \ifdefstring{\template@soaljawab}{true}{}{%
+	                \addcontentsline{toc}{chapter}{\lstlistlistingname}%
+	            }%
+	        }{}
+	    }
+	}{}
+    
+    %===========================%
+    %     Table of Contents     %
+    %===========================%
+    
+    \ifdefstring{\template@showlabelname}{true}{
+        % --- Format Daftar Gambar Berlabel ---
+        \titlecontents{figure}[6em]
+        {}
+        {\contentslabel[\figurename~\thecontentslabel]{6em}}
+        {}
+        {\titlerule*[0.7pc]{.}\contentspage}
+        
+        % --- Format Daftar Tabel Berlabel ---
+        \titlecontents{table}[5em]
+        {}
+        {\contentslabel[\tablename~\thecontentslabel]{5em}}
+        {}
+        {\titlerule*[0.7pc]{.}\contentspage}
+        
+        % --- Format Daftar Kode/Listing Berlabel ---
+        \titlecontents{lstlisting}[4.5em]
+        {}
+        {\contentslabel[\lstlistingname~\thecontentslabel]{4.5em}}
+        {}
+        {\titlerule*[0.7pc]{.}\contentspage}
+    }{
+        % --- Format Daftar Gambar ---
+        \titlecontents{figure}[2.3em]
+        {}
+        {\contentslabel{2.3em}}
+        {}
+        {\titlerule*[0.7pc]{.}\contentspage}
+        
+        % --- Format Daftar Tabel ---
+        \titlecontents{table}[2.3em]
+        {}
+        {\contentslabel{2.3em}}
+        {}
+        {\titlerule*[0.7pc]{.}\contentspage}
+        
+        % --- Format Daftar Kode/Listing ---
+        \titlecontents{lstlisting}[2.3em]
+        {}
+        {\contentslabel{2.3em}}
+        {}
+        {\titlerule*[0.7pc]{.}\contentspage}
     }
     
-    \ifdefstring{\template@soaljawab}{true}{
-        \titlecontents{chapter}[0pt]
-        {\addvspace{1.5ex plus 1pt}\bfseries}
-        {}
-        {}
-        {\hfill\contentspage}
-    }{
-        \ifdefstring{\template@heading}{apalike}{
+    % --- Format Daftar Lampiran ---
+    \titlecontents{appendix}[0pt]
+    {\addvspace{1.5ex plus 1pt}}
+    {\thecontentslabel\quad}
+    {}
+    {\nopagebreak\titlerule*[0.7pc]{.}\contentspage}
+    
+    % --- Format Daftar Isi ---
+    \ifdef{\chapter}{
+        % --- Dengan Bab ---
+        \LetLtxMacro\template@originalchapter\chapter
+        \RenewDocumentCommand{\chapter}{s o m}{%
+            \IfBooleanTF{#1}{%
+                \template@originalchapter*{#3}%
+            }{%
+                \IfValueTF{#2}{%
+                    \template@originalchapter[#2]{#3}%
+                }{%
+                    \template@originalchapter{#3}%
+                }%
+            }%
+            % --- Spasi Daftar Kode/Listing ---
+            \ifbool{listoflistingsused}{%
+                \addtocontents{lol}{\protect\addvspace{10\p@}}%
+            }{}%
+        }%
+        
+        \ifdefstring{\template@soaljawab}{true}{
             \titlecontents{chapter}[0pt]
             {\addvspace{1.5ex plus 1pt}\bfseries}
-            {\chaptername\ \thecontentslabel\quad}
+            {}
             {}
             {\hfill\contentspage}
         }{
-            \titlecontents{chapter}[0pt]
-            {\addvspace{1.5ex plus 1pt}\bfseries}
-            {\MakeUppercase{\chaptername}\ \thecontentslabel\quad \MakeUppercase}
-            {\MakeUppercase}
-            {\hfill\contentspage}
+            \ifdefstring{\template@heading}{apalike}{
+                \titlecontents{chapter}[0pt]
+                {\addvspace{1.5ex plus 1pt}\bfseries}
+                {\chaptername\ \thecontentslabel\quad}
+                {}
+                {\hfill\contentspage}
+            }{
+                \titlecontents{chapter}[0pt]
+                {\addvspace{1.5ex plus 1pt}\bfseries}
+                {\MakeUppercase{\chaptername}\ \thecontentslabel\quad \MakeUppercase}
+                {\MakeUppercase}
+                {\hfill\contentspage}
+            }
         }
-    }
-}{
-    % --- Tanpa Bab ---
-    \LetLtxMacro\template@originalsection\section
-    \RenewDocumentCommand{\section}{s o m}{%
-        \IfBooleanTF{#1}{%
-            \template@originalsection*{#3}%
-            \addcontentsline{toc}{section}{#3}%
-        }{%
-            \IfValueTF{#2}{%
-                \template@originalsection[#2]{#3}%
+    }{
+        % --- Tanpa Bab ---
+        \LetLtxMacro\template@originalsection\section
+        \RenewDocumentCommand{\section}{s o m}{%
+            \IfBooleanTF{#1}{%
+                \template@originalsection*{#3}%
+                \addcontentsline{toc}{section}{#3}%
             }{%
-                \template@originalsection{#3}%
+                \IfValueTF{#2}{%
+                    \template@originalsection[#2]{#3}%
+                }{%
+                    \template@originalsection{#3}%
+                }%
             }%
-        }% 
-    }
-}
-
-%========================%
-%     Caption Number     %
-%========================%
-
-\newcommand{\template@captionprefix}{}
-
-\ifdef{\chapter}{
-    \renewcommand{\template@captionprefix}{\arabic{chapter}.}
-    
-    \ifdefstring{\template@soaljawab}{true}{
-        \renewcommand{\template@captionprefix}{}
-    }{}
-    \ifdefstring{\template@heading}{apalike}{
-        \renewcommand{\template@captionprefix}{}
-    }{}
-}{
-    \renewcommand{\template@captionprefix}{}
-}
-
-\renewcommand{\thefigure}{\template@captionprefix\arabic{figure}}
-\renewcommand{\thetable}{\template@captionprefix\arabic{table}}
-\ifdef{\thelstlisting}{\renewcommand{\thelstlisting}{\template@captionprefix\arabic{lstlisting}}}{}
-
-%====================================%
-%     Untitled Table of Contents     %
-%====================================%
-
-% --- Daftar Gambar ---
-\LetLtxMacro\template@originallistoffigures\listoffigures
-\RenewDocumentCommand{\listoffigures}{}{%
-    \template@originallistoffigures
-    
-    \ifdef{\chapter}{
-        \ifdefstring{\template@soaljawab}{true}{}{%
-            \addcontentsline{toc}{chapter}{\listfigurename}%
-        }%
-    }{}
-}
-
-% --- Daftar Tabel ---
-\LetLtxMacro\template@originallistoftables\listoftables
-\RenewDocumentCommand{\listoftables}{}{%
-    \template@originallistoftables
-    
-    \ifdef{\chapter}{
-        \ifdefstring{\template@soaljawab}{true}{}{%
-            \addcontentsline{toc}{chapter}{\listtablename}%
-        }%
-    }{}
-}
-
-% --- Daftar Kode Listing ---
-\ifdef{\lstlistoflistings}{
-    \LetLtxMacro\template@originallistoflistings\lstlistoflistings
-    \RenewDocumentCommand{\lstlistoflistings}{}{%
-        \template@originallistoflistings
-        
-        \ifdef{\chapter}{
-            \ifdefstring{\template@soaljawab}{true}{}{%
-                \addcontentsline{toc}{chapter}{\lstlistlistingname}%
-            }%
-        }{}
-    }
-}{}
-
-%======================================%
-%     Page Style (Header & Footer)     %
-%======================================%
-
-% --- Warisan Pagestyle Biasa untuk Bab ---
-\ifdef{\chapter}{
-    \fancypagestyle{plain}[fancy]{}
-}{}
-
-% --- Nomor Halaman X / X dari Pemilihan No. Halaman Lampiran ---
-\ifdefstring{\template@apppagenum}{arabic}{
-    \newcommand{\thepagefull}{\thepage\ / \pageref{LastPage}}
-}{
-    \newcommand{\thepagefull}{\thepage\ / \pageref{LastMainPage}}
-}
-
-% --- Env Nomor Halaman Tanpa Lastpage ---
-\NewDocumentEnvironment{pagestylenolastpage}{}{
-    \renewcommand{\thepagefull}{\thepage}
-}{
-    \clearpage
-}
-
-% --- Header Informasi (Default v1.x.x) ---
-%
-%                      Skema Tutorial | Sesi 3  │
-%                                               │  12 / 35
-%               XYZA-9999 | 1024 | Mata Kuliah  │
-%
-\fancypagestyle{head-info}{
-    \fancyhf{}
-    \renewcommand{\headrulewidth}{0pt}
-    \setlength{\topmargin}{-1.5cm}
-    \setlength{\headsep}{1.5cm}
-    \fancyhead[R]{
-        \color{gray}
-        \begin{tabular}{r @{\hspace*{15pt}}|@{\hspace*{15pt}} l}
-            \ifundef{\judul}{\textit{\skemaTutorial\ $\mid$ \textit{\Sesi\ \sesiKe}}}{\textit{\judul}} & \multirow{2}{*}{\thepagefull} \\
-            \textit{\KodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah} &
-        \end{tabular}\hspace*{-2.1cm}
-    }
-    
-    \fancypagestyle{plain}{
-        \fancyhf{}
-        \renewcommand{\headrulewidth}{0pt}
-        \setlength{\topmargin}{-1.25cm}
-        \setlength{\headsep}{1.5cm}
-        \fancyhead[R]{
-            \textcolor{gray}{\thepagefull} \hspace*{-2cm}
+            % --- Spasi Daftar Kode/Listing ---
+            \ifbool{listoflistingsused}{%
+                \addtocontents{lol}{\protect\addvspace{10\p@}}%
+            }{}%
         }
     }
-}
-
-% --- Header Ringkas dengan Footer Nomor Halaman ---
-%
-%     Nama Penulis (098765432)                 Mata Kuliah
-%     ────────────────────────────────────────────────────
-%
-%                              12
-%
-\fancypagestyle{simple}{
-    \fancyhf{}
-    \fancyhead[L]{\footnotesize \namaMahasiswa\ (\nimMahasiswa)}
-    \fancyhead[R]{
-        \ifundef{\judul}{
-            \footnotesize \namaMataKuliah
-        }{
-            \footnotesize \judul
-        }
-    }
-    \fancyfoot[C]{\footnotesize \thepage}
-    \renewcommand{\headrulewidth}{0.5pt}
-    
-    \fancypagestyle{plain}{
-        \fancyhf{}
-        \fancyfoot[C]{\footnotesize \thepage}
-        \renewcommand{\headrulewidth}{0pt}
-    }
-}
-%
-%     Nama Penulis (098765432)                 Mata Kuliah
-%     ────────────────────────────────────────────────────
-%
-%                           12 / 35
-%
-\fancypagestyle{simple-pagelast}{
-    \fancyhf{}
-    \fancyhead[L]{\footnotesize \namaMahasiswa\ (\nimMahasiswa)}
-    \fancyhead[R]{
-        \ifundef{\judul}{
-            \footnotesize \namaMataKuliah
-        }{
-            \footnotesize \judul
-        }
-    }
-    \fancyfoot[C]{\footnotesize \thepagefull}
-    \renewcommand{\headrulewidth}{0.5pt}
-    
-    \fancypagestyle{plain}{
-        \fancyhf{}
-        \fancyfoot[C]{\footnotesize \thepagefull}
-        \renewcommand{\headrulewidth}{0pt}
-    }
-}
-
-% --- Footer Nomor Halaman Saja ---
-\fancypagestyle{foot-page}{
-    \fancyhf{}
-    \fancyfoot[C]{\footnotesize \thepage}
-    \renewcommand{\headrulewidth}{0pt}
-}
-\fancypagestyle{foot-pagelast}{
-    \fancyhf{}
-    \fancyfoot[C]{\footnotesize \thepagefull}
-    \renewcommand{\headrulewidth}{0pt}
-}
-
-%=======================================%
-%     Ordered List & Unordered List     %
-%=======================================%
-
-\setlist[enumerate]{leftmargin=\parindent}
-\setlist[itemize]{leftmargin=\parindent}
-
-%==========================%
-%     Tabularray Table     %
-%==========================%
-
-% --- Specing 1 dan Ukuran Huruf \small untuk Keterangan Tabel ---
-\SetTblrStyle{caption}{font=\setstretch{1}\small}
-
-% --- Specing 1 dan Ukuran Huruf \small untuk tulisan
-%     "Continued to next page" atau "Lanjutan di halaman berikutnya"
-\SetTblrStyle{capcont}{font=\setstretch{1}\small}
-\SetTblrStyle{contfoot-text}{font=\setstretch{1}\small}
-
-% --- Ukuran Huruf \small untuk Catatan Tabel (Footnote) ---
-\SetTblrStyle{note}{font=\setstretch{1}\small}
-
-% --- Ukuran Huruf \small untuk Catatan Tambahan (Remark) Tabel ---
-\SetTblrStyle{remark}{font=\setstretch{1}\small}
-
-% --- Format Remark Bertulis Tegak ---
-\DeclareTblrTemplate{remark-tag}{normal}{
-    \UseTblrFont {remark-tag} \InsertTblrRemarkTag
-}
-\SetTblrTemplate{remark-tag}{normal}
-
-%========================================%
-%     More Non-Autocomplete Commands     %
-%========================================%
-
-% --- Tanda Titik Otomatis untuk \paragraph dan \subparagraph ---
-\newcommand{\smartperiod}[1]{#1\@addpunct{.}}
-
-%======================%
-%     Conditionals     %
-%======================%
-
-% --- Pemilihan URL Style ---
-\ifdefstring{\template@urlstyle}{roman}{
-    \AtBeginDocument{\urlstyle{APACrm}}
-}{}
-
-% --- Pemilihan Bahasa APA ---
-\ifdefstring{\template@apa}{indonesia}{
-    \input{preset/bib/apa-bahasa-indonesia.tex}
-}{}
-\ifdefstring{\template@apa}{campuran}{
-    \input{preset/bib/apa-bahasa-campuran.tex}
-}{}
-
-% --- Penggunaan microtype ---
-\ifdefstring{\template@microtype}{true}{
-    \RequirePackage[babel]{microtype}
-    \microtypecontext{spacing=nonfrench}
-%
-%    \AtBeginEnvironment{verbatim}{\microtypesetup{deactivate}}
-%    \AtEndEnvironment{verbatim}{\microtypesetup{activate}}
-%    
-%    \AtBeginEnvironment{lstlisting}{\microtypesetup{deactivate}}
-%    \AtEndEnvironment{lstlisting}{\microtypesetup{activate}}
-}{}
-
-%===============================================================%
-%     Pengkondisian Penomoran Heading Ilmiah dan Soal Jawab     %
-%===============================================================%
-
-% --- Penentuan Nama File Preset Judul ---
-\newcommand{\template@titlefilename}{}
-
-\ifdefstring{\template@soaljawab}{true}{
-    \renewcommand{\template@titlefilename}{ljmtugas}
-}{
-    \renewcommand{\template@titlefilename}{artikelmakalah}
-}
-
-% --- Pemilihan Jenis Penomoran Heading/Section ---
-\ifdefstring{\template@heading}{alpha}{
-    \input{preset/titles/\template@titlefilename-alphanumeric.tex}
-}{}
-\ifdefstring{\template@heading}{alpha-mag}{
-    \input{preset/titles/\template@titlefilename-alphanumeric-mag.tex}
-}{}
-\ifdefstring{\template@heading}{multi}{
-    \input{preset/titles/\template@titlefilename-multilevel.tex}
-}{}
-\ifdefstring{\template@heading}{multi-mag}{
-    \input{preset/titles/\template@titlefilename-multilevel-mag.tex}
-}{}
-\ifdefstring{\template@heading}{apalike}{
-    \input{preset/titles/\template@titlefilename-lowlevel.tex}
-}{}
+	
+	%======================================%
+	%     Page Style (Header & Footer)     %
+	%======================================%
+	
+	% --- Warisan Pagestyle Biasa untuk Bab ---
+	\ifdef{\chapter}{
+	    \fancypagestyle{plain}[fancy]{}
+	}{}
+	
+	% --- Nomor Halaman X / X dari Pemilihan No. Halaman Lampiran ---
+	\ifdefstring{\template@apppagenum}{arabic}{
+	    \newcommand{\thepagefull}{\thepage\ / \pageref{LastPage}}
+	}{
+	    \newcommand{\thepagefull}{\thepage\ / \pageref{LastMainPage}}
+	}
+	
+	% --- Env Nomor Halaman Tanpa Lastpage ---
+	\NewDocumentEnvironment{pagestylenolastpage}{}{
+	    \renewcommand{\thepagefull}{\thepage}
+	}{
+	    \clearpage
+	}
+	
+	% --- Header Informasi (Default v1.x.x) ---
+	%
+	%                      Skema Tutorial | Sesi 3  │
+	%                                               │  12 / 35
+	%               XYZA-9999 | 1024 | Mata Kuliah  │
+	%
+	\fancypagestyle{head-info}{
+	    \fancyhf{}
+	    \renewcommand{\headrulewidth}{0pt}
+	    \setlength{\topmargin}{-1.5cm}
+	    \setlength{\headsep}{1.5cm}
+	    \fancyhead[R]{
+	        \color{gray}
+	        \begin{tabular}{r @{\hspace*{15pt}}|@{\hspace*{15pt}} l}
+	            \ifundef{\judul}{\textit{\skemaTutorial\ $\mid$ \textit{\Sesi\ \sesiKe}}}{\textit{\judul}} & \multirow{2}{*}{\thepagefull} \\
+	            \textit{\KodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah} &
+	        \end{tabular}\hspace*{-2.1cm}
+	    }
+	    
+	    \fancypagestyle{plain}{
+	        \fancyhf{}
+	        \renewcommand{\headrulewidth}{0pt}
+	        \setlength{\topmargin}{-1.25cm}
+	        \setlength{\headsep}{1.5cm}
+	        \fancyhead[R]{
+	            \textcolor{gray}{\thepagefull} \hspace*{-2cm}
+	        }
+	    }
+	}
+	
+	% --- Header Ringkas dengan Footer Nomor Halaman ---
+	%
+	%     Nama Penulis (098765432)                 Mata Kuliah
+	%     ────────────────────────────────────────────────────
+	%
+	%                              12
+	%
+	\fancypagestyle{simple}{
+	    \fancyhf{}
+	    \fancyhead[L]{\footnotesize \namaMahasiswa\ (\nimMahasiswa)}
+	    \fancyhead[R]{
+	        \ifundef{\judul}{
+	            \footnotesize \namaMataKuliah
+	        }{
+	            \footnotesize \judul
+	        }
+	    }
+	    \fancyfoot[C]{\footnotesize \thepage}
+	    \renewcommand{\headrulewidth}{0.5pt}
+	    
+	    \fancypagestyle{plain}{
+	        \fancyhf{}
+	        \fancyfoot[C]{\footnotesize \thepage}
+	        \renewcommand{\headrulewidth}{0pt}
+	    }
+	}
+	%
+	%     Nama Penulis (098765432)                 Mata Kuliah
+	%     ────────────────────────────────────────────────────
+	%
+	%                           12 / 35
+	%
+	\fancypagestyle{simple-pagelast}{
+	    \fancyhf{}
+	    \fancyhead[L]{\footnotesize \namaMahasiswa\ (\nimMahasiswa)}
+	    \fancyhead[R]{
+	        \ifundef{\judul}{
+	            \footnotesize \namaMataKuliah
+	        }{
+	            \footnotesize \judul
+	        }
+	    }
+	    \fancyfoot[C]{\footnotesize \thepagefull}
+	    \renewcommand{\headrulewidth}{0.5pt}
+	    
+	    \fancypagestyle{plain}{
+	        \fancyhf{}
+	        \fancyfoot[C]{\footnotesize \thepagefull}
+	        \renewcommand{\headrulewidth}{0pt}
+	    }
+	}
+	
+	% --- Footer Nomor Halaman Saja ---
+	\fancypagestyle{foot-page}{
+	    \fancyhf{}
+	    \fancyfoot[C]{\footnotesize \thepage}
+	    \renewcommand{\headrulewidth}{0pt}
+	}
+	\fancypagestyle{foot-pagelast}{
+	    \fancyhf{}
+	    \fancyfoot[C]{\footnotesize \thepagefull}
+	    \renewcommand{\headrulewidth}{0pt}
+	}
+	
+	%=======================================%
+	%     Ordered List & Unordered List     %
+	%=======================================%
+	
+	\setlist[enumerate]{leftmargin=\parindent}
+	\setlist[itemize]{leftmargin=\parindent}
+	
+	%==========================%
+	%     Tabularray Table     %
+	%==========================%
+	
+	% --- Specing 1 dan Ukuran Huruf \small untuk Keterangan Tabel ---
+	\SetTblrStyle{caption}{font=\setstretch{1}\small}
+	
+	% --- Specing 1 dan Ukuran Huruf \small untuk tulisan
+	%     "Continued to next page" atau "Lanjutan di halaman berikutnya"
+	\SetTblrStyle{capcont}{font=\setstretch{1}\small}
+	\SetTblrStyle{contfoot-text}{font=\setstretch{1}\small}
+	
+	% --- Ukuran Huruf \small untuk Catatan Tabel (Footnote) ---
+	\SetTblrStyle{note}{font=\setstretch{1}\small}
+	
+	% --- Ukuran Huruf \small untuk Catatan Tambahan (Remark) Tabel ---
+	\SetTblrStyle{remark}{font=\setstretch{1}\small}
+	
+	% --- Format Remark Bertulis Tegak ---
+	\DeclareTblrTemplate{remark-tag}{normal}{
+	    \UseTblrFont {remark-tag} \InsertTblrRemarkTag
+	}
+	\SetTblrTemplate{remark-tag}{normal}
+	
+	%========================================%
+	%     More Non-Autocomplete Commands     %
+	%========================================%
+	
+	% --- Tanda Titik Otomatis untuk \paragraph dan \subparagraph ---
+	\newcommand{\smartperiod}[1]{#1\@addpunct{.}}
+	
+	%======================%
+	%     Conditionals     %
+	%======================%
+	
+	% --- Pemilihan URL Style ---
+	\ifdefstring{\template@urlstyle}{roman}{
+	    \AtBeginDocument{\urlstyle{APACrm}}
+	}{}
+	
+	% --- Pemilihan Bahasa APA ---
+	\ifdefstring{\template@apa}{indonesia}{
+	    \input{preset/bib/apa-bahasa-indonesia.tex}
+	}{}
+	\ifdefstring{\template@apa}{campuran}{
+	    \input{preset/bib/apa-bahasa-campuran.tex}
+	}{}
+	
+	% --- Penggunaan microtype ---
+	\ifdefstring{\template@microtype}{true}{
+	    \RequirePackage[babel]{microtype}
+	    \microtypecontext{spacing=nonfrench}
+	%
+	%    \AtBeginEnvironment{verbatim}{\microtypesetup{deactivate}}
+	%    \AtEndEnvironment{verbatim}{\microtypesetup{activate}}
+	%    
+	%    \AtBeginEnvironment{lstlisting}{\microtypesetup{deactivate}}
+	%    \AtEndEnvironment{lstlisting}{\microtypesetup{activate}}
+	}{}
+	
+	%===============================================================%
+	%     Pengkondisian Penomoran Heading Ilmiah dan Soal Jawab     %
+	%===============================================================%
+	
+	% --- Penentuan Nama File Preset Judul ---
+	\newcommand{\template@titlefilename}{}
+	
+	\ifdefstring{\template@soaljawab}{true}{
+	    \renewcommand{\template@titlefilename}{ljmtugas}
+	}{
+	    \renewcommand{\template@titlefilename}{artikelmakalah}
+	}
+	
+	% --- Pemilihan Jenis Penomoran Heading/Section ---
+	\ifdefstring{\template@heading}{alpha}{
+	    \input{preset/titles/\template@titlefilename-alphanumeric.tex}
+	}{}
+	\ifdefstring{\template@heading}{alpha-mag}{
+	    \input{preset/titles/\template@titlefilename-alphanumeric-mag.tex}
+	}{}
+	\ifdefstring{\template@heading}{multi}{
+	    \input{preset/titles/\template@titlefilename-multilevel.tex}
+	}{}
+	\ifdefstring{\template@heading}{multi-mag}{
+	    \input{preset/titles/\template@titlefilename-multilevel-mag.tex}
+	}{}
+	\ifdefstring{\template@heading}{apalike}{
+	    \input{preset/titles/\template@titlefilename-lowlevel.tex}
+	}{}
 
 %%=================================%
 }%     End of \AtBeginDocument     %
@@ -799,17 +852,17 @@
             }{}
             
             % --- Prefix Caption & Reset Counter ---
-            \ifdefstring{\template@soaljawab}{true}{
-                \renewcommand{\template@captionprefix}{}
-            }{
-                \ifdefstring{\template@heading}{apalike}{
-                    \renewcommand{\template@captionprefix}{}
-                }{
-                    \renewcommand{\template@captionprefix}{\thechapter.}
-                    \setcounter{figure}{0}%
-                    \setcounter{table}{0}%
-                    \ifdef{\thelstlisting}{\setcounter{lstlisting}{0}}{}%
-                }
+            \ifboolexpr{ test {\ifstrequal{\template@soaljawab}{true}} or test {\ifstrequal{\template@heading}{apalike}} }{%
+                % Left it default
+            }{%
+                \renewcommand{\thefigure}{\thechapter.\arabic{figure}}%
+                \renewcommand{\thetable}{\thechapter.\arabic{table}}%
+                \renewcommand{\theequation}{\thechapter.\arabic{equation}}%
+                \ifdef{\thelstlisting}{\renewcommand{\thelstlisting}{\thechapter.\arabic{lstlisting}}}{}%
+                \setcounter{figure}{0}%
+                \setcounter{table}{0}%
+                \setcounter{equation}{0}%
+                \ifdef{\thelstlisting}{\setcounter{lstlisting}{0}}{}%
             }
         }
     }{
@@ -865,12 +918,16 @@
             
             % --- Pengkondisian Prefix Caption & Reset Counter
             %     (Artikel) ---
-            \ifdefstring{\template@heading}{apalike}{
-                \renewcommand{\template@captionprefix}{}
-            }{
-                \renewcommand{\template@captionprefix}{\thesection.}
+            \ifboolexpr{ test {\ifstrequal{\template@soaljawab}{true}} or test {\ifstrequal{\template@heading}{apalike}} }{%
+                % Left it default
+            }{%
+                \renewcommand{\thefigure}{\thesection.\arabic{figure}}%
+                \renewcommand{\thetable}{\thesection.\arabic{table}}%
+                \renewcommand{\theequation}{\thesection.\arabic{equation}}%
+                \ifdef{\thelstlisting}{\renewcommand{\thelstlisting}{\thesection.\arabic{lstlisting}}}{}%
                 \setcounter{figure}{0}%
                 \setcounter{table}{0}%
+                \setcounter{equation}{0}%
                 \ifdef{\thelstlisting}{\setcounter{lstlisting}{0}}{}%
             }
         }
