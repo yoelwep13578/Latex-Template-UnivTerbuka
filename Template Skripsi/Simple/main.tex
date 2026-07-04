@@ -141,7 +141,14 @@
 %                      lampiran (ABCDEF punya halaman sendiri)
 %      - [kosong]  --- Memakai pilihan arabic
 %
-\documentclass[heading=alpha, mainfont=times, apa=campuran, listappendix, appnumarabic]{artikelmakalah}
+%     11. showlabelname
+%     Memunculkan tulisan nama label:
+%     Daftar Gambar: "2.2" --> "Gambar 2.2"
+%     Daftar Tabel: "2.2" --> "Tabel 2.2"
+%     Daftar Kode: "2.2" --> "Kode 2.2"
+%     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
+%
+\documentclass[heading=alpha, mainfont=times, apa=campuran, showlabelname, listappendix, appnumarabic]{artikelmakalah}
 
 %==================%
 %     Preamble     %
@@ -151,11 +158,10 @@
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
 
 % --- Halaman Landscape ---
-%     [NOTE] Hanya bisa digunakan untuk lualatex
 \usepackage{pdflscape}
 
 % --- Hyperlink ---
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, bookmarksdepth=3]{hyperref}
 
 %======================%
 %     Bahasa Utama     %
@@ -388,7 +394,8 @@
         % Daftar Tabel
         \listoftables
         
-        % Daftar Kode/Listings
+        % Daftar Kode/Listings 
+        % (Package listings Harus Dimuat)
         %\lstlistoflistings
         
         % Daftar Lampiran 
