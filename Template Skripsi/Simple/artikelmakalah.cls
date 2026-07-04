@@ -343,7 +343,7 @@
     %========================%
     
     \ifdef{\chapter}{
-        \ifboolexpr{ test {\ifstrequal{\template@soaljawab}{true}} or test {\ifstrequal{\template@heading}{apalike}} }{
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{
             \counterwithout{figure}{chapter}
             \counterwithout{table}{chapter}
             \counterwithout{equation}{chapter}
@@ -423,6 +423,21 @@
         {\contentslabel[\lstlistingname~\thecontentslabel]{5em}}
         {}
         {\titlerule*[0.7pc]{.}\contentspage}
+        
+        % --- Format Daftar Lampiran ---
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
+            \titlecontents{appendix}[0em]
+            {}
+            {}
+            {}
+            {\titlerule*[0.7pc]{.}\contentspage}
+        }{%
+            \titlecontents{appendix}[6em]
+            {}
+            {\contentslabel[\appendixname~\thecontentslabel]{6em}}
+            {}
+            {\nopagebreak\titlerule*[0.7pc]{.}\contentspage}
+        }%
     }{
         % --- Format Daftar Gambar ---
         \titlecontents{figure}[2.3em]
@@ -444,14 +459,22 @@
         {\contentslabel{2.3em}}
         {}
         {\titlerule*[0.7pc]{.}\contentspage}
+        
+        % --- Format Daftar Lampiran ---
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
+            \titlecontents{appendix}[0em]
+            {}
+            {}
+            {}
+            {\titlerule*[0.7pc]{.}\contentspage}
+        }{%
+            \titlecontents{appendix}[2.3em]
+            {}
+            {\contentslabel{2.3em}}
+            {}
+            {\titlerule*[0.7pc]{.}\contentspage}
+        }%
     }
-    
-    % --- Format Daftar Lampiran ---
-    \titlecontents{appendix}[0pt]
-    {\addvspace{1.5ex plus 1pt}}
-    {\thecontentslabel\quad}
-    {}
-    {\nopagebreak\titlerule*[0.7pc]{.}\contentspage}
     
     % --- Format Daftar Isi ---
     \ifdef{\chapter}{
@@ -737,21 +760,19 @@
 %     Daftar Lampiran     %
 %=========================%
 
-\newcommand{\listofappendices}{
-	\ifdefstring{\template@listappendix}{true}{
+\newcommand{\listofappendices}{%
+	\ifdefstring{\template@listappendix}{true}{%
 		\clearpage
-		
-		\ifdef{\chapter}{
-			\chapter*{\listappendicesname}
-			\addcontentsline{toc}{chapter}{\listappendicesname}
-		}{
-			\section*{\listappendicesname}
-			\addcontentsline{toc}{chapter}{\listappendicesname}
-		}
-		\markboth{\listappendicesname}{\listappendicesname}
-		
-		\@starttoc{loa}
-	}{}
+		\ifdef{\chapter}{%
+			\chapter*{\listappendicesname}%
+			\addcontentsline{toc}{chapter}{\listappendicesname}%
+		}{%
+			\section*{\listappendicesname}%
+			\addcontentsline{toc}{chapter}{\listappendicesname}%
+		}%
+		\markboth{\listappendicesname}{\listappendicesname}%
+		\@starttoc{loa}%
+	}{}%
 }
 
 %=========================%
@@ -838,13 +859,9 @@
                     \addtocontents{lol}{\protect\addvspace{10\p@}}%
                 }{}%
                 % --- Penambahan ke Daftar Lampiran ---
-                \ifdefstring{\template@listappendix}{true}{
-                	\ifdefstring{\template@heading}{apalike}{
-                		\addcontentsline{loa}{appendix}{#3}%
-                	}{
-                		\addcontentsline{loa}{appendix}{\appendixname\ \thechapter\quad #3}%
-                	}
-                }{}
+                \ifdefstring{\template@listappendix}{true}{%
+                    \addtocontents{loa}{\protect\contentsline{appendix}{\protect\numberline{\thechapter}#3}{\thepage}{}}%
+                }{}%
             }% 
             
             % --- Reset Halaman untuk apppagenum gabungan ---
@@ -853,7 +870,7 @@
             }{}
             
             % --- Prefix Caption & Reset Counter ---
-            \ifboolexpr{ test {\ifstrequal{\template@soaljawab}{true}} or test {\ifstrequal{\template@heading}{apalike}} }{%
+            \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
                 % Left it default
             }{%
                 \renewcommand{\thefigure}{\thechapter.\arabic{figure}}%
@@ -906,13 +923,9 @@
                     \addtocontents{lol}{\protect\addvspace{10\p@}}%
                 }{}%
                 % --- Penambahan ke Daftar Lampiran ---
-                \ifdefstring{\template@listappendix}{true}{
-                	\ifdefstring{\template@heading}{apalike}{
-                		\addcontentsline{loa}{appendix}{#3}%
-                	}{
-                		\addcontentsline{loa}{appendix}{\appendixname\ \thesection\quad #3}%
-                	}
-                }{}
+                \ifdefstring{\template@listappendix}{true}{%
+                    \addtocontents{loa}{\protect\contentsline{appendix}{\protect\numberline{\thesection}#3}{\thepage}{}}%
+                }{}%
             }% 
             
             % --- Reset Halaman untuk apppagenum gabungan 
@@ -923,7 +936,7 @@
             
             % --- Pengkondisian Prefix Caption & Reset Counter
             %     (Artikel) ---
-            \ifboolexpr{ test {\ifstrequal{\template@soaljawab}{true}} or test {\ifstrequal{\template@heading}{apalike}} }{%
+            \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
                 % Left it default
             }{%
                 \renewcommand{\thefigure}{\thesection.\arabic{figure}}%
@@ -936,23 +949,7 @@
                 \ifdef{\thelstlisting}{\setcounter{lstlisting}{0}}{}%
             }
         }
-        
-        % --- Nomor Caption Berlanjut ---
-        %\renewcommand{\template@captionprefix}{}
-        
-        % --- Nomor Caption Reset ---
-        %
-        % \renewcommand{\template@captionprefix}{\thesection.}
-        % \pretocmd{\section}{%
-        %     \setcounter{figure}{0}%
-        %     \setcounter{table}{0}%
-        %     \setcounter{lstlisting}{0}%
-        % }
     }
-    
-    \renewcommand{\thefigure}{\template@captionprefix\arabic{figure}}
-    \renewcommand{\thetable}{\template@captionprefix\arabic{table}}
-    \ifdef{\thelstlisting}{\renewcommand{\thelstlisting}{\template@captionprefix\arabic{lstlisting}}}{}
     
     % --- Pemilihan Jenis Nomor Halaman Lampiran/Appendix ---
     \ifdefstring{\template@apppagenum}{arabicone}{
