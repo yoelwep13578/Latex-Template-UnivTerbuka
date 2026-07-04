@@ -468,9 +468,9 @@
             {}
             {\titlerule*[0.7pc]{.}\contentspage}
         }{%
-            \titlecontents{appendix}[2.3em]
+            \titlecontents{appendix}[2.4em]
             {}
-            {\contentslabel{2.3em}}
+            {\contentslabel{2.4em}}
             {}
             {\titlerule*[0.7pc]{.}\contentspage}
         }%
