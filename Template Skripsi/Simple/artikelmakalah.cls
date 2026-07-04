@@ -860,9 +860,9 @@
                 }{}%
                 % --- Penambahan ke Daftar Lampiran ---
                 \ifdefstring{\template@listappendix}{true}{%
-                    \addtocontents{loa}{\protect\contentsline{appendix}{\protect\numberline{\thechapter}#3}{\thepage}{}}%
+                    \addtocontents{loa}{\protect\contentsline{appendix}{\protect\numberline{\thechapter}#3}{\thepage}{\@currentHref}}%
                 }{}%
-            }% 
+            }%
             
             % --- Reset Halaman untuk apppagenum gabungan ---
             \ifdefstring{\template@apppagenum}{gabungan}{
@@ -924,7 +924,7 @@
                 }{}%
                 % --- Penambahan ke Daftar Lampiran ---
                 \ifdefstring{\template@listappendix}{true}{%
-                    \addtocontents{loa}{\protect\contentsline{appendix}{\protect\numberline{\thesection}#3}{\thepage}{}}%
+                    \addtocontents{loa}{\protect\contentsline{appendix}{\protect\numberline{\thesection}#3}{\thepage}{\@currentHref}}%
                 }{}%
             }% 
             
