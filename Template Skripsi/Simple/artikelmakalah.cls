@@ -385,12 +385,10 @@
 	}
 	
 	% --- Daftar Kode Listing ---
-    \newbool{listoflistingsused}
 	\ifdef{\lstlistoflistings}{
 	    \LetLtxMacro\template@originallistoflistings\lstlistoflistings
 	    \RenewDocumentCommand{\lstlistoflistings}{}{%
 	        \template@originallistoflistings
-	        \booltrue{listoflistingsused}
             
 	        \ifdef{\chapter}{
 	            \ifdefstring{\template@soaljawab}{true}{}{%
@@ -406,9 +404,9 @@
     
     \ifdefstring{\template@showlabelname}{true}{
         % --- Format Daftar Gambar Berlabel ---
-        \titlecontents{figure}[6em]
+        \titlecontents{figure}[6.2em]
         {}
-        {\contentslabel[\figurename~\thecontentslabel]{6em}}
+        {\contentslabel[\figurename~\thecontentslabel]{6.2em}}
         {}
         {\titlerule*[0.7pc]{.}\contentspage}
         
@@ -420,9 +418,9 @@
         {\titlerule*[0.7pc]{.}\contentspage}
         
         % --- Format Daftar Kode/Listing Berlabel ---
-        \titlecontents{lstlisting}[4.5em]
+        \titlecontents{lstlisting}[5em]
         {}
-        {\contentslabel[\lstlistingname~\thecontentslabel]{4.5em}}
+        {\contentslabel[\lstlistingname~\thecontentslabel]{5em}}
         {}
         {\titlerule*[0.7pc]{.}\contentspage}
     }{
@@ -470,7 +468,7 @@
                 }%
             }%
             % --- Spasi Daftar Kode/Listing ---
-            \ifbool{listoflistingsused}{%
+            \ifdef{\lstlistoflistings}{%
                 \addtocontents{lol}{\protect\addvspace{10\p@}}%
             }{}%
         }%
@@ -511,7 +509,7 @@
                 }%
             }%
             % --- Spasi Daftar Kode/Listing ---
-            \ifbool{listoflistingsused}{%
+            \ifdef{\lstlistoflistings}{%
                 \addtocontents{lol}{\protect\addvspace{10\p@}}%
             }{}%
         }
@@ -835,7 +833,10 @@
                 }{%
                     \template@originalchapter{#3}%
                 }%
-                
+                % --- Spasi Daftar Kode/Listing ---
+                \ifdef{\lstlistoflistings}{%
+                    \addtocontents{lol}{\protect\addvspace{10\p@}}%
+                }{}%
                 % --- Penambahan ke Daftar Lampiran ---
                 \ifdefstring{\template@listappendix}{true}{
                 	\ifdefstring{\template@heading}{apalike}{
@@ -900,6 +901,10 @@
                 }{%
                     \template@originalsection{#3}%
                 }%
+                % --- Spasi Daftar Kode/Listing ---
+                \ifdef{\lstlistoflistings}{%
+                    \addtocontents{lol}{\protect\addvspace{10\p@}}%
+                }{}%
                 % --- Penambahan ke Daftar Lampiran ---
                 \ifdefstring{\template@listappendix}{true}{
                 	\ifdefstring{\template@heading}{apalike}{
