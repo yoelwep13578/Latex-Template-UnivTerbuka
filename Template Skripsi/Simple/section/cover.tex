@@ -48,9 +48,9 @@
     }}}
 
     % --- Pernyataan Maksud/Tujuan Dokumen ---
-    \ifdef{\keteranganTujuanKarya}{
+    \ifdef{\tujuanKarya}{
         \vspace{1cm}
-        {\setstretch{1}\textbf{\keteranganTujuanKarya}}
+        {\setstretch{1}\textbf{\tujuanKarya}}
     }{}
     
     % --- Logo Perguruan Tinggi ---
@@ -65,23 +65,23 @@
     \begin{tabular}{@{}l@{\hspace{4pt}}c@{\hspace{4pt}}l}
         \Nama &:& \namaMahasiswa \\
         \NomorIndukM &:& \nimMahasiswa \\
-        \ProgramStudi &:& \programStudi
+        \ProgramStudi &:& \prodi
     \end{tabular}}
     
     \vfill
     
     {\setstretch{1}\large
-    \ifundef{\captionsindonesian}{
-        \textbf{\MakeUppercase{\Fakultas\ of \fakultas}} \\
-        \textbf{\MakeUppercase{\perguruanTinggi}} \\
-        \textbf{\MakeUppercase{\utDaerah}} \\
-        \textbf{\tahun}
-    }{
-        \textbf{\MakeUppercase{\Fakultas\ \fakultas}} \\
-        \textbf{\MakeUppercase{\perguruanTinggi}} \\
-        \textbf{\MakeUppercase{\utDaerah}} \\
-        \textbf{\tahun}
-    }
+        \ifundef{\captionsindonesian}{
+            \textbf{\MakeUppercase{\Fakultas\ of \fakultasENG}} \\
+            \textbf{\MakeUppercase{\kampusENG}} \\
+            \textbf{\MakeUppercase{\daerahKampus}} \\
+            \textbf{\tahun}
+        }{
+            \textbf{\MakeUppercase{\Fakultas\ \fakultas}} \\
+            \textbf{\MakeUppercase{\kampus}} \\
+            \textbf{\MakeUppercase{\daerahKampus}} \\
+            \textbf{\tahun}
+        }
     }
     
 \end{titlepage}
