@@ -11,6 +11,7 @@
 %
 \newcommand{\judul}{Judul Tulisan Anda yang Disarankan Tidak Terlalu Panjang, Sekitar 10--20 Kata}
 \newcommand{\judulENG}{Title of Your Bachelor's Thesis Should Not Be Too Long, Around 10--20 Words}
+\newcommand{\judulSebaris}{\begingroup\def\\{ }\judul\endgroup}
 
 % --- Keterangan Maksud atau Tujuan Penulisan Karya Tulis ---
 %
@@ -18,34 +19,13 @@
 % pernyataan tujuan dari tulisan yang Anda susun ini.
 %
 % [Contoh] "Diajukan sebagai salah satu syarat untuk memperoleh
-%          gelar Sarjana Sains pada Program Studi \programStudi."
+%          gelar Sarjana Sains pada Program Studi ..."
 %
 \newcommand{\tujuanKarya}{Diajukan sebagai salah satu syarat untuk memperoleh gelar \gelarHarapan.}
 
-% --- Skema Pembelajaran/Tutorial ---
-%
-% [Syntax] \newcommand{\skemaTutorial}{PERINTAH atau TEKS}
-%
-% Isilah PERINTAH dengan yang ada di bawah ini untuk penerjemahan
-% saat bahasa diganti menjadi Bahasa Indonesia atau Bahasa Inggris
-%
-%  - \TutorialOnline
-%    Tutorial Online <--> Online Tutorial
-%
-%  - \TutorialWebinar
-%    Tutorial Webinar <--> Webinar Tutorial
-%
-%  - \TutorialTatapMuka
-%    Tutorial Tatap Muka <--> Face-to-Face Tutorial
-%
-% Anda bisa saja mengganti dengan teks Anda sendiri, namun
-% penerjemahan nama Skema Tutorial tidak akan bekerja
-%
-%\newcommand{\skemaTutorial}{\TutorialOnline}
-
 % --- Email Korespondensi ---
 %
-% Umumnya menggunakan NIM@ecampus.ut.ac.id. Anda dapat
+% Umumnya menggunakan NIM@ecampus. Anda dapat
 % menggantinya dengan e-mail lain jika dibolehkan.
 %
 \newcommand{\emailKorespondensi}{\nimMahasiswa @ecampus.ut.ac.id}
@@ -61,23 +41,14 @@
 % --- Tempat dan Tanggal Lengkap ---
 \newcommand{\tempatTanggal}{\daerahMahasiswa, \tanggalLengkap}
 
-%=======================================%
-%     IDENTITAS SUBJEK PEMBELAJARAN     %
-%=======================================%
 
-%\newcommand{\sesiKe}{1}
-%\newcommand{\tugasKe}{1}
-
-%\newcommand{\namaMataKuliah}{Pengendalian Berbasis Desktop}
-%\newcommand{\kodeMataKuliah}{STSI9999}
-
-%\newcommand{\kodeKelas}{256}
 
 %=============================%
 %     IDENTITAS MAHASISWA     %
 %=============================%===============================%
 % Keterangan Fungsi Variabel
 % [Kosong]  : Semua
+% <-- ENG   : Dokumen Berbahasa Inggris
 % <-- LJM   : Lembar Jawaban
 % <-- BT    : Buku Tugas
 % <-- KTI   : Karya Tulis Ilmiah Sendiri
@@ -93,11 +64,11 @@
 
 % --- Program Studi ---
 \newcommand{\prodi}{Sains Data}
-\newcommand{\prodiENG}{Data Science}
+\newcommand{\prodiENG}{Data Science} % <-- ENG
 
 % --- Fakultas ---
 \newcommand{\fakultas}{Sains dan Teknologi}
-\newcommand{\fakultasENG}{Science and Technology}
+\newcommand{\fakultasENG}{Science and Technology} % <-- ENG
 
 % --- Daerah ---
 \newcommand{\daerahMahasiswa}{Medan}
@@ -106,13 +77,16 @@
 
 % --- Perguruan Tinggi ---
 \newcommand{\kampus}{Universitas Terbuka}
-\newcommand{\kampusENG}{Indonesia Open University}
+\newcommand{\kampusENG}{Indonesia Open University} % <-- ENG
+
+
 
 %===============================%
 %     IDENTITAS TUTOR/DOSEN     %
 %===============================%=============================%
 % Keterangan Fungsi Variabel
 % [Kosong]  : Semua
+% <-- ENG   : Dokumen Berbahasa Inggris
 % <-- LJM   : Lembar Jawaban
 % <-- BT    : Buku Tugas
 % <-- KTI   : Karya Tulis Ilmiah Sendiri
