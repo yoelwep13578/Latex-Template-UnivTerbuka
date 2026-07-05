@@ -572,21 +572,47 @@
 	    \renewcommand{\headrulewidth}{0pt}
 	    \setlength{\topmargin}{-1.5cm}
 	    \setlength{\headsep}{1.5cm}
+        % --- Judul ---
+        \newcommand{\headinfo@judul}{%
+            \ifdef{\judul}{\judulSebaris}{\skemaPembelajaran}%
+        }
+        % --- Sesi/Tugas ---
+        \newcommand{\headinfo@barisSatu}{%
+            \ifdef{\tugasKe}{%
+                \textit{\headinfo@judul} $\mid$ \textit{\Tugas\ \tugasKe}%
+            }{%
+                \ifdef{\sesiKe}{%
+                    \textit{\headinfo@judul}\ $\mid$ \textit{\Sesi\ \sesiKe}%
+                }{%
+                    \textit{\headinfo@judul}%
+                }%
+            }%
+        }
+        % --- Baris Kedua Header ---
+        \newcommand{\headinfo@barisDua}{%
+            \ifdef{\namaMataKuliah}{%
+                \textit{\KodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah}%
+            }{%
+                \textit{\prodi}\ $\mid$\ \textit{\kampus}%
+            }%
+        }
 	    \fancyhead[R]{
 	        \color{gray}
+            \footnotesize
 	        \begin{tabular}{r @{\hspace*{15pt}}|@{\hspace*{15pt}} l}
-	            \ifundef{\judul}{\textit{\skemaTutorial\ $\mid$ \textit{\Sesi\ \sesiKe}}}{\textit{\judul}} & \multirow{2}{*}{\thepagefull} \\
-	            \textit{\KodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah} &
+	            \headinfo@barisSatu & \multirow{2}{*}{\thepagefull} \\
+	            \headinfo@barisDua &
 	        \end{tabular}\hspace*{-2.1cm}
 	    }
 	    
 	    \fancypagestyle{plain}{
 	        \fancyhf{}
 	        \renewcommand{\headrulewidth}{0pt}
-	        \setlength{\topmargin}{-1.25cm}
+	        \setlength{\topmargin}{-1.28cm}
 	        \setlength{\headsep}{1.5cm}
 	        \fancyhead[R]{
-	            \textcolor{gray}{\thepagefull} \hspace*{-2cm}
+                \footnotesize
+	            \textcolor{gray}{\thepagefull} \hspace*{-1.97cm}
 	        }
 	    }
 	}
