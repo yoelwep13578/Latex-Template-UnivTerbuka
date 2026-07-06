@@ -1,5 +1,3 @@
-% !TEX program = lualatex
-
 % Template Makalah
 % Versi 2.0.0 Beta
 
@@ -21,11 +19,10 @@
 %      - alpha-mag --- Penomoran alphanumeric dengan teks besar
 %                      di level 1
 %      - multi     --- Penomoran multilevel 1 > 1.1 > 1.1.1 
-%                      > 1.1.1.1 > 1.1.1.1.1 > 1.1.1.1.1.1
+%                      > 1.1.1.1
 %      - multi-mag --- Penomoran multilevel dengan teks besar 
 %                      di level 1
 %      - apalike   --- Tanpa penomoran seperti APA 7
-%                      \paragraph dan \subparagraph
 %      - [kosong]  --- Memakai pilihan alpha
 %
 %     2. urlstyle
@@ -94,6 +91,7 @@
 %     Pilihan untuk font monospace
 %     
 %     Pilihan yang tersedia:
+%      - courier-new --- Courier New [Windows]
 %      - cascadia  --- Cascadia Code [Windows >= 10]
 %      - consolas  --- Consolas [Windows]
 %      - fira      --- Fira Code
@@ -116,7 +114,15 @@
 %     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
 %     Microtype dapat digunakan setelah pengerjaan selesai (final).
 %
-%     8. apppagenum
+%     8. listappendix
+%     Memunculkan daftar isi baru bernama "Daftar Lampiran" seperti
+%     yang ada pada Daftar Gambar, Daftar Tabel, dan Daftar Kode.
+%
+%     9. appnumarabic
+%     Mengganti nomor Lampiran A, Lampiran B, Lampiran C, ...
+%     menjadi Lampiran 1, Lampiran 2, Lampiran 3, ...
+%
+%     10. apppagenum
 %     Format nomor halaman untuk bagian Lampiran (setelah daftar
 %     pustaka atau glosarium)
 %
@@ -134,7 +140,14 @@
 %                      lampiran (ABCDEF punya halaman sendiri)
 %      - [kosong]  --- Memakai pilihan arabic
 %
-\documentclass[heading=alpha, mainfont=times, apa=campuran]{artikelmakalah}
+%     11. showlabelname
+%     Memunculkan tulisan nama label:
+%     Daftar Gambar: "2.2" --> "Gambar 2.2"
+%     Daftar Tabel: "2.2" --> "Tabel 2.2"
+%     Daftar Kode: "2.2" --> "Kode 2.2"
+%     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
+%
+\documentclass[heading=alpha, mainfont=times, apa=campuran, listappendix, appnumarabic]{artikelmakalah}
 
 %==================%
 %     Preamble     %
@@ -144,11 +157,10 @@
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
 
 % --- Halaman Landscape ---
-%     [NOTE] Hanya bisa digunakan untuk lualatex
 \usepackage{pdflscape}
 
 % --- Hyperlink ---
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, bookmarksdepth=3]{hyperref}
 
 %======================%
 %     Bahasa Utama     %
@@ -166,7 +178,8 @@
 \usepackage{graphicx, xcolor}
 
 % --- Matematika ---
-\usepackage{amsmath, amsthm, amssymb, unicode-math}
+%\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsmath}
 \usepackage{xfrac}
 
 % --- Line Break Display Matematika ---
@@ -178,7 +191,7 @@
 
 % --- Pembacaan Font Sistem dan Setelan Font ---
 %     [NOTE] Hanya bisa digunakan untuk lualatex
-\usepackage{fontspec}
+%\usepackage{fontspec}
 
 % --- Penyetelan Heading & Daftar Isi ---
 \usepackage{titlesec}
@@ -205,17 +218,35 @@
 % --- Posisi Float Lampiran Gambar/Tabel ---
 \usepackage{float}
 
-% --- Menu Keys & Dir ---
-\usepackage{menukeys}
-
 %===========================================%
 %     Package yang Aman untuk Dimatikan     %
 %===========================================%
 
-% --- Lampiran Kode Program [On/Off] ---
+% --- Sisipan Kode Program [On/Off] ---
+%
+%     Environment yang terpengaruh:
+%     - lstlisting --- Kode program berbentuk blok (codeblock)
+%     - lstcode --- lstlisting yang terintegrasi tcolorbox
+%
+%     Perintah yang terpengaruh:
+%     - lstinline --- Kode sebaris
+%     - inlinesnippet --- Kode sebaris berwarna seperti
+%                         markdown
+%
 %\usepackage{listings}
 
 % --- Text Box [On/Off] ---
+%
+%     Environment yang terpengaruh:
+%     - lstcode --- lstlisting yang terintegrasi tcolorbox
+%     - blockquote ---┐ Kutipan bergaris vertikal di kiri
+%     - indentbquote -┘
+%     - textbox --- Kotak teks
+%     - theorembox ---┐ Kotak teorema
+%     - lemmabox      |
+%     - definitionbox |
+%     - example ------┘
+%
 %\usepackage[most]{tcolorbox}
 
 % --- Glosarium [On/Off] ---

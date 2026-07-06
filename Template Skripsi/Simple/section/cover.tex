@@ -29,26 +29,26 @@
     \centering
     
     % --- Judul ---
-    {\setstretch{1}\Large\textbf{\MakeUppercase{
-        \ifundef{\judul}{
-            \ifundef{\captionsindonesian}{
-                \skemaTutorial\ \Tugas\ \tugasKe
-            }{
-                \Tugas\ \skemaTutorial\ \tugasKe
-            }
-        }{
+    {\setstretch{1}\Large\textbf{\MakeUppercase{%
+        \ifundef{\judul}{%
+            \ifundef{\captionsindonesian}{%
+                \skemaPembelajaran\ \Tugas\ \tugasKe
+            }{%
+                \Tugas\ \skemaPembelajaran\ \tugasKe
+            }%
+        }{%
             \judul
-        }
+        }%
     }}\par}
     
-    % --- Subjudul ---
+    % --- Subjudul/Tambahan ---
     \vspace{1cm}
-    {\setstretch{1}\textbf{\MakeUppercase{
+    {\setstretch{1}\textbf{\MakeUppercase{%
         Tugas Akhir Program Skema Skripsi
     }}}
 
     % --- Pernyataan Maksud/Tujuan Dokumen ---
-    \ifdef{\tujuanKarya}{
+    \ifdef{\tujuanKarya}{%
         \vspace{1cm}
         {\setstretch{1}\textbf{\tujuanKarya}}
     }{}
@@ -62,11 +62,12 @@
     {\setstretch{1}\textbf{\DisusunOleh:}}
     
     {\setstretch{1}\bfseries
-    \begin{tabular}{@{}l@{\hspace{4pt}}c@{\hspace{4pt}}l}
-        \Nama &:& \namaMahasiswa \\
-        \NomorIndukM &:& \nimMahasiswa \\
-        \ProgramStudi &:& \prodi
-    \end{tabular}}
+        \begin{tabular}{@{}l@{\hspace{4pt}}c@{\hspace{4pt}}l}
+            \Nama &:& \namaMahasiswa \\
+            \NomorIndukM &:& \nimMahasiswa \\
+            \ProgramStudi &:& \prodi
+        \end{tabular}
+    }
     
     \vfill
     
