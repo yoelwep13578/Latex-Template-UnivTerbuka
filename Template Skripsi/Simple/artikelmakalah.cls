@@ -591,7 +591,7 @@
         % --- Baris Kedua Header ---
         \newcommand{\headinfo@barisDua}{%
             \ifdef{\namaMataKuliah}{%
-                \textit{\KodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah}%
+                \textit{\kodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah}%
             }{%
                 \textit{\prodi}\ $\mid$\ \textit{\kampus}%
             }%
