@@ -23,10 +23,9 @@
 %     Default: -
 \DeclareStringOption[false]{soaljawab}[true]
 
-% --- Pilihan URL Style ---
-%     Pilihan: roman
+% --- Pilihan URL Huruf Biasa ---
 %     Default: -
-\DeclareStringOption[none]{urlstyle}[none]
+\DeclareStringOption[false]{urlroman}[true]
 
 % --- Pilihan Font Monospace (Khusus) ---
 %     Pilihan: cascadia, fira, jetbrains
@@ -576,7 +575,7 @@
         \newcommand{\headinfo@judul}{%
             \ifdef{\judul}{\judulSebaris}{\skemaPembelajaran}%
         }
-        % --- Sesi/Tugas ---
+        % --- Baris Satu Header ---
         \newcommand{\headinfo@barisSatu}{%
             \ifdef{\tugasKe}{%
                 \textit{\headinfo@judul} $\mid$ \textit{\Tugas\ \tugasKe}%
@@ -591,7 +590,11 @@
         % --- Baris Kedua Header ---
         \newcommand{\headinfo@barisDua}{%
             \ifdef{\namaMataKuliah}{%
-                \textit{\kodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah}%
+                \ifdef{\kodeKelas}{%
+                    \textit{\kodeMataKuliah} $\mid$ \textit{\kodeKelas} $\mid$ \textit{\namaMataKuliah}%
+                }{%
+                    \textit{\kodeMataKuliah} $\mid$ \textit{\namaMataKuliah}%
+                }%
             }{%
                 \textit{\prodi}\ $\mid$\ \textit{\kampus}%
             }%
@@ -724,7 +727,7 @@
 	%======================%
 	
 	% --- Pemilihan URL Style ---
-	\ifdefstring{\template@urlstyle}{roman}{
+	\ifdefstring{\template@urlroman}{true}{
 	    \AtBeginDocument{\urlstyle{APACrm}}
 	}{}
 	
