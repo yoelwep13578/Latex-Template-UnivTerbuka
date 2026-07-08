@@ -1,8 +1,8 @@
-% --- Cover ---
+% --- Judul ---
 %
-%     Ini adalah halaman sampul. Jangan mengubah apa pun
-%     yang ada di dalam sini, kecuali bila Anda sudah mahir
-%     menulis kode LaTeX.
+%     Ini adalah bagian judul, pengganti halaman sampul. 
+%     Jangan mengubah apa pun yang ada di dalam sini, kecuali bila 
+%     Anda sudah mahir menulis kode LaTeX.
 %
 %     Saat ini, logo institusi perguruan tinggi tidak disertakan
 %     seperti dahulu atas alasan hukum kekayaan merek dan kebudayaan
@@ -25,48 +25,80 @@
 %     dari file variable.tex!
 %
 
-\begin{titlepage}
-    
-    \centering
-    
-    % Logo
-    \includegraphics[width=5cm]{image/logo-kampus.png}
-    
+\begin{center}    
     % Judul
-    \ifundef{\judul}{
-        \ifundef{\captionsindonesian}{
-            \LARGE\textbf{\skemaTutorial\ \LembarJawaban} \\
-        }{
-            \LARGE\textbf{\LembarJawaban\ \skemaTutorial} \\
+    {\setstretch{1}\LARGE
+        \ifundef{\judul}{%
+            \ifdef{\tugasKe}{%
+                \ifundef{\captionsindonesian}{%
+                    \LembarJawaban\ for \Tugas\ \tugasKe
+                }{%
+                    \LembarJawaban\ \Tugas\ \tugasKe
+                }%
+            }{%
+                \ifundef{\captionsindonesian}{%
+                    \skemaPembelajaran\ \LembarJawaban
+                }{%
+                    \LembarJawaban\ \skemaPembelajaran
+                }%
+            }%
+        }{%
+            \judul
+        }%
+    \par}
+    
+    % Afiliasi
+    \ifundef{\captionsindonesian}{%
+        \prodi\ \ProgramStudi\ --- \Fakultas\ of \fakultas \\
+        \kampusENG
+    }{%
+        \ProgramStudi\ \prodi\ --- \Fakultas\ \fakultas \\
+        \kampus
+    }%
+    
+    % Garis
+    \rule{\textwidth}{0.5pt}
+    
+    % --- Tabel Identitas ---
+    \begin{tblr}{
+            hspan=minimal,
+            colspec={Q[l] X Q[l]},
+            colsep=0pt,
+            rowsep=2pt,
+            cells={font=\small}
         }
-    }{\LARGE\textbf{\judul} \\}
-    %
-    \ifundef{\captionsindonesian}{
-        \textbf{\DiskusiKe\ \sesiKe}
-    }{
-        \textbf{\DiskusiKe\sesiKe}
-    }
+        \textbf{\Nama:} \namaMahasiswa && \textbf{\Pengampu:} \namaPengampu \\
+        \textbf{\NomorIndukM:} \nimMahasiswa && \textbf{\Kelas\ / \Sesi:} \kodeKelas\ / \sesiKe \\
+        \ifdefstring{\negaraMahasiswa}{Indonesia}{%
+            \ifdefstring{\kampus}{Universitas Terbuka}{%
+                \textbf{\UPBJJ:} \daerahKampus
+            }{%
+                \textbf{\Daerah:} \daerahKampus
+            }%
+        }{%
+            \textbf{\UTLLN:} \negaraMahasiswa
+        } && \textbf{\MataKuliah:} \namaMataKuliah \\
+    \end{tblr}
     
-    \normalsize
-    
-    \linesskip{2}
-    
-    \fcolorbox{gray}{white}{
-        \begin{tblr}{
-                colspec={l c l l l},
-                hline{2-6, 8-Z}={3-Z}{dashed, gray},
-                column{2}={colsep=2pt}
-            }
-            \Nama &:& \SetCell[c=3]{l} \namaMahasiswa && \\
-            \NomorIndukM &:& \SetCell[c=3]{l} \nimMahasiswa && \\
-            \ProgramStudi &:& \SetCell{font=\ttfamily, bg=graybg} \kodeProgramStudi & \SetCell[c=2]{l} \programStudi & \\
-            \Fakultas &:& \SetCell{font=\ttfamily, bg=graybg} \kodeFakultas & \SetCell[c=2]{l} \fakultas & \\
-            \UPBJJ &:& \SetCell{font=\ttfamily, bg=graybg} \kodeUTDaerah & \SetCell[c=2]{l} \utDaerah & \\
-            &&&& \\
-            \TutorPengampu &:& \SetCell[c=3]{l} \namaTutorPengampu && \\
-            \MataKuliah &:& \SetCell[c=2]{font=\ttfamily, bg=graybg} \KodeMataKuliah && \namaMataKuliah \\
-            \KelasOnlineKe &:& \SetCell[c=3]{l} \kodeKelas &&
-        \end{tblr}
-    }
-    
-\end{titlepage}
+    \rule{\textwidth}{0.5pt}
+
+%\fcolorbox{gray}{white}{
+%    \begin{tblr}{
+%            colspec={l c l l l},
+%            hline{2-6, 8-Z}={3-Z}{dashed, gray},
+%            column{2}={colsep=2pt}
+%        }
+%        \Nama &:& \SetCell[c=3]{l} \namaMahasiswa && \\
+%        \NomorIndukM &:& \SetCell[c=3]{l} \nimMahasiswa && \\
+%        \ProgramStudi &:& \SetCell{font=\ttfamily, bg=graybg} \kodeProdi & \SetCell[c=2]{l} \prodi & \\
+%        \Fakultas &:& \SetCell{font=\ttfamily, bg=graybg} \kodeFakultas & \SetCell[c=2]{l} \fakultas & \\
+%        \UPBJJ &:& \SetCell{font=\ttfamily, bg=graybg} \kodeDaerah & \SetCell[c=2]{l} \daerahKampus & \\
+%        &&&& \\
+%        \TutorPengampu &:& \SetCell[c=3]{l} \namaPengampu && \\
+%        \MataKuliah &:& \SetCell[c=2]{font=\ttfamily, bg=graybg} \kodeMataKuliah && \namaMataKuliah \\
+%        \Kelas &:& \SetCell[c=3]{l} \kodeKelas &&
+%    \end{tblr}
+%}
+\end{center}
+
+\vspace{2ex}
