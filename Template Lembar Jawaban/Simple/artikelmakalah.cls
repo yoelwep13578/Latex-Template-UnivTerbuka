@@ -1,3 +1,5 @@
+% !TeX root = ./main.tex
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{artikelmakalah}[2026/06/26 v2.0 Template Artikel dan Makalah]
 
@@ -47,12 +49,16 @@
 %     Default: alpha
 \DeclareStringOption[alpha]{heading}[alpha]
 
+% --- Pilihan Kapitalisasi Heading Pertama ---
+%     Default: -
+\DeclareStringOption[false]{seccaps}[true]
+
 % --- Pilihan Bahasa untuk APA ---
 %     Pilihan: indonesia, campuran
 %     Default: -
 \DeclareStringOption[none]{apa}[none]
 
-% --- Pilihan Bahasa untuk APA ---
+% --- Indentasi ---
 %     Default: 1.25cm
 \DeclareStringOption[1.25cm]{indent}[1.25cm]
 
@@ -72,6 +78,10 @@
 %     Pilihan: arabic, arabicone, roman, gabungan
 %     Default: arabic
 \DeclareStringOption[arabic]{apppagenum}[arabic]
+
+% --- Pilihan Judul Lampiran Dua Baris ---
+%     Default: -
+\DeclareStringOption[false]{appnewline}[true]
 
 % --- Pilihan Pemunculan Nama Label di Daftar Label ---
 %     Default: -
@@ -290,6 +300,7 @@
 	% 
 	
 	\ifdef{\chapter}{
+        % --- Dengan Bab ---
 	    \titlespacing*{\chapter}
 	        {0pt}
 	        {-30pt}
@@ -306,18 +317,31 @@
 	        {1.5ex plus .2ex}
 	    
 	    \ifdefstring{\template@heading}{apalike}{
-	        \titlespacing*{\subsubsection}{\titleindent}{*1.5}{.5em}
-	        \titlespacing*{\paragraph}{\titleindent}{*1.5}{.5em}
-	    }{
 	        \titlespacing*{\subsubsection}
-	            {0pt}
-	            {2.2ex plus .5ex minus .1ex}
-	            {1.5ex plus .2ex}
-	            
-	        \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
-	        \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+                {\titleindent}{*1.5}{.5em}
+	        \titlespacing*{\paragraph}
+                {\titleindent}{*1.5}{.5em}
+            \titlespacing*{\subparagraph}
+                {\titleindent}{*1.5}{.5em}
+	    }{
+            \titlespacing*{\subsubsection}
+                {0pt}
+                {2.2ex plus .5ex minus .1ex}
+                {1.5ex plus .2ex}
+            
+            \ifboolexpr{
+                test {\ifdefstring{\template@heading}{multi}} or
+                test {\ifdefstring{\template@heading}{multi-mag}}
+            }{
+    	        \titlespacing*{\paragraph}{\titleindent}{*1.5}{.5em}
+    	        \titlespacing*{\subparagraph}{\titleindent}{*1.5}{.5em}
+            }{
+                \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
+                \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+            }
 	    }
 	}{
+        % --- Tanpa Bab ---
 	    \titlespacing*{\section}
 	    {0pt}
 	    {3.5ex plus 1ex minus .2ex}
@@ -333,8 +357,17 @@
 	    {2.2ex plus .5ex minus .1ex}
 	    {1.5ex plus .2ex}
 	    
-	    \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
-	    \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+	    \ifboolexpr{
+            test {\ifdefstring{\template@heading}{apalike}} or
+            test {\ifdefstring{\template@heading}{multi}} or
+            test {\ifdefstring{\template@heading}{multi-mag}}
+        }{
+            \titlespacing*{\paragraph}{\titleindent}{*1.5}{.5em}
+            \titlespacing*{\subparagraph}{\titleindent}{*1.5}{.5em}
+        }{
+            \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
+            \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+        }
 	}
     
     %========================%
@@ -914,28 +947,27 @@
         }
     }{
         % --- Format Judul Section dan Bagian Lampiran ---
-        \ifdefstring{\template@soaljawab}{true}{
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
             \titleformat{\section}[block]
-            {\normalfont\LARGE\bfseries\filcenter}
+            {\setstretch{1}\normalfont\Large\bfseries\filcenter}
             {}
             {0pt}
             {}
-        }{
-        	% --- Format Judul Section Lampiran APA-Like ---
-        	\ifdefstring{\template@heading}{apalike}{
-        		\titleformat{\section}[block]
-        		{\normalfont\Large\bfseries\filcenter}
-        		{\appendixname\ \thesection:\ }
-        		{0pt}
-        		{}
-        	}{
-        		\titleformat{\section}[block]
-        		{\normalfont\Large\bfseries\filcenter}
-        		{\MakeUppercase\appendixname\ \thesection:\ }
-        		{0pt}
-        		{\MakeUppercase}
-        	}
-        }
+        }{%
+            \ifdefstring{\template@appnewline}{true}{%
+                \titleformat{\section}[display]
+                {\setstretch{1}\normalfont\Large\bfseries\filcenter}
+                {\setstretch{1}\MakeUppercase\appendixname\ \thesection}
+                {-.5ex}
+                {\MakeUppercase}
+            }{%
+                \titleformat{\section}[block]
+                {\setstretch{1}\normalfont\Large\bfseries\filcenter}
+                {\setstretch{1}\MakeUppercase\appendixname\ \thesection:\ }
+                {-.5ex}
+                {\MakeUppercase}
+            }%
+        }%
         
         \RenewDocumentCommand{\section}{s o m}{%
             \IfBooleanTF{#1}{%
@@ -976,8 +1008,8 @@
                 \setcounter{table}{0}%
                 \setcounter{equation}{0}%
                 \ifdef{\thelstlisting}{\setcounter{lstlisting}{0}}{}%
-            }
-        }
+            }%
+        }%
     }
     
     % --- Pemilihan Jenis Nomor Halaman Lampiran/Appendix ---
