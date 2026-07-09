@@ -265,6 +265,19 @@
 
 \fi
 
+%=========================%
+%     Phantom Section     %
+%=========================%
+
+\ifdefstring{\template@heading}{apalike}{%
+    \ifdef{\chapter}{\AddToHook{cmd/chapter/before}{\phantomsection}}{}
+    \AddToHook{cmd/section/before}{\phantomsection}
+    \AddToHook{cmd/subsection/before}{\phantomsection}
+    \AddToHook{cmd/subsubsection/before}{\phantomsection}
+    \AddToHook{cmd/paragraph/before}{\phantomsection}
+    \AddToHook{cmd/subparagraph/before}{\phantomsection}
+}{}
+
 
 
 \AtBeginDocument{
@@ -899,6 +912,7 @@
         }%
         
         \RenewDocumentCommand{\chapter}{s o m}{%
+            \ifdefstring{\template@heading}{apalike}{\phantomsection}{}
             \IfBooleanTF{#1}{%
                 \template@originalchapter*{#3}%
             }{%
@@ -970,6 +984,7 @@
         }%
         
         \RenewDocumentCommand{\section}{s o m}{%
+            \ifdefstring{\template@heading}{apalike}{\phantomsection}{}
             \IfBooleanTF{#1}{%
                 \template@originalsection*{#3}%
                 \addcontentsline{toc}{section}{#3}%
