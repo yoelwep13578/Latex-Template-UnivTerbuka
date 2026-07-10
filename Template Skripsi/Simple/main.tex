@@ -25,14 +25,19 @@
 %      - apalike   --- Tanpa penomoran seperti APA 7
 %      - [kosong]  --- Memakai pilihan alpha
 %
-%     2. urlroman
+%     2. seccaps
+%     Membuat judul heading pada tingkat pertama menggunakan huruf
+%     KAPITAL SEMUA. seccaps disarankan dipakai untuk makalah, namun
+%     seccaps untuk artikel sebaiknya dihindari bila tidak ada paksaan.
+%
+%     3. urlroman
 %     URL disarankan menggunakan huruf monospace agar mudah
 %     dilihat dan diketik dari media tercetak (kertas).
 %     urlroman dapat digunakan agar URL menggunakan huruf 
 %     roman, namun sebaiknya jangan jika tidak ada aturan
 %     yang memaksa.
 %
-%     3. mainfont
+%     4. mainfont
 %     Pilihan untuk font utama dan font matematika
 %
 %     Pilihan yang tersedia:
@@ -69,7 +74,7 @@
 %                            Bisa dipakai untuk disetel sendiri 
 %                            dengan \setmainfont dan \setmathfont
 %
-%     4. sansfont
+%     5. sansfont
 %     Pilihan untuk font sans serif
 %
 %     Pilihan yang tersedia:
@@ -83,7 +88,7 @@
 %                     Bisa dipakai untuk disetel sendiri dengan 
 %                     \setsansfont
 %
-%     5. monofont
+%     6. monofont
 %     Pilihan untuk font monospace
 %     
 %     Pilihan yang tersedia:
@@ -96,29 +101,36 @@
 %                      Bisa dipakai untuk disetel sendiri dengan
 %                      \setmonofont
 %
-%     6. indent
+%     7. indent
 %     Jarak menjorok pada baris awal paragraf
 %
 %     Satuan yang dapat digunakan:
-%      - em --- Lebar huruf "m"
+%      - em --- Lebar huruf "M" atau lebar = ukuran huruf
 %      - cm --- Centimeter
 %      - in --- Inci
 %      - pt --- Point
 %
-%     7. microtype
+%     8. microtype
 %     Alat tambahan untuk membuat teks terlihat lebih rapi dengan
 %     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
 %     Microtype dapat digunakan setelah pengerjaan selesai (final).
 %
-%     8. listappendix
+%     9. listappendix
 %     Memunculkan daftar isi baru bernama "Daftar Lampiran" seperti
 %     yang ada pada Daftar Gambar, Daftar Tabel, dan Daftar Kode.
 %
-%     9. appnumarabic
+%     10. appnewline
+%     Membuat judul lampiran memiliki dua baris, sama seperti bab
+%     makalah.
+%
+%     Lampiran A: Nama Lampiran -->  Lampiran A
+%                                   Nama Lampiran
+%
+%     11. appnumarabic
 %     Mengganti nomor Lampiran A, Lampiran B, Lampiran C, ...
 %     menjadi Lampiran 1, Lampiran 2, Lampiran 3, ...
 %
-%     10. apppagenum
+%     12. apppagenum
 %     Format nomor halaman untuk bagian Lampiran (setelah daftar
 %     pustaka atau glosarium)
 %
@@ -136,14 +148,14 @@
 %                      lampiran (ABCDEF punya halaman sendiri)
 %      - [kosong]  --- Memakai pilihan arabic
 %
-%     11. showlabelname
+%     13. showlabelname
 %     Memunculkan tulisan nama label:
 %     Daftar Gambar: "2.2" --> "Gambar 2.2"
 %     Daftar Tabel: "2.2" --> "Tabel 2.2"
 %     Daftar Kode: "2.2" --> "Kode 2.2"
 %     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
 %
-\documentclass[heading=alpha, mainfont=times, apa=campuran, listappendix, appnumarabic]{artikelmakalah}
+\documentclass[seccaps, heading=alpha, mainfont=times, apa=campuran, listappendix, appnumarabic]{artikelmakalah}
 
 %==================%
 %     Preamble     %

@@ -1,3 +1,5 @@
+\makeatletter
+
 \ifdef{\chapter}{
     %====================%
     %     Dengan Bab     %
@@ -12,7 +14,7 @@
     {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
     {}
     {0em}
-    {}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\Large}
@@ -35,13 +37,13 @@
     \titleformat{\paragraph}[runin]
     {\normalfont\bfseries\normalsize}
     {\normalfont\bfseries\theparagraph}
-    {1em}
+    {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
     {\normalfont\bfseries\itshape\normalsize}
     {\normalfont\bfseries\thesubparagraph}
-    {1em}
+    {0em}
     {\smartperiod}
 }{
     %===================%
@@ -57,7 +59,7 @@
     {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
     {}
     {0em}
-    {}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\large}
@@ -74,12 +76,14 @@
     \titleformat{\paragraph}[runin]
     {\normalfont\bfseries\normalsize}
     {\normalfont\bfseries\theparagraph}
-    {1em}
+    {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
     {\normalfont\bfseries\itshape\normalsize}
     {\normalfont\bfseries\thesubparagraph}
-    {1em}
+    {0em}
     {\smartperiod}
 }
+
+\makeatother

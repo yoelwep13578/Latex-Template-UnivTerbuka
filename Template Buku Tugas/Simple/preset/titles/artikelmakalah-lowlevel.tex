@@ -1,3 +1,5 @@
+\makeatletter
+
 \ifdef{\chapter}{
     %====================%
     %     Dengan Bab     %
@@ -9,7 +11,7 @@
     {\setstretch{1}\normalfont\bfseries\filcenter\Large}
     {}
     {0em}
-    {}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\large}
@@ -51,7 +53,7 @@
     {\setstretch{1}\normalfont\bfseries\filright\Large}
     {}
     {0em}
-    {\MakeUppercase}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\large}
@@ -77,3 +79,5 @@
     {1em}
     {\smartperiod}
 }
+
+\makeatother

@@ -1,5 +1,3 @@
-% !TEX program = lualatex
-
 % Template Buku Tugas
 % Versi 2.0.0 Beta
 
@@ -21,25 +19,25 @@
 %      - alpha-mag --- Penomoran alphanumeric dengan teks besar
 %                      di level 1
 %      - multi     --- Penomoran multilevel 1 > 1.1 > 1.1.1 
-%                      > 1.1.1.1 > 1.1.1.1.1 > 1.1.1.1.1.1
+%                      > 1.1.1.1
 %      - multi-mag --- Penomoran multilevel dengan teks besar 
 %                      di level 1
 %      - apalike   --- Tanpa penomoran seperti APA 7
-%                      \paragraph dan \subparagraph
 %      - [kosong]  --- Memakai pilihan alpha
 %
-%     2. urlstyle
-%     Pemformatan tampilan untuk link URL
+%     2. seccaps
+%     Membuat judul heading pada tingkat pertama menggunakan huruf
+%     KAPITAL SEMUA. seccaps disarankan dipakai untuk makalah, namun
+%     seccaps untuk artikel sebaiknya dihindari bila tidak ada paksaan.
 %
-%     Pilihan yang tersedia:
-%      - roman    --- Link URL menggunakan font utama seperti
-%                     biasanya
-%      - [kosong] --- Link URL menggunakan font monospace, yang 
-%                     disarankan untuk memudahkan link dilihat
-%                     dan diketik dari tulisan tercetak di
-%                     kertas/layar
+%     3. urlroman
+%     URL disarankan menggunakan huruf monospace agar mudah
+%     dilihat dan diketik dari media tercetak (kertas).
+%     urlroman dapat digunakan agar URL menggunakan huruf 
+%     roman, namun sebaiknya jangan jika tidak ada aturan
+%     yang memaksa.
 %
-%     3. mainfont
+%     4. mainfont
 %     Pilihan untuk font utama dan font matematika
 %
 %     Pilihan yang tersedia:
@@ -76,7 +74,7 @@
 %                            Bisa dipakai untuk disetel sendiri 
 %                            dengan \setmainfont dan \setmathfont
 %
-%     4. sansfont
+%     5. sansfont
 %     Pilihan untuk font sans serif
 %
 %     Pilihan yang tersedia:
@@ -90,10 +88,11 @@
 %                     Bisa dipakai untuk disetel sendiri dengan 
 %                     \setsansfont
 %
-%     5. monofont
+%     6. monofont
 %     Pilihan untuk font monospace
 %     
 %     Pilihan yang tersedia:
+%      - courier-new --- Courier New [Windows]
 %      - cascadia  --- Cascadia Code [Windows >= 10]
 %      - consolas  --- Consolas [Windows]
 %      - fira      --- Fira Code
@@ -102,21 +101,36 @@
 %                      Bisa dipakai untuk disetel sendiri dengan
 %                      \setmonofont
 %
-%     6. indent
+%     7. indent
 %     Jarak menjorok pada baris awal paragraf
 %
 %     Satuan yang dapat digunakan:
-%      - em --- Lebar huruf "m"
+%      - em --- Lebar huruf "M" atau lebar = ukuran huruf
 %      - cm --- Centimeter
 %      - in --- Inci
 %      - pt --- Point
 %
-%     7. microtype
+%     8. microtype
 %     Alat tambahan untuk membuat teks terlihat lebih rapi dengan
 %     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
 %     Microtype dapat digunakan setelah pengerjaan selesai (final).
 %
-%     8. apppagenum
+%     9. listappendix
+%     Memunculkan daftar isi baru bernama "Daftar Lampiran" seperti
+%     yang ada pada Daftar Gambar, Daftar Tabel, dan Daftar Kode.
+%
+%     10. appnewline
+%     Membuat judul lampiran memiliki dua baris, sama seperti bab
+%     makalah.
+%
+%     Lampiran A: Nama Lampiran -->  Lampiran A
+%                                   Nama Lampiran
+%
+%     11. appnumarabic
+%     Mengganti nomor Lampiran A, Lampiran B, Lampiran C, ...
+%     menjadi Lampiran 1, Lampiran 2, Lampiran 3, ...
+%
+%     12. apppagenum
 %     Format nomor halaman untuk bagian Lampiran (setelah daftar
 %     pustaka atau glosarium)
 %
@@ -134,6 +148,13 @@
 %                      lampiran (ABCDEF punya halaman sendiri)
 %      - [kosong]  --- Memakai pilihan arabic
 %
+%     13. showlabelname
+%     Memunculkan tulisan nama label:
+%     Daftar Gambar: "2.2" --> "Gambar 2.2"
+%     Daftar Tabel: "2.2" --> "Tabel 2.2"
+%     Daftar Kode: "2.2" --> "Kode 2.2"
+%     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
+%
 \documentclass[soaljawab, heading=alpha, mainfont=times, apa=campuran]{artikelmakalah}
 
 %==================%
@@ -144,11 +165,10 @@
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
 
 % --- Halaman Landscape ---
-%     [NOTE] Hanya bisa digunakan untuk lualatex
 \usepackage{pdflscape}
 
 % --- Hyperlink ---
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, bookmarksdepth=3]{hyperref}
 
 %======================%
 %     Bahasa Utama     %
@@ -166,7 +186,8 @@
 \usepackage{graphicx, xcolor}
 
 % --- Matematika ---
-\usepackage{amsmath, amsthm, amssymb, unicode-math}
+%\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsmath}
 \usepackage{xfrac}
 
 % --- Line Break Display Matematika ---
@@ -178,7 +199,7 @@
 
 % --- Pembacaan Font Sistem dan Setelan Font ---
 %     [NOTE] Hanya bisa digunakan untuk lualatex
-\usepackage{fontspec}
+%\usepackage{fontspec}
 
 % --- Penyetelan Heading & Daftar Isi ---
 \usepackage{titlesec}
@@ -205,17 +226,35 @@
 % --- Posisi Float Lampiran Gambar/Tabel ---
 \usepackage{float}
 
-% --- Menu Keys & Dir ---
-\usepackage{menukeys}
-
 %===========================================%
 %     Package yang Aman untuk Dimatikan     %
 %===========================================%
 
-% --- Lampiran Kode Program [On/Off] ---
+% --- Sisipan Kode Program [On/Off] ---
+%
+%     Environment yang terpengaruh:
+%     - lstlisting --- Kode program berbentuk blok (codeblock)
+%     - lstcode --- lstlisting yang terintegrasi tcolorbox
+%
+%     Perintah yang terpengaruh:
+%     - lstinline --- Kode sebaris
+%     - inlinesnippet --- Kode sebaris berwarna seperti
+%                         markdown
+%
 %\usepackage{listings}
 
 % --- Text Box [On/Off] ---
+%
+%     Environment yang terpengaruh:
+%     - lstcode --- lstlisting yang terintegrasi tcolorbox
+%     - blockquote ---┐ Kutipan bergaris vertikal di kiri
+%     - indentbquote -┘
+%     - textbox --- Kotak teks
+%     - theorembox ---┐ Kotak teorema
+%     - lemmabox      |
+%     - definitionbox |
+%     - example ------┘
+%
 %\usepackage[most]{tcolorbox}
 
 % --- Glosarium [On/Off] ---
@@ -297,7 +336,7 @@
     \onehalfspacing
     
     % Halaman Sampul
-    \input{section/cover.tex}
+    \include{section/cover.tex}
     
     %============================%
     %     Pilihan Page Style     %
@@ -338,7 +377,7 @@
     
     % Halaman Sebelum Isi Bahasan
     \begin{pagestylenolastpage}
-        \pagenumbering{roman}
+        %\pagenumbering{roman}
         
         % Daftar Isi
         %\tableofcontents
@@ -357,8 +396,8 @@
     
     % Halaman Isi Bahasan
     \pagenumbering{arabic}
-    \input{section/soal.tex}
-    \input{section/jawaban.tex}
+    \include{section/soal.tex}
+    \include{section/jawaban.tex}
     
     % Daftar Pustaka
     %\nocite{*} % <-- Tampil tanpa dikutip

@@ -1,3 +1,5 @@
+\makeatletter
+
 \ifdef{\chapter}{
     %====================%
     %     Dengan Bab     %
@@ -7,9 +9,9 @@
     
     \titleformat{\chapter}[display]
     {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
-    {\setstretch{1}\fontsize{32}{38}\selectfont\MakeUppercase{\chaptername\ \thechapter}}
+    {\setstretch{1}\fontsize{32}{38}\selectfont\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thechapter}
     {-.5ex}
-    {\MakeUppercase}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\Large}
@@ -45,13 +47,13 @@
     %     Tanpa Bab     %
     %===================%
     
-    \setcounter{secnumdepth}{2}
+    \setcounter{secnumdepth}{3}
 
     \titleformat{\section}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\fontsize{32}{38}\selectfont}
     {\normalfont\bfseries\thesection.}
     {1em}
-    {\MakeUppercase}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\large}
@@ -77,3 +79,5 @@
     {1em}
     {\smartperiod}
 }
+
+\makeatother

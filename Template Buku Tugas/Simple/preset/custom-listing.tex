@@ -1,6 +1,17 @@
 \makeatletter
 \ltx@ifpackageloaded{listings}{
 
+% --- Nomor Caption Listing ---
+\AtBeginDocument{%
+    \ifdef{\chapter}{%
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
+            \counterwithout{lstlisting}{chapter}%
+        }{%
+            \renewcommand{\thelstlisting}{\arabic{chapter}.\arabic{lstlisting}}%
+        }%
+    }{}%
+}
+
 % --- Setelan Listing ---
 \lstset{
     %style=FiraCodeStyle,
@@ -10,7 +21,6 @@
     xrightmargin=1em,
     basicstyle=\ttfamily,
     numberstyle=\footnotesize\color{gray},
-    numberbychapter=false,
     captionpos=b,
     breaklines=true,
     frame={top|bottom},
@@ -24,6 +34,8 @@
     stringstyle=\color{monokai-green},
     identifierstyle=\color{black},
 }
+
+
 
 %===============================================%
 %     Pelengkapan Bahasa Program lstlisting     %

@@ -29,29 +29,40 @@
     \centering
     
     % --- Judul ---
-    {\setstretch{1}\Large\textbf{\MakeUppercase{
-        \ifundef{\judul}{
-            \ifundef{\captionsindonesian}{
-                \skemaTutorial\ \Tugas\ \tugasKe
-            }{
-                \Tugas\ \skemaTutorial\ \tugasKe
-            }
-        }{
-            \judul
-        }
+    {\setstretch{1}\Large\textbf{\MakeUppercase{%
+            \ifundef{\judul}{%
+                \ifundef{\captionsindonesian}{%
+                    \ifdef{\tugasKe}{%
+                        \skemaPembelajaran\ \Tugas\ \tugasKe
+                    }{%
+                        \skemaPembelajaran\ \Tugas\, \Sesi\ \sesiKe
+                    }%
+                }{%
+                    \ifdef{\tugasKe}{%
+                        \Tugas\ \skemaPembelajaran\ \tugasKe
+                    }{%
+                        \Tugas\ \skemaPembelajaran\ \Sesi\ \sesiKe
+                    }%
+                }%
+            }{%
+                \judul
+            }%
     }}\par}
     
-    {\setstretch{1}\large
-    \textbf{\MakeUppercase{
-        \ifundef{\captionsindonesian}{\namaMataKuliah}{\MataKuliah\ \namaMataKuliah}
-    }}}
+    % --- Subjudul/Tambahan ---
+    \ifdef{\namaMataKuliah}{
+        {\setstretch{1}\large
+            \textbf{\MakeUppercase{%
+                \ifundef{\captionsindonesian}{\namaMataKuliah}{\MataKuliah\ \namaMataKuliah}%
+        }}}%
+        
+        {\setstretch{1}\large\textbf{\kodeMataKuliah}}%
+    }{}
     
-    {\setstretch{1}\large\textbf{\kodeMataKuliah}}
-
     % --- Pernyataan Maksud/Tujuan Dokumen ---
-    \ifdef{\keteranganTujuanKarya}{
+    \ifdef{\tujuanKarya}{%
         \vspace{1cm}
-        {\small \textit{\keteranganTujuanKarya}}
+        {\small \textit{\tujuanKarya}}
     }{}
     
     % --- Logo Perguruan Tinggi ---
@@ -62,35 +73,63 @@
     % --- Tutor Pengampu dan Mahasiswa ---
     {\textbf{\MakeUppercase{\TutorPengampu}}} \\
     
-    \namaTutorPengampu
+    \namaPengampu
     
     \linesskip{1}
     
     {\setstretch{1}\textbf{\MakeUppercase{\DisusunOleh}}}
     
     {\setstretch{1}
-    \begin{tabular}{@{}l@{\;}c@{\;}l}
-        \Nama &:& \namaMahasiswa \\
-        \NomorIndukM &:& \nimMahasiswa \\
-        \KodeKelas &:& \kodeKelas
-    \end{tabular}}
+        \ifdef{\kodeKelas}{%
+            \begin{tabular}{@{}l@{\;}c@{\;}l}
+                \Nama &:& \namaMahasiswa \\
+                \NomorIndukM &:& \nimMahasiswa \\
+                \KodeKelas &:& \kodeKelas
+            \end{tabular}%
+        }{%
+            \begin{tabular}{@{}l@{\;}c@{\;}l}
+                \Nama &:& \namaMahasiswa \\
+                \NomorIndukM &:& \nimMahasiswa
+            \end{tabular}%
+        }%
+    }
     
     \vfill
     
     {\setstretch{1}\large
-    \ifundef{\captionsindonesian}{
-        \textbf{\MakeUppercase{\programStudi\ \ProgramStudi}} \\
-        \textbf{\MakeUppercase{\Fakultas\ of \fakultas}} \\
-        \textbf{\MakeUppercase{\utDaerah\ \UPBJJ}} \\
-        \textbf{\MakeUppercase{\perguruanTinggi}} \\
-        \textbf{\tahun}
-    }{
-        \textbf{\MakeUppercase{\ProgramStudi\ \programStudi}} \\
-        \textbf{\MakeUppercase{\Fakultas\ \fakultas}} \\
-        \textbf{\MakeUppercase{\UPBJJ\ \utDaerah}} \\
-        \textbf{\MakeUppercase{\perguruanTinggi}} \\
-        \textbf{\tahun}
-    }
+        \ifundef{\captionsindonesian}{%
+            \textbf{\MakeUppercase{\prodi\ \ProgramStudi}} \\
+            \textbf{\MakeUppercase{\Fakultas\ of \fakultas}} \\
+            \ifdefstring{\kampus}{Universitas Terbuka}{%
+                \ifdefstring{\negaraMahasiswa}{Indonesia}{%
+                    \textbf{\MakeUppercase{UT \daerahKampus\ \UPBJJ}} \\
+                    \textbf{\MakeUppercase{\kampusENG}} \\
+                }{%
+                    \textbf{\MakeUppercase{\UTLayananLuarNegeri\ (\negaraMahasiswa)}} \\
+                    \textbf{\MakeUppercase{\kampusENG}} \\
+                }%
+            }{%
+                \textbf{\MakeUppercase{\kampusENG}} \\
+                \textbf{\MakeUppercase{\daerahKampus}} \\
+            }%
+            \textbf{\tahun}
+        }{%
+            \textbf{\MakeUppercase{\ProgramStudi\ \prodi}} \\
+            \textbf{\MakeUppercase{\Fakultas\ \fakultas}} \\
+            \ifdefstring{\kampus}{Universitas Terbuka}{%
+                \ifdefstring{\negaraMahasiswa}{Indonesia}{%
+                    \textbf{\MakeUppercase{\UPBJJ\ UT \daerahKampus}} \\
+                    \textbf{\MakeUppercase{\kampus}} \\
+                }{%
+                    \textbf{\MakeUppercase{\UTLayananLuarNegeri\ \negaraMahasiswa}} \\
+                    \textbf{\MakeUppercase{\kampus}} \\
+                }%
+            }{%
+                \textbf{\MakeUppercase{\kampus}} \\
+                \textbf{\MakeUppercase{\daerahKampus}} \\
+            }%
+            \textbf{\tahun}
+        }%
     }
     
 \end{titlepage}

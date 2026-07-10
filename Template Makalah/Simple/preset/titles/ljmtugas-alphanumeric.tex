@@ -1,3 +1,5 @@
+\makeatletter
+
 \ifdef{\chapter}{
     %====================%
     %     Dengan Bab     %
@@ -13,39 +15,39 @@
     \renewcommand{\thesubparagraph}{\alph{paragraph}}
     
     \titleformat{\chapter}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\LARGE}
+    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
     {}
     {0em}
-    {}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\Large}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\thesection.\hfill}}}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesection.}}
     {0em}
     {}
     
     \titleformat{\subsection}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\large}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\thesubsection.\hfill}}}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsection.}}
     {0em}
     {}
     
     \titleformat{\subsubsection}[hang]
     {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\thesubsubsection.\hfill}}}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsubsection.}}
     {0em}
     {}
     
     \titleformat{\paragraph}[runin]
     {\normalfont\bfseries\normalsize}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\theparagraph)\hfill}}}
-    {1em}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\theparagraph)}}
+    {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
     {\normalfont\bfseries\itshape\normalsize}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\thesubparagraph)\hfill}}}
-    {1em}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubparagraph)}}
+    {0em}
     {\smartperiod}
 }{
     %===================%
@@ -63,29 +65,31 @@
     {\setstretch{1}\normalfont\bfseries\filcenter\Large}
     {}
     {0em}
-    {}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
     {\setstretch{1}\normalfont\bfseries\filright\large}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\thesubsection.\hfill}}}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsection.}}
     {0em}
     {}
     
     \titleformat{\subsubsection}[hang]
     {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\thesubsubsection.\hfill}}}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsubsection.}}
     {0em}
     {}
     
     \titleformat{\paragraph}[runin]
     {\normalfont\bfseries\normalsize}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\theparagraph.\hfill}}}
-    {1em}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\theparagraph.}}
+    {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
     {\normalfont\bfseries\itshape\normalsize}
-    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries\thesubparagraph)\hfill}}}
-    {1em}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubparagraph)}}
+    {0em}
     {\smartperiod}
 }
+
+\makeatother

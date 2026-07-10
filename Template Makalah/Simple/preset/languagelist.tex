@@ -41,6 +41,16 @@
 \newcommand{\TutorialWebinar}{Webinar Tutorial}
 \newcommand{\TutorialTatapMuka}{Face-to-Face Tutorial}
 %
+% --- Tutor atau Dosen ---
+%
+\newcommand{\Pengampu}{Tutor}
+\newcommand{\TutorPengampu}{Tutor}
+\ifboolexpr{ test {\ifdefstring{\kampus}{Universitas Terbuka}} or test {\ifdefstring{\fakultas}{Kedokteran}} }{}{%
+    \renewcommand{\TutorPengampu}{Lecturer}%
+    \renewcommand{\Pengampu}{Lecturer}%
+}%
+\newcommand{\DosenPembimbing}{Thesis Advisor}
+%
 % --- Data ---
 %
 \newcommand{\LembarJawaban}{Answer Sheet}
@@ -54,11 +64,13 @@
 \newcommand{\NomorIndukM}{Student ID}
 \newcommand{\ProgramStudi}{Study Program}
 \newcommand{\Fakultas}{Faculty}
-\newcommand{\TutorPengampu}{Tutor}
 \newcommand{\MataKuliah}{Subject/Course}
-\newcommand{\KelasOnlineKe}{Class}
+\newcommand{\Kelas}{Class}
 \newcommand{\KodeKelas}{Class}
+\newcommand{\Daerah}{Region}
 \newcommand{\UPBJJ}{Regional Office}
+\newcommand{\UTLayananLuarNegeri}{UT Overseas Student Service}
+\newcommand{\UTLLN}{UT OSS}
 %
 % --- Judul Biasa ---
 %
@@ -118,6 +130,21 @@
     \renewcommand{\TutorialWebinar}{Tutorial \textit{Webinar}}
     \renewcommand{\TutorialTatapMuka}{Tutorial Tatap Muka}
     %
+    % --- Tutor atau Dosen ---
+    %
+    \ifboolexpr{ test {\ifdefstring{\kampus}{Universitas Terbuka}} or test {\ifdefstring{\fakultas}{Kedokteran}} }{%
+        \renewcommand{\TutorPengampu}{Tutor Pengampu}%
+        \renewcommand{\Pengampu}{Tutor}%
+    }{%
+        \renewcommand{\TutorPengampu}{Dosen Pengampu}%
+        \renewcommand{\Pengampu}{Dosen}%
+    }%
+    \ifdefstring{\kampus}{Universitas Terbuka}{%
+        \renewcommand{\DosenPembimbing}{Pembimbing}%
+    }{%
+        \renewcommand{\DosenPembimbing}{Dosen Pembimbing}
+    }%
+    %
     % --- Data ---
     %
     \renewcommand{\LembarJawaban}{Lembar Jawaban}
@@ -131,11 +158,13 @@
     \renewcommand{\NomorIndukM}{NIM}
     \renewcommand{\ProgramStudi}{Program Studi}
     \renewcommand{\Fakultas}{Fakultas}
-    \renewcommand{\TutorPengampu}{Tutor Pengampu}
     \renewcommand{\MataKuliah}{Mata Kuliah}
-    \renewcommand{\KelasOnlineKe}{Kelas \textit{Online} ke-}
+    \renewcommand{\Kelas}{Kelas}
     \renewcommand{\KodeKelas}{Kode Kelas}
+    \renewcommand{\Daerah}{Daerah}
     \renewcommand{\UPBJJ}{UPBJJ}
+    \renewcommand{\UTLayananLuarNegeri}{UT Layanan Luar Negeri}
+    \renewcommand{\UTLLN}{UT LLN}
     %
     % --- Judul Biasa ---
     %

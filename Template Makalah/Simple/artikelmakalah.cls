@@ -1,3 +1,5 @@
+% !TeX root = ./main.tex
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{artikelmakalah}[2026/06/26 v2.0 Template Artikel dan Makalah]
 
@@ -47,12 +49,16 @@
 %     Default: alpha
 \DeclareStringOption[alpha]{heading}[alpha]
 
+% --- Pilihan Kapitalisasi Heading Pertama ---
+%     Default: -
+\DeclareStringOption[false]{seccaps}[true]
+
 % --- Pilihan Bahasa untuk APA ---
 %     Pilihan: indonesia, campuran
 %     Default: -
 \DeclareStringOption[none]{apa}[none]
 
-% --- Pilihan Bahasa untuk APA ---
+% --- Indentasi ---
 %     Default: 1.25cm
 \DeclareStringOption[1.25cm]{indent}[1.25cm]
 
@@ -72,6 +78,10 @@
 %     Pilihan: arabic, arabicone, roman, gabungan
 %     Default: arabic
 \DeclareStringOption[arabic]{apppagenum}[arabic]
+
+% --- Pilihan Judul Lampiran Dua Baris ---
+%     Default: -
+\DeclareStringOption[false]{appnewline}[true]
 
 % --- Pilihan Pemunculan Nama Label di Daftar Label ---
 %     Default: -
@@ -255,6 +265,23 @@
 
 \fi
 
+%=========================%
+%     Phantom Section     %
+%=========================%
+
+\ifdefstring{\template@soaljawab}{true}{%
+    \ifdef{\chapter}{\AddToHook{cmd/chapter/before}{\phantomsection}}{\AddToHook{cmd/section/before}{\phantomsection}}
+}{%
+    \ifdefstring{\template@heading}{apalike}{%
+        \ifdef{\chapter}{\AddToHook{cmd/chapter/before}{\phantomsection}}{}
+        \AddToHook{cmd/section/before}{\phantomsection}
+        \AddToHook{cmd/subsection/before}{\phantomsection}
+        \AddToHook{cmd/subsubsection/before}{\phantomsection}
+        \AddToHook{cmd/paragraph/before}{\phantomsection}
+        \AddToHook{cmd/subparagraph/before}{\phantomsection}
+    }{}%
+}
+
 
 
 \AtBeginDocument{
@@ -290,6 +317,7 @@
 	% 
 	
 	\ifdef{\chapter}{
+        % --- Dengan Bab ---
 	    \titlespacing*{\chapter}
 	        {0pt}
 	        {-30pt}
@@ -306,18 +334,31 @@
 	        {1.5ex plus .2ex}
 	    
 	    \ifdefstring{\template@heading}{apalike}{
-	        \titlespacing*{\subsubsection}{\titleindent}{*1.5}{.5em}
-	        \titlespacing*{\paragraph}{\titleindent}{*1.5}{.5em}
-	    }{
 	        \titlespacing*{\subsubsection}
-	            {0pt}
-	            {2.2ex plus .5ex minus .1ex}
-	            {1.5ex plus .2ex}
-	            
-	        \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
-	        \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+                {\titleindent}{*1.5}{.5em}
+	        \titlespacing*{\paragraph}
+                {\titleindent}{*1.5}{.5em}
+            \titlespacing*{\subparagraph}
+                {\titleindent}{*1.5}{.5em}
+	    }{
+            \titlespacing*{\subsubsection}
+                {0pt}
+                {2.2ex plus .5ex minus .1ex}
+                {1.5ex plus .2ex}
+            
+            \ifboolexpr{
+                test {\ifdefstring{\template@heading}{multi}} or
+                test {\ifdefstring{\template@heading}{multi-mag}}
+            }{
+    	        \titlespacing*{\paragraph}{\titleindent}{*1.5}{.5em}
+    	        \titlespacing*{\subparagraph}{\titleindent}{*1.5}{.5em}
+            }{
+                \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
+                \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+            }
 	    }
 	}{
+        % --- Tanpa Bab ---
 	    \titlespacing*{\section}
 	    {0pt}
 	    {3.5ex plus 1ex minus .2ex}
@@ -333,8 +374,17 @@
 	    {2.2ex plus .5ex minus .1ex}
 	    {1.5ex plus .2ex}
 	    
-	    \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
-	    \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+	    \ifboolexpr{
+            test {\ifdefstring{\template@heading}{apalike}} or
+            test {\ifdefstring{\template@heading}{multi}} or
+            test {\ifdefstring{\template@heading}{multi-mag}}
+        }{
+            \titlespacing*{\paragraph}{\titleindent}{*1.5}{.5em}
+            \titlespacing*{\subparagraph}{\titleindent}{*1.5}{.5em}
+        }{
+            \titlespacing*{\paragraph}{0pt}{*1.5}{.5em}
+            \titlespacing*{\subparagraph}{0pt}{*1.5}{.5em}
+        }
 	}
     
     %========================%
@@ -355,9 +405,9 @@
         }
     }{}
     
-	%====================================%
-	%     Untitled Table of Contents     %
-	%====================================%
+	%===========================================%
+	%     Untitled Table of Contents Format     %
+	%===========================================%
 	
 	% --- Daftar Gambar ---
 	\LetLtxMacro\template@originallistoffigures\listoffigures
@@ -368,7 +418,7 @@
 	        \ifdefstring{\template@soaljawab}{true}{}{%
 	            \addcontentsline{toc}{chapter}{\listfigurename}%
 	        }%
-	    }{}
+	    }{}%
 	}
 	
 	% --- Daftar Tabel ---
@@ -380,7 +430,7 @@
 	        \ifdefstring{\template@soaljawab}{true}{}{%
 	            \addcontentsline{toc}{chapter}{\listtablename}%
 	        }%
-	    }{}
+	    }{}%
 	}
 	
 	% --- Daftar Kode Listing ---
@@ -393,8 +443,8 @@
 	            \ifdefstring{\template@soaljawab}{true}{}{%
 	                \addcontentsline{toc}{chapter}{\lstlistlistingname}%
 	            }%
-	        }{}
-	    }
+	        }{}%
+	    }%
 	}{}
     
     %===========================%
@@ -495,26 +545,19 @@
             }{}%
         }%
         
-        \ifdefstring{\template@soaljawab}{true}{
+        % --- Daftar Isi Makalah ---
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
             \titlecontents{chapter}[0pt]
             {\addvspace{1.5ex plus 1pt}\bfseries}
-            {}
-            {}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
             {\hfill\contentspage}
         }{
-            \ifdefstring{\template@heading}{apalike}{
-                \titlecontents{chapter}[0pt]
-                {\addvspace{1.5ex plus 1pt}\bfseries}
-                {\chaptername\ \thecontentslabel\quad}
-                {}
-                {\hfill\contentspage}
-            }{
-                \titlecontents{chapter}[0pt]
-                {\addvspace{1.5ex plus 1pt}\bfseries}
-                {\MakeUppercase{\chaptername}\ \thecontentslabel\quad \MakeUppercase}
-                {\MakeUppercase}
-                {\hfill\contentspage}
-            }
+            \titlecontents{chapter}[0pt]
+            {\addvspace{1.5ex plus 1pt}\bfseries}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thecontentslabel\quad \ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\hfill\contentspage}
         }
     }{
         % --- Tanpa Bab ---
@@ -522,7 +565,6 @@
         \RenewDocumentCommand{\section}{s o m}{%
             \IfBooleanTF{#1}{%
                 \template@originalsection*{#3}%
-                \addcontentsline{toc}{section}{#3}%
             }{%
                 \IfValueTF{#2}{%
                     \template@originalsection[#2]{#3}%
@@ -534,6 +576,39 @@
             \ifdef{\lstlistoflistings}{%
                 \addtocontents{lol}{\protect\addvspace{10\p@}}%
             }{}%
+        }
+        
+        % --- Daftar Isi Artikel ---
+        \LetLtxMacro\template@originaltableofcontents\tableofcontents
+        \RenewDocumentCommand{\tableofcontents}{}{%
+            \begingroup
+            \titleformat{\section}[block]
+            {\bfseries\normalsize\filcenter}
+            {}
+            {0em}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            %
+            \begin{center}
+                \begin{minipage}{0.85\textwidth}
+                    \small
+                    \template@originaltableofcontents
+                \end{minipage}
+            \end{center}
+            \endgroup
+        }
+        
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
+            \titlecontents{section}[0pt]
+            {\addvspace{1.5ex plus 1pt}\bfseries}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\hfill\contentspage}
+        }{
+            \titlecontents{section}[0pt]
+            {\addvspace{1.5ex plus 1pt}\bfseries}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thecontentslabel\quad \ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\hfill\contentspage}
         }
     }
 	
@@ -834,47 +909,48 @@
     
     \ifdef{\chapter}{
         % --- Format Daftar Isi ---
-        \ifdefstring{\template@soaljawab}{true}{}{
-            \ifdefstring{\template@heading}{apalike}{
-                \titlecontents{chapter}[0pt]
-                {\addvspace{1.5ex plus 1pt}\bfseries}
-                {\appendixname\ \thecontentslabel\quad}
-                {}
-                {\hfill\contentspage}
-            }{
-                \titlecontents{chapter}[0pt]
-                {\addvspace{1.5ex plus 1pt}\bfseries}
-                {\MakeUppercase{\appendixname}\ \thecontentslabel\quad \MakeUppercase}
-                {\MakeUppercase}
-                {\hfill\contentspage}
-            }
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{}{%
+            \titlecontents{chapter}[0pt]
+            {\addvspace{1.5ex plus 1pt}\bfseries}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thecontentslabel\quad \ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\hfill\contentspage}
         }
         
-        % --- Format Judul Bab dan Bagian Lampiran ---
-        \ifdefstring{\template@soaljawab}{true}{
+        % --- Ukuran Huruf Lampiran Biasa & Mag ---
+        \newcommand{\makalah@appfont}{%
+            \ifboolexpr{ test {\ifdefstring{\template@heading}{alpha-mag}} or test {\ifdefstring{\template@heading}{multi-mag}} }%
+            {\fontsize{32}{38}\selectfont}{\Large}%
+        }%
+        
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
+            % --- Soal Jawab atau APA-Like ---
             \titleformat{\chapter}[block]
-            {\normalfont\LARGE\bfseries\filcenter}
+            {\setstretch{1}\normalfont\bfseries\filcenter\makalah@appfont}
             {}
             {0pt}
-            {}
-        }{
-        	% --- Format Judul Bab Lampiran APA-Like ---
-        	\ifdefstring{\template@heading}{apalike}{
-	            \titleformat{\chapter}[block]
-	            {\normalfont\Large\bfseries\filcenter}
-	            {\appendixname\ \thechapter:\ }
-	            {0pt}
-	            {}
-        	}{
-        		\titleformat{\chapter}[block]
-        		{\normalfont\Large\bfseries\filcenter}
-        		{\MakeUppercase\appendixname\ \thechapter:\ }
-        		{0pt}
-        		{\MakeUppercase}
-        	}
-        }
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+        }{%
+            % --- Lampiran Bernomor ---
+            \ifdefstring{\template@appnewline}{true}{%
+                % --- Format Dua Baris ---
+                \titleformat{\chapter}[display]
+                {\setstretch{1}\normalfont\bfseries\filcenter\makalah@appfont}
+                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thechapter}
+                {-.5ex}
+                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            }{%
+                % --- Format Sebaris ---
+                \titleformat{\chapter}[block]
+                {\setstretch{1}\normalfont\bfseries\filcenter\makalah@appfont}
+                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thechapter:\ }
+                {0pt}
+                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            }%
+        }%
         
         \RenewDocumentCommand{\chapter}{s o m}{%
+            \ifdefstring{\template@heading}{apalike}{\phantomsection}{}
             \IfBooleanTF{#1}{%
                 \template@originalchapter*{#3}%
             }{%
@@ -913,31 +989,40 @@
             }
         }
     }{
-        % --- Format Judul Section dan Bagian Lampiran ---
-        \ifdefstring{\template@soaljawab}{true}{
+        % --- Ukuran Huruf Lampiran Biasa & Mag (Artikel) ---
+        \newcommand{\artikel@appfont}{%
+            \ifboolexpr{ test {\ifdefstring{\template@heading}{alpha-mag}} or test {\ifdefstring{\template@heading}{multi-mag}} }%
+            {\fontsize{32}{38}\selectfont}{\Large}%
+        }%
+        
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
+            % --- Soal Jawab atau APA-Like (Artikel) ---
             \titleformat{\section}[block]
-            {\normalfont\LARGE\bfseries\filcenter}
+            {\setstretch{1}\normalfont\bfseries\filcenter\artikel@appfont}
             {}
             {0pt}
-            {}
-        }{
-        	% --- Format Judul Section Lampiran APA-Like ---
-        	\ifdefstring{\template@heading}{apalike}{
-        		\titleformat{\chapter}[block]
-        		{\normalfont\Large\bfseries\filcenter}
-        		{\appendixname\ \thesection:\ }
-        		{0pt}
-        		{}
-        	}{
-        		\titleformat{\chapter}[block]
-        		{\normalfont\Large\bfseries\filcenter}
-        		{\MakeUppercase\appendixname\ \thesection:\ }
-        		{0pt}
-        		{\MakeUppercase}
-        	}
-        }
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+        }{%
+            % --- Lampiran Bernomor (Artikel) ---
+            \ifdefstring{\template@appnewline}{true}{%
+                % --- Format Dua Baris ---
+                \titleformat{\section}[display]
+                {\setstretch{1}\normalfont\bfseries\filcenter\artikel@appfont}
+                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thesection}
+                {-.5ex}
+                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            }{%
+                % --- Format Sebaris ---
+                \titleformat{\section}[block]
+                {\setstretch{1}\normalfont\bfseries\filcenter\artikel@appfont}
+                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thesection:\ }
+                {0pt}
+                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            }%
+        }%
         
         \RenewDocumentCommand{\section}{s o m}{%
+            \ifdefstring{\template@heading}{apalike}{\phantomsection}{}
             \IfBooleanTF{#1}{%
                 \template@originalsection*{#3}%
                 \addcontentsline{toc}{section}{#3}%
@@ -976,8 +1061,8 @@
                 \setcounter{table}{0}%
                 \setcounter{equation}{0}%
                 \ifdef{\thelstlisting}{\setcounter{lstlisting}{0}}{}%
-            }
-        }
+            }%
+        }%
     }
     
     % --- Pemilihan Jenis Nomor Halaman Lampiran/Appendix ---
