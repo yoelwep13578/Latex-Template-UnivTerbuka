@@ -269,14 +269,18 @@
 %     Phantom Section     %
 %=========================%
 
-\ifdefstring{\template@heading}{apalike}{%
-    \ifdef{\chapter}{\AddToHook{cmd/chapter/before}{\phantomsection}}{}
-    \AddToHook{cmd/section/before}{\phantomsection}
-    \AddToHook{cmd/subsection/before}{\phantomsection}
-    \AddToHook{cmd/subsubsection/before}{\phantomsection}
-    \AddToHook{cmd/paragraph/before}{\phantomsection}
-    \AddToHook{cmd/subparagraph/before}{\phantomsection}
-}{}
+\ifdefstring{\template@soaljawab}{true}{%
+    \ifdef{\chapter}{\AddToHook{cmd/chapter/before}{\phantomsection}}{\AddToHook{cmd/section/before}{\phantomsection}}
+}{%
+    \ifdefstring{\template@heading}{apalike}{%
+        \ifdef{\chapter}{\AddToHook{cmd/chapter/before}{\phantomsection}}{}
+        \AddToHook{cmd/section/before}{\phantomsection}
+        \AddToHook{cmd/subsection/before}{\phantomsection}
+        \AddToHook{cmd/subsubsection/before}{\phantomsection}
+        \AddToHook{cmd/paragraph/before}{\phantomsection}
+        \AddToHook{cmd/subparagraph/before}{\phantomsection}
+    }{}%
+}
 
 
 
@@ -401,9 +405,9 @@
         }
     }{}
     
-	%====================================%
-	%     Untitled Table of Contents     %
-	%====================================%
+	%===========================================%
+	%     Untitled Table of Contents Format     %
+	%===========================================%
 	
 	% --- Daftar Gambar ---
 	\LetLtxMacro\template@originallistoffigures\listoffigures
@@ -414,7 +418,7 @@
 	        \ifdefstring{\template@soaljawab}{true}{}{%
 	            \addcontentsline{toc}{chapter}{\listfigurename}%
 	        }%
-	    }{}
+	    }{}%
 	}
 	
 	% --- Daftar Tabel ---
@@ -426,7 +430,7 @@
 	        \ifdefstring{\template@soaljawab}{true}{}{%
 	            \addcontentsline{toc}{chapter}{\listtablename}%
 	        }%
-	    }{}
+	    }{}%
 	}
 	
 	% --- Daftar Kode Listing ---
@@ -439,8 +443,8 @@
 	            \ifdefstring{\template@soaljawab}{true}{}{%
 	                \addcontentsline{toc}{chapter}{\lstlistlistingname}%
 	            }%
-	        }{}
-	    }
+	        }{}%
+	    }%
 	}{}
     
     %===========================%
@@ -541,6 +545,7 @@
             }{}%
         }%
         
+        % --- Daftar Isi Makalah ---
         \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
             \titlecontents{chapter}[0pt]
             {\addvspace{1.5ex plus 1pt}\bfseries}
@@ -571,6 +576,39 @@
             \ifdef{\lstlistoflistings}{%
                 \addtocontents{lol}{\protect\addvspace{10\p@}}%
             }{}%
+        }
+        
+        % --- Daftar Isi Artikel ---
+        \LetLtxMacro\template@originaltableofcontents\tableofcontents
+        \RenewDocumentCommand{\tableofcontents}{}{%
+            \begingroup
+            \titleformat{\section}[block]
+            {\bfseries\normalsize\filcenter}
+            {}
+            {0em}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            %
+            \begin{center}
+                \begin{minipage}{0.85\textwidth}
+                    \small
+                    \template@originaltableofcontents
+                \end{minipage}
+            \end{center}
+            \endgroup
+        }
+        
+        \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
+            \titlecontents{section}[0pt]
+            {\addvspace{1.5ex plus 1pt}\bfseries}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\hfill\contentspage}
+        }{
+            \titlecontents{section}[0pt]
+            {\addvspace{1.5ex plus 1pt}\bfseries}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thecontentslabel\quad \ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\hfill\contentspage}
         }
     }
 	
