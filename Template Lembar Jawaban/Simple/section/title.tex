@@ -60,25 +60,21 @@
     \rule{\textwidth}{0.5pt}
     
     % --- Tabel Identitas ---
-    \begin{tblr}{
-            hspan=minimal,
-            colspec={Q[l] X Q[l]},
-            colsep=0pt,
-            rowsep=2pt,
-            cells={font=\small}
-        }
-        \textbf{\Nama:} \namaMahasiswa && \textbf{\Pengampu:} \namaPengampu \\
-        \textbf{\NomorIndukM:} \nimMahasiswa && \textbf{\Kelas\ / \Sesi:} \kodeKelas\ / \sesiKe \\
-        \ifdefstring{\negaraMahasiswa}{Indonesia}{%
-            \ifdefstring{\kampus}{Universitas Terbuka}{%
-                \textbf{\UPBJJ:} \daerahKampus
+    {\small\noindent
+        \begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} l @{}}
+            \textbf{\Nama:} \namaMahasiswa & \textbf{\Pengampu:} \namaPengampu \\
+            \textbf{\NomorIndukM:} \nimMahasiswa & \textbf{\Kelas\ / \Sesi:} \kodeKelas\ / \sesiKe \\
+            \ifdefstring{\negaraMahasiswa}{Indonesia}{%
+                \ifdefstring{\kampus}{Universitas Terbuka}{%
+                    \textbf{\UPBJJ:} \daerahKampus
+                }{%
+                    \textbf{\Daerah:} \daerahKampus
+                }%
             }{%
-                \textbf{\Daerah:} \daerahKampus
-            }%
-        }{%
-            \textbf{\UTLLN:} \negaraMahasiswa
-        } && \textbf{\MataKuliah:} \namaMataKuliah \\
-    \end{tblr}
+                \textbf{\UTLLN:} \negaraMahasiswa
+            } & \textbf{\MataKuliah:} \namaMataKuliah \\
+        \end{tabular*}
+    \par}
     
     \rule{\textwidth}{0.5pt}
 
