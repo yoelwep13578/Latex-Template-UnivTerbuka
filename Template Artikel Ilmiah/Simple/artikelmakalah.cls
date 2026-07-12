@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/06/26 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/07/12 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
