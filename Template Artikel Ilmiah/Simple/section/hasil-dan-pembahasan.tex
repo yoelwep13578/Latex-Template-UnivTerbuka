@@ -1,0 +1,67 @@
+\section{Hasil dan Pembahasan}
+%======================================================%
+%          TULIS HASIL DAN PEMBAHASAN DI SINI          %
+%                                                      %
+%          Mulailah menulis dari \subsection           %
+%      \subsection > \subsubsection > \paragraph       %
+%      > \subparagraph                                 %
+%                                                      %
+% Jangan Lupa untuk Menghapus Contoh Soal di Bawah Ini %
+%======================================================%
+
+\textit{--------- Petunjuk Pengguna: Judul section ini dapat diganti dengan nama alternatif yang lebih spesifik atas saran pembimbing, asalkan bertolak dari perumusan masalah. Pilih susunan struktur di bawah sesuai jenis artikel ilmiah Anda (Opsi A atau Opsi B), kemudian hapus teks petunjuk ini beserta opsi yang tidak digunakan. ---------}
+
+% --- OPSI A: STRUKTUR UNTUK ARTIKEL HASIL PENELITIAN ---
+\subsection{Hasil}
+Bagian ini menyajikan data atau temuan lapangan yang dikelompokkan ke dalam beberapa subjudul sesuai dengan tujuan penelitian di bagian pendahuluan. Informasi dapat disajikan dengan bantuan ilustrasi berupa tabel atau gambar (seperti diagram, foto, atau grafik) yang wajib dirujuk langsung di dalam teks narasi sebelum ilustrasi tersebut muncul. Data yang sudah dituangkan ke dalam format tabel tidak boleh diduplikasi lagi ke dalam bentuk grafik, begitu pula sebaliknya. Narasi pada bagian hasil hanya berfokus untuk menonjolkan dan merangkum temuan data yang paling penting secara objektif tanpa interpretasi subjektif.
+
+Contoh penyajian tabel menggunakan \textit{tabular} bawaan \LaTeX\ dapat dilihat pada \autoref{table:contoh}, sementara contoh penyajian tabel menggunakan \textit{tabularray} (dengan kode yang lebih manusiawi) dapat dilihat pada \autoref{table:contoh-tabularray}, sedangkan contoh grafik atau diagram dapat diletakkan menggunakan lingkungan gambar seperti pada \autoref{fig:contoh}.
+
+\begin{table}[H]
+    \centering
+    \caption{Contoh Format Tabel Identifikasi Data Temuan (Tabel \textit{Tabular} Standar)}
+    \label{table:contoh}
+    {\small
+        \begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} c c @{}}
+            \hline
+            \textbf{Indikator Capaian} & \textbf{Target Kelayakan} & \textbf{Persentase Aktual} \\
+            \hline
+            Akurasi Algoritma Pengujian & 85\% & 89\% \\
+            Efisiensi Waktu Eksekusi & 10 detik & 7 detik \\
+            \hline
+        \end{tabular*}
+    \par}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    {\small
+        \begin{talltblr}[
+                caption={Contoh Format Tabel Identifikasi Data Temuan (Tabel \textit{Tabularray TallTblr})},
+                label={table:contoh-tabularray}
+            ]{
+                colspec={l c c}, hline{1,2,Z}={solid}
+            }
+            \textbf{Indikator Capaian} & \textbf{Target Kelayakan} & \textbf{Persentase Aktual} \\
+            Akurasi Algoritma Pengujian & 85\% & 89\% \\
+            Efisiensi Waktu Eksekusi & 10 detik & 7 detik \\
+        \end{talltblr}
+    \par}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.7\textwidth]{image/nama-file-gambar}
+    \framebox{\parbox[c][3cm][c]{0.5\textwidth}{\centering \textit{Tempatkan File Gambar di Sini}}}
+    \caption{Contoh Penempatan Ilustrasi Grafik atau Diagram}
+    \label{fig:contoh}
+\end{figure}
+
+\subsection{Pembahasan}
+Bagian pembahasan memuat analisis, interpretasi, dan penjelasan mendalam atas data temuan yang telah dipaparkan pada bagian hasil. Penafsiran ini wajib dikaitkan serta didukung dengan sumber pustaka yang relevan beserta rujukan aktifnya. Argumentasi dikemukakan secara singkat, logis, dan diarahkan untuk menjawab rumusan masalah pendahuluan dengan menunjukkan persamaan, membahas perbedaan, serta mengurai penyebab timbulnya perbedaan terhadap teori atau temuan peneliti terdahulu.
+
+Penyusunan paragraf pada bagian pembahasan ini memiliki aturan baku demi menjaga kualitas akademik. Setiap paragraf wajib diawali oleh pendapat atau gagasan mandiri penulis sebagai kalimat topik. Selanjutnya, kalimat tersebut diikuti oleh paparan teori dari sumber rujukan untuk mendukung klaim penulis. Paragraf kemudian ditutup oleh kalimat penyimpulan serta ulasan kritis yang menyintesiskan pendapat penulis dengan temuan para peneliti sebelumnya. Di akhir bagian pembahasan, penulis menjabarkan implikasi penerapan temuan, memberikan rekomendasi aspek lain yang perlu diteliti lebih lanjut, dan menutup seluruh narasi dengan kalimat kesimpulan yang positif, tegas, serta kuat.
+
+% --- OPSI B: STRUKTUR UNTUK ARTIKEL NON-PENELITIAN (KONSEPTUAL) ---
+\subsection{[Nama Subjudul Berdasarkan Rumusan Masalah 1]}
+Jika artikel ilmiah berupa kajian pustaka atau pemikiran konseptual, bagian ini tidak dibagi menjadi menu ``Hasil'' dan ``Pembahasan''. Isinya langsung dipayungi di bawah subjudul-subjudul spesifik yang mencerminkan jawaban atas tujuan atau pertanyaan pada pendahuluan. Sajian fakta, fenomena, atau permasalahan dikupas, dianalisis, dan ditafsirkan secara kritis menggunakan penalaran logis penulis yang bertolak serta ditopang dari sumber-sumber teoretis yang telah dihimpun pada bagian kerangka pikir.
