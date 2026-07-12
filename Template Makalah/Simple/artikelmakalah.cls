@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/06/26 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/07/12 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -52,6 +52,10 @@
 % --- Pilihan Kapitalisasi Heading Pertama ---
 %     Default: -
 \DeclareStringOption[false]{seccaps}[true]
+
+% --- Pilihan Ukuran Heading yang Lebih Kecil ---
+%     Default: -
+\DeclareStringOption[false]{seccompact}[true]
 
 % --- Pilihan Bahasa untuk APA ---
 %     Pilihan: indonesia, campuran
@@ -826,6 +830,24 @@
 	%    \AtEndEnvironment{lstlisting}{\microtypesetup{activate}}
 	}{}
 	
+    %==============================%
+    %     Ukuran Huruf Heading     %
+    %==============================%
+    
+    % --- Ukuran Standar Mendekati Bawaan LaTeX ---
+    \newcommand{\template@size@chapter}{\Large}
+    \newcommand{\template@size@section}{\Large}
+    \newcommand{\template@size@subsection}{\large}
+    \newcommand{\template@size@subsubsection}{\normalsize}
+    
+    % --- Ukuran Sederhana (Maksimaal Hanya Mendekati 14pt) ---
+    \ifdefstring{\template@seccompact}{true}{
+        \renewcommand{\template@size@chapter}{\large}
+        \renewcommand{\template@size@section}{\large}
+        \renewcommand{\template@size@subsection}{\normalsize}
+        \renewcommand{\template@size@subsubsection}{\normalsize}
+    }{}
+    
 	%===============================================================%
 	%     Pengkondisian Penomoran Heading Ilmiah dan Soal Jawab     %
 	%===============================================================%

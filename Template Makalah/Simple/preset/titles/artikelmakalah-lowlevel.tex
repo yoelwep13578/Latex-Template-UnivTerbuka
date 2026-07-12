@@ -8,19 +8,19 @@
     \setcounter{secnumdepth}{-2}
     
     \titleformat{\chapter}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
+    {\setstretch{1}\normalfont\bfseries\filcenter\template@size@section}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\setstretch{1}\normalfont\bfseries\filright\template@size@subsection}
     {}
     {0em}
     {}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\template@size@subsubsection}
     {}
     {0em}
     {}
@@ -50,19 +50,19 @@
     \setcounter{secnumdepth}{-2}
     
     \titleformat{\section}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\Large}
+    {\setstretch{1}\normalfont\bfseries\filright\template@size@section}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\setstretch{1}\normalfont\bfseries\filright\template@size@subsection}
     {}
     {0em}
     {}
     
     \titleformat{\subsubsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\template@size@subsubsection}
     {}
     {0em}
     {}

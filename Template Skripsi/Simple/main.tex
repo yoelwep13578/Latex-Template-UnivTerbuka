@@ -1,5 +1,5 @@
 % Template Skripsi Berbasis Makalah (Report)
-% Versi 2.0.0 Beta
+% Versi 2.0.0
 
 % --- Panduan Setelan Document Class ---
 %
@@ -26,18 +26,23 @@
 %      - [kosong]  --- Memakai pilihan alpha
 %
 %     2. seccaps
-%     Membuat judul heading pada tingkat pertama menggunakan huruf
-%     KAPITAL SEMUA. seccaps disarankan dipakai untuk makalah, namun
-%     seccaps untuk artikel sebaiknya dihindari bila tidak ada paksaan.
+%     Membuat judul heading pada tingkat pertama menggunakan 
+%     huruf KAPITAL SEMUA. seccaps disarankan dipakai untuk makalah,
+%     namun seccaps untuk artikel sebaiknya dihindari bila tidak ada
+%     paksaan.
 %
-%     3. urlroman
+%     3. seccompact
+%     Ukuran judul heading dibuat lebih kecil dari bawaan LaTeX. 
+%     Heading setingkat Bab dan Seksi hanya berukuran sekitar 14pt.
+%
+%     4. urlroman
 %     URL disarankan menggunakan huruf monospace agar mudah
 %     dilihat dan diketik dari media tercetak (kertas).
 %     urlroman dapat digunakan agar URL menggunakan huruf 
 %     roman, namun sebaiknya jangan jika tidak ada aturan
 %     yang memaksa.
 %
-%     4. mainfont
+%     5. mainfont
 %     Pilihan untuk font utama dan font matematika
 %
 %     Pilihan yang tersedia:
@@ -73,8 +78,9 @@
 %                            Computer Modern Roman
 %                            Bisa dipakai untuk disetel sendiri 
 %                            dengan \setmainfont dan \setmathfont
+%                            di LuaLaTeX
 %
-%     5. sansfont
+%     6. sansfont
 %     Pilihan untuk font sans serif
 %
 %     Pilihan yang tersedia:
@@ -86,9 +92,9 @@
 %      - noto     --- Noto Sans
 %      - [kosong] --- Latin Modern Sans/Computer Modern Sans
 %                     Bisa dipakai untuk disetel sendiri dengan 
-%                     \setsansfont
+%                     \setsansfont di LuaLaTeX
 %
-%     6. monofont
+%     7. monofont
 %     Pilihan untuk font monospace
 %     
 %     Pilihan yang tersedia:
@@ -99,10 +105,11 @@
 %      - jetbrains --- JetBrains Mono
 %      - [kosong]  --- Latin Modern Mono/Computer Modern Mono
 %                      Bisa dipakai untuk disetel sendiri dengan
-%                      \setmonofont
+%                      \setmonofont di LuaLaTeX
 %
-%     7. indent
-%     Jarak menjorok pada baris awal paragraf
+%     8. indent
+%     Jarak menjorok pada baris awal paragraf, ditulis dengan angka
+%     dan satuannya.
 %
 %     Satuan yang dapat digunakan:
 %      - em --- Lebar huruf "M" atau lebar = ukuran huruf
@@ -110,27 +117,29 @@
 %      - in --- Inci
 %      - pt --- Point
 %
-%     8. microtype
+%     Contoh penggunaan: indent=1.5cm atau indent=2em
+%
+%     9. microtype
 %     Alat tambahan untuk membuat teks terlihat lebih rapi dengan
 %     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
 %     Microtype dapat digunakan setelah pengerjaan selesai (final).
 %
-%     9. listappendix
+%     10. listappendix
 %     Memunculkan daftar isi baru bernama "Daftar Lampiran" seperti
 %     yang ada pada Daftar Gambar, Daftar Tabel, dan Daftar Kode.
 %
-%     10. appnewline
+%     11. appnewline
 %     Membuat judul lampiran memiliki dua baris, sama seperti bab
 %     makalah.
 %
 %     Lampiran A: Nama Lampiran -->  Lampiran A
 %                                   Nama Lampiran
 %
-%     11. appnumarabic
+%     12. appnumarabic
 %     Mengganti nomor Lampiran A, Lampiran B, Lampiran C, ...
 %     menjadi Lampiran 1, Lampiran 2, Lampiran 3, ...
 %
-%     12. apppagenum
+%     13. apppagenum
 %     Format nomor halaman untuk bagian Lampiran (setelah daftar
 %     pustaka atau glosarium)
 %
@@ -139,20 +148,19 @@
 %                      jumlah halaman yang tidak terlalu banyak
 %                      (<= 15 halaman)
 %      - arabicone --- Nomor diulang dari 1
-%      - roman     --- Romawi dari i. Dapat dipakai bila
-%                      Lampiran diperlakukan sebagai Back Matter
-%      - gabungan  --- Berformat A-1, A-2, B-1, ...
-%                      Bagian ABCDEF berasal dari lampiran (
-%                      Lampiran A, Lampiran B)
-%                      Nomor 123456 adalah halaman dari setiap
-%                      lampiran (ABCDEF punya halaman sendiri)
+%      - roman     --- Nomor romawi kecil (i, ii, iii)
+%      - gabungan  --- Format gabungan nama bab dan halaman
+%                      Contoh: A-1, A-2, B-1
+%                      Huruf "A" melambangkan Lampiran A, dan 
+%                      angka "1" melambangkan halaman pertama 
+%                      pada lampiran tersebut.
 %      - [kosong]  --- Memakai pilihan arabic
 %
-%     13. showlabelname
+%     14. showlabelname
 %     Memunculkan tulisan nama label:
-%     Daftar Gambar: "2.2" --> "Gambar 2.2"
-%     Daftar Tabel: "2.2" --> "Tabel 2.2"
-%     Daftar Kode: "2.2" --> "Kode 2.2"
+%     Daftar Gambar  : "2.2"   --> "Gambar 2.2"
+%     Daftar Tabel   : "2.2"   --> "Tabel 2.2"
+%     Daftar Kode    : "2.2"   --> "Kode 2.2"
 %     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
 %
 \documentclass[seccaps, heading=alpha, mainfont=times, apa=campuran, listappendix, appnumarabic]{artikelmakalah}

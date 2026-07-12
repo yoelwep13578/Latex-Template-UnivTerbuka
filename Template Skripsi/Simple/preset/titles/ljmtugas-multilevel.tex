@@ -11,25 +11,25 @@
     \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
     
     \titleformat{\chapter}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
+    {\setstretch{1}\normalfont\bfseries\filcenter\template@size@chapter}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\Large}
+    {\setstretch{1}\normalfont\bfseries\filright\template@size@section}
     {\normalfont\bfseries\thesection.}
     {1em}
     {}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\setstretch{1}\normalfont\bfseries\filright\template@size@subsection}
     {\normalfont\bfseries\thesubsection}
     {1em}
     {}
     
     \titleformat{\subsubsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\template@size@subsubsection}
     {\normalfont\bfseries\thesubsubsection}
     {1em}
     {}
@@ -56,19 +56,19 @@
     \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
     
     \titleformat{\section}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
+    {\setstretch{1}\normalfont\bfseries\filcenter\template@size@section}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\setstretch{1}\normalfont\bfseries\filright\template@size@subsection}
     {\normalfont\bfseries\thesubsection.}
     {1em}
     {}
     
     \titleformat{\subsubsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\template@size@subsubsection}
     {\normalfont\bfseries\thesubsubsection}
     {1em}
     {}
