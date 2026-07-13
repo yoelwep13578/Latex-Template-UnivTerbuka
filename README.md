@@ -58,7 +58,7 @@ Cukup isi nama, NIM, nama dosen, dan judul tugas di satu _file_ khusus (`variabl
 
 <img src="https://github.com/user-attachments/assets/f462b2da-eafc-40ae-b365-155847c7721e" />
 
-Seperti gambar yang ada di atas, Anda dapat melihat kalau isi _file_ `.tex` hanya berisi kode saja, tidak ada nomor apa pun yang diberikan di dalamnya. Penomoran bab, sub-bab, nomor urut gambar, tabel, hingga rumus berjalan secara otomatis di latar belakang. Jika di tengah-tengah Anda harus menukar posisi Bab 2 menjadi Bab 3, menukar posisi subbab, atau menyelipkan satu gambar baru di halaman depan, Anda tidak perlu mengubah urutan angkanya satu per satu secara manual. Seluruh nomor urut di dalam dokumen akan langsung menyesuaikan diri.
+Seperti gambar yang ada di atas, Anda dapat melihat bahwa isi _file_ `.tex` hanya berisi kode saja, tidak ada nomor apa pun yang diberikan di dalamnya. Penomoran bab, sub-bab, nomor urut gambar, tabel, hingga rumus berjalan secara otomatis di latar belakang. Jika di tengah-tengah Anda harus menukar posisi Bab 2 menjadi Bab 3, menukar posisi subbab, atau menyelipkan satu gambar baru di halaman depan, Anda tidak perlu mengubah urutan angkanya satu per satu secara manual. Seluruh nomor urut di dalam dokumen akan langsung menyesuaikan diri.
 
 ### _Pemisahan antara Isi Teks dan Desain Tata Letak_
 
