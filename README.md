@@ -56,11 +56,23 @@ Cukup isi nama, NIM, nama dosen, dan judul tugas di satu _file_ khusus (`variabl
 
 ### _Struktur dan Penomoran Otomatis yang Sangat Membantu_
 
-Mengubah subjudul di halaman 3 tidak akan merusak posisi tabel di halaman 5. Penomoran bab, sub-bab, hingga nomor urut gambar/tabel berjalan otomatis dan tidak akan pernah bergeser secara tidak sengaja.
+<img src="https://github.com/user-attachments/assets/f462b2da-eafc-40ae-b365-155847c7721e" />
+
+Seperti gambar yang ada di atas, Anda dapat melihat kalau isi _file_ `.tex` hanya berisi kode saja, tidak ada nomor apa pun yang diberikan di dalamnya. Penomoran bab, sub-bab, nomor urut gambar, tabel, hingga rumus berjalan secara otomatis di latar belakang. Jika di tengah-tengah Anda harus menukar posisi Bab 2 menjadi Bab 3, menukar posisi subbab, atau menyelipkan satu gambar baru di halaman depan, Anda tidak perlu mengubah urutan angkanya satu per satu secara manual. Seluruh nomor urut di dalam dokumen akan langsung menyesuaikan diri.
 
 ### _Pemisahan antara Isi Teks dan Desain Tata Letak_
 
 Anda tidak akan membuang waktu memblok teks untuk mengganti ukuran _font_ atau menggeser penggaris margin (_ruler_) secara manual karena semua dokumen yang dihasilkan otomatis mengikuti standar baku kemahasiswaan.
+
+### _Comment untuk Corat-coret dan Draf Rahasia_
+
+Saat menulis atau merevisi tugas, muncul rasa bimbang seperti _"Kalimat ini mau dibuang sayang, tapi kalau dipertahankan rasanya kurang pas"_. Di LaTeX, Anda cukup menyembunyikan teks tersebut menggunakan tanda persen `%`. Teks yang diberi tanda ini (disebut sebagai _comment_) tidak akan muncul di hasil akhir PDF, tetapi tetap tersimpan di dalam _file_ ketikan Anda. ini sangat berguna untuk:
+
+- Menyimpan Cadangan Tulisan: Menyembunyikan paragraf lama yang siapa tahu akan dipakai lagi nanti.
+
+- Perancangan Draf & Catatan Kerja (_To-Do List_): Menulis pengingat seperti `% TODO: Tambahkan referensi bagian ini langsung di sela-sela baris ketikan`.
+
+- Menyematkan Contoh Panduan: _Template_ ini sudah dilengkapi instruksi dan contoh pengisian tersembunyi yang bisa Anda baca saat mengetik tanpa takut mengotori hasil cetak dokumen.
 
 ### _Sangat Pas untuk Rumus Matematika dan Notasi Ilmiah_
 
