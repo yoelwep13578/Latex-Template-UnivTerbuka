@@ -1,9 +1,10 @@
 <h1 align="center">Latex-Template-UnivTerbuka</h1>
 
 <div align="center">
-    <img src="https://img.shields.io/github/v/release/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=008800" />
-    <img src="https://img.shields.io/github/issues-raw/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=ffff00" />
-    <img src="https://img.shields.io/github/issues-closed-raw/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=3344ff" />
+    <img alt="Release" src="https://img.shields.io/github/v/release/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=008800" />
+    <img alt="Open issue" src="https://img.shields.io/github/issues-raw/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=ffff00" />
+    <img alt="Closed issue" src="https://img.shields.io/github/issues-closed-raw/yoelwep13578/Latex-Template-UnivTerbuka?style=for-the-badge&color=3344ff" />
+    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/yoelwep13578/LaTeX-Template-UnivTerbuka?style=for-the-badge&color=red">
 </div>
 
 <p align="center">Repositori ini berisi kumpulan template lembar jawaban, buku tugas, makalah, dan artikel menggunakan format standar yang dipadukan dengan pedoman Universitas Terbuka. Ketik tugas kuliah, makalah, artikel, dan laporan tanpa perlu pusing memikirkan format, margin, dan nomor halaman.</p>
@@ -47,7 +48,11 @@ _Template_ ini hadir untuk menyelesaikan masalah tersebut. Anda tetap menulis de
 
 ### _Teks Bervariabel untuk Pendataan Otomatis_
 
-Cukup isi nama, NIM, nama dosen, dan judul tugas di satu _file_ khusus (`variable.tex`). Identitas tersebut akan otomatis tersebar ke seluruh halaman yang membutuhkan (seperti halaman sampul, _header_, atau kata pengantar, lembar pengesahan, dan sebagainya) tanpa perlu mengetik ulang atau takut ada yang terlewat. Data yang sudah ditulis juga bisa Anda panggil untuk dimunculkan saat dibutuhkan.
+<img src="https://github.com/user-attachments/assets/9627eaa8-41ca-4d65-a78d-5c99c94dcbf3" />
+
+Cukup isi nama, NIM, nama dosen, dan judul tugas di satu _file_ khusus (`variable.tex`). Identitas tersebut akan otomatis tersebar ke seluruh halaman yang membutuhkan (seperti halaman sampul, _header_, atau kata pengantar, lembar pengesahan, dan sebagainya) tanpa perlu mengetik ulang atau takut ada yang terlewat. Data yang sudah ditulis juga bisa Anda panggil untuk dimunculkan saat dibutuhkan. Anda juga dapat menambahkan variabel data sendiri lalu dipanggil saat memerlukannya.
+
+<img src="https://github.com/user-attachments/assets/975f19a0-dbdb-490a-bd8c-9f6abc630e34" />
 
 ### _Struktur dan Penomoran Otomatis yang Sangat Membantu_
 
