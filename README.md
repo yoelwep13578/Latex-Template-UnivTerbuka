@@ -50,7 +50,9 @@ _Template_ ini hadir untuk menyelesaikan masalah tersebut. Anda tetap menulis de
 
 <img src="https://github.com/user-attachments/assets/9627eaa8-41ca-4d65-a78d-5c99c94dcbf3" />
 
-Cukup isi nama, NIM, nama dosen, dan judul tugas di satu _file_ khusus (`variable.tex`). Identitas tersebut akan otomatis tersebar ke seluruh halaman yang membutuhkan (seperti halaman sampul, _header_, atau kata pengantar, lembar pengesahan, dan sebagainya) tanpa perlu mengetik ulang atau takut ada yang terlewat. Data yang sudah ditulis juga bisa Anda panggil untuk dimunculkan saat dibutuhkan. Anda juga dapat menambahkan variabel data sendiri lalu dipanggil saat memerlukannya.
+Cukup isi nama, NIM, nama dosen, dan judul tugas di satu _file_ khusus (`variable.tex`). Identitas tersebut akan otomatis tersebar ke seluruh halaman yang membutuhkan (seperti halaman sampul, _header_, atau kata pengantar, lembar pengesahan, dan sebagainya) tanpa perlu mengetik ulang atau takut ada yang terlewat. 
+
+Data yang sudah ditulis juga bisa Anda panggil untuk dimunculkan saat dibutuhkan. Anda juga dapat menambahkan variabel data sendiri lalu dipanggil saat memerlukannya.
 
 <img src="https://github.com/user-attachments/assets/975f19a0-dbdb-490a-bd8c-9f6abc630e34" />
 
@@ -59,6 +61,13 @@ Cukup isi nama, NIM, nama dosen, dan judul tugas di satu _file_ khusus (`variabl
 <img src="https://github.com/user-attachments/assets/f462b2da-eafc-40ae-b365-155847c7721e" />
 
 Seperti gambar yang ada di atas, Anda dapat melihat bahwa isi _file_ `.tex` hanya berisi kode saja, tidak ada nomor apa pun yang diberikan di dalamnya. Penomoran bab, sub-bab, nomor urut gambar, tabel, hingga rumus berjalan secara otomatis di latar belakang. Jika di tengah-tengah Anda harus menukar posisi Bab 2 menjadi Bab 3, menukar posisi subbab, atau menyelipkan satu gambar baru di halaman depan, Anda tidak perlu mengubah urutan angkanya satu per satu secara manual. Seluruh nomor urut di dalam dokumen akan langsung menyesuaikan diri.
+
+Sebagai gambaran sederhana, lihatlah contoh revisi di bawah ini untuk memindahkan Kerangka Pikir ke dalam Bab 2 Landasan Teori.
+
+<img src="https://github.com/user-attachments/assets/e2c8e5cc-9985-4b1e-92aa-bb0bd71c0ffb" />
+<img src="https://github.com/user-attachments/assets/c07e06c5-bf08-417d-8ef3-cc11a99c7760" />
+
+
 
 ### _Pemisahan antara Isi Teks dan Desain Tata Letak_
 
