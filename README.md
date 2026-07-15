@@ -115,3 +115,39 @@ _Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda
 - Mengubah format judul Lampiran yang mulanya sebaris menjadi dua baris;
 - Mengubah jenis nomor halaman khusus untuk Lampiran;
 - Memunculkan nama label dalam Daftar Gambar, Daftar Tabel, dan Daftar Kode.
+
+
+
+## _Download_
+
+### _Dari Master dengan Update Berkelanjutan_
+
+Silakan klik tombol <img src="https://img.shields.io/badge/%E2%9D%AE%20%20%20%E2%9D%AF-Code-blue?style=flat&labelColor=blue" align="middle" /> 
+pada bagian kanan atas, lalu pilih _**Download ZIP**_.
+
+Jika memiliki GIT CLI, Anda dapat menyimpan repositori ini dengan menjalankan perintah di bawah ini:
+
+```bash
+git clone --depth 1 https://github.com/yoelwep13578/Latex-Template-UnivTerbuka.git && rm -rf Latex-Template-UnivTerbuka/.git
+```
+
+
+
+## Isian di Dalam _Template_
+
+### _Jenis Template_
+
+- **Lembar Jawaban:** _Template_ berbentuk artikel untuk mengisi jawaban Anda.
+- **Buku Tugas:** _Template_ berbentuk buku tugas untuk mengisi jawaban Anda.
+- **Makalah:** _Template_ makalah biasa yang berisi 4 Bab (Pendahuluan, Landasan Teori, Pembahasan, Penutup).
+- **Skripsi:** _Template_ makalah lanjutan yang diperkaya lagi menjadi 5 Bab, dilengkapi ragam daftar, dan halaman Lampiran; untuk Tugas Akhir Program Sarjana (Skema Skripsi).
+- **Artikel:** _Template_ artikel biasa maupun artikel ilmiah untuk Tugas Akhir Program Sarjana.
+
+### _Struktur File dan Folder_
+
+Setiap _template_ memiliki struktur seperti ini:
+
+- _Folder_ `/image` untuk menyimpan gambar. Anda dapat meletakkan semua gambar yang diperlukan ke dalam _folder_ ini.
+- _Folder_ `/pdf` untuk menyimpan dokumen PDF, biasanya naskah soal. Anda dibolehkan menyimpan PDF berbentuk dokumen, hasil _export_ grafik, atau hasil _export_ diagram ke dalam _folder_ ini.
+- _Folder_ `/preset` berisi sebagian penyetelan dokumen, terdiri atas penomoran _heading_, pustaka bahasa, daftar, dan sebagainya.
+- _Folder_ `/section` berisi bagian-bagian dokumen yang sudah dipisahkan, secara bawaan dipecahkan per bab untuk makalah dan per bagian untuk artikel. Anda dapat membuat pemecahan dokumen tersendiri (misal kumpulan subbagian dalam Bab 3 makalah) dan menyimpannya di dalam _folder_ ini.
