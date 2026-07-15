@@ -67,25 +67,37 @@ Sebagai gambaran sederhana, lihatlah contoh revisi di bawah ini untuk memindahka
 <img src="https://github.com/user-attachments/assets/e2c8e5cc-9985-4b1e-92aa-bb0bd71c0ffb" />
 <img src="https://github.com/user-attachments/assets/c07e06c5-bf08-417d-8ef3-cc11a99c7760" />
 
-
-
 ### _Pemisahan antara Isi Teks dan Desain Tata Letak_
 
 Anda tidak akan membuang waktu memblok teks untuk mengganti ukuran _font_ atau menggeser penggaris margin (_ruler_) secara manual karena semua dokumen yang dihasilkan otomatis mengikuti standar baku kemahasiswaan.
+
+<img src="https://github.com/user-attachments/assets/415ca9f7-5f24-41d5-95b4-42ab37994560" />
 
 ### _Comment untuk Corat-coret dan Draf Rahasia_
 
 Saat menulis atau merevisi tugas, muncul rasa bimbang seperti _"Kalimat ini mau dibuang sayang, tapi kalau dipertahankan rasanya kurang pas"_. Di LaTeX, Anda cukup menyembunyikan teks tersebut menggunakan tanda persen `%`. Teks yang diberi tanda ini (disebut sebagai _comment_) tidak akan muncul di hasil akhir PDF, tetapi tetap tersimpan di dalam _file_ ketikan Anda. ini sangat berguna untuk:
 
-- Menyimpan Cadangan Tulisan: Menyembunyikan paragraf lama yang siapa tahu akan dipakai lagi nanti.
+#### Menyimpan Cadangan Tulisan
 
-- Perancangan Draf & Catatan Kerja (_To-Do List_): Menulis pengingat seperti `% TODO: Tambahkan referensi bagian ini langsung di sela-sela baris ketikan`.
+Menyembunyikan paragraf lama yang siapa tahu akan dipakai lagi nanti.
 
-- Menyematkan Contoh Panduan: _Template_ ini sudah dilengkapi instruksi dan contoh pengisian tersembunyi yang bisa Anda baca saat mengetik tanpa takut mengotori hasil cetak dokumen.
+<img src="https://github.com/user-attachments/assets/9b58a4b3-c337-48c6-8cf0-9993ce56800c" />
+
+#### Perancangan Draf & Catatan Kerja (_To-Do List_)
+
+Menulis pengingat atau rencana pengerjaan berikutnya agar tidak lupa.
+
+<img src="https://github.com/user-attachments/assets/0b2b27f0-edc6-4259-b232-c37a456ea8cb" />
+
+#### Menyematkan Contoh Panduan
+
+_Template_ ini sudah dilengkapi instruksi dan contoh pengisian tersembunyi yang bisa Anda baca saat mengetik tanpa takut mengotori hasil dokumennya.
 
 ### _Sangat Pas untuk Rumus Matematika dan Notasi Ilmiah_
 
 Penulisan rumus serumit apa pun dapat diketik langsung menggunakan teks kode LaTeX tanpa perlu berulang kali mengeklik menu _Equation Editor_.
+
+<img src="https://github.com/user-attachments/assets/0575256e-5189-49a8-93ff-94271b709e0f" />
 
 ### _Fleksibel_
 
