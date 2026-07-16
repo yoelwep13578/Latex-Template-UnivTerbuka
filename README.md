@@ -48,7 +48,10 @@ _Template_ ini hadir untuk menyelesaikan masalah tersebut. Anda tetap menulis de
 
 ### _Teks Bervariabel untuk Pendataan Otomatis_
 
-<img src="https://github.com/user-attachments/assets/9627eaa8-41ca-4d65-a78d-5c99c94dcbf3" />
+<details>
+    <summary>Klik untuk melihat gambar</summary>
+    <img src="https://github.com/user-attachments/assets/9627eaa8-41ca-4d65-a78d-5c99c94dcbf3" />
+</details>
 
 Cukup isi nama, NIM, nama dosen, dan judul tugas di satu _file_ khusus (`variable.tex`). Identitas tersebut akan otomatis tersebar ke seluruh halaman yang membutuhkan (seperti halaman sampul, _header_, atau kata pengantar, lembar pengesahan, dan sebagainya) tanpa perlu mengetik ulang atau takut ada yang terlewat. 
 
@@ -58,20 +61,29 @@ Data yang sudah ditulis juga bisa Anda panggil untuk dimunculkan saat dibutuhkan
 
 ### _Struktur dan Penomoran Otomatis yang Sangat Membantu_
 
-<img src="https://github.com/user-attachments/assets/f462b2da-eafc-40ae-b365-155847c7721e" />
+<details>
+    <summary>Klik untuk melihat gambar</summary>
+    <img src="https://github.com/user-attachments/assets/f462b2da-eafc-40ae-b365-155847c7721e" />
+</details>
 
 Seperti gambar yang ada di atas, Anda dapat melihat bahwa isi _file_ `.tex` hanya berisi kode saja, tidak ada nomor apa pun yang diberikan di dalamnya. Penomoran bab, sub-bab, nomor urut gambar, tabel, hingga rumus berjalan secara otomatis di latar belakang. Jika di tengah-tengah Anda harus menukar posisi Bab 2 menjadi Bab 3, menukar posisi subbab, atau menyelipkan satu gambar baru di halaman depan, Anda tidak perlu mengubah urutan angkanya satu per satu secara manual. Seluruh nomor urut di dalam dokumen akan langsung menyesuaikan diri.
 
 Sebagai gambaran sederhana, lihatlah contoh revisi di bawah ini untuk memindahkan Kerangka Pikir ke dalam Bab 2 Landasan Teori.
 
-<img src="https://github.com/user-attachments/assets/e2c8e5cc-9985-4b1e-92aa-bb0bd71c0ffb" />
-<img src="https://github.com/user-attachments/assets/c07e06c5-bf08-417d-8ef3-cc11a99c7760" />
+<details>
+    <summary>Klik untuk melihat gambar</summary>
+    <img src="https://github.com/user-attachments/assets/e2c8e5cc-9985-4b1e-92aa-bb0bd71c0ffb" />
+    <img src="https://github.com/user-attachments/assets/c07e06c5-bf08-417d-8ef3-cc11a99c7760" />
+</details>
 
 ### _Pemisahan antara Isi Teks dan Desain Tata Letak_
 
 Anda tidak akan membuang waktu memblok teks untuk mengganti ukuran _font_ atau menggeser penggaris margin (_ruler_) secara manual karena semua dokumen yang dihasilkan otomatis mengikuti standar baku kemahasiswaan.
 
-<img src="https://github.com/user-attachments/assets/415ca9f7-5f24-41d5-95b4-42ab37994560" />
+<details>
+    <summary>Klik untuk melihat gambar</summary>
+    <img src="https://github.com/user-attachments/assets/415ca9f7-5f24-41d5-95b4-42ab37994560" />
+</details>
 
 ### _Comment untuk Corat-coret dan Draf Rahasia_
 
@@ -96,8 +108,10 @@ _Template_ ini sudah dilengkapi instruksi dan contoh pengisian tersembunyi yang 
 ### _Sangat Pas untuk Rumus Matematika dan Notasi Ilmiah_
 
 Penulisan rumus serumit apa pun dapat diketik langsung menggunakan teks kode LaTeX tanpa perlu berulang kali mengeklik menu _Equation Editor_.
-
-<img src="https://github.com/user-attachments/assets/0575256e-5189-49a8-93ff-94271b709e0f" />
+<details>
+    <summary>Klik untuk melihat gambar</summary>
+    <img src="https://github.com/user-attachments/assets/0575256e-5189-49a8-93ff-94271b709e0f" />
+</details>
 
 ### _Fleksibel_
 
@@ -125,11 +139,12 @@ _Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda
 Silakan klik tombol <img src="https://img.shields.io/badge/%E2%9D%AE%20%20%20%E2%9D%AF-Code-blue?style=flat&labelColor=blue" align="middle" /> 
 pada bagian kanan atas, lalu pilih _**Download ZIP**_.
 
-Jika memiliki GIT CLI, Anda dapat menyimpan repositori ini dengan menjalankan perintah di bawah ini:
-
-```bash
-git clone --depth 1 https://github.com/yoelwep13578/Latex-Template-UnivTerbuka.git && rm -rf Latex-Template-UnivTerbuka/.git
-```
+> [!TIP]
+> Jika memiliki GIT CLI, Anda dapat men-_download template_ dengan menyimpan repositori ini menggunakan perintah:
+> 
+> ```bash
+> git clone --depth 1 https://github.com/yoelwep13578/Latex-Template-UnivTerbuka.git && rm -rf Latex-Template-UnivTerbuka/.git
+> ```
 
 
 
@@ -145,9 +160,53 @@ git clone --depth 1 https://github.com/yoelwep13578/Latex-Template-UnivTerbuka.g
 
 ### _Struktur File dan Folder_
 
-Setiap _template_ memiliki struktur seperti ini:
+Setiap _template_ memiliki struktur dasar seperti ini:
+
+    Template yang Anda Pilih/
+    ├── image/
+    │   └── ...(kumpulan gambar)
+    │
+    ├── pdf/
+    │   └── ...(kumpulan PDF)
+    │
+    ├── preset/
+    │   └── ... (kumpulan folder dan file setelan)
+    │
+    ├── section/
+    │   └── ... (kumpulan bagian atau bab yang sudah dipecah)
+    │
+    ├── artikelmakalah.cls
+    ├── main.tex
+    ├── glossary.tex
+    ├── reference.bib
+    └── variable.tex
 
 - _Folder_ `/image` untuk menyimpan gambar. Anda dapat meletakkan semua gambar yang diperlukan ke dalam _folder_ ini.
+
 - _Folder_ `/pdf` untuk menyimpan dokumen PDF, biasanya naskah soal. Anda dibolehkan menyimpan PDF berbentuk dokumen, hasil _export_ grafik, atau hasil _export_ diagram ke dalam _folder_ ini.
+
 - _Folder_ `/preset` berisi sebagian penyetelan dokumen, terdiri atas penomoran _heading_, pustaka bahasa, daftar, dan sebagainya.
+
 - _Folder_ `/section` berisi bagian-bagian dokumen yang sudah dipisahkan, secara bawaan dipecahkan per bab untuk makalah dan per bagian untuk artikel. Anda dapat membuat pemecahan dokumen tersendiri (misal kumpulan subbagian dalam Bab 3 makalah) dan menyimpannya di dalam _folder_ ini.
+
+- _File_ `artikelmakalah.cls` merupakan _document class_ utama yang digunakan pada _template_ ini.
+
+- _File_ `main.tex` adalah _file_ utama untuk memuat _package_, menyimpan setelan dasar yang boleh Anda ubah, dan menyatukan semua bagian yang sudah dipecah ke dalam _folder_ `section/`.
+
+- _File_ `glossary.tex` digunakan untuk Glosarium, berisi kumpulan daftar istilah yang ditulis mirip seperti format BibTeX. _File_ ini tidak akan digunakan bila Anda tidak memuat _package_ `glossaries-extra` di dalam _file_ `main.tex`.
+
+- _File_ `reference.bib` digunakan untuk menyimpan Daftar Pustaka, ditulis menggunakan format BibTeX.
+
+- _File_ `variable.tex` digunakan untuk menyimpan data penting seperti nama Anda, nomor induk, nama dosen/tutor, program studi, fakultas, kampus, daerah, dan sebagainya. _File_ ini dimanfaatkan oleh template LaTeX untuk menyebarkan isi data yang Anda tulis ke dalam dokumen.
+
+
+
+## Cara Penggunaan
+
+### _Memakai Editor Online: TeX Page (Disarankan untuk yang Tidak Ingin Repot Memasang Distribusi LaTeX)_
+
+Setelah Anda men-_download template_ ini:
+1. Kunjungi [TeX Page](https://www.texpage.com). Silakan daftarkan diri dengan membuat akun (_Sign In_) di sana. Jika sudah pernah membuat akun TeX Page, Anda hanya perlu _Log-In_ saja.
+2. Sesuaikan identitas. Buka _file_ `variable.tex` dan isilah pendataan penting seperti judul karya tulis (jika digunakan), nama Anda, nomor induk, program studi, dan lainnya di dalamnya.
+3. Mulailah menulis. Bukalah salah satu _file_ dalam _folder_ `section/` yang ingin diisi (misalnya `pendahuluan.tex`), dan ketik tulisan Anda di sana.
+4. Lihat hasilnya dengan mengeklik tombol _**Compile**_ atau _**Build**_ pada _editor_ untuk melihat dokumen PDF Anda.
