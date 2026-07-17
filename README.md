@@ -136,7 +136,7 @@ _Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda
 
 ### _Dari Master dengan Update Berkelanjutan_
 
-Silakan klik tombol <img src="https://img.shields.io/badge/%E2%9D%AE%20%20%20%E2%9D%AF-Code-blue?style=flat&labelColor=blue" align="middle" /> 
+Silakan klik tombol <img src="https://img.shields.io/badge/%E2%9D%AE%20%20%20%E2%9D%AF-Code-blue?style=flat&labelColor=blue" align="texttop" /> 
 pada bagian kanan atas, lalu pilih _**Download ZIP**_.
 
 > [!TIP]
@@ -203,10 +203,14 @@ Setiap _template_ memiliki struktur dasar seperti ini:
 
 ## Cara Penggunaan
 
-### _Memakai Editor Online: TeX Page (Disarankan untuk yang Tidak Ingin Repot Memasang Distribusi LaTeX)_
+### _Memakai Editor Online (Disarankan untuk yang Tidak Ingin Repot Memasang Distribusi LaTeX)_
+
+#### TeX Page
 
 Setelah Anda men-_download template_ ini:
 1. Kunjungi [TeX Page](https://www.texpage.com). Silakan daftarkan diri dengan membuat akun (_Sign In_) di sana. Jika sudah pernah membuat akun TeX Page, Anda hanya perlu _Log-In_ saja.
-2. Sesuaikan identitas. Buka _file_ `variable.tex` dan isilah pendataan penting seperti judul karya tulis (jika digunakan), nama Anda, nomor induk, program studi, dan lainnya di dalamnya.
-3. Mulailah menulis. Bukalah salah satu _file_ dalam _folder_ `section/` yang ingin diisi (misalnya `pendahuluan.tex`), dan ketik tulisan Anda di sana.
-4. Lihat hasilnya dengan mengeklik tombol _**Compile**_ atau _**Build**_ pada _editor_ untuk melihat dokumen PDF Anda.
+2. Buat proyek baru. Klik <img align="texttop" alt="+ New" src="https://img.shields.io/badge/New-s?style=flat&label=%2B&labelColor=%23495A80&color=%23495A80" /> ⟶ **_Blank Project_** ⟶ berikan dengan nama yang Anda inginkan (misalnya disamakan dengan judul karya tulis Anda).
+3. n
+4. Sesuaikan identitas. Buka _file_ `variable.tex` dan isilah pendataan penting seperti judul karya tulis (jika digunakan), nama Anda, nomor induk, program studi, dan lainnya di dalamnya.
+5. Mulailah menulis. Bukalah salah satu _file_ dalam _folder_ `section/` yang ingin diisi (misalnya `pendahuluan.tex`), dan ketik tulisan Anda di sana.
+6. Lihat hasilnya dengan mengeklik tombol _**Compile**_ atau _**Build**_ pada _editor_ untuk melihat dokumen PDF Anda.
