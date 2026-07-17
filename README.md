@@ -203,14 +203,18 @@ Setiap _template_ memiliki struktur dasar seperti ini:
 
 ## Cara Penggunaan
 
+_Template_ ini dapat digunakan melalui beberapa metode berikut sesuai kenyamanan Anda:
+
 ### _Memakai Editor Online (Disarankan untuk yang Tidak Ingin Repot Memasang Distribusi LaTeX)_
 
-#### TeX Page
+Menggunakan layanan _online/cloud_ dan akses internet tanpa perlu menginstal aplikasi apa pun di komputer.
 
-Setelah Anda men-_download template_ ini:
-1. Kunjungi [TeX Page](https://www.texpage.com). Silakan daftarkan diri dengan membuat akun (_Sign In_) di sana. Jika sudah pernah membuat akun TeX Page, Anda hanya perlu _Log-In_ saja.
-2. Buat proyek baru. Klik <img align="texttop" alt="+ New" src="https://img.shields.io/badge/New-s?style=flat&label=%2B&labelColor=%23495A80&color=%23495A80" /> ⟶ **_Blank Project_** ⟶ berikan dengan nama yang Anda inginkan (misalnya disamakan dengan judul karya tulis Anda).
-3. n
-4. Sesuaikan identitas. Buka _file_ `variable.tex` dan isilah pendataan penting seperti judul karya tulis (jika digunakan), nama Anda, nomor induk, program studi, dan lainnya di dalamnya.
-5. Mulailah menulis. Bukalah salah satu _file_ dalam _folder_ `section/` yang ingin diisi (misalnya `pendahuluan.tex`), dan ketik tulisan Anda di sana.
-6. Lihat hasilnya dengan mengeklik tombol _**Compile**_ atau _**Build**_ pada _editor_ untuk melihat dokumen PDF Anda.
+### _Lokal Instal dan Serba Sendiri_
+
+Menggunakan distribusi LaTeX, alat bantu, dan perangkat Anda sendiri, sehingga memiliki kebebasan dan lebih aman.
+
+Setelah memilih metode yang Anda inginkan, Anda dapat mulai menulis dengan cara:
+
+1. Sesuaikan identitas. Buka _file_ `variable.tex` dan isilah pendataan penting seperti judul karya tulis (jika digunakan), nama Anda, nomor induk, program studi, dan lainnya di dalamnya.
+2. Mulailah menulis. Bukalah salah satu _file_ dalam _folder_ `section/` yang ingin diisi (misalnya `pendahuluan.tex`), dan ketik tulisan Anda di sana.
+3. Lihat hasilnya dengan mengeklik tombol _**Compile**_ atau _**Build**_ pada _editor_ untuk melihat dokumen PDF Anda.
