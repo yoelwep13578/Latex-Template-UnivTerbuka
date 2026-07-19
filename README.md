@@ -9,6 +9,7 @@
 
 <p align="center">Repositori ini berisi kumpulan template lembar jawaban, buku tugas, makalah, dan artikel menggunakan format standar yang dipadukan dengan pedoman Universitas Terbuka. Ketik tugas kuliah, makalah, artikel, dan laporan tanpa perlu pusing memikirkan format, margin, dan nomor halaman.</p>
 
+<p align="center"><a href="https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/wiki" target="_blank"><img alt="Wiki: Home" src="https://img.shields.io/badge/Baca%20Wiki-Panduan%20Halaman%20Pertama-black?style=for-the-badge&logo=Wikibooks" /></a></p>
 
 
 ## Pendahuluan
@@ -203,18 +204,12 @@ Setiap _template_ memiliki struktur dasar seperti ini:
 
 ## Cara Penggunaan
 
-_Template_ ini dapat digunakan melalui beberapa metode berikut sesuai kenyamanan Anda:
-
-### _Memakai Editor Online (Disarankan untuk yang Tidak Ingin Repot Memasang Distribusi LaTeX)_
-
-Menggunakan layanan _online/cloud_ dan akses internet tanpa perlu menginstal aplikasi apa pun di komputer.
-
-### _Lokal Instal dan Serba Sendiri_
-
-Menggunakan distribusi LaTeX, alat bantu, dan perangkat Anda sendiri, sehingga memiliki kebebasan dan lebih aman.
-
-Setelah memilih metode yang Anda inginkan, Anda dapat mulai menulis dengan cara:
+_Template_ ini dapat Anda gunakan untuk menulis dengan mengikuti cara ini:
 
 1. Sesuaikan identitas. Buka _file_ `variable.tex` dan isilah pendataan penting seperti judul karya tulis (jika digunakan), nama Anda, nomor induk, program studi, dan lainnya di dalamnya.
 2. Mulailah menulis. Bukalah salah satu _file_ dalam _folder_ `section/` yang ingin diisi (misalnya `pendahuluan.tex`), dan ketik tulisan Anda di sana.
 3. Lihat hasilnya dengan mengeklik tombol _**Compile**_ atau _**Build**_ pada _editor_ untuk melihat dokumen PDF Anda.
+
+Panduan lengkapnya dapat Anda baca di Wiki _Getting Started_
+
+<p align="center"><a href="https://github.com/yoelwep13578/Latex-Template-UnivTerbuka/wiki/Getting-Started" target="_blank"><img alt="Wiki: Getting Started" src="https://img.shields.io/badge/Baca%20Wiki-Getting%20Started-black?style=for-the-badge&logo=Wikibooks" /></a></p>
