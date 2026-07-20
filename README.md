@@ -114,9 +114,13 @@ Penulisan rumus serumit apa pun dapat diketik langsung menggunakan teks kode LaT
     <img src="https://github.com/user-attachments/assets/0575256e-5189-49a8-93ff-94271b709e0f" />
 </details>
 
-### _Fleksibel_
 
-_Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda, bukan? Anda diberi kebebasan untuk:
+
+## Hal yang Baru pada _Template_ Versi 2
+
+### _Pengaturan Dasar yang Disederhanakan_
+
+Seluruh pengaturan dokumen telah disederhanakan. Anda cukup menentukan setelan kustomisasi dari _document class_. _Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda, bukan? Anda diberi kebebasan untuk:
 
 - Mengganti _font/typeface_ utama yang berpasangan dengan _font/typeface_ matematika
 - Mengganti _font/typeface_ untuk Sans Serif, yang umum digunakan agar suatu teks terlepas/tidak melebur dengan bacaan narasi;
@@ -130,6 +134,22 @@ _Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda
 - Mengubah format judul Lampiran yang mulanya sebaris menjadi dua baris;
 - Mengubah jenis nomor halaman khusus untuk Lampiran;
 - Memunculkan nama label dalam Daftar Gambar, Daftar Tabel, dan Daftar Kode.
+
+### _Pengisian Tulisan Tangan yang Lebih Manusiawi_
+
+Untuk jenis dokumen yang membutuhkan sisipan kolom tulisan tangan (seperti lembar pernyataan atau tanda tangan), jarak barisnya dibuat lebih renggang dan manusiawi dengan tinggi 0,5 cm hingga 0,8 cm. 
+
+Ukuran ini dipilih berdasarkan jarak garis-garis pada buku tulis, sehingga memberikan kenyamanan saat Anda mencetak dokumen dan menulis di atasnya menggunakan pulpen.
+
+### _Adaptif_
+
+_Layout_ dokumen akan berubah secara otomatis berdasarkan _input_ yang Anda berikan, seperti:
+
+- **Dinamika Judul.** Tata letak sampul akan menyesuaikan diri secara estetis terlepas dari panjang atau pendeknya judul karya tulis Anda.
+
+- **Identitas Kampus & Wilayah.** _Template_ dapat mengenali dan membedakan penanganan untuk Universitas Terbuka Daerah, UPBJJ, UT Layanan Luar Negeri (LLN), hingga kampus lain.
+
+- **Tujuan Karya Tulis.** Cukup gunakan variabel keterangan tujuan di dalam _file_ `variable.tex`, dan _template_ akan menyematkan teks tersebut seperti "Diajukan untuk memenuhi tugas..." atau keterangan sejenis pada halaman sampul.
 
 
 
