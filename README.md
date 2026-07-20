@@ -204,11 +204,19 @@ Setiap _template_ memiliki struktur dasar seperti ini:
 
 ## Cara Penggunaan
 
+> [!NOTE]
+> Atas alasan hukum merek dan kebudayaan _open source_, _template_ tidak menyediakan logo kampus lagi.
+
 _Template_ ini dapat Anda gunakan untuk menulis dengan mengikuti cara ini:
 
-1. Sesuaikan identitas. Buka _file_ `variable.tex` dan isilah pendataan penting seperti judul karya tulis (jika digunakan), nama Anda, nomor induk, program studi, dan lainnya di dalamnya.
-2. Mulailah menulis. Bukalah salah satu _file_ dalam _folder_ `section/` yang ingin diisi (misalnya `pendahuluan.tex`), dan ketik tulisan Anda di sana.
-3. Lihat hasilnya dengan mengeklik tombol _**Compile**_ atau _**Build**_ pada _editor_ untuk melihat dokumen PDF Anda.
+1. Silakan _download_ logo Universitas Terbuka. Klik kanan pada salah satu tombol ini --> **_Save link as_**, beri nama `logo-kampus` dan letakkan dalam _folder_ `image/`.
+
+   [![Download Wikimedia](https://img.shields.io/badge/Wikimedia%20Commons-006499?style=for-the-badge&logo=wikimediacommons)](https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_Universitas_Terbuka.MP4.png) [![Download Web Kampus](https://img.shields.io/badge/Website%20Kampus-214395?style=for-the-badge&logo=semanticscholar)](https://www.ut.ac.id/wp-content/uploads/2015/11/logo-ut-small-transparent-300x226.png)
+
+2. Buka _file_ `main.tex` (atau _file_ utama yang sudah Anda ganti namanya)
+3. Sesuaikan identitas. Buka _file_ `variable.tex` dan isilah pendataan penting seperti judul karya tulis (jika digunakan), nama Anda, nomor induk, program studi, dan lainnya di dalamnya.
+4. Mulailah menulis. Bukalah salah satu _file_ dalam _folder_ `section/` yang ingin diisi (misalnya `pendahuluan.tex`), dan ketik tulisan Anda di sana.
+5. Lihat hasilnya dengan mengeklik tombol _**Compile**_ atau _**Build**_ pada _editor_ untuk melihat dokumen PDF Anda.
 
 Panduan lengkapnya dapat Anda baca di Wiki _Getting Started_
 
