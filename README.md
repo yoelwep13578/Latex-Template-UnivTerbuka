@@ -118,6 +118,10 @@ Penulisan rumus serumit apa pun dapat diketik langsung menggunakan teks kode LaT
 
 ## Hal yang Baru pada _Template_ Versi 2
 
+### _Kompatibilitas dengan PDF LaTeX_
+
+`pdflatex` terkenal dengan kecepatan kompilasinya. _Template_ ini sekarang dapat digunakan untuk mesin `pdflatex` untuk kompilasi yang lebih cepat dan lebih sederhana.
+
 ### _Pengaturan Dasar yang Disederhanakan_
 
 Seluruh pengaturan dokumen telah disederhanakan. Anda cukup menentukan setelan kustomisasi dari _document class_. _Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda, bukan? Anda diberi kebebasan untuk:
