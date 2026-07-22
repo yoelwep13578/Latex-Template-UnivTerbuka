@@ -1,0 +1,100 @@
+% --- Judul ---
+%
+%     Ini adalah bagian judul, pengganti halaman sampul. 
+%     Jangan mengubah apa pun yang ada di dalam sini, kecuali bila 
+%     Anda sudah mahir menulis kode LaTeX.
+%
+%     Saat ini, logo institusi perguruan tinggi tidak disertakan
+%     seperti dahulu atas alasan hukum kekayaan merek dan kebudayaan
+%     open-source. Perlu diketahui bahwa logo merek tidak bisa
+%     sembarang diperoleh. Bila template ini dikembangkan
+%     , digandakan, maupun di-fork oleh pihak lain (dengan logo
+%     yang masih ada), hal tersebut sudah melenceng dari tujuan
+%     pendidikan dan beralih fungsi menjadi distributor.
+%
+%       1.  Kunjungi https://link-menuju-repository.
+%       2.  Download logo institusi pendidikan resmi sesuai 
+%           kebutuhan.
+%       3.  Ubah/berikan nama file-nya menjadi "logo-kampus".
+%       4.  Masukkan logo tersebut ke dalam folder image 
+%           dan timpa file "logo-kampus" yang ada di dalam 
+%           template ini.
+%
+%     Untuk mengganti nama Anda, nama tutor, mata kuliah,
+%     NIM, dan sebagainya, jangan diubah dari sini. Isilah data
+%     dari file variable.tex!
+%
+
+\begin{center}    
+    % Judul
+    {\setstretch{1}\LARGE
+        \ifundef{\judul}{%
+            \ifdef{\tugasKe}{%
+                \ifundef{\captionsindonesian}{%
+                    \LembarJawaban\ for \Tugas\ \tugasKe
+                }{%
+                    \LembarJawaban\ \Tugas\ \tugasKe
+                }%
+            }{%
+                \ifundef{\captionsindonesian}{%
+                    \skemaPembelajaran\ \LembarJawaban
+                }{%
+                    \LembarJawaban\ \skemaPembelajaran
+                }%
+            }%
+        }{%
+            \judul
+        }%
+    \par}
+    
+    % Afiliasi
+    \ifundef{\captionsindonesian}{%
+        \prodi\ \ProgramStudi\ --- \Fakultas\ of \fakultas \\
+        \kampusENG
+    }{%
+        \ProgramStudi\ \prodi\ --- \Fakultas\ \fakultas \\
+        \kampus
+    }%
+    
+    % Garis
+    \rule{\textwidth}{0.5pt}
+    
+    % --- Tabel Identitas ---
+    {\small\noindent
+        \begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} l @{}}
+            \textbf{\Nama:} \namaMahasiswa & \textbf{\Pengampu:} \namaPengampu \\
+            \textbf{\NomorIndukM:} \nimMahasiswa & \textbf{\Kelas\ / \Sesi:} \kodeKelas\ / \sesiKe \\
+            \ifdefstring{\negaraMahasiswa}{Indonesia}{%
+                \ifdefstring{\kampus}{Universitas Terbuka}{%
+                    \textbf{\UTDaerah:} \daerahKampus
+                }{%
+                    \textbf{\Daerah:} \daerahKampus
+                }%
+            }{%
+                \textbf{\UTLLN:} \negaraMahasiswa
+            } & \textbf{\MataKuliah:} \namaMataKuliah \\
+        \end{tabular*}
+    \par}
+    
+    \rule{\textwidth}{0.5pt}
+
+%\fcolorbox{gray}{white}{
+%    \begin{tblr}{
+%            colspec={l c l l l},
+%            hline{2-6, 8-Z}={3-Z}{dashed, gray},
+%            column{2}={colsep=2pt}
+%        }
+%        \Nama &:& \SetCell[c=3]{l} \namaMahasiswa && \\
+%        \NomorIndukM &:& \SetCell[c=3]{l} \nimMahasiswa && \\
+%        \ProgramStudi &:& \SetCell{font=\ttfamily, bg=graybg} \kodeProdi & \SetCell[c=2]{l} \prodi & \\
+%        \Fakultas &:& \SetCell{font=\ttfamily, bg=graybg} \kodeFakultas & \SetCell[c=2]{l} \fakultas & \\
+%        \UPBJJ &:& \SetCell{font=\ttfamily, bg=graybg} \kodeDaerah & \SetCell[c=2]{l} \daerahKampus & \\
+%        &&&& \\
+%        \TutorPengampu &:& \SetCell[c=3]{l} \namaPengampu && \\
+%        \MataKuliah &:& \SetCell[c=2]{font=\ttfamily, bg=graybg} \kodeMataKuliah && \namaMataKuliah \\
+%        \Kelas &:& \SetCell[c=3]{l} \kodeKelas &&
+%    \end{tblr}
+%}
+\end{center}
+
+\vspace{2ex}

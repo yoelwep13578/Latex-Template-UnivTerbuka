@@ -1,0 +1,72 @@
+%==========================%
+%     BAHASA INDONESIA     %
+%==========================%
+
+% --- Isi Teks Abstrak Bahasa Indonesia ---
+%
+%     Tulis isi teks abstrak Anda dengan maksimal 250 kata
+%
+\newcommand{\abstrak}{%
+    Abstrak merupakan rangkuman dari isi tulisan dalam format yang sangat singkat, terdiri dari satu paragraf dengan jumlah kata 150--200 kata. Abstrak memberikan informasi yang jelas tentang isi artikel dengan menunjukkan hasil utama yang diperoleh beserta kesimpulannya. Abstrak bukan ringkasan dari isi artikel sehingga tidak memuat tabel, gambar, dan daftar pustaka.
+}
+
+% --- Kata Kunci ---
+%
+%     Maksimal 6 kata, diurutkan dari A sampai Z
+%
+\newcommand{\kataKunci}{analisis, artikel, \textit{e-commerce}, kelayakan, kualitatif}
+
+
+
+%========================%
+%     BAHASA INGGRIS     %
+%========================%
+
+% --- Isi Teks Abstrak Bahasa Inggris ---
+%
+%     Tulis isi teks abstrak Anda dengan maksimal 250 kata
+%
+%\newcommand{\abstrakENG}{An abstract is a summary of the content of a paper in a very concise format, consisting of one paragraph with 150--200 words. The abstract provides clear information about the content of the article by presenting the main results obtained and their conclusions. The abstract is not a summary of the content of the article, so it does not include tables, figures, or references.}
+
+% --- Kata Kunci ---
+%
+%     Maksimal 6 kata, diurutkan dari A sampai Z
+%
+\newcommand{\kataKunciENG}{analysis, appropriateness, article, e-commerce, qualitative}
+
+%------------------------ BATAS AMAN ------------------------
+\makeatletter
+
+% --- Abstrak Bahasa Indonesia ---
+\ifdefstring{\template@seccaps}{true}{%
+    \renewcommand{\abstractname}{ABSTRAK}
+}{}
+\begin{abstract}
+    \setstretch{1}
+    \noindent\textit{\abstrak}
+    
+    \vspace{.5cm}
+    
+    \noindent\textbf{Kata kunci:} \kataKunci
+\end{abstract}
+
+% --- Abstrak Bahasa Inggris ---
+\ifdef{\abstrakENG}{%
+    \begin{otherlanguage}{american}
+        \ifdefstring{\template@seccaps}{true}{%
+            \renewcommand{\abstractname}{\textit{ABSTRACT}}
+        }{%
+            \renewcommand{\abstractname}{\textit{Abstract}}
+        }
+        \begin{abstract}
+            \setstretch{1}
+            \noindent\itshape\abstrakENG
+            
+            \vspace{.5cm}
+            
+            \noindent\textbf{Keywords:} \kataKunciENG
+        \end{abstract}
+    \end{otherlanguage}
+}{}
+
+\makeatother

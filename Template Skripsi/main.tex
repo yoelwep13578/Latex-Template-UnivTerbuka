@@ -1,0 +1,444 @@
+% Template Skripsi Berbasis Makalah (Report)
+% Versi 2.0.0
+
+% --- Panduan Setelan Document Class ---
+%
+%     0. soaljawab
+%     Template akan membuat heading 1 menjadi di tengah
+%     dan tidak bernomor.
+%     [NOTE] Hanya boleh digunakan untuk template yang
+%            berisi Soal dan Jawaban.
+%     
+%     1. heading
+%     Penomoran dan format untuk heading
+%
+%     Pilihan yang tersedia:
+%      - alpha     --- Penomoran alphanumeric I. > A. > 1. > a. 
+%                      > 1) > a)
+%                      atau berformat A. > 1. > a. > 1) > a)
+%      - alpha-mag --- Penomoran alphanumeric dengan teks besar
+%                      di level 1
+%      - multi     --- Penomoran multilevel 1 > 1.1 > 1.1.1 
+%                      > 1.1.1.1
+%      - multi-mag --- Penomoran multilevel dengan teks besar 
+%                      di level 1
+%      - apalike   --- Tanpa penomoran seperti APA 7
+%      - [kosong]  --- Memakai pilihan alpha
+%
+%     2. seccaps
+%     Membuat judul heading pada tingkat pertama menggunakan 
+%     huruf KAPITAL SEMUA. seccaps disarankan dipakai untuk makalah,
+%     namun seccaps untuk artikel sebaiknya dihindari bila tidak ada
+%     paksaan.
+%
+%     3. seccompact
+%     Ukuran judul heading dibuat lebih kecil dari bawaan LaTeX. 
+%     Heading setingkat Bab dan Seksi hanya berukuran sekitar 14pt.
+%
+%     4. urlroman
+%     URL disarankan menggunakan huruf monospace agar mudah
+%     dilihat dan diketik dari media tercetak (kertas).
+%     urlroman dapat digunakan agar URL menggunakan huruf 
+%     roman, namun sebaiknya jangan jika tidak ada aturan
+%     yang memaksa.
+%
+%     5. mainfont
+%     Pilihan untuk font utama dan font matematika
+%
+%     Pilihan yang tersedia:
+%      - times           --- Times New Roman [Windows]
+%                            XITS Math [TeX Live]
+%                            [NOTE] Untuk memakai ini di MiKTeX,
+%                                   instal package font "xits"
+%
+%      - garamond        --- EB Garamond [TeX Live]
+%                            Garamond-Math [TeX Live]
+%                            [NOTE] Untuk memakai ini di MiKTeX,
+%                                   instal package font
+%                                   "ebgaramond" & "garamond-math"
+%
+%      - libertinus      --- Libertinus Serif [TeX Live]
+%                            Libertinus Math [TeX Live]
+%                            [NOTE] Untuk memakai ini di MiKTeX
+%                                   install package font 
+%                                   "libertinus-fonts" dan
+%                                   "libertinus-otf"
+%
+%      - tex-gyre-termes --- TeX Gyre Termes [TeX Live]
+%                            XITS Math [TeX Live]
+%                            [NOTE] Untuk memakai ini di MiKTeX
+%                                   install package font
+%                                   "tex-gyre" dan "xits"
+%
+%      - xits            --- XITS [TeX Live]
+%                            [NOTE] Untuk memakai ini di MiKTeX,
+%                                   instal package font "xits"
+%
+%      - [kosong]        --- Latin Modern Roman/
+%                            Computer Modern Roman
+%                            Bisa dipakai untuk disetel sendiri 
+%                            dengan \setmainfont dan \setmathfont
+%                            di LuaLaTeX
+%
+%     6. sansfont
+%     Pilihan untuk font sans serif
+%
+%     Pilihan yang tersedia:
+%      - aptos    --- Aptos [Windows >= 10]
+%      - calibri  --- Calibri [Windows]
+%      - alegreya --- Alegreya Sans [TeX Live]
+%                     [NOTE] Untuk memakai ini di MiKTeX,
+%                            instal package font "alegreya"
+%      - noto     --- Noto Sans
+%      - [kosong] --- Latin Modern Sans/Computer Modern Sans
+%                     Bisa dipakai untuk disetel sendiri dengan 
+%                     \setsansfont di LuaLaTeX
+%
+%     7. monofont
+%     Pilihan untuk font monospace
+%     
+%     Pilihan yang tersedia:
+%      - courier-new --- Courier New [Windows]
+%      - cascadia  --- Cascadia Code [Windows >= 10]
+%      - consolas  --- Consolas [Windows]
+%      - fira      --- Fira Code
+%      - jetbrains --- JetBrains Mono
+%      - [kosong]  --- Latin Modern Mono/Computer Modern Mono
+%                      Bisa dipakai untuk disetel sendiri dengan
+%                      \setmonofont di LuaLaTeX
+%
+%     8. indent
+%     Jarak menjorok pada baris awal paragraf, ditulis dengan angka
+%     dan satuannya.
+%
+%     Satuan yang dapat digunakan:
+%      - em --- Lebar huruf "M" atau lebar = ukuran huruf
+%      - cm --- Centimeter
+%      - in --- Inci
+%      - pt --- Point
+%
+%     Contoh penggunaan: indent=1.5cm atau indent=2em
+%
+%     9. microtype
+%     Alat tambahan untuk membuat teks terlihat lebih rapi dengan
+%     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
+%     Microtype dapat digunakan setelah pengerjaan selesai (final).
+%
+%     10. listappendix
+%     Memunculkan daftar isi baru bernama "Daftar Lampiran" seperti
+%     yang ada pada Daftar Gambar, Daftar Tabel, dan Daftar Kode.
+%
+%     11. appnewline
+%     Membuat judul lampiran memiliki dua baris, sama seperti bab
+%     makalah.
+%
+%     Lampiran A: Nama Lampiran -->  Lampiran A
+%                                   Nama Lampiran
+%
+%     12. appnumarabic
+%     Mengganti nomor Lampiran A, Lampiran B, Lampiran C, ...
+%     menjadi Lampiran 1, Lampiran 2, Lampiran 3, ...
+%
+%     13. apppagenum
+%     Format nomor halaman untuk bagian Lampiran (setelah daftar
+%     pustaka atau glosarium)
+%
+%     Pilihan yang tersedia:
+%      - arabic    --- Nomor berlanjut. Dapat dipakai untuk
+%                      jumlah halaman yang tidak terlalu banyak
+%                      (<= 15 halaman)
+%      - arabicone --- Nomor diulang dari 1
+%      - roman     --- Nomor romawi kecil (i, ii, iii)
+%      - gabungan  --- Format gabungan nama bab dan halaman
+%                      Contoh: A-1, A-2, B-1
+%                      Huruf "A" melambangkan Lampiran A, dan 
+%                      angka "1" melambangkan halaman pertama 
+%                      pada lampiran tersebut.
+%      - [kosong]  --- Memakai pilihan arabic
+%
+%     14. showlabelname
+%     Memunculkan tulisan nama label:
+%     Daftar Gambar  : "2.2"   --> "Gambar 2.2"
+%     Daftar Tabel   : "2.2"   --> "Tabel 2.2"
+%     Daftar Kode    : "2.2"   --> "Kode 2.2"
+%     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
+%
+\documentclass[seccaps, heading=alpha, mainfont=times, apa=campuran, listappendix, appnumarabic]{artikelmakalah}
+
+%==================%
+%     Preamble     %
+%==================%
+
+% --- Margin & Geometri Kertas ---
+\usepackage[left=4cm, right=3cm, top=3cm, bottom=4cm]{geometry}
+
+% --- Halaman Landscape ---
+\usepackage{pdflscape}
+
+% --- Hyperlink ---
+\usepackage[hidelinks, bookmarksdepth=3]{hyperref}
+
+%======================%
+%     Bahasa Utama     %
+%======================%
+%
+%     Indonesia Standar: indonesian
+%     Indonesia Non-Standar: bahasa, bahasai
+%     ---
+%     Inggris Standar: american, british
+%     Inggris Lainnya: american, USenglish, UKenglish, british
+%
+\usepackage[indonesian]{babel}
+
+% --- Gambar dan Warna ---
+\usepackage{graphicx, xcolor}
+
+% --- Matematika ---
+%\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsmath}
+\usepackage{xfrac}
+
+% --- Line Break Display Matematika ---
+\allowdisplaybreaks
+
+% --- Tabel Pelengkap & Pengganti tabular ---
+\usepackage{multirow}
+\usepackage{tabularray}
+
+% --- Pembacaan Font Sistem dan Setelan Font ---
+%     [NOTE] Hanya bisa digunakan untuk lualatex
+%\usepackage{fontspec}
+
+% --- Penyetelan Heading & Daftar Isi ---
+\usepackage{titlesec}
+\usepackage{titletoc}
+
+% --- Penyetelan Footer dan Header ---
+\usepackage{fancyhdr}
+
+% --- Pendeteksian Nomor Halaman Terakhir ---
+\usepackage{lastpage}
+
+% --- Spasi Barisan Teks ---
+\usepackage{setspace}
+
+% --- Daftar/List ---
+\usepackage{enumitem}
+
+% --- Indent Paragraf & Spasi Antarparagraf ---
+\usepackage{parskip}
+
+% --- Keterangan ---
+\usepackage[font=small]{caption}
+
+% --- Posisi Float Lampiran Gambar/Tabel ---
+\usepackage{float}
+
+%===========================================%
+%     Package yang Aman untuk Dimatikan     %
+%===========================================%
+
+% --- Sisipan Kode Program [On/Off] ---
+%
+%     Environment yang terpengaruh:
+%     - lstlisting --- Kode program berbentuk blok (codeblock)
+%     - lstcode --- lstlisting yang terintegrasi tcolorbox
+%
+%     Perintah yang terpengaruh:
+%     - lstinline --- Kode sebaris
+%     - inlinesnippet --- Kode sebaris berwarna seperti
+%                         markdown
+%
+%\usepackage{listings}
+
+% --- Text Box [On/Off] ---
+%
+%     Environment yang terpengaruh:
+%     - lstcode --- lstlisting yang terintegrasi tcolorbox
+%     - blockquote ---┐ Kutipan bergaris vertikal di kiri
+%     - indentbquote -┘
+%     - textbox --- Kotak teks
+%     - theorembox ---┐ Kotak teorema
+%     - lemmabox      |
+%     - definitionbox |
+%     - example ------┘
+%
+%\usepackage[most]{tcolorbox}
+
+% --- Glosarium [On/Off] ---
+%\usepackage[automake, numberedsection=false, nopostdot, nonumberlist]{glossaries-extra}
+
+%-------------------------------------------%
+
+%========================%
+%     File Pendukung     %
+%========================%
+
+% --- Variabel ---
+\input{variable.tex}
+
+\input{preset/custom-commands.tex}
+\input{preset/custom-enumitem.tex}
+\input{preset/custom-listing.tex}
+\input{preset/custom-tcolorbox.tex}
+\input{preset/languagelist.tex}
+
+% --- Daftar Istilah Glosarium ---
+\input{glossary.tex}
+
+%===========================================%
+%     Pilihan Gaya Selingkung Referensi     %
+%===========================================%
+%
+% --- Gaya Selingkung Referensi APA 6 ---
+%
+%     Kutipan di Awal: \citeA{keyword}
+%
+%     Menurut \citeA{nama-rujukan}, konsep ini ...
+%     Menurut Penulis (2077), konsep ini ...
+%
+%     Kutipan di Akhir: \cite{keyword}
+%
+%     ... agar selaras dengan kesejahteraan \cite{nama-rujukan}. 
+%     ... agar selaras dengan kesejahteraan (Penulis, 2077). 
+%
+%     Daftar Pustaka:
+%     
+%     Penulis. (2077). _Judul karya tulis buku_. Alamat Penerbit:
+%          Nama Penerbit.
+%
+\usepackage{apacite}
+\bibliographystyle{apacite}
+% ----------------------------------------- %
+%
+% --- Gaya Selingkung Referensi IEEE ---
+%
+%     Kutipan di Awal: \cite{keyword}
+%
+%     Berdasarkan \cite{nama-rujukan}, konsep ini ...
+%     Berdasarkan [3], konsep ini ...
+%
+%     Berdasarkan Penulis \cite{nama-rujukan}, konsep ini ...
+%     Berdasarkan Penulis [3], konsep ini ...
+%
+%     Kutipan di Akhir: \cite{keyword}
+%
+%     ... agar selaras dengan kesejahteraan \cite{nama-rujukan}. 
+%     ... agar selaras dengan kesejahteraan [3]. 
+%
+%     Daftar Pustaka:
+%     
+%     [3] Penulis, _Judul Karya Tulis Buku_. Alamat Penerbit:
+%         Nama Penerbit, 2077
+%
+%     [NOTE] Jangan gunakan setelan bahasa APA di \documentclass 
+%            saat menggunakan gaya selingkung IEEE.
+%
+%\usepackage{cite}
+%\bibliographystyle{ieeetr}
+% ----------------------------------------- %
+
+\begin{document}
+    
+    % Line Spacing 1,5
+    \onehalfspacing
+    
+    % Halaman Sampul
+    \input{section/cover.tex}
+    
+    %============================%
+    %     Pilihan Page Style     %
+    %============================%
+    %
+    %     head-info ---
+    %     Header dengan informasi pembelajaran di bagian kiri
+    %     dan halaman di bagian kanan
+    %
+    %                      Skema Tutorial | Sesi 3  |
+    %                                               |  12 / 35
+    %               XYZA-9999 | 1024 | Mata Kuliah  |
+    %
+    %     simple ---
+    %     Header berisi nama mahasiswa, NIM, dan nama mata kuliah
+    %     Footer berisi halaman saat ini
+    %
+    %     Nama Penulis (098765432)                 Mata Kuliah
+    %     ----------------------------------------------------
+    %
+    %                              12
+    %
+    %     simple-pagelast ---
+    %     Sama seperti simple, namun ada halaman terakhir
+    %
+    %     Nama Penulis (098765432)                 Mata Kuliah
+    %     ----------------------------------------------------
+    %
+    %                           12 / 35
+    %
+    %     foot-page ---
+    %     Footer berisi halaman saat ini
+    %
+    %     foot-pagelast ---
+    %     Footer berisi halaman saat ini dan halaman terakhir
+    %
+    \pagestyle{foot-page}
+    
+    % Halaman Sebelum Isi Bahasan
+    \begin{pagestylenolastpage}
+        \pagenumbering{roman}
+        
+        % Abstrak
+        \include{section/abstract-en.tex}
+        \include{section/abstrak-id.tex}
+        
+        % Lembar Pengesahan
+        \include{section/lembar-pengesahan.tex}
+        
+        % Lembar Pernyataan Anti/Bebas Plagiasi
+        \include{section/lembar-pernyataan-anti-plagiasi.tex}
+        
+        % Kata Pengantar
+        \include{section/kata-pengantar.tex}
+        
+        % Daftar Isi
+        \tableofcontents
+        
+        % Daftar Gambar
+        \listoffigures
+        
+        % Daftar Tabel
+        \listoftables
+        
+        % Daftar Kode/Listings 
+        % (Package listings Harus Dimuat)
+        %\lstlistoflistings
+        
+        % Daftar Lampiran 
+        % (Hanya Muncul Saat Memakai listappendix)
+        \listofappendices
+    \end{pagestylenolastpage}
+    
+    \clearpage
+    
+    % Halaman Isi Bahasan
+    \pagenumbering{arabic}
+    \include{section/pendahuluan.tex}
+    \include{section/landasan-teori.tex}
+    \include{section/metode.tex}
+    \include{section/hasil-dan-pembahasan.tex}
+    \include{section/kesimpulan-dan-saran.tex}
+    
+    % Daftar Pustaka
+    %\nocite{*} % <-- Tampil tanpa dikutip
+    \bibliography{reference}
+    
+    % Glosarium
+    \ifdef{\printglossaries}{\printglossaries}{}
+    
+    % Lampiran
+    \include{section/lampiran.tex}
+    
+    % Compile Mark
+    %\vfill {\footnotesize\noindent Di-\textit{compile} dengan \LaTeX\ pada \tanggalLengkap}
+    
+\end{document}

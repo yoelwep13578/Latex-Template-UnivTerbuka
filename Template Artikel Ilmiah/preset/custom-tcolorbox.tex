@@ -1,0 +1,140 @@
+\makeatletter
+\ltx@ifpackageloaded{tcolorbox}{
+
+%===========================%
+%     Textbox Tcolorbox     %
+%===========================%
+
+% --- Block Quote ---
+\newtcolorbox{blockquote}{
+    parbox=false,
+    boxrule=0pt,
+    frame hidden,
+    colback=graybg,
+    enhanced,
+    sharp corners,
+    borderline west={2pt}{0pt}{black}
+}
+
+% --- Block Quote Indent ---
+\newtcolorbox{indentbquote}{
+    size=minimal,
+    parbox=false,
+    boxrule=0pt,
+    frame hidden,
+    colback=graybg,
+    enhanced,
+    sharp corners,
+    left=1.24cm,
+    right=1.24cm,
+    top=10pt,
+    bottom=10pt,
+    borderline west={2pt}{0pt}{black}
+}
+
+% --- Text Box ---
+\newtcolorbox{textbox}{
+    parbox=false,
+    breakable,
+    sharp corners,
+    colback=white,
+    boxrule=0.5pt
+}
+
+% --- LST Codeblock ---
+\newtcblisting{lstcode}[1][]{%
+    arc=0mm,
+    outer arc=0mm,
+    boxrule=0.5pt,
+    colback=graybg,
+    colframe=graybr,
+    left=4mm,
+    right=4mm,
+    top=3mm,
+    bottom=3mm,
+    breakable,
+    listing only,
+    listing options={
+        basicstyle=\footnotesize\ttfamily,
+        aboveskip=0pt,
+        belowskip=0pt,
+        frame=none,
+        breaklines=true,
+        xleftmargin=0em,
+        xrightmargin=0em,
+        #1
+    }
+}
+
+% --- Teorema (Theorem) ---
+\newtcbtheorem{theorembox}{\Teorema}{
+    parbox=false,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=0.5pt,
+    titlerule=0.5pt,
+    fonttitle=\bfseries,
+    before skip=12pt, after skip=12pt,
+    colback=white,
+    colframe=red!40!black,
+    colbacktitle=red!8,
+    coltitle=red!40!black,
+    breakable,
+    lines before break=2
+}{thm}
+
+% --- Lema (Lemma) ---
+\newtcbtheorem[use counter from=theorembox]{lemmabox}{\Lema}{
+    parbox=false,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=0.5pt,
+    titlerule=0.5pt,
+    fonttitle=\bfseries,
+    before skip=12pt, after skip=12pt,
+    colback=white,
+    colframe=purple!40!black,
+    colbacktitle=purple!8,
+    coltitle=purple!40!black,
+    breakable,
+    lines before break=2
+}{lem}
+
+% --- Definisi (Definition) ---
+\newtcbtheorem[use counter from=theorembox]{definitionbox}{\Definisi}{
+    parbox=false,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=0.5pt,
+    titlerule=0.5pt,
+    fonttitle=\bfseries,
+    before skip=12pt, after skip=12pt,
+    colback=white,
+    colframe=green!40!black,
+    colbacktitle=green!8,
+    coltitle=green!40!black,
+    breakable,
+    lines before break=2
+}{def}
+
+% --- Contoh (Example) ---
+\newtcbtheorem[use counter from=theorembox]{examplebox}{\Contoh}{
+    parbox=false,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=0.5pt,
+    titlerule=0.5pt,
+    fonttitle=\bfseries,
+    before skip=12pt, after skip=12pt,
+    colback=white,
+    colframe=black!70,
+    colbacktitle=black!8,
+    coltitle=black!80,
+    breakable,
+    lines before break=2
+}{ex}
+
+}{
+\typeout{Template Info: tcolorbox not used.}
+}
+\makeatother

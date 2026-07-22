@@ -1,0 +1,86 @@
+\makeatletter
+\ltx@ifpackageloaded{glossaries-extra}{
+
+\renewcommand{\glossarypreamble}{\glsfindwidesttoplevelname[\currentglossary]}
+\glsfindwidesttoplevelname
+\setglossarystyle{alttree}
+\setabbreviationstyle{short-long}
+\makeglossaries
+
+%---------------------- Batas Aman -----------------------%
+
+%=========================================================%
+%                      DAFTAR ISTILAH                     %
+%                                                         %
+%            Tambahkan istilah dengan memakai:            %
+%                                                         %
+%            \newglossaryentry{KATA_TUNJUK}{              %
+%                name={NAMA_ISTILAH},                     %
+%                description={PENJELASAN}                 %
+%            }                                            %
+%                                                         %
+%   Istilah hanya akan muncul di halaman Daftar Istilah   %
+%             jika disebut di dalam teksnya               %
+%                                                         %
+% Jangan lupa untuk menghapus contoh istilah di bawah ini %
+%=========================================================%
+
+\newglossaryentry{latex}{
+    name={\LaTeX},
+    description={Sistem penyiapan dokumen untuk tipografi berkualitas tinggi, yang sangat populer di kalangan akademisi untuk menulis dokumen ilmiah dan teknis}
+}
+
+\newglossaryentry{lualatex}{
+    name={Lua\LaTeX},
+    description={Pengembangan dari \LaTeX yang mengintegrasikan mesin pemrograman Lua, sehingga memberikan fleksibilitas tinggi dalam kustomisasi \textit{font} sistem secara dinamis}
+}
+
+\newglossaryentry{texmaker}{
+    name={TeX Maker},
+    description={Perangkat lunak penyunting (\textit{editor}) \LaTeX lintas \textit{platform} yang gratis dan terintegrasi, yang menyediakan antarmuka pengguna yang ramah untuk pemula}
+}
+
+\newglossaryentry{texstudio}{
+    name={TeX Studio},
+    description={Perangkat lunak penyunting (\textit{editor}) \LaTeX \textit{open-source} tingkat lanjut yang bercabang dari TeX Maker, yang dilengkapi fitur bantuan pengetesan kode secara interaktif dan pembacaan otomatis (\textit{code autocomplete})}
+}
+
+\newglossaryentry{miktex}{
+    name={MiKTeX},
+    description={Distribusi \LaTeX\ modern yang sangat populer untuk sistem operasi Windows, yang memiliki keunggulan berupa pengunduhan paket otomatis saat kompilasi berjalan}
+}
+
+\newglossaryentry{texlive}{
+    name={TeX Live},
+    description={Distribusi \LaTeX\ standar komprehensif lintas \textit{platform} (Linux, macOS, Windows) yang dirawat secara berkala oleh \textit{TeX Users Group}}
+}
+
+\newglossaryentry{microtype}{
+    name=Microtype,
+    description={Paket \LaTeX\ yang menangani optimasi tipografi tingkat mikro, seperti penyesuaian tonjolan huruf pada margin (\textit{protrusion}) dan kelebaran jarak huruf untuk meratakan teks secara sempurna}
+}
+
+%=========================================================%
+%                    DAFTAR SINGKATAN                     %
+%                                                         %
+%           Tambahkan singkatan dengan memakai:           %
+%                                                         %
+%     \newacronym{KATA_TUNJUK}{SINGKATAN}{KEPANJANGAN}    %
+%                                                         %
+%  Singkatan hanya akan muncul di halaman Daftar Istilah  %
+%             jika disebut di dalam teksnya               %
+%                                                         %
+%     Jangan lupa untuk menghapus contoh di bawah ini     %
+%=========================================================%
+
+\newacronym{wysiwyg}{WYSIWYG}{\textit{What You See Is What You Get}}
+\newacronym{ctan}{CTAN}{\textit{Comprehensive TeX Archive Network}}
+\newacronym{pdf}{PDF}{\textit{Portable Document Format}}
+\newacronym{ide}{IDE}{\textit{Integrated Development Environment}}
+
+%---------------------- Batas Aman -----------------------%
+
+}{
+    \typeout{Template Info: glossaries-extra not used.}
+}
+\makeatother

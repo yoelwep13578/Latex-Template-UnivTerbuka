@@ -1,0 +1,83 @@
+\makeatletter
+
+\ifdef{\chapter}{
+    %====================%
+    %     Dengan Bab     %
+    %====================%
+    
+    \setcounter{secnumdepth}{3}
+    
+    \titleformat{\chapter}[display]
+    {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
+    {\setstretch{1}\fontsize{32}{38}\selectfont\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thechapter}
+    {-.5ex}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    
+    \titleformat{\section}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\Large}
+    {\normalfont\bfseries\thesection}
+    {1em}
+    {}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\normalfont\bfseries\thesubsection}
+    {1em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\normalfont\bfseries\thesubsubsection}
+    {1em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {\normalfont\bfseries\theparagraph}
+    {1em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {\normalfont\bfseries\thesubparagraph}
+    {1em}
+    {\smartperiod}
+}{
+    %===================%
+    %     Tanpa Bab     %
+    %===================%
+    
+    \setcounter{secnumdepth}{3}
+
+    \titleformat{\section}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\fontsize{32}{38}\selectfont}
+    {\normalfont\bfseries\thesection.}
+    {1em}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\normalfont\bfseries\thesubsection}
+    {1em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\normalfont\bfseries\thesubsubsection}
+    {1em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {\normalfont\bfseries\theparagraph}
+    {1em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {\normalfont\bfseries\thesubparagraph}
+    {1em}
+    {\smartperiod}
+}
+
+\makeatother

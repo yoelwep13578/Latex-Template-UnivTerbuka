@@ -1,0 +1,135 @@
+% --- Cover ---
+%
+%     Ini adalah halaman sampul. Jangan mengubah apa pun
+%     yang ada di dalam sini, kecuali bila Anda sudah mahir
+%     menulis kode LaTeX.
+%
+%     Saat ini, logo institusi perguruan tinggi tidak disertakan
+%     seperti dahulu atas alasan hukum kekayaan merek dan kebudayaan
+%     open-source. Perlu diketahui bahwa logo merek tidak bisa
+%     sembarang diperoleh. Bila template ini dikembangkan
+%     , digandakan, maupun di-fork oleh pihak lain (dengan logo
+%     yang masih ada), hal tersebut sudah melenceng dari tujuan
+%     pendidikan dan beralih fungsi menjadi distributor.
+%
+%       1.  Kunjungi https://link-menuju-repository.
+%       2.  Download logo institusi pendidikan resmi sesuai 
+%           kebutuhan.
+%       3.  Ubah/berikan nama file-nya menjadi "logo-kampus".
+%       4.  Masukkan logo tersebut ke dalam folder image 
+%           dan timpa file "logo-kampus" yang ada di dalam 
+%           template ini.
+%
+%     Untuk mengganti nama Anda, nama tutor, mata kuliah,
+%     NIM, dan sebagainya, jangan diubah dari sini. Isilah data
+%     dari file variable.tex!
+%
+\begin{titlepage}
+    
+    \centering
+    
+    % --- Judul ---
+    {\setstretch{1}\Large\textbf{\MakeUppercase{%
+            \ifundef{\judul}{%
+                \ifundef{\captionsindonesian}{%
+                    \ifdef{\tugasKe}{%
+                        \skemaPembelajaran\ \Tugas\ \tugasKe
+                    }{%
+                        \skemaPembelajaran\ \Tugas\, \Sesi\ \sesiKe
+                    }%
+                }{%
+                    \ifdef{\tugasKe}{%
+                        \Tugas\ \skemaPembelajaran\ \tugasKe
+                    }{%
+                        \Tugas\ \skemaPembelajaran\ \Sesi\ \sesiKe
+                    }%
+                }%
+            }{%
+                \judul
+            }%
+    }}\par}
+    
+    % --- Subjudul/Tambahan ---
+    \ifdef{\namaMataKuliah}{
+        {\setstretch{1}\large
+            \textbf{\MakeUppercase{%
+                \ifundef{\captionsindonesian}{\namaMataKuliah}{\MataKuliah\ \namaMataKuliah}%
+        }}}%
+        
+        {\setstretch{1}\large\textbf{\kodeMataKuliah}}%
+    }{}
+    
+    % --- Pernyataan Maksud/Tujuan Dokumen ---
+    \ifdef{\tujuanKarya}{%
+        \vspace{1cm}
+        {\small \textit{\tujuanKarya}}
+    }{}
+    
+    % --- Logo Perguruan Tinggi ---
+    \vfill
+    \includegraphics[width=5cm]{image/logo-kampus.png}
+    \vfill
+    
+    % --- Tutor Pengampu dan Mahasiswa ---
+    {\textbf{\MakeUppercase{\TutorPengampu}}} \\
+    
+    \namaPengampu
+    
+    \linesskip{1}
+    
+    {\setstretch{1}\textbf{\MakeUppercase{\DisusunOleh}}}
+    
+    {\setstretch{1}
+        \ifdef{\kodeKelas}{%
+            \begin{tabular}{@{}l@{\;}c@{\;}l}
+                \Nama &:& \namaMahasiswa \\
+                \NomorIndukM &:& \nimMahasiswa \\
+                \KodeKelas &:& \kodeKelas
+            \end{tabular}%
+        }{%
+            \begin{tabular}{@{}l@{\;}c@{\;}l}
+                \Nama &:& \namaMahasiswa \\
+                \NomorIndukM &:& \nimMahasiswa
+            \end{tabular}%
+        }%
+    }
+    
+    \vfill
+    
+    {\setstretch{1}\large
+        \ifundef{\captionsindonesian}{%
+            \textbf{\MakeUppercase{\prodi\ \ProgramStudi}} \\
+            \textbf{\MakeUppercase{\Fakultas\ of \fakultas}} \\
+            \ifdefstring{\kampus}{Universitas Terbuka}{%
+                \ifdefstring{\negaraMahasiswa}{Indonesia}{%
+                    \textbf{\MakeUppercase{UT \daerahKampus\ \UPBJJ}} \\
+                    \textbf{\MakeUppercase{\kampusENG}} \\
+                }{%
+                    \textbf{\MakeUppercase{\UTLayananLuarNegeri\ (\negaraMahasiswa)}} \\
+                    \textbf{\MakeUppercase{\kampusENG}} \\
+                }%
+            }{%
+                \textbf{\MakeUppercase{\kampusENG}} \\
+                \textbf{\MakeUppercase{\daerahKampus}} \\
+            }%
+            \textbf{\tahun}
+        }{%
+            \textbf{\MakeUppercase{\ProgramStudi\ \prodi}} \\
+            \textbf{\MakeUppercase{\Fakultas\ \fakultas}} \\
+            \ifdefstring{\kampus}{Universitas Terbuka}{%
+                \ifdefstring{\negaraMahasiswa}{Indonesia}{%
+                    \textbf{\MakeUppercase{\UTDaerah\ \daerahKampus}} \\
+                    \textbf{\MakeUppercase{\kampus}} \\
+                }{%
+                    \textbf{\MakeUppercase{\UTLayananLuarNegeri\ \negaraMahasiswa}} \\
+                    \textbf{\MakeUppercase{\kampus}} \\
+                }%
+            }{%
+                \textbf{\MakeUppercase{\kampus}} \\
+                \textbf{\MakeUppercase{\daerahKampus}} \\
+            }%
+            \textbf{\tahun}
+        }%
+    }
+    
+\end{titlepage}

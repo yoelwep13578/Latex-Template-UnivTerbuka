@@ -1,0 +1,206 @@
+%=====================%
+%     COLOR NAMES     %
+%=====================%
+
+\definecolor{monokai-bg}{RGB}{250,250,250}     % Light gray background
+\definecolor{monokai-comment}{RGB}{117,113,94} % Grayish comments
+\definecolor{monokai-purple}{RGB}{137,89,168}  % Purple for keywords
+\definecolor{monokai-green}{RGB}{58,110,59}    % Green for strings
+\definecolor{monokai-orange}{RGB}{253,151,31}  % Orange for specials
+\definecolor{monokai-blue}{RGB}{81,154,186}    % Blue for types/functions
+\definecolor{graybg}{RGB}{249, 249, 249}
+\definecolor{graybr}{RGB}{204, 204, 204}
+
+
+
+%==============%
+%     Math     %
+%==============%
+
+% --- Penambahan Teorema ---
+\newtheorem{theorem}{\Teorema}              % Teorema
+\newtheorem{lemma}[theorem]{\Lema}          % Lema
+\newtheorem{definition}[theorem]{\Definisi} % Definisi
+\newtheorem{example}[theorem]{\Contoh}      % Contoh
+
+% --- Math Roman Alternatif ---
+\newcommand{\upmath}[1]{\mathrm{#1}}
+
+% --- Kumpulan Simbol Huruf Tegak ---
+\newcommand{\deriv}{\upmath{d}}     % Turunan Diferensial
+\newcommand{\adj}{\mathrm{adj}}     % Adjoin Matriks
+\newcommand{\euler}{\mathrm{e}}     % Euler
+\newcommand{\imaginary}{\mathrm{i}} % Imajiner
+
+% --- Huruf Tegak Matematika a hingga z ---
+\newcommand{\upa}{\mathrm{a}}
+\newcommand{\upb}{\mathrm{b}}
+\newcommand{\upc}{\mathrm{c}}
+\newcommand{\upd}{\mathrm{d}}
+\newcommand{\upe}{\mathrm{e}}
+\newcommand{\upf}{\mathrm{f}}
+\newcommand{\upg}{\mathrm{g}}
+\newcommand{\uph}{\mathrm{h}}
+\newcommand{\upi}{\mathrm{i}}
+\newcommand{\upj}{\mathrm{j}}
+\newcommand{\upk}{\mathrm{k}}
+\newcommand{\upl}{\mathrm{l}}
+\newcommand{\upm}{\mathrm{m}}
+\newcommand{\upn}{\mathrm{n}}
+\newcommand{\upo}{\mathrm{o}}
+\newcommand{\upp}{\mathrm{p}}
+\newcommand{\upq}{\mathrm{q}}
+\newcommand{\upr}{\mathrm{r}}
+\newcommand{\ups}{\mathrm{s}}
+\newcommand{\upt}{\mathrm{t}}
+\newcommand{\upu}{\mathrm{u}}
+\newcommand{\upv}{\mathrm{v}}
+\newcommand{\upw}{\mathrm{w}}
+\newcommand{\upx}{\mathrm{x}}
+\newcommand{\upy}{\mathrm{y}}
+\newcommand{\upz}{\mathrm{z}}
+
+% --- Huruf Tegak Matematika A hingga Z ---
+\newcommand{\upA}{\mathrm{A}}
+\newcommand{\upB}{\mathrm{B}}
+\newcommand{\upC}{\mathrm{C}}
+\newcommand{\upD}{\mathrm{D}}
+\newcommand{\upE}{\mathrm{E}}
+\newcommand{\upF}{\mathrm{F}}
+\newcommand{\upG}{\mathrm{G}}
+\newcommand{\upH}{\mathrm{H}}
+\newcommand{\upI}{\mathrm{I}}
+\newcommand{\upJ}{\mathrm{J}}
+\newcommand{\upK}{\mathrm{K}}
+\newcommand{\upL}{\mathrm{L}}
+\newcommand{\upM}{\mathrm{M}}
+\newcommand{\upN}{\mathrm{N}}
+\newcommand{\upO}{\mathrm{O}}
+\newcommand{\upP}{\mathrm{P}}
+\newcommand{\upQ}{\mathrm{Q}}
+\newcommand{\upR}{\mathrm{R}}
+\newcommand{\upS}{\mathrm{S}}
+\newcommand{\upT}{\mathrm{T}}
+\newcommand{\upU}{\mathrm{U}}
+\newcommand{\upV}{\mathrm{V}}
+\newcommand{\upW}{\mathrm{W}}
+\newcommand{\upX}{\mathrm{X}}
+\newcommand{\upY}{\mathrm{Y}}
+\newcommand{\upZ}{\mathrm{Z}}
+
+
+
+%==============%
+%     Code     %
+%==============%
+
+% --- Kode Sebaris Ber-highlight (Markdown Style) ---
+\newcommand{\inlinesnippet}[1]{%
+	{%
+	\setlength{\fboxsep}{2pt}%
+	\fcolorbox{graybr}{graybg}{\small\vphantom{gH}\lstinline{#1}}%
+	}%
+}
+
+
+
+%=======================%
+%     Keyboard Keys     %
+%=======================%
+
+\newcommand{\keys}[1]{%
+	{%
+	\setlength{\fboxsep}{2pt}%
+	\fcolorbox{graybr}{graybg}{\hspace{2pt}\footnotesize\ttfamily\vphantom{gH}#1\hspace{2pt}}%
+	}%
+}
+
+\newcommand{\arrowkeys}[1]{%
+	{%
+	\setlength{\fboxsep}{2.4pt}%
+	\fcolorbox{graybr}{graybg}{%
+		\makebox[1.2em]{%
+			\scriptsize\vphantom{gH}#1%
+		}%
+	}%
+	}%
+}
+
+% --- Modifiers ---
+\newcommand{\Ctrl}{\keys{Ctrl}}
+\newcommand{\Shift}{\keys{Shift}}
+\newcommand{\Alt}{\keys{Alt}}
+\newcommand{\AltGr}{\keys{AltGr}}
+\newcommand{\Altgr}{\AltGr}
+
+% --- Common Navigation & Actions ---
+\newcommand{\Esc}{\keys{Esc}}
+\newcommand{\Enter}{\keys{Enter}}
+\newcommand{\Tab}{\keys{Tab}}
+\newcommand{\Space}{\keys{Space}}
+\newcommand{\Backspace}{\keys{Backspace}}
+\newcommand{\Capslock}{\keys{Caps Lock}}
+
+% --- Right Side Navigation & Actions ---
+\newcommand{\Insert}{\keys{Ins}}
+\newcommand{\Delete}{\keys{Del}}
+\newcommand{\PgUp}{\keys{PgUp}}
+\newcommand{\PgDn}{\keys{PgDn}}
+\newcommand{\Home}{\keys{Home}}
+\newcommand{\End}{\keys{End}}
+
+\newcommand{\Up}{\arrowkeys{\(\uparrow\)}}
+\newcommand{\Down}{\arrowkeys{\(\downarrow\)}}
+\newcommand{\Left}{\arrowkeys{\(\leftarrow\)}}
+\newcommand{\Right}{\arrowkeys{\(\rightarrow\)}}
+
+% --- F Key ---
+\newcommand{\Fn}{\keys{Fn}}
+
+
+
+%===================%
+%     Fixed Box     %
+%===================%
+
+\newcommand{\kotakMeterai}{
+    \fbox{%
+        \parbox[c][2.1cm][c]{2.9cm}{%
+            \centering
+            Meterai \\ Rp10.000
+        }%
+    }
+}
+
+%=======================%
+%     More Commands     %
+%=======================%
+
+% --- Longkap Baris ---
+\newcommand{\linesskip}[1]{\vspace{#1\baselineskip}}
+
+% --- Keterangan Panjang (Lebih dari Sebaris)
+\newcommand{\longcaption}[1]{\caption{\begin{tabular}[t]{@{}l@{}}#1\end{tabular}}}
+
+% --- Sumber Lampiran Tabel ---
+\newcommand{\tablesource}[1]{\vspace{.3\baselineskip}\caption*{Sumber: #1}\vspace{-\baselineskip}}
+\newcommand{\tablesourceleft}[2]{
+    
+    \raggedright\medskip\hspace{#1}\small Sumber: #2}
+
+% --- Sumber Lampiran Gambar ---
+\newcommand{\figuresource}[1]{\vspace{-.9em}\caption*{Sumber: #1}\vspace{-.3\baselineskip}}
+
+% --- Sumber Lampiran Kode ---
+\newcommand{\lstsource}[1]{\begin{center}\vspace{-1.27\baselineskip}\setstretch{1}\small Sumber: #1 \vspace{.5\baselineskip}\end{center}}
+
+% --- Link Email ---
+\newcommand{\emailref}[1]{\href{mailto:#1}{{\url#1}}}
+
+% --- Garis Titik-Titik ---
+\newcommand{\dotsfill}[2]{
+    \leavevmode%
+    \makebox[#1]{%
+        \cleaders\hbox to 0.44em{\smash{\lower#2\hbox{.}}\hss}\hfill%
+    }%
+}

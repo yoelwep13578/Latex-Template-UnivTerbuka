@@ -1,0 +1,28 @@
+% --- Judul ---
+%
+%     Ini adalah bagian judul, pengganti halaman sampul. 
+%     Jangan mengubah apa pun yang ada di dalam sini, kecuali bila 
+%     Anda sudah mahir menulis kode LaTeX.
+%
+\begin{center}    
+    {\setstretch{1}
+        % Judul
+        {\large\bfseries\judul\par}
+        
+        % Penulis dan Afiliasi
+        {\small
+            \ifdef{\namaPembimbingPolos}{%
+                \textbf{\namaMahasiswa\textsuperscript{1*} dan \namaPembimbingPolos\textsuperscript{2}}
+                
+                \textsuperscript{1,2}Program Studi \prodi, Fakultas \fakultas, \kampus
+                \ifdef{\emailKorespondensi}{\newline\textsuperscript{*}\textit{E-mail:} \emailref{\emailKorespondensi}}{}
+            }{%
+                \textbf{\namaMahasiswa}
+                
+                Program Studi \prodi, Fakultas \fakultas, \kampus
+                \ifdef{\emailKorespondensi}{\newline\textit{E-mail:} \emailref{\emailKorespondensi}}{}
+            }%
+        }
+        \par
+    }
+\end{center}

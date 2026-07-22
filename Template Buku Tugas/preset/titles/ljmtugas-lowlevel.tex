@@ -1,0 +1,83 @@
+\makeatletter
+
+\ifdef{\chapter}{
+    %====================%
+    %     Dengan Bab     %
+    %====================%
+    
+    \setcounter{secnumdepth}{-2}
+    
+    \titleformat{\chapter}[block]
+    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
+    {}
+    {0em}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    
+    \titleformat{\section}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\subsubsection}[runin]
+    {\normalfont\bfseries\normalsize}
+    {}
+    {0em}
+    {\smartperiod}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {}
+    {0em}
+    {\smartperiod}
+    
+%    \titleformat{\subparagraph}[runin]
+%    {\normalfont\bfseries\itshape\normalsize}
+%    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries(\thesubparagraph)\hfill}}}
+%    {1em}
+%    {\smartperiod}
+}{
+    %===================%
+    %     Tanpa Bab     %
+    %===================%
+    
+    \setcounter{secnumdepth}{-2}
+    
+    \titleformat{\section}[block]
+    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
+    {}
+    {0em}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {}
+    {0em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {}
+    {0em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {}
+    {0em}
+    {\smartperiod}
+}
+
+\makeatother

@@ -1,0 +1,96 @@
+\makeatletter
+
+\ifdef{\chapter}{
+    %====================%
+    %     Dengan Bab     %
+    %====================%
+    
+    \setcounter{secnumdepth}{5}
+    
+    \renewcommand{\thechapter}{\Roman{chapter}}
+    \renewcommand{\thesection}{\Alph{section}}
+    \renewcommand{\thesubsection}{\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\alph{subsubsection}}
+    \renewcommand{\theparagraph}{\arabic{paragraph}}
+    \renewcommand{\thesubparagraph}{\alph{paragraph}}
+    
+    \titleformat{\chapter}[display]
+    {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
+    {\setstretch{1}\fontsize{32}{38}\selectfont\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thechapter}
+    {-.5ex}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    
+    \titleformat{\section}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\Large}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesection.}}
+    {0em}
+    {}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsection.}}
+    {0em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsubsection.}}
+    {0em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\theparagraph)}}
+    {0em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubparagraph)}}
+    {0em}
+    {\smartperiod}
+}{
+    %===================%
+    %     Tanpa Bab     %
+    %===================%
+    
+    \setcounter{secnumdepth}{5}
+    
+    \renewcommand{\thesection}{\Roman{section}}
+    \renewcommand{\thesubsection}{\Alph{subsection}}
+    \renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+    \renewcommand{\theparagraph}{\alph{paragraph}}
+    \renewcommand{\thesubparagraph}{\arabic{subparagraph}}
+    
+    \titleformat{\section}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\fontsize{32}{38}\selectfont}
+    {\normalfont\bfseries\thesection.}
+    {1em}
+    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    
+    \titleformat{\subsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\filright\large}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsection.}}
+    {0em}
+    {}
+    
+    \titleformat{\subsubsection}[hang]
+    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsubsection.}}
+    {0em}
+    {}
+    
+    \titleformat{\paragraph}[runin]
+    {\normalfont\bfseries\normalsize}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\theparagraph.}}
+    {0em}
+    {\smartperiod}
+    
+    \titleformat{\subparagraph}[runin]
+    {\normalfont\bfseries\itshape\normalsize}
+    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubparagraph)}}
+    {0em}
+    {\smartperiod}
+}
+
+\makeatother
