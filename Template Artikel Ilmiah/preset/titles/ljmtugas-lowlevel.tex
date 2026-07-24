@@ -8,38 +8,38 @@
     \setcounter{secnumdepth}{-2}
     
     \titleformat{\chapter}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\template@size@section}
+    {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@section}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\template@size@subsection}
+    {\setstretch{1}\template@secfont\bfseries\filright\template@size@subsection}
     {}
     {0em}
     {}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\template@size@subsubsection}
+    {\setstretch{1}\template@secfont\bfseries\itshape\filright\template@size@subsubsection}
     {}
     {0em}
     {}
     
     \titleformat{\subsubsection}[runin]
-    {\normalfont\bfseries\normalsize}
+    {\template@secfont\bfseries\normalsize}
     {}
     {0em}
     {\smartperiod}
     
     \titleformat{\paragraph}[runin]
-    {\normalfont\bfseries\itshape\normalsize}
+    {\template@secfont\bfseries\itshape\normalsize}
     {}
     {0em}
     {\smartperiod}
     
 %    \titleformat{\subparagraph}[runin]
-%    {\normalfont\bfseries\itshape\normalsize}
-%    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\normalfont\bfseries(\thesubparagraph)\hfill}}}
+%    {\template@secfont\bfseries\itshape\normalsize}
+%    {\hspace{\titleindent}\llap{\parbox[b]{\titleindent}{\template@secfont\bfseries(\thesubparagraph)\hfill}}}
 %    {1em}
 %    {\smartperiod}
 }{
@@ -50,31 +50,31 @@
     \setcounter{secnumdepth}{-2}
     
     \titleformat{\section}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\template@size@section}
+    {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@section}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\template@size@subsection}
+    {\setstretch{1}\template@secfont\bfseries\filright\template@size@subsection}
     {}
     {0em}
     {}
     
     \titleformat{\subsubsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\template@size@subsubsection}
+    {\setstretch{1}\template@secfont\bfseries\itshape\filright\template@size@subsubsection}
     {}
     {0em}
     {}
     
     \titleformat{\paragraph}[runin]
-    {\normalfont\bfseries\normalsize}
+    {\template@secfont\bfseries\normalsize}
     {}
     {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
-    {\normalfont\bfseries\itshape\normalsize}
+    {\template@secfont\bfseries\itshape\normalsize}
     {}
     {0em}
     {\smartperiod}

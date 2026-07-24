@@ -42,7 +42,11 @@
 %     roman, namun sebaiknya jangan jika tidak ada aturan
 %     yang memaksa.
 %
-%     5. mainfont
+%     5. sansstructure
+%     Judul heading (bab sampai subparagraf) dan keterangan sisipan
+%     menggunakan huruf berjenis Sans agar bisa terpisah dari narasi.
+%
+%     6. mainfont
 %     Pilihan untuk font utama dan font matematika
 %
 %     Pilihan yang tersedia:
@@ -80,7 +84,7 @@
 %                            dengan \setmainfont dan \setmathfont
 %                            di LuaLaTeX
 %
-%     6. sansfont
+%     7. sansfont
 %     Pilihan untuk font sans serif
 %
 %     Pilihan yang tersedia:
@@ -94,7 +98,7 @@
 %                     Bisa dipakai untuk disetel sendiri dengan 
 %                     \setsansfont di LuaLaTeX
 %
-%     7. monofont
+%     8. monofont
 %     Pilihan untuk font monospace
 %     
 %     Pilihan yang tersedia:
@@ -107,7 +111,7 @@
 %                      Bisa dipakai untuk disetel sendiri dengan
 %                      \setmonofont di LuaLaTeX
 %
-%     8. indent
+%     9. indent
 %     Jarak menjorok pada baris awal paragraf, ditulis dengan angka
 %     dan satuannya.
 %
@@ -119,27 +123,27 @@
 %
 %     Contoh penggunaan: indent=1.5cm atau indent=2em
 %
-%     9. microtype
+%     10. microtype
 %     Alat tambahan untuk membuat teks terlihat lebih rapi dengan
 %     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
 %     Microtype dapat digunakan setelah pengerjaan selesai (final).
 %
-%     10. listappendix
+%     11. listappendix
 %     Memunculkan daftar isi baru bernama "Daftar Lampiran" seperti
 %     yang ada pada Daftar Gambar, Daftar Tabel, dan Daftar Kode.
 %
-%     11. appnewline
+%     12. appnewline
 %     Membuat judul lampiran memiliki dua baris, sama seperti bab
 %     makalah.
 %
 %     Lampiran A: Nama Lampiran -->  Lampiran A
 %                                   Nama Lampiran
 %
-%     12. appnumarabic
+%     13. appnumarabic
 %     Mengganti nomor Lampiran A, Lampiran B, Lampiran C, ...
 %     menjadi Lampiran 1, Lampiran 2, Lampiran 3, ...
 %
-%     13. apppagenum
+%     14. apppagenum
 %     Format nomor halaman untuk bagian Lampiran (setelah daftar
 %     pustaka atau glosarium)
 %
@@ -156,14 +160,14 @@
 %                      pada lampiran tersebut.
 %      - [kosong]  --- Memakai pilihan arabic
 %
-%     14. showlabelname
+%     15. showlabelname
 %     Memunculkan tulisan nama label:
 %     Daftar Gambar  : "2.2"   --> "Gambar 2.2"
 %     Daftar Tabel   : "2.2"   --> "Tabel 2.2"
 %     Daftar Kode    : "2.2"   --> "Kode 2.2"
 %     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
 %
-\documentclass[seccaps, heading=alpha, mainfont=times, apa=campuran, listappendix, appnumarabic]{artikelmakalah}
+\documentclass[seccaps, sansstructure, heading=alpha, mainfont=times, apa=campuran, listappendix, appnumarabic]{artikelmakalah}
 
 %==================%
 %     Preamble     %
@@ -427,7 +431,7 @@
     \include{section/metode.tex}
     \include{section/hasil-dan-pembahasan.tex}
     \include{section/kesimpulan-dan-saran.tex}
-    
+
     % Daftar Pustaka
     %\nocite{*} % <-- Tampil tanpa dikutip
     \bibliography{reference}

@@ -15,38 +15,38 @@
     \renewcommand{\thesubparagraph}{\alph{paragraph}}
     
     \titleformat{\chapter}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
+    {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@chapter}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\Large}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\thesection.}}
+    {\setstretch{1}\template@secfont\bfseries\filright\template@size@section}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\thesection.}}
     {0em}
     {}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\large}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsection.}}
+    {\setstretch{1}\template@secfont\bfseries\filright\template@size@subsection}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubsection.}}
     {0em}
     {}
     
     \titleformat{\subsubsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsubsection.}}
+    {\setstretch{1}\template@secfont\bfseries\itshape\filright\template@size@subsubsection}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubsubsection.}}
     {0em}
     {}
     
     \titleformat{\paragraph}[runin]
-    {\normalfont\bfseries\normalsize}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\theparagraph)}}
+    {\template@secfont\bfseries\normalsize}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\theparagraph)}}
     {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
-    {\normalfont\bfseries\itshape\normalsize}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubparagraph)}}
+    {\template@secfont\bfseries\itshape\normalsize}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubparagraph)}}
     {0em}
     {\smartperiod}
 }{
@@ -62,32 +62,32 @@
     \renewcommand{\thesubparagraph}{\arabic{subparagraph}}
     
     \titleformat{\section}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\Large}
+    {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@section}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\large}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsection.}}
+    {\setstretch{1}\template@secfont\bfseries\filright\template@size@subsection}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubsection.}}
     {0em}
     {}
     
     \titleformat{\subsubsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubsubsection.}}
+    {\setstretch{1}\template@secfont\bfseries\itshape\filright\template@size@subsubsection}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubsubsection.}}
     {0em}
     {}
     
     \titleformat{\paragraph}[runin]
-    {\normalfont\bfseries\normalsize}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\theparagraph.}}
+    {\template@secfont\bfseries\normalsize}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\theparagraph.}}
     {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
-    {\normalfont\bfseries\itshape\normalsize}
-    {\makebox[\titleindent][l]{\normalfont\bfseries\thesubparagraph)}}
+    {\template@secfont\bfseries\itshape\normalsize}
+    {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubparagraph)}}
     {0em}
     {\smartperiod}
 }

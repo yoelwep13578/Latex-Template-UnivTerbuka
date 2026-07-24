@@ -11,38 +11,38 @@
     \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
     
     \titleformat{\chapter}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
+    {\setstretch{1}\template@secfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\section}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\Large}
-    {\normalfont\bfseries\thesection.}
+    {\setstretch{1}\template@secfont\bfseries\filright\Large}
+    {\template@secfont\bfseries\thesection.}
     {1em}
     {}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\large}
-    {\normalfont\bfseries\thesubsection}
+    {\setstretch{1}\template@secfont\bfseries\filright\large}
+    {\template@secfont\bfseries\thesubsection}
     {1em}
     {}
     
     \titleformat{\subsubsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
-    {\normalfont\bfseries\thesubsubsection}
+    {\setstretch{1}\template@secfont\bfseries\itshape\filright\normalsize}
+    {\template@secfont\bfseries\thesubsubsection}
     {1em}
     {}
     
     \titleformat{\paragraph}[runin]
-    {\normalfont\bfseries\normalsize}
-    {\normalfont\bfseries\theparagraph}
+    {\template@secfont\bfseries\normalsize}
+    {\template@secfont\bfseries\theparagraph}
     {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
-    {\normalfont\bfseries\itshape\normalsize}
-    {\normalfont\bfseries\thesubparagraph}
+    {\template@secfont\bfseries\itshape\normalsize}
+    {\template@secfont\bfseries\thesubparagraph}
     {0em}
     {\smartperiod}
 }{
@@ -56,32 +56,32 @@
     \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
     
     \titleformat{\section}[block]
-    {\setstretch{1}\normalfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
+    {\setstretch{1}\template@secfont\bfseries\filcenter\fontsize{32}{38}\selectfont}
     {}
     {0em}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     
     \titleformat{\subsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\filright\large}
-    {\normalfont\bfseries\thesubsection}
+    {\setstretch{1}\template@secfont\bfseries\filright\large}
+    {\template@secfont\bfseries\thesubsection}
     {1em}
     {}
     
     \titleformat{\subsubsection}[hang]
-    {\setstretch{1}\normalfont\bfseries\itshape\filright\normalsize}
-    {\normalfont\bfseries\thesubsubsection}
+    {\setstretch{1}\template@secfont\bfseries\itshape\filright\normalsize}
+    {\template@secfont\bfseries\thesubsubsection}
     {1em}
     {}
     
     \titleformat{\paragraph}[runin]
-    {\normalfont\bfseries\normalsize}
-    {\normalfont\bfseries\theparagraph}
+    {\template@secfont\bfseries\normalsize}
+    {\template@secfont\bfseries\theparagraph}
     {0em}
     {\smartperiod}
     
     \titleformat{\subparagraph}[runin]
-    {\normalfont\bfseries\itshape\normalsize}
-    {\normalfont\bfseries\thesubparagraph}
+    {\template@secfont\bfseries\itshape\normalsize}
+    {\template@secfont\bfseries\thesubparagraph}
     {0em}
     {\smartperiod}
 }

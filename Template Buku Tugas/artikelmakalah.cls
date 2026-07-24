@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/06/26 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/07/24 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -44,6 +44,10 @@
 %     Default: -
 \DeclareStringOption[none]{sansfont}[none]
 
+% --- Pilihan Penggunaan Sans Serif ---
+%     Default: -
+\DeclareStringOption[false]{sansstructure}[true]
+
 % --- Pilihan Penomoran Heading ---
 %     Pilihan: alpha, alphabig, multi, multibig, lowlevel
 %     Default: alpha
@@ -52,6 +56,10 @@
 % --- Pilihan Kapitalisasi Heading Pertama ---
 %     Default: -
 \DeclareStringOption[false]{seccaps}[true]
+
+% --- Pilihan Ukuran Heading yang Lebih Kecil ---
+%     Default: -
+\DeclareStringOption[false]{seccompact}[true]
 
 % --- Pilihan Bahasa untuk APA ---
 %     Pilihan: indonesia, campuran
@@ -611,6 +619,17 @@
             {\hfill\contentspage}
         }
     }
+    
+    %==========================================================%
+    %     Sans Serif Section, Caption, Footnote Table Font     %
+    %==========================================================%
+    
+    \newcommand{\template@secfont}{\normalfont}
+    
+    \ifdefstring{\template@sansstructure}{true}{%
+        \renewcommand{\template@secfont}{\sffamily}%
+        \captionsetup{font={sf,small}}%
+    }{}
 	
 	%======================================%
 	%     Page Style (Header & Footer)     %
@@ -771,18 +790,18 @@
 	%==========================%
 	
 	% --- Specing 1 dan Ukuran Huruf \small untuk Keterangan Tabel ---
-	\SetTblrStyle{caption}{font=\setstretch{1}\small}
+	\SetTblrStyle{caption}{font=\template@secfont\setstretch{1}\small}
 	
 	% --- Specing 1 dan Ukuran Huruf \small untuk tulisan
 	%     "Continued to next page" atau "Lanjutan di halaman berikutnya"
-	\SetTblrStyle{capcont}{font=\setstretch{1}\small}
-	\SetTblrStyle{contfoot-text}{font=\setstretch{1}\small}
+	\SetTblrStyle{capcont}{font=\template@secfont\setstretch{1}\small}
+	\SetTblrStyle{contfoot-text}{font=\template@secfont\setstretch{1}\small}
 	
 	% --- Ukuran Huruf \small untuk Catatan Tabel (Footnote) ---
-	\SetTblrStyle{note}{font=\setstretch{1}\small}
+	\SetTblrStyle{note}{font=\template@secfont\setstretch{1}\small}
 	
 	% --- Ukuran Huruf \small untuk Catatan Tambahan (Remark) Tabel ---
-	\SetTblrStyle{remark}{font=\setstretch{1}\small}
+	\SetTblrStyle{remark}{font=\template@secfont\setstretch{1}\small}
 	
 	% --- Format Remark Bertulis Tegak ---
 	\DeclareTblrTemplate{remark-tag}{normal}{
@@ -826,6 +845,24 @@
 	%    \AtEndEnvironment{lstlisting}{\microtypesetup{activate}}
 	}{}
 	
+    %==============================%
+    %     Ukuran Huruf Heading     %
+    %==============================%
+    
+    % --- Ukuran Standar Mendekati Bawaan LaTeX ---
+    \newcommand{\template@size@chapter}{\Large}
+    \newcommand{\template@size@section}{\Large}
+    \newcommand{\template@size@subsection}{\large}
+    \newcommand{\template@size@subsubsection}{\normalsize}
+    
+    % --- Ukuran Sederhana (Maksimaal Hanya Mendekati 14pt) ---
+    \ifdefstring{\template@seccompact}{true}{
+        \renewcommand{\template@size@chapter}{\large}
+        \renewcommand{\template@size@section}{\large}
+        \renewcommand{\template@size@subsection}{\normalsize}
+        \renewcommand{\template@size@subsubsection}{\normalsize}
+    }{}
+    
 	%===============================================================%
 	%     Pengkondisian Penomoran Heading Ilmiah dan Soal Jawab     %
 	%===============================================================%
@@ -926,7 +963,7 @@
         \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
             % --- Soal Jawab atau APA-Like ---
             \titleformat{\chapter}[block]
-            {\setstretch{1}\normalfont\bfseries\filcenter\makalah@appfont}
+            {\setstretch{1}\template@secfont\bfseries\filcenter\makalah@appfont}
             {}
             {0pt}
             {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
@@ -935,14 +972,14 @@
             \ifdefstring{\template@appnewline}{true}{%
                 % --- Format Dua Baris ---
                 \titleformat{\chapter}[display]
-                {\setstretch{1}\normalfont\bfseries\filcenter\makalah@appfont}
+                {\setstretch{1}\template@secfont\bfseries\filcenter\makalah@appfont}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thechapter}
                 {-.5ex}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
             }{%
                 % --- Format Sebaris ---
                 \titleformat{\chapter}[block]
-                {\setstretch{1}\normalfont\bfseries\filcenter\makalah@appfont}
+                {\setstretch{1}\template@secfont\bfseries\filcenter\makalah@appfont}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thechapter:\ }
                 {0pt}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
@@ -998,7 +1035,7 @@
         \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
             % --- Soal Jawab atau APA-Like (Artikel) ---
             \titleformat{\section}[block]
-            {\setstretch{1}\normalfont\bfseries\filcenter\artikel@appfont}
+            {\setstretch{1}\template@secfont\bfseries\filcenter\artikel@appfont}
             {}
             {0pt}
             {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
@@ -1007,14 +1044,14 @@
             \ifdefstring{\template@appnewline}{true}{%
                 % --- Format Dua Baris ---
                 \titleformat{\section}[display]
-                {\setstretch{1}\normalfont\bfseries\filcenter\artikel@appfont}
+                {\setstretch{1}\template@secfont\bfseries\filcenter\artikel@appfont}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thesection}
                 {-.5ex}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
             }{%
                 % --- Format Sebaris ---
                 \titleformat{\section}[block]
-                {\setstretch{1}\normalfont\bfseries\filcenter\artikel@appfont}
+                {\setstretch{1}\template@secfont\bfseries\filcenter\artikel@appfont}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thesection:\ }
                 {0pt}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
