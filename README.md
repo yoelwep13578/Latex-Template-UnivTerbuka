@@ -141,9 +141,20 @@ Seluruh pengaturan dokumen telah disederhanakan. Anda cukup menentukan setelan k
 
 ### _Pengisian Tulisan Tangan yang Lebih Manusiawi_
 
-Untuk jenis dokumen yang membutuhkan sisipan kolom tulisan tangan (seperti lembar pernyataan atau tanda tangan), jarak barisnya dibuat lebih renggang dan manusiawi dengan tinggi 0,5 cm hingga 0,8 cm. 
+Untuk jenis dokumen yang membutuhkan sisipan kolom tulisan tangan (seperti lembar pernyataan atau tanda tangan), jarak barisnya dibuat lebih renggang dan manusiawi dengan tinggi 0,5 cm hingga 0,8 cm. Jarak ketinggian untuk tanda tangan diseragamkan menjadi 2,1 cm (setinggi meterai).
 
-Ukuran ini dipilih berdasarkan jarak garis-garis pada buku tulis, sehingga memberikan kenyamanan saat Anda mencetak dokumen dan menulis di atasnya menggunakan pulpen.
+<details>
+    <summary>Klik untuk melihat gambar</summary>
+    <img src="https://github.com/user-attachments/assets/75fd8887-40e7-43fd-ad68-7483b8b4bbd4" />
+</details>
+
+Ukuran ini dipilih berdasarkan jarak garis-garis pada buku tulis, sehingga memberikan kenyamanan kepada Anda sendiri atau orang lain yang menulis di atas dokumennya menggunakan pulpen. Seperti ini pula panduan yang diharapkan bisa menyadarkan masalah ini.
+
+<details>
+    <summary>Klik untuk melihat gambar</summary>
+    <img src="https://github.com/user-attachments/assets/7208a88c-b585-484b-87d0-7c8cad0e5354" />
+</details>
+
 
 ### _Adaptif_
 
