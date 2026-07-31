@@ -124,7 +124,13 @@ Penulisan rumus serumit apa pun dapat diketik langsung menggunakan teks kode LaT
 
 ### _Pengaturan Dasar yang Disederhanakan_
 
-Seluruh pengaturan dokumen telah disederhanakan. Anda cukup menentukan setelan kustomisasi dari _document class_. _Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda, bukan? Anda diberi kebebasan untuk:
+Seluruh pengaturan dokumen telah disederhanakan. Anda cukup menentukan setelan kustomisasi dari _document class_ di `main.tex`. 
+
+```latex
+\documentclass[indent=1cm, mainfont=times, ...]{artikelmakalah}
+```
+
+_Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda, bukan? Anda diberi kebebasan untuk:
 
 - Mengganti _font/typeface_ utama yang berpasangan dengan _font/typeface_ matematika
 - Mengganti _font/typeface_ untuk Sans Serif, yang umum digunakan agar suatu teks terlepas/tidak melebur dengan bacaan narasi;
