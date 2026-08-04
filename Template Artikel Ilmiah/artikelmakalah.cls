@@ -107,7 +107,7 @@
 %     Document Class & Preamble     %
 %===================================%
 
-\LoadClass[a4paper, 12pt]{report}
+\LoadClass[a4paper, 12pt]{article}
 
 % --- PDFTeX Conditional ---
 \RequirePackage{iftex}
