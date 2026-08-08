@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/07/24 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/08/08 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -15,7 +15,7 @@
 % \DeclareStringOption[initial]{key}[default]
 % 
 % initial: Nilai default bila tidak disebut, seperti 
-% \usepackage[]{XXX}
+% \[]{XXX}
 % key    : Nama setelan untuk \usepackage[key]{XXX}
 % default: Nilai bawaan key bila hanya ditulis 
 %          \usepackage[key]{XXX}
@@ -136,7 +136,7 @@
 			\ifdefstring{\template@mainfont}{garamond}{
 				\RequirePackage[lining, tabular]{ebgaramond}
 				%\RequirePackage{ebgaramond-maths}
-				\usepackage[ebgaramond]{newtxmath}
+				\RequirePackage[ebgaramond]{newtxmath}
 			}{
 				\ifdefstring{\template@mainfont}{libertinus}{
 					\RequirePackage{libertine}
@@ -178,7 +178,7 @@
 		\RequirePackage[scaled=0.97]{inconsolata}
 	}{
 		\ifdefstring{\template@monofont}{cascadia}{
-			\RequirePackage[scaled=0.85]{FiraMono} % Alt
+            \RequirePackage[scaled=0.9]{cascadia-code}
 		}{
 			\ifdefstring{\template@monofont}{fira}{
 				\RequirePackage[scaled=0.85]{FiraMono}
@@ -205,39 +205,39 @@
 
 % --- Pemilihan Font Monospace ---
 \ifdefstring{\template@monofont}{courier-new}{
-	\setmonofont{Courier New}[Scale=MatchLowercase]
+	\setmonofont[Scale=MatchLowercase]{Courier New}
 }{}
 \ifdefstring{\template@monofont}{consolas}{
-	\setmonofont{Consolas}[Scale=MatchLowercase]
+	\setmonofont[Scale=MatchLowercase]{Consolas}
 }{}
 \ifdefstring{\template@monofont}{cascadia}{
-	\setmonofont{Cascadia Code Light}[
+	\setmonofont[
 	BoldFont={Cascadia Code Bold},
 	ItalicFont={Cascadia Code Light Italic},
 	BoldItalicFont={Cascadia Code Bold Italic},
 	Scale=MatchLowercase
-	]
+	]{Cascadia Code Light}
 }{}
 \ifdefstring{\template@monofont}{fira}{
-	\setmonofont{Fira Code Light}[
+	\setmonofont[
 	BoldFont={Fira Code Medium},
 	Contextuals=Alternate,
 	Scale=MatchLowercase
-	]
+	]{Fira Code Light}
 }{}
 \ifdefstring{\template@monofont}{jetbrains}{
-	\setmonofont{JetBrains Mono Thin}[
+	\setmonofont[
 	Contextuals={Alternate},
 	BoldFont={JetBrains Mono Bold},
 	BoldItalicFont={JetBrains Mono Bold Italic},
 	ItalicFont={JetBrains Mono Thin Italic},
 	Scale=MatchLowercase
-	] 
+	]{JetBrains Mono Thin}
 }{}
 
 % --- Pemilihan Font Utama dan Font Matematika ---
 \ifdefstring{\template@mainfont}{times}{
-	\setmainfont{Times New Roman}[Ligatures=Rare]
+	\setmainfont[Ligatures=Rare]{Times New Roman}
 	\setmathfont{XITS Math}
 }{}
 \ifdefstring{\template@mainfont}{tex-gyre-termes}{
@@ -259,16 +259,16 @@
 
 % --- Pemilihan Font Sans ---
 \ifdefstring{\template@sansfont}{aptos}{
-	\setsansfont{Aptos}[Scale=MatchLowercase]
+	\setsansfont[Scale=MatchLowercase]{Aptos}
 }{}
 \ifdefstring{\template@sansfont}{calibri}{
-	\setsansfont{Calibri}[Scale=MatchLowercase]
+	\setsansfont[Scale=MatchLowercase]{Calibri}
 }{}
 \ifdefstring{\template@sansfont}{alegreya}{
-	\setsansfont{Alegreya Sans}[Scale=MatchLowercase]
+	\setsansfont[Scale=MatchLowercase]{Alegreya Sans}
 }{}
 \ifdefstring{\template@sansfont}{noto}{
-	\setsansfont{Noto Sans}[Scale=MatchLowercase]
+	\setsansfont[Scale=MatchLowercase]{Noto Sans}
 }{}
 
 \fi
@@ -820,11 +820,6 @@
 	%     Conditionals     %
 	%======================%
 	
-	% --- Pemilihan URL Style ---
-	\ifdefstring{\template@urlroman}{true}{
-	    \AtBeginDocument{\urlstyle{APACrm}}
-	}{}
-	
 	% --- Pemilihan Bahasa APA ---
 	\ifdefstring{\template@apa}{indonesia}{
 	    \input{preset/bib/apa-bahasa-indonesia.tex}
@@ -896,6 +891,17 @@
 %%=================================%
 }%     End of \AtBeginDocument     %
 %%=================================%
+
+% --- Pemilihan URL Style ---
+\ifdefstring{\template@urlroman}{true}{%
+    \AddToHook{begindocument/end}{%
+        \ltx@ifpackageloaded{apacite}{%
+            \urlstyle{APACrm}%
+        }{%
+            \urlstyle{rm}%
+        }%
+    }%
+}{}
 
 %=========================%
 %     Daftar Lampiran     %
