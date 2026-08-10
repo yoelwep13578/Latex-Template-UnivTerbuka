@@ -49,6 +49,29 @@
     {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubparagraph)}}
     {0em}
     {\smartperiod}
+    
+    % --- Halaman Lampiran ---
+    \ifdefstring{\template@appnumarabic}{true}{}{
+        \gappto{\appendix}{
+            \renewcommand{\thesection}{\arabic{section}}
+            \renewcommand{\thesubsection}{\alph{subsection}}
+            \renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+            \renewcommand{\theparagraph}{\alph{paragraph}}
+            \renewcommand{\thesubparagraph}{\arabic{paragraph}}
+            
+            \titleformat{\subsubsection}[hang]
+            {\setstretch{1}\template@secfont\bfseries\itshape\filright\template@size@subsubsection}
+            {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubsubsection)}}
+            {0em}
+            {}
+            
+            \titleformat{\subparagraph}[runin]
+            {\template@secfont\bfseries\itshape\normalsize}
+            {\makebox[\titleindent][l]{\template@secfont\bfseries (\thesubparagraph)}}
+            {0em}
+            {\smartperiod}
+        }
+    }
 }{
     %===================%
     %     Tanpa Bab     %
@@ -91,6 +114,22 @@
     {\makebox[\titleindent][l]{\template@secfont\bfseries\thesubparagraph)}}
     {0em}
     {\smartperiod}
+    
+    % --- Halaman Lampiran ---
+    \ifdefstring{\template@appnumarabic}{true}{}{
+        \gappto{\appendix}{
+            \renewcommand{\thesubsection}{\arabic{section}}
+            \renewcommand{\thesubsubsection}{\alph{subsection}}
+            \renewcommand{\theparagraph}{\arabic{subsubsection}}
+            \renewcommand{\thesubparagraph}{\alph{paragraph}}
+            
+            \titleformat{\paragraph}[runin]
+            {\template@secfont\bfseries\normalsize}
+            {\makebox[\titleindent][l]{\template@secfont\bfseries\theparagraph)}}
+            {0em}
+            {\smartperiod}
+        }
+    }
 }
 
 \makeatother
