@@ -95,7 +95,7 @@
 %==============%
 
 % --- Kode Sebaris Ber-highlight (Markdown Style) ---
-\newcommand{\inlinesnippet}[1]{%
+\NewDocumentCommand{\inlinesnippet}{v}{%
 	{%
 	\setlength{\fboxsep}{2pt}%
 	\fcolorbox{graybr}{graybg}{\small\vphantom{gH}\lstinline{#1}}%
