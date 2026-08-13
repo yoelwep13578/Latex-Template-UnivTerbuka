@@ -42,7 +42,7 @@
 }
 
 % --- LST Codeblock ---
-\newtcblisting{lstcode}[1][]{%
+\NewTCBListing{lstcode}{ !O{} }{%
     arc=0mm,
     outer arc=0mm,
     boxrule=0.5pt,
@@ -63,6 +63,37 @@
         xleftmargin=0em,
         xrightmargin=0em,
         #1
+    }
+}
+
+\AtBeginDocument{%
+    \NewTCBListing[blend into=listings]{lstcodecap}{ O{} m }{%
+        arc=0mm,
+        outer arc=0mm,
+        boxrule=0.5pt,
+        colback=graybg,
+        colframe=graybr,
+        left=4mm,
+        right=4mm,
+        top=3mm,
+        bottom=3mm,
+        breakable,
+        listing and comment,
+        listing options={
+            basicstyle=\footnotesize\ttfamily,
+            aboveskip=0pt,
+            belowskip=0pt,
+            frame=none,
+            breaklines=true,
+            xleftmargin=0em,
+            xrightmargin=0em,
+            #1
+        },
+        title={#2},
+        detach title,
+        coltitle=black,
+        listing above* comment,
+        comment={\centering\small\tcbtitle\vspace{.5\baselineskip}}
     }
 }
 
