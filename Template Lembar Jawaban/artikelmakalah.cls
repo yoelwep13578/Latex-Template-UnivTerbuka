@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/08/08 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/08/15 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -108,6 +108,9 @@
 %===================================%
 
 \LoadClass[a4paper, 12pt]{article}
+
+% --- Math ---
+\RequirePackage{amsthm, amssymb}
 
 % --- PDFTeX Conditional ---
 \RequirePackage{iftex}
