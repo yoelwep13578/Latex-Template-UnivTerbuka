@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/08/15 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/08/25 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -617,7 +617,7 @@
         }{
             \titlecontents{section}[0pt]
             {\addvspace{1.5ex plus 1pt}\bfseries}
-            {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thecontentslabel\quad \ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+            {\thecontentslabel\quad \ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
             {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
             {\hfill\contentspage}
         }
