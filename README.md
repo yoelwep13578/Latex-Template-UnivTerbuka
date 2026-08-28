@@ -27,7 +27,7 @@ Menulis dokumen akademis seperti makalah, artikel, laporan, atau tugas kuliah bi
   - Mengganti jenis nomor urutan (misalnya menjadi romawi besar I, II, III, IV, V),
   - Menyimpan setelan format tadi untuk _Heading_ 1 agar dapat digunakan kembali dengan format yang sama saat membuat bab baru.
 
-  Ini baru bab saja, belum _heading_ yang lain dan urusan pemformatan lanjutan untuk sisipan. Seandainya Anda membuat bab atau _heading_ haru, lalu kepencet tombol Enter atau melakukan kesalahan, maka penomorannya bisa hilang atau bahkan terlongkap.
+  Ini baru bab saja, belum _heading_ yang lain dan urusan pemformatan lanjutan untuk sisipan. Seandainya Anda membuat bab atau _heading_ baru, lalu kepencet tombol Enter atau melakukan kesalahan, maka penomorannya bisa hilang atau bahkan terlongkap.
 
 - Pada _Word Processor_ Ber-_Template_, Anda biasanya memakai _file_ `.docx`, `.doc`, atau `.odt` yang sudah jadi agar bisa sedikit membantu. _Mengapa hanya dibilang sedikit membantu?_ Alasannya karena _template_ tersebut biasanya hanya membantu mempersiapkan halaman sampul, nomor halaman, penataan posisi bagian (kata pengantar sampai akhir), serta format & penomoran _heading_.
 
@@ -37,7 +37,7 @@ Menulis dokumen akademis seperti makalah, artikel, laporan, atau tugas kuliah bi
 
 ### _Perbandingan dengan LaTeX_
 
-_Jadi bagaimana dengan LaTeX?_ Menulis dokumen dengan LaTeX sebenarnya sangat mudah karena Anda hanya mengetik teks biasa dan kode LaTeX yang mudah dipelajari melalui panduan wiki dari repositori ini. Namun, jika Anda memulai dari dokumen LaTeX yang polosan, Anda harus menghabiskan waktu untuk menulis kode pengaturan margin, mencari paket _font_ yang cocok, hingga mendesain halaman sampul dari awal.
+_Jadi bagaimana dengan LaTeX?_ LaTeX memang punya kurva belajar tersendiri di awal, tetapi begitu Anda terbiasa, menulis dokumen menjadi relatif mudah karena Anda hanya perlu mengetik teks biasa dan kode LaTeX yang dasar-dasarnya bisa dipelajari lewat panduan wiki dari repositori ini. Namun, jika Anda memulai dari dokumen LaTeX yang polosan, Anda tetap harus menghabiskan waktu untuk menulis kode pengaturan margin, mencari paket _font_ yang cocok, hingga mendesain halaman sampul dari awal.
 
 _Template_ ini hadir untuk menyelesaikan masalah tersebut. Anda tetap menulis dengan kode LaTeX standar yang bersih, sementara seluruh konfigurasi tampilan dan format yang puyeng itu sudah diselesaikan.
 
@@ -88,7 +88,7 @@ Anda tidak akan membuang waktu memblok teks untuk mengganti ukuran _font_ atau m
 
 ### _Comment untuk Corat-coret dan Draf Rahasia_
 
-Saat menulis atau merevisi tugas, muncul rasa bimbang seperti _"Kalimat ini mau dibuang sayang, tapi kalau dipertahankan rasanya kurang pas"_. Di LaTeX, Anda cukup menyembunyikan teks tersebut menggunakan tanda persen `%`. Teks yang diberi tanda ini (disebut sebagai _comment_) tidak akan muncul di hasil akhir PDF, tetapi tetap tersimpan di dalam _file_ ketikan Anda. ini sangat berguna untuk:
+Saat menulis atau merevisi tugas, muncul rasa bimbang seperti _"Kalimat ini mau dibuang sayang, tapi kalau dipertahankan rasanya kurang pas"_. Di LaTeX, Anda cukup menyembunyikan teks tersebut menggunakan tanda persen `%`. Teks yang diberi tanda ini (disebut sebagai _comment_) tidak akan muncul di hasil akhir PDF, tetapi tetap tersimpan di dalam _file_ ketikan Anda. Ini sangat berguna untuk:
 
 #### Menyimpan Cadangan Tulisan
 
@@ -120,7 +120,7 @@ Penulisan rumus serumit apa pun dapat diketik langsung menggunakan teks kode LaT
 
 ### _Kompatibilitas dengan PDF LaTeX_
 
-`pdflatex` terkenal dengan kecepatan kompilasinya. _Template_ ini sekarang dapat digunakan untuk mesin `pdflatex` untuk kompilasi yang lebih cepat dan lebih sederhana.
+`pdflatex` terkenal dengan kecepatan kompilasinya. Sebelumnya, _template_ ini hanya kompatibel dengan LuaLaTeX; kini _template_ ini juga dapat digunakan dengan mesin `pdflatex` untuk kompilasi yang lebih cepat dan lebih sederhana.
 
 ### _Pengaturan Dasar yang Disederhanakan_
 
@@ -132,7 +132,7 @@ Seluruh pengaturan dokumen telah disederhanakan. Anda cukup menentukan setelan k
 
 _Template_ juga harus bisa disesuaikan dengan kebutuhan, aturan, dan selera Anda, bukan? Anda diberi kebebasan untuk:
 
-- Mengganti _font/typeface_ utama yang berpasangan dengan _font/typeface_ matematika
+- Mengganti _font/typeface_ utama yang berpasangan dengan _font/typeface_ matematika;
 - Mengganti _font/typeface_ untuk Sans Serif, yang umum digunakan agar suatu teks terlepas/tidak melebur dengan bacaan narasi;
 - Mengganti _font/typeface_ untuk _Monospace_, yang paling sering dipakai untuk teks kode dan istilah dalam sistem komputer;
 - Membuat _URL/link_ menggunakan huruf biasa;
