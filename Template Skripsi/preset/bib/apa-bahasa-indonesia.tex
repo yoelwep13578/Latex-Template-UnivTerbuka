@@ -39,7 +39,8 @@
 \renewcommand{\BVOLS}{Jilid}%        % jilid
 \renewcommand{\BNUM}{No.\hbox{}}%         % nomor
 \renewcommand{\BNUMS}{No.\hbox{}}%       % nomor
-\renewcommand{\BEd}{ed.\hbox{}}%          % edisi
+%\renewcommand{\BEd}{ed.\hbox{}}%          % edisi
+\renewcommand{\BEd}{\unskip}%          % edisi
 \renewcommand{\BCHAP}{bab}%        % bab
 \renewcommand{\BCHAPS}{bab}%       % bab
 \renewcommand{\BPG}{h.\hbox{}}%           % halaman
@@ -88,7 +89,27 @@
 \renewcommand{\BBYY}{,}%
 \renewcommand{\BBC}{;}%
 \fi
-%%
+%% Ordinal formatting
+\makeatletter
+\renewcommand{\PrintOrdinal}[1]{%
+    \edef\APACtemp{#1}%
+    \if\relax\detokenize\expandafter{\APACtemp}\relax
+    ??%
+    \else
+    \afterassignment\APACtest@num
+    \count@=0\APACtemp\relax
+    \fi
+}
+\def\APACtest@num#1\relax{%
+    \ifx\relax#1\relax
+    % number
+    edisi ke-\the\count@
+    \else
+    % word
+    edisi #1%
+    \fi
+}
+\makeatother
 %% Date formatting
 \renewcommand{\APACmonth}[1]{\ifcase #1\or Januari\or Februari\or Maret\or
     April\or Mei\or Juni\or Juli\or Agustus\or September\or Oktober\or
