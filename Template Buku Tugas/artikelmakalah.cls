@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/08/25 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/09/01 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -61,10 +61,15 @@
 %     Default: -
 \DeclareStringOption[false]{seccompact}[true]
 
-% --- Pilihan Bahasa untuk APA ---
+% --- Pilihan Gaya Seligkung Referensi ---
+%     Pilihan: apa, ieee
+%     Default: apa
+\DeclareStringOption[apa]{bibstyle}[apa]
+
+% --- Pilihan Bahasa Bibliografi & Sitasi ---
 %     Pilihan: indonesia, campuran
 %     Default: -
-\DeclareStringOption[none]{apa}[none]
+\DeclareStringOption[none]{biblang}[none]
 
 % --- Indentasi ---
 %     Default: 1.25cm
@@ -819,18 +824,10 @@
 	% --- Tanda Titik Otomatis untuk \paragraph dan \subparagraph ---
 	\newcommand{\smartperiod}[1]{#1\@addpunct{.}}
 	
-	%======================%
-	%     Conditionals     %
-	%======================%
-	
-	% --- Pemilihan Bahasa APA ---
-	\ifdefstring{\template@apa}{indonesia}{
-	    \input{preset/bib/apa-bahasa-indonesia.tex}
-	}{}
-	\ifdefstring{\template@apa}{campuran}{
-	    \input{preset/bib/apa-bahasa-campuran.tex}
-	}{}
-	
+	%=====================%
+	%     Microtyping     %
+	%=====================%
+    
 	% --- Penggunaan microtype ---
 	\ifdefstring{\template@microtype}{true}{
 	    \RequirePackage[babel]{microtype}
@@ -901,10 +898,38 @@
         \ltx@ifpackageloaded{apacite}{%
             \urlstyle{APACrm}%
         }{%
-            \urlstyle{rm}%
+            \urlstyle{same}%
         }%
     }%
 }{}
+
+% --- Pemilihan Gaya Referensi dan Bahasanya ---
+\ifdefstring{\template@bibstyle}{apa}{%
+    \RequirePackage[natbibapa]{apacite}
+    \bibliographystyle{apacite}
+    
+    \ifdefstring{\template@biblang}{campuran}{%
+        \input{preset/bib/apa-bahasa-campuran.tex}
+    }{%
+        \ifdefstring{\template@biblang}{indonesia}{%
+            \input{preset/bib/apa-bahasa-indonesia.tex}
+        }{}%
+    }%
+}{}%
+
+\ifdefstring{\template@bibstyle}{ieee}{%
+    \RequirePackage[numbers, sort&compress]{natbib}
+    
+    \ifdefstring{\template@biblang}{campuran}{%
+        \bibliographystyle{preset/bib/IEEEtranN-enid}
+    }{%
+        \ifdefstring{\template@biblang}{indonesia}{%
+            \bibliographystyle{preset/bib/IEEEtranN-id}
+        }{%
+            \bibliographystyle{IEEEtranN}
+        }%
+    }%
+}{}%
 
 %=========================%
 %     Daftar Lampiran     %
