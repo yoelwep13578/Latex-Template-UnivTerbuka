@@ -22,8 +22,8 @@
 %% Other labels
 \renewcommand{\BIP}{dalam proses terbit}%            % ``in press''
 \renewcommand{\BIn}{Dalam}%                  % for ``In '' editor...
-\renewcommand{\BOthers}[1]{\textit{et al}.\hbox{}}% ``et al''
-\renewcommand{\BOthersPeriod}[1]{\textit{et al}.\hbox{}}% ``et al'' dengan titik
+\renewcommand{\BOthers}[1]{\textit{et~al}.\hbox{}}% ``et al''
+\renewcommand{\BOthersPeriod}[1]{\textit{et~al}.\hbox{}}% ``et al'' dengan titik
 \renewcommand{\Bby}{oleh}%                  % for ``by '' editor... (in reprints)
 \renewcommand{\BCHAIR}{Ketua}%            % ketua simposium
 \renewcommand{\BCHAIRS}{Para Ketua}%          % para ketua
@@ -31,6 +31,8 @@
 \renewcommand{\BVOLS}{Jilid}%        % jilid
 \renewcommand{\BCHAP}{bab}%        % bab
 \renewcommand{\BCHAPS}{bab}%       % bab
+%\renewcommand{\BEd}{ed.\hbox{}}%          % edisi
+\renewcommand{\BEd}{\unskip}%          % edisi
 
 %% Default PhD thesis type name.
 \renewcommand{\BPhD}{Disertasi doktor}
@@ -51,6 +53,27 @@
 \renewcommand{\BMsgPostedTo}{Pesan dikirim ke\ }%     Pesan; perhatikan spasi.
 \renewcommand{\BBAB}{dan}% between authors in in-text citation
 %%
+%% Ordinal formatting
+\makeatletter
+\renewcommand{\PrintOrdinal}[1]{%
+    \edef\APACtemp{#1}%
+    \if\relax\detokenize\expandafter{\APACtemp}\relax
+    ??%
+    \else
+    \afterassignment\APACtest@num
+    \count@=0\APACtemp\relax
+    \fi
+}
+\def\APACtest@num#1\relax{%
+    \ifx\relax#1\relax
+    % number
+    ed.~ke-\the\count@
+    \else
+    % word
+    ed. #1%
+    \fi
+}
+\makeatother
 %% Date formatting
 \renewcommand{\APACmonth}[1]{\ifcase #1\or Januari\or Februari\or Maret\or
     April\or Mei\or Juni\or Juli\or Agustus\or September\or Oktober\or
