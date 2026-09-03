@@ -9,7 +9,6 @@
 *.bcf
 *.blg
 *.brf
-*.bst
 *.dvi
 *.fdb_latexmk
 *.fls
