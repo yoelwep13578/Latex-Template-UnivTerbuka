@@ -218,6 +218,10 @@ Setiap _template_ memiliki struktur dasar seperti ini:
     │   └── ... (kumpulan bagian atau bab yang sudah dipecah)
     │
     ├── artikelmakalah.cls
+    ├── indonesian.lbx
+    ├── indonesian-apa.lbx
+    ├── indonesian-apa6.lbx
+    ├── indonesian-ieee.lbx
     ├── main.tex
     ├── glossary.tex
     ├── reference.bib
@@ -240,6 +244,72 @@ Setiap _template_ memiliki struktur dasar seperti ini:
 - _File_ `reference.bib` digunakan untuk menyimpan Daftar Pustaka, ditulis menggunakan format BibTeX.
 
 - _File_ `variable.tex` digunakan untuk menyimpan data penting seperti nama Anda, nomor induk, nama dosen/tutor, program studi, fakultas, kampus, daerah, dan sebagainya. _File_ ini dimanfaatkan oleh template LaTeX untuk menyebarkan isi data yang Anda tulis ke dalam dokumen.
+
+- _File_ `indonesian.lbx` adalah lokalisasi BibLaTeX Bahasa Indonesia terpusat sebagai dasar istilah gaya selingkung referensi.
+
+- _File_ `indonesian-apa.lbx` adalah lokalisasi BibLaTeX Bahasa Indonesia untuk APA 7.
+
+- _File_ `indonesian-apa6.lbx` adalah lokalisasi BibLaTeX Bahasa Indonesia untuk APA 6.
+
+- _File_ `indonesian-ieee.lbx` adalah lokalisasi BibLaTeX Bahasa Indonesia untuk IEEE/IEEEtran.
+
+### _File Lokalisasi/Penerjemahan Bahasa Indonesia untuk APA, APA 7, dan IEEEtranN_
+
+_Template_ ini menyediakan kumpulan _file_ bahasa Indonesia untuk APA 6 `apacite`, APA 6 `biblatex`, APA 7 `biblatex`, IEEEtranN `natbib`, dan IEEE `natbib`. Pada penerjemahan ini, istilah `et al.` diganti menjadi `dkk.`, editor diubah menjadi penyunting (disingkat `penyunt.`), serta bilangan ordinal edisi 1st, 2nd, 3rd, 4th diubah menjadi ke-1, ke-2, ke-3, ke-4.
+
+Jika Anda membutuhkan _file_ tersebut namun tidak dengan _template_-nya (misal ingin diadopsi pada dokumen pribadi), Anda bisa mengambilnya dari salah satu jenis _template_ ini.
+
+- **APA 6 `apacite`.** _File_-nya bernama `apa-bahasa-indonesia.tex`, diterjemah dengan metode timpa teks (_override_). <br>
+  Tersimpan di dalam `Template XXXXXXXX / preset / bib / apa-bahasa-indonesia.tex`
+
+  <details>
+  <summary>Panduan pemakaian lokalisasi <code>.tex</code> untuk <code>apacite</code></summary>
+  
+  Gunakan `\input` dan arahkan ke _file_ lokalisasi yang Anda simpan. Pasang perintah tersebut di _preamble_ Anda.
+  
+  ```latex
+  \input{lokasi/menuju/apa-bahasa-indonesia.tex}
+  ```
+  </details>
+
+- **IEEEtranN `natbib`.** _File_-nya bernama `IEEEtranN-id.bst`. <br>
+  Tersimpan di dalam `Template XXXXXXXX / preset / bib / IEEEtranN-id.bst`
+
+  <details>
+  <summary>Panduan pemakaian lokalisasi untuk <code>natbib</code></summary>
+  
+  Gunakan `\bibliographystyle` dan arahkan ke _file_ lokalisasi yang Anda simpan. Pasang perintah tersebut di _preamble_ atau di dalam perintah _environment_ `document` Anda.
+  
+  ```latex
+  \bibliographystyle{lokasi/menuju/IEEEtranN-id}
+  ```
+  </details>
+
+- **APA 6 `biblatex`.** _File_-nya bernama `indonesian-apa6.lbx`. <br>
+  Tersimpan di dalam `Template XXXXXXXX / preset / bib / indonesian-apa6.lbx`
+
+  <details>
+  <summary>Panduan pemakaian lokalisasi untuk <code>biblatex</code></summary>
+  
+  Tempatkan di dalam _folder_/lokasi yang sama dengan _file_ `.tex` utama (`main.tex`).
+  </details>
+
+- **APA 7 `biblatex`.** _File_-nya bernama `indonesian-apa.lbx`. <br>
+  Tersimpan di dalam `Template XXXXXXXX / preset / bib / indonesian-apa.lbx`
+
+  <details>
+  <summary>Panduan pemakaian lokalisasi untuk <code>biblatex</code></summary>
+  
+  Tempatkan di dalam _folder_/lokasi yang sama dengan _file_ `.tex` utama (`main.tex`).
+  </details>
+
+- **IEEE `biblatex`.** _File_-nya bernama `indonesian-ieee.lbx`. <br>
+  Tersimpan di dalam `Template XXXXXXXX / preset / bib / indonesian-ieee.lbx`
+  <details>
+  <summary>Panduan pemakaian lokalisasi untuk <code>biblatex</code></summary>
+  
+  Tempatkan di dalam _folder_/lokasi yang sama dengan _file_ `.tex` utama (`main.tex`).
+  </details>
 
 
 
