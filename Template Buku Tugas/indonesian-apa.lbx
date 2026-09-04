@@ -1,0 +1,249 @@
+\ProvidesFile{indonesian-apa.lbx}[2025/08/27\space v9.20\space APA biblatex localisation]
+\InheritBibliographyExtras{indonesian}
+
+\NewBibliographyString{publication}
+\NewBibliographyString{jourarticle}
+\NewBibliographyString{revisededition}
+\NewBibliographyString{chair}
+\NewBibliographyString{chairs}
+\NewBibliographyString{typevolume}
+\NewBibliographyString{typevolumes}
+\NewBibliographyString{typeseries}
+\NewBibliographyString{typeseriess}
+\NewBibliographyString{typevolseries}
+\NewBibliographyString{typevolseriess}
+\NewBibliographyString{on}
+\NewBibliographyString{retrieved}
+\NewBibliographyString{available}
+\NewBibliographyString{from}
+\NewBibliographyString{archivedat}
+\NewBibliographyString{origyear}
+\NewBibliographyString{reviewof}
+\NewBibliographyString{with}
+\NewBibliographyString{supplement}
+\NewBibliographyString{commenton}
+\NewBibliographyString{manunpub}
+\NewBibliographyString{maninprep}
+\NewBibliographyString{mansub}
+\NewBibliographyString{producer}
+\NewBibliographyString{producers}
+\NewBibliographyString{execproducer}
+\NewBibliographyString{execproducers}
+\NewBibliographyString{execdirector}
+\NewBibliographyString{execdirectors}
+\NewBibliographyString{director}
+\NewBibliographyString{directors}
+\NewBibliographyString{writer}
+\NewBibliographyString{writers}
+\NewBibliographyString{host}
+\NewBibliographyString{hosts}
+\NewBibliographyString{guestexpert}
+\NewBibliographyString{guestexperts}
+\NewBibliographyString{narrator}
+\NewBibliographyString{narrators}
+\NewBibliographyString{film}
+\NewBibliographyString{tvseries}
+\NewBibliographyString{tvepisode}
+\NewBibliographyString{video}
+\NewBibliographyString{song}
+\NewBibliographyString{album}
+\NewBibliographyString{podcast}
+\NewBibliographyString{podcastepisode}
+\NewBibliographyString{interview}
+\NewBibliographyString{speech}
+\NewBibliographyString{lithograph}
+\NewBibliographyString{map}
+\NewBibliographyString{lecturenotes}
+\NewBibliographyString{powerpoint}
+\NewBibliographyString{photograph}
+\NewBibliographyString{photographs}
+\NewBibliographyString{present}
+\NewBibliographyString{painting}
+\NewBibliographyString{article}
+\NewBibliographyString{unitednations}
+\NewBibliographyString{charter}
+\NewBibliographyString{ofthe}
+\NewBibliographyString{tothe}
+
+\DeclareBibliographyStrings{%
+  inherit          = {indonesian},
+  jourarticle      = {{artikel}{artikel}},
+  tothe            = {{ke}{ke}},
+  ofthe            = {{dari}{dari}},
+  unitednations    = {{Perserikatan\space Bangsa-Bangsa}{PBB}},
+  charter          = {{piagam}{piagam}},
+  article          = {{artikel}{art\adddot}},
+  painting         = {{lukisan}{lukisan}},
+  present          = {{saat\space ini}{saat\space ini}},
+  song             = {{lagu}{lagu}},
+  album            = {{album}{album}},
+  map              = {{peta}{peta}},
+  photograph       = {{foto}{foto}},
+  photographs      = {{kumpulan\space foto}{kumpulan\space foto}},
+  powerpoint       = {{salindia\space Powerpoint}{salindia\space Powerpoint}},
+  lecturenotes     = {{catatan\space kuliah}{catatan\space kuliah}},
+  podcast          = {{siniar\space audio}{siniar\space audio}},
+  podcastepisode   = {{episode\space siniar\space audio}{episode\space siniar\space audio}},
+  interview        = {{wawancara}{wawancara}},
+  speech           = {{rekaman\space audio\space pidato}{rekaman\space audio\space pidato}},
+  lithograph       = {{lintograf}{lintograf}},
+  video            = {{video}{video}},
+  film             = {{film}{film}},
+  tvseries         = {{serial\space TV}{serial\space TV}},
+  tvepisode        = {{episode\space serial\space TV}{episode\space serial\space TV}},
+  narrator         = {{narator}{narator}},
+  narrators        = {{narator}{narator}},
+  producer         = {{produser}{produser}},
+  producers        = {{produser}{produser}},
+  execproducer     = {{Produser\space Eksekutif}{Prod\adddot\space Eksekutif}},
+  execproducers    = {{Produser\space Eksekutif}{Prod\adddot\space Eksekutif}},
+  execdirector     = {{Sutradara\space Eksekutif}{Sutr\adddot\space Eksekutif}},
+  execdirectors    = {{Sutradara\space Eksekutif}{Sutr\adddot\space Eksekutif}},
+  director         = {{sutradara}{sutr\adddot}},
+  directors        = {{sutradara}{sutr\adddot}},
+  writer           = {{penulis}{penulis}},
+  writers          = {{penulis}{penulis}},
+  host             = {{pembawa\space acara}{pembawa\space acara}},
+  hosts            = {{pembawa\space acara}{pembawa\space acara}},
+  guestexpert      = {{Pakar\space Tamu}{Pakar\space Tamu}},
+  guestexperts     = {{Pakar\space Tamu}{Pakar\space Tamu}},
+  with             = {{bersama}{bersama}},
+  manunpub         = {{manuskrip\space tidak\space diterbitkan}{manuskrip\space tidak\space diterbitkan}},
+  maninprep        = {{manuskrip\space dalam\space persiapan}{manuskrip\space dalam\space persiapan}},
+  mansub           = {{manuskrip\space diajukan\space untuk\space publikasi}{manuskrip\space diajukan\space untuk\space publikasi}},
+  supplement       = {{suplemen}{supl\adddot}},
+  part             = {{bagian}{bag\adddot}},
+  revisededition   = {{Edisi\space Revisi}{edisi\space rev\adddot}},
+  commenton        = {{komentar\space pada}{komentar\space pada}},
+  page             = {{Halaman}{{}hlm\adddot}},
+  pages            = {{Halaman}{{}hlm\adddot}},
+  on               = {{pada}{pada}},
+  retrieved        = {{diakses}{diakses}},
+  available        = {{tersedia}{tersedia}},
+  from             = {{dari}{dari}},
+  archivedat       = {{diarsipkan\space di}{diarsipkan\space di}},
+  reprintas        = {{dicetak\space ulang\space sebagai}{dicetak\space ulang\space sebagai}},
+  reprintfrom      = {{dicetak\space ulang\space dari}{dicetak\space ulang\space dari}},
+  reviewof         = {{tinjauan\space atas}{tinjauan\space atas}},
+  paragraph        = {{paragraf}{par\adddot}},
+  paragraphs       = {{paragraf}{par\adddot}},
+  mathesis         = {{Tesis\addabbrvspace Magister}{Tesis\addabbrvspace Magister}},
+  phdthesis        = {{Disertasi\addabbrvspace Doktoral}{Disertasi\addabbrvspace Doktoral}},
+  origyear         = {{karya\space asli\space diterbitkan}{karya\space asli\space diterbitkan}},
+  chair            = {{Ketua}{Ketua}},
+  chairs           = {{Ketua}{Ketua}},
+  typevolume       = {{Penyunting\space Jilid}{Penyunt\adddotspace Jilid}},
+  typevolumes      = {{Penyunting\space Jilid}{Penyunt\adddotspace Jilid}},
+  typeseries       = {{Penyunting\space Seri}{Penyunt\adddotspace Seri}},
+  typeseriess      = {{Penyunting\space Seri}{Penyunt\adddotspace Seri}},
+  typevolseries    = {{Penyunting\space Seri\space dan\space Jilid}{Penyunt\adddotspace Seri\space\& Jilid}},
+  typevolseriess   = {{Penyunting\space Seri\space dan\space Jilid}{Penyunt\adddotspace Seri\space\& Jilid}},
+  annodomini       = {{M}{M}},
+  beforechrist     = {{SM}{SM}},
+  commonera        = {{EU}{EU}},
+  beforecommonera  = {{SEU}{SEU}},
+  publication      = {{Publikasi}{Publikasi}}
+}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Drop end* when they are the same as *
+% You must use \print*date to get here otherwise it will be ignored
+
+\DeclareBibliographyExtras{%
+  \def\urldatecomma{\addcomma\addspace}%
+  \protected\def\mkbibdateapalong#1#2#3#4{%
+    % As per 10.1, Articles only have year
+    \ifboolexpr{ (test {\ifentrytype{article}}
+                  or (test {\ifentrytype{inbook}} and not test {\ifnameundef{editor}}))
+                 and not test {\iffieldequalstr{entrysubtype}{nonacademic}} }
+      {\clearfield{labelmonth}%
+       \clearfield{labelday}}
+      {}%
+    \iffieldundef{#1}% YEAR
+      {}%
+      {\iffieldbibstring{#1}{\bibncpstring{\thefield{#1}}}{\thefield{#1}}}%
+    \iffieldundef{#2}% YEARDIVISION
+      {}%
+      {\iffieldundef{#1}%
+        {}%
+        {\addcomma\addspace}%
+       \iffieldbibstring{#2}{\bibcplstring{\thefield{#2}}}{\thefield{#2}}}%
+    \iffieldundef{#3}% MONTH
+      {}%
+      {\iffieldundef{#1}%
+        {}%
+        {\addcomma\addspace}%
+       \mkbibmonth{\thefield{#3}}}%
+    \iffieldundef{#4}% DAY
+      {}%
+      {\iffieldundef{#3}%
+        {}%
+        {\addspace}%
+       \stripzeros{\thefield{#4}}}}%
+  \protected\def\mkbibdateapalongextra#1#2#3#4{%
+    % As per 10.1, Articles only have year
+    \ifboolexpr{ (test {\ifentrytype{article}}
+                  or (test {\ifentrytype{inbook}} and not test {\ifnameundef{editor}}))
+                 and not test {\iffieldequalstr{entrysubtype}{nonacademic}} }
+      {\clearfield{labelmonth}%
+       \clearfield{labelday}}
+      {}%
+    \iffieldundef{#1}% YEAR
+      {}%
+      {\iffieldbibstring{#1}{\bibncpstring{\thefield{#1}}}{\thefield{#1}}\printfield{extradate}}%
+    \iffieldundef{#2}% YEARDIVISION
+      {}%
+      {\iffieldundef{#1}%
+        {}%
+        {\addcomma\addspace}%
+       \iffieldbibstring{#2}{\bibcplstring{\thefield{#2}}}{\thefield{#2}}}%
+    \iffieldundef{#3}% MONTH
+      {}%
+      {\iffieldundef{#1}%
+        {}%
+        {\addcomma\addspace}%
+       \mkbibmonth{\thefield{#3}}}%
+    \iffieldundef{#4}% DAY
+      {}%
+      {\iffieldundef{#3}%
+        {}%
+        {\addspace}%
+       \stripzeros{\thefield{#4}}}}%
+  \protected\def\mkbibdateapalongmdy#1#2#3#4{%
+    % As per 10.1, Articles only have year
+    \ifboolexpr{ (test {\ifentrytype{article}}
+                  or (test {\ifentrytype{inbook}} and not test {\ifnameundef{editor}}))
+                 and not test {\iffieldequalstr{entrysubtype}{nonacademic}} }
+      {\clearfield{labelmonth}%
+       \clearfield{labelday}}
+      {}%
+    \iffieldundef{#2}% YEARDIVISION
+      {}%
+      {\iffieldundef{#1}%
+        {}%
+        {\addcomma\addspace}%
+       \iffieldbibstring{#2}{\bibcplstring{\thefield{#2}}}{\thefield{#2}}}%
+    \iffieldundef{#3}% MONTH
+      {}%
+      {\mkbibmonth{\thefield{#3}}}%
+    \iffieldundef{#4}% DAY
+      {}%
+      {\addspace}%
+       \stripzeros{\thefield{#4}}%
+    \iffieldundef{#1}% YEAR
+      {}%
+      {\iffieldundef{#4}%
+        {\iffieldundef{#3}%
+          {}%
+          {\addspace}}%
+        {\addcomma\addspace}%
+       \iffieldbibstring{#1}{\bibncpstring{\thefield{#1}}}{\thefield{#1}}}}}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\endinput

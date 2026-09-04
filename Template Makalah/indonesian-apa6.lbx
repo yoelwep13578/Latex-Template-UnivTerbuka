@@ -1,0 +1,144 @@
+\ProvidesFile{indonesian-apa6.lbx}[2020/08/28\space v8.5\space APA 6th ed. biblatex localisation]
+\InheritBibliographyExtras{indonesian}
+
+% (APA 6.22) The example abbreviations
+
+\NewBibliographyString{revisededition}
+\NewBibliographyString{typechair}
+\NewBibliographyString{typechairs}
+\NewBibliographyString{typevolume}
+\NewBibliographyString{typevolumes}
+\NewBibliographyString{typeseries}
+\NewBibliographyString{typeseriess}
+\NewBibliographyString{typevolseries}
+\NewBibliographyString{typevolseriess}
+\NewBibliographyString{on}
+\NewBibliographyString{retrieved}
+\NewBibliographyString{available}
+\NewBibliographyString{from}
+\NewBibliographyString{archivedat}
+\NewBibliographyString{origyear}
+\NewBibliographyString{reviewof}
+\NewBibliographyString{producer}
+\NewBibliographyString{execproducer}
+\NewBibliographyString{director}
+\NewBibliographyString{writer}
+\NewBibliographyString{with}
+
+\DeclareBibliographyStrings{%
+  inherit          = {indonesian},
+  revisededition   = {{Edisi\space Revisi}{edisi\space rev\adddot}},
+  page             = {{Halaman}{{}hlm\adddot}},
+  pages            = {{Halaman}{{}hlm\adddot}},
+  on               = {{pada}{pada}},
+  retrieved        = {{diakses}{diakses}},
+  available        = {{tersedia}{tersedia}},
+  from             = {{dari}{dari}},
+  archivedat       = {{diarsipkan\space di}{diarsipkan\space di}},
+  with             = {{bersama}{bersama}},
+  reprintas        = {{dicetak\space ulang\space sebagai}{dicetak\space ulang\space sebagai}},
+  reprintfrom      = {{dicetak\space ulang\space dari}{dicetak\space ulang\space dari}},
+  reviewof         = {{tinjauan\space atas}{tinjauan\space atas}},
+  paragraph        = {{\P}{\P}},
+  paragraphs       = {{\P\P}{\P\P}},
+  producer         = {{produser}{produser}},
+  execproducer     = {{produser eksekutif}{produser eksekutif}},
+  director         = {{sutradara}{sutradara}},
+  writer           = {{penulis}{penulis}},
+  mathesis         = {{Tesis\addabbrvspace Magister}{Tesis\addabbrvspace Magister}},
+  phdthesis        = {{Disertasi\addabbrvspace Doktoral}{Disertasi\addabbrvspace Doktoral}},
+  origyear         = {{karya\space asli\space diterbitkan}{karya\space asli\space diterbitkan}},
+  typechair        = {{Ketua}{Ketua}},
+  typechairs       = {{Ketua}{Ketua}},
+  typevolume       = {{Penyunting\space Jilid}{Penyunt\adddotspace Jilid}},
+  typevolumes      = {{Penyunting\space Jilid}{Penyunt\adddotspace Jilid}},
+  typeseries       = {{Penyunting\space Seri}{Penyunt\adddotspace Seri}},
+  typeseriess      = {{Penyunting\space Seri}{Penyunt\adddotspace Seri}},
+  typevolseries    = {{Penyunting\space Seri\space dan\space Jilid}{Penyunt\adddotspace Seri\space\& Jilid}},
+  typevolseriess   = {{Penyunting\space Seri\space dan\space Jilid}{Penyunt\adddotspace Seri\space\& Jilid}},
+  annodomini       = {{M}{M}},
+  beforechrist     = {{SM}{SM}},
+}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (APA 7.10 Example 68) Drop end* when they are the same as *
+
+% You must use \print*date to get here otherwise it will be ignored
+
+\DeclareBibliographyExtras{%
+  \def\urldatecomma{\addcomma\addspace}%
+  \protected\def\mkbibdateapalong#1#2#3{%
+    % As per 6.28, Articles only have year
+    \ifboolexpr{ test {\ifentrytype{article}}
+                 and not test {\iffieldequalstr{entrysubtype}{nonacademic}} }
+      {\clearfield{labelmonth}%
+       \clearfield{labelday}}
+      {}%
+    \iffieldundef{#1}%
+      {}%
+      {\iffieldbibstring{#1}{\biblcstring{\thefield{#1}}}{\thefield{#1}}}%
+    \iffieldundef{#2}%
+      {}%
+      {\iffieldundef{#1}%
+        {}%
+        {\addcomma\addspace}%
+       \mkbibmonth{\thefield{#2}}}%
+    \iffieldundef{#3}%
+      {}%
+      {\iffieldundef{#2}%
+        {}%
+        {\addspace}%
+       \stripzeros{\thefield{#3}}}}%
+  \protected\def\mkbibdateapalongextra#1#2#3{%
+    % As per 6.28, Articles only have year
+    \ifboolexpr{ test {\ifentrytype{article}}
+                 and not test {\iffieldequalstr{entrysubtype}{nonacademic}} }
+      {\clearfield{labelmonth}%
+       \clearfield{labelday}}
+      {}%
+    \iffieldundef{#1}%
+      {}%
+      {\iffieldbibstring{#1}{\biblcstring{\thefield{#1}}}{\thefield{#1}}\printfield{extradate}}%
+    \iffieldundef{#2}%
+      {}%
+      {\iffieldundef{#1}%
+        {}%
+        {\addcomma\addspace}%
+       \mkbibmonth{\thefield{#2}}}%
+    \iffieldundef{#3}%
+      {}%
+      {\iffieldundef{#2}%
+        {}%
+        {\addspace}%
+       \stripzeros{\thefield{#3}}}}%
+  \protected\def\mkbibdateapalongmdy#1#2#3{%
+    % As per 6.28, Articles only have year
+    \ifboolexpr{ test {\ifentrytype{article}}
+                 and not test {\iffieldequalstr{entrysubtype}{nonacademic}} }
+      {\clearfield{labelmonth}%
+       \clearfield{labelday}}
+      {}%
+    \iffieldundef{#2}%
+      {}%
+      {\mkbibmonth{\thefield{#2}}}%
+    \iffieldundef{#3}%
+      {}%
+      {\addspace}%
+       \stripzeros{\thefield{#3}}%
+    \iffieldundef{#1}%
+      {}%
+      {\ifthenelse{\iffieldundef{#3}}%
+        {\ifthenelse{\iffieldundef{#2}}%
+          {}%
+          {\addspace}}%
+        {\addcomma\addspace}%
+       \iffieldbibstring{#1}{\biblcstring{\thefield{#1}}}{\thefield{#1}}}}}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\endinput

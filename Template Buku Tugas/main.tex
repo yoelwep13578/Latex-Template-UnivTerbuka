@@ -44,7 +44,8 @@
 %
 %     5. sansstructure
 %     Judul heading (bab sampai subparagraf) dan keterangan sisipan
-%     menggunakan huruf berjenis Sans agar bisa terpisah dari narasi.
+%     menggunakan huruf berjenis Sans agar bisa terpisah dari
+%     narasi.
 %
 %     6. mainfont
 %     Pilihan untuk font utama dan font matematika
@@ -167,16 +168,27 @@
 %     Daftar Kode    : "2.2"   --> "Kode 2.2"
 %     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
 %
-%     16. bibstyle
+%     16. biblatex
+%     Memakai mesin pengolahan BibLaTeX dengan Biber untuk
+%     menggantikan BibTeX. BibLaTeX memiliki lokalisasi
+%     lewat babel sehingga setelan bahasa biblang tidak 
+%     diperlukan.
+%
+%     [NOTE] Pastikan Biber terinstal dan menggunakan
+%            bibliography tool Biber
+%
+%     17. bibstyle
 %     Gaya selingkung referensi dan pengutipan (sitasi)
 %
 %     Pilihan yang tersedia:
-%      - apa      --- American Psychological Association 6
+%      - apa6     --- American Psychological Association 6
+%      - apa      --- American Psychological Association 7
+%                     [NOTE] Hanya bisa dengan BibLaTeX
 %      - ieee     --- Institute of Electrical and 
 %                     Electronics Engineers
-%      - [kosong] --- Memakai pilihan apa (APA 6)
+%      - [kosong] --- Memakai pilihan apa6 (APA 6)
 %
-%     17. biblang
+%     18. biblang
 %     Bahasa dan penerjemahan istilah dari gaya selingkung
 %     referensi yang dipilih
 %

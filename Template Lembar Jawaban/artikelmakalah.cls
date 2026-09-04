@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/09/01 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/09/04 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -61,10 +61,14 @@
 %     Default: -
 \DeclareStringOption[false]{seccompact}[true]
 
+% --- Pilihan BibLaTeX atau BibTeX ---
+%     Default: -
+\DeclareStringOption[false]{biblatex}[true]
+
 % --- Pilihan Gaya Seligkung Referensi ---
-%     Pilihan: apa, ieee
-%     Default: apa
-\DeclareStringOption[apa]{bibstyle}[apa]
+%     Pilihan: apa6, apa, ieee
+%     Default: apa6
+\DeclareStringOption[apa6]{bibstyle}[apa6]
 
 % --- Pilihan Bahasa Bibliografi & Sitasi ---
 %     Pilihan: indonesia, campuran
@@ -887,7 +891,7 @@
 	\ifdefstring{\template@heading}{apalike}{
 	    \input{preset/titles/\template@titlefilename-lowlevel.tex}
 	}{}
-
+    
 %%=================================%
 }%     End of \AtBeginDocument     %
 %%=================================%
@@ -901,35 +905,63 @@
             \urlstyle{same}%
         }%
     }%
-}{}
+}{%
+    \AtBeginDocument{%
+        \urlstyle{tt}
+        \def\urlfont{\ttfamily}
+    }%
+}
 
 % --- Pemilihan Gaya Referensi dan Bahasanya ---
-\ifdefstring{\template@bibstyle}{apa}{%
-    \RequirePackage[natbibapa]{apacite}
-    \bibliographystyle{apacite}
-    
-    \ifdefstring{\template@biblang}{campuran}{%
-        \input{preset/bib/apa-bahasa-campuran.tex}
+\ifdefstring{\template@biblatex}{true}{%
+    % --- BibLaTeX ---
+    \ifdefstring{\template@bibstyle}{apa}{%
+        \RequirePackage[backend=biber, style=apa, natbib=true]{biblatex}
+        %\DeclareLanguageMapping{indonesian}{indonesian-apa}
     }{%
-        \ifdefstring{\template@biblang}{indonesia}{%
-            \input{preset/bib/apa-bahasa-indonesia.tex}
-        }{}%
-    }%
-}{}%
-
-\ifdefstring{\template@bibstyle}{ieee}{%
-    \RequirePackage[numbers, sort&compress]{natbib}
-    
-    \ifdefstring{\template@biblang}{campuran}{%
-        \bibliographystyle{preset/bib/IEEEtranN-enid}
-    }{%
-        \ifdefstring{\template@biblang}{indonesia}{%
-            \bibliographystyle{preset/bib/IEEEtranN-id}
+        \ifdefstring{\template@bibstyle}{apa6}{%
+            \RequirePackage[backend=biber, style=apa6, natbib=true]{biblatex}
+            %\DeclareLanguageMapping{indonesian}{indonesian-apa6}
         }{%
-            \bibliographystyle{IEEEtranN}
+            \ifdefstring{\template@bibstyle}{ieee}{%
+                \RequirePackage[backend=biber, style=ieee, sorting=none, natbib=true]{biblatex}
+                \DeclareLanguageMapping{indonesian}{indonesian-ieee}
+            }{}%
         }%
     }%
-}{}%
+    \addbibresource{reference.bib}
+    \setcounter{biburlnumpenalty}{9000}
+    \setcounter{biburlucpenalty}{9000}
+    \setcounter{biburllcpenalty}{9000}
+}{%
+    % --- BibTeX NatBib ---
+    \ifboolexpr{ test {\ifdefstring{\template@bibstyle}{apa}} or test {\ifdefstring{\template@bibstyle}{apa6}} }{%
+        \RequirePackage[natbibapa]{apacite}
+        \bibliographystyle{apacite}
+        
+        \ifdefstring{\template@biblang}{campuran}{%
+            \input{preset/bib/apa-bahasa-campuran.tex}
+        }{%
+            \ifdefstring{\template@biblang}{indonesia}{%
+                \input{preset/bib/apa-bahasa-indonesia.tex}
+            }{}%
+        }%
+    }{}%
+    
+    \ifdefstring{\template@bibstyle}{ieee}{%
+        \RequirePackage[numbers, sort&compress]{natbib}
+        
+        \ifdefstring{\template@biblang}{campuran}{%
+            \bibliographystyle{preset/bib/IEEEtranN-enid}
+        }{%
+            \ifdefstring{\template@biblang}{indonesia}{%
+                \bibliographystyle{preset/bib/IEEEtranN-id}
+            }{%
+                \bibliographystyle{IEEEtranN}
+            }%
+        }%
+    }{}%
+}
 
 %=========================%
 %     Daftar Lampiran     %

@@ -1,0 +1,745 @@
+\ProvidesFile{indonesian.lbx}
+[\abx@lbxid]
+
+\DeclareRedundantLanguages{english,american}{english,american,british,
+canadian,australian,newzealand,USenglish,UKenglish}
+
+\DeclareBibliographyExtras{%
+  \renewrobustcmd*{\bibdatesep}{/}%
+  \protected\def\bibrangedash{%
+    \textendash\penalty\hyphenpenalty}% breakable dash
+  \def\finalandcomma{\addcomma}%
+  \def\finalandsemicolon{\addsemicolon}%
+  \protected\def\mkbibordinal#1{ke-#1}% ordinal Indonesian ke-
+  \protected\def\mkbibmascord#1{#1}%
+  \protected\def\mkbibfemord#1{#1}%
+  \protected\def\mkbibneutord#1{#1}%
+  \protected\def\mkbibdatelong#1#2#3{%
+    \iffieldundef{#2}
+      {}
+      {\mkbibmonth{\thefield{#2}}%
+       \iffieldundef{#3}
+         {\iffieldundef{#1}{}{\space}}
+         {\nobreakspace}}%
+    \iffieldundef{#3}
+      {}
+      {\stripzeros{\thefield{#3}}%
+       \iffieldundef{#1}{}{,\space}}%
+     \iffieldbibstring{#1}
+       {\bibstring{\thefield{#1}}}
+       {\dateeraprintpre{#1}\stripzeros{\thefield{#1}}}}%
+  \protected\def\mkbibdateshort#1#2#3{%
+    \iffieldundef{#2}
+      {}
+      {\mkmonthzeros{\thefield{#2}}%
+       \iffieldundef{#3}
+         {\iffieldundef{#1}{}{\bibdatesep}}
+         {/}}%
+    \iffieldundef{#3}
+      {}
+      {\mkdayzeros{\thefield{#3}}%
+       \iffieldundef{#1}{}{\bibdatesep}}%
+     \iffieldbibstring{#1}
+       {\bibstring{\thefield{#1}}}
+       {\dateeraprintpre{#1}\mkyearzeros{\thefield{#1}}}}%
+  \expandafter\protected\expandafter\def\csname mkbibtime24h\endcsname#1#2#3#4{%
+      \iffieldundef{#1}
+        {}
+        {\mktimezeros{\thefield{#1}}%
+         \iffieldundef{#2}{}{\bibtimesep}}%
+      \iffieldundef{#2}
+        {}
+        {\mktimezeros{\thefield{#2}}%
+         \iffieldundef{#3}{}{\bibtimesep}}%
+      \iffieldundef{#3}
+        {}
+        {\mktimezeros{\thefield{#3}}}%
+      \iffieldundef{#4}{}
+        {\bibtimezonesep
+         \mkbibtimezone{\thefield{#4}}}}%
+  \expandafter\protected\expandafter\def\csname mkbibtime12h\endcsname#1#2#3#4{%
+      \stripzeros{\mktimehh{\thefield{#1}}}%
+      \bibtimesep
+      \forcezerosmdt{\thefield{#2}}%
+      \iffieldundef{#3}{}
+        {\bibtimesep
+         \forcezerosmdt{\thefield{#3}}}%
+       \space
+       \ifnumless{\thefield{#1}}{12}
+         {\bibstring{am}}
+         {\bibstring{pm}}%
+      \iffieldundef{#4}{}
+       {\space\bibtimezonesep
+        \parentext{\mkbibtimezone{\thefield{#4}}}}}%
+  \protected\def\mkbibyeardivisiondateshort#1#2{%
+    \mkbibyeardivision{\thefield{#2}}%
+    \iffieldundef{#1}{}{\space}%
+    \dateeraprintpre{#1}\mkyearzeros{\thefield{#1}}}%
+  \protected\def\mkbibyeardivisiondatelong#1#2{%
+    \mkbibyeardivision{\thefield{#2}}%
+    \iffieldundef{#1}{}{\space}%
+    \dateeraprintpre{#1}\mkyearzeros{\thefield{#1}}}%
+  \savecommand\mkdaterangecomp
+  \savecommand\mkdaterangecompextra
+  \savecommand\mkdaterangeterse
+  \savecommand\mkdaterangeterseextra
+  \protected\def\mkdaterangecomp{%
+    \lbx@us@mkdaterangetrunc@long{long}}%
+  \protected\def\mkdaterangeterse{%
+    \lbx@us@mkdaterangetrunc@short{short}}%
+  \protected\def\mkdaterangecompextra{%
+    \lbx@us@mkdaterangetruncextra@long{long}}%
+  \protected\def\mkdaterangeterseextra{%
+    \lbx@us@mkdaterangetruncextra@short{short}}%
+  \DeclareCaseLangs*{indonesian}% add Indonesian for sentence case title
+  \DeclareFieldFormat{edition}{% swap ed. and ordinal/text position
+    \ifinteger{#1}
+      {\bibstring{edition}\addhighpenspace\mkbibordedition{#1}}%
+      {#1}%
+  }%
+}
+
+\UndeclareBibliographyExtras{%
+  \restorecommand\mkdaterangecomp
+  \restorecommand\mkdaterangecompextra
+  \restorecommand\mkdaterangeterse
+  \restorecommand\mkdaterangeterseextra
+}
+
+\DeclareBibliographyStrings{%
+  bibliography     = {{Daftar Pustaka}{Daftar Pustaka}},% ALT: Bibliografi
+  references       = {{Daftar Pustaka}{Daftar Pustaka}},% ALT: Referensi
+  shorthands       = {{Daftar Singkatan}{Singkatan}},
+  editor           = {{penyunting}{penyunt\adddot}},
+  editors          = {{penyunting}{penyunt\adddot}},
+  compiler         = {{penyusun}{peny\adddot}},
+  compilers        = {{penyusun}{peny\adddot}},
+  redactor         = {{redaktur}{red\adddot}},
+  redactors        = {{redaktur}{red\adddot}},
+  reviser          = {{perevisi}{perev\adddot}},
+  revisers         = {{perevisi}{perev\adddot}},
+  founder          = {{pendiri}{pendiri}},
+  founders         = {{pendiri}{pendiri}},
+  continuator      = {{penerus}{penerus}},% FIXME: unsure
+  continuators     = {{penerus}{penerus}},% FIXME: unsure
+  collaborator     = {{kolaborator}{kolab\adddot}},% FIXME: unsure
+  collaborators    = {{kolaborator}{kolab\adddot}},% FIXME: unsure
+  translator       = {{penerjemah}{penerj\adddot}},
+  translators      = {{penerjemah}{penerj\adddot}},
+  commentator      = {{komentator}{kom\adddot}},
+  commentators     = {{komentator}{kom\adddot}},
+  annotator        = {{anotator}{anot\adddot}},
+  annotators       = {{anotator}{anot\adddot}},
+  commentary       = {{komentar}{kom\adddot}},
+  annotations      = {{anotasi}{anot\adddot}},
+  introduction     = {{pengantar}{pengantar}},
+  foreword         = {{prakata}{prakata}},
+  afterword        = {{epilog}{epilog}},
+  editortr         = {{penyunting dan penerjemah}%
+                      {penyunt\adddotspace dan penerj\adddot}},
+  editorstr        = {{penyunting dan penerjemah}%
+                      {penyunt\adddotspace dan penerj\adddot}},
+  editorco         = {{penyunting dan komentator}%
+                      {penyunt\adddotspace dan kom\adddot}},
+  editorsco        = {{penyunting dan komentator}%
+                      {penyunt\adddotspace dan kom\adddot}},
+  editoran         = {{penyunting dan anotator}%
+                      {penyunt\adddotspace dan anot\adddot}},
+  editorsan        = {{penyunting dan anotator}%
+                      {penyunt\adddotspace dan anot\adddot}},
+  editorin         = {{penyunting dan pengantar}%
+                      {penyunt\adddotspace dan pengantar}},
+  editorsin        = {{penyunting dan pengantar}%
+                      {penyunt\adddotspace dan pengantar}},
+  editorfo         = {{penyunting dan prakata}%
+                      {ed\adddotspace dan prakata}},
+  editorsfo        = {{penyunting dan prakata}%
+                      {penyunt\adddotspace dan prakata}},
+  editoraf         = {{penyunting dan epilog}%
+                      {penyunt\adddotspace dan epilog}},
+  editorsaf        = {{penyunting dan epilog}%
+                      {penyunt\adddotspace dan epilog}},
+  editortrco       = {{penyunting, penerjemah\finalandcomma\ dan komentator}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan kom\adddot}},
+  editorstrco      = {{penyunting, penerjemah\finalandcomma\ dan komentator}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan kom\adddot}},
+  editortran       = {{penyunting, penerjemah\finalandcomma\ dan anotator}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan anot\adddot}},
+  editorstran      = {{penyunting, penerjemah\finalandcomma\ dan anotator}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan anot\adddot}},
+  editortrin       = {{penyunting, penerjemah\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan pengantar}},
+  editorstrin      = {{penyunting, penerjemah\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan pengantar}},
+  editortrfo       = {{penyunting, penerjemah\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan prakata}},
+  editorstrfo      = {{penyunting, penerjemah\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan prakata}},
+  editortraf       = {{penyunting, penerjemah\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan epilog}},
+  editorstraf      = {{penyunting, penerjemah\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace penerj\adddot\finalandcomma\ dan epilog}},
+  editorcoin       = {{penyunting, komentator\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace kom\adddot\finalandcomma\ dan pengantar}},
+  editorscoin      = {{penyunting, komentator\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace kom\adddot\finalandcomma\ dan pengantar}},
+  editorcofo       = {{penyunting, komentator\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace kom\adddot\finalandcomma\ dan prakata}},
+  editorscofo      = {{penyunting, komentator\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace kom\adddot\finalandcomma\ dan prakata}},
+  editorcoaf       = {{penyunting, komentator\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace kom\adddot\finalandcomma\ dan epilog}},
+  editorscoaf      = {{penyunting, komentator\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace kom\adddot\finalandcomma\ dan epilog}},
+  editoranin       = {{penyunting, anotator\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace anot\adddot\finalandcomma\ dan pengantar}},
+  editorsanin      = {{penyunting, anotator\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace anot\adddot\finalandcomma\ dan pengantar}},
+  editoranfo       = {{penyunting, anotator\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace anot\adddot\finalandcomma\ dan prakata}},
+  editorsanfo      = {{penyunting, anotator\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace anot\adddot\finalandcomma\ dan prakata}},
+  editoranaf       = {{penyunting, anotator\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace anot\adddot\finalandcomma\ dan epilog}},
+  editorsanaf      = {{penyunting, anotator\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace anot\adddot\finalandcomma\ dan epilog}},
+  editortrcoin     = {{penyunting, penerjemah, komentator\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace penerj., kom\adddot\finalandcomma\ dan pengantar}},
+  editorstrcoin    = {{penyunting, penerjemah, komentator\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace penerj., kom\adddot\finalandcomma\ dan pengantar}},
+  editortrcofo     = {{penyunting, penerjemah, komentator\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace penerj., kom\adddot\finalandcomma\ dan prakata}},
+  editorstrcofo    = {{penyunting, penerjemah, komentator\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace penerj., kom\adddot\finalandcomma\ dan prakata}},
+  editortrcoaf     = {{penyunting, penerjemah, komentator\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace penerj., kom\adddot\finalandcomma\ dan epilog}},
+  editorstrcoaf    = {{penyunting, penerjemah, komentator\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace penerj., kom\adddot\finalandcomma\ dan epilog}},
+  editortranin     = {{penyunting, penerjemah, anotator\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace penerj., anot\adddot\finalandcomma\ dan pengantar}},
+  editorstranin    = {{penyunting, penerjemah, anotator\finalandcomma\ dan pengantar}%
+                      {penyunt.,\addabbrvspace penerj., anot\adddot\finalandcomma\ dan pengantar}},
+  editortranfo     = {{penyunting, penerjemah, anotator\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace penerj., anot\adddot\finalandcomma\ dan prakata}},
+  editorstranfo    = {{penyunting, penerjemah, anotator\finalandcomma\ dan prakata}%
+                      {penyunt.,\addabbrvspace penerj., anot\adddot\finalandcomma\ dan prakata}},
+  editortranaf     = {{penyunting, penerjemah, anotator\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace penerj., anot\adddot\finalandcomma\ dan epilog}},
+  editorstranaf    = {{penyunting, penerjemah, anotator\finalandcomma\ dan epilog}%
+                      {penyunt.,\addabbrvspace penerj., anot\adddot\finalandcomma\ dan epilog}},
+  translatorco     = {{penerjemah dan komentator}%
+                      {penerj\adddot\ dan kom\adddot}},
+  translatorsco    = {{penerjemah dan komentator}%
+                      {penerj\adddot\ dan kom\adddot}},
+  translatoran     = {{penerjemah dan anotator}%
+                      {penerj\adddot\ dan anot\adddot}},
+  translatorsan    = {{penerjemah dan anotator}%
+                      {penerj\adddot\ dan anot\adddot}},
+  translatorin     = {{terjemahan dan pengantar}%
+                      {terj\adddot\ dan pengantar}},
+  translatorsin    = {{terjemahan dan pengantar}%
+                      {terj\adddot\ dan pengantar}},
+  translatorfo     = {{terjemahan dan prakata}%
+                      {terj\adddot\ dan prakata}},
+  translatorsfo    = {{terjemahan dan prakata}%
+                      {terj\adddot\ dan prakata}},
+  translatoraf     = {{terjemahan dan epilog}%
+                      {terj\adddot\ dan epilog}},
+  translatorsaf    = {{terjemahan dan epilog}%
+                      {terj\adddot\ dan epilog}},
+  translatorcoin   = {{terjemahan, komentar\finalandcomma\ dan pengantar}%
+                      {terj., kom\adddot\finalandcomma\ dan pengantar}},
+  translatorscoin  = {{terjemahan, komentar\finalandcomma\ dan pengantar}%
+                      {terj., kom\adddot\finalandcomma\ dan pengantar}},
+  translatorcofo   = {{terjemahan, komentar\finalandcomma\ dan prakata}%
+                      {terj., kom\adddot\finalandcomma\ dan prakata}},
+  translatorscofo  = {{terjemahan, komentar\finalandcomma\ dan prakata}%
+                      {terj., kom\adddot\finalandcomma\ dan prakata}},
+  translatorcoaf   = {{terjemahan, komentar\finalandcomma\ dan epilog}%
+                      {terj., kom\adddot\finalandcomma\ dan epilog}},
+  translatorscoaf  = {{terjemahan, komentar\finalandcomma\ dan epilog}%
+                      {terj., kom\adddot\finalandcomma\ dan epilog}},
+  translatoranin   = {{terjemahan, anotasi\finalandcomma\ dan pengantar}%
+                      {terj., anot\adddot\finalandcomma\ dan pengantar}},
+  translatorsanin  = {{terjemahan, anotasi\finalandcomma\ dan pengantar}%
+                      {terj., anot\adddot\finalandcomma\ dan pengantar}},
+  translatoranfo   = {{terjemahan, anotasi\finalandcomma\ dan prakata}%
+                      {terj., anot\adddot\finalandcomma\ dan prakata}},
+  translatorsanfo  = {{terjemahan, anotasi\finalandcomma\ dan prakata}%
+                      {terj., anot\adddot\finalandcomma\ dan prakata}},
+  translatoranaf   = {{terjemahan, anotasi\finalandcomma\ dan epilog}%
+                      {terj., anot\adddot\finalandcomma\ dan epilog}},
+  translatorsanaf  = {{terjemahan, anotasi\finalandcomma\ dan epilog}%
+                      {terj., anot\adddot\finalandcomma\ dan epilog}},
+  organizer        = {{penyelenggara}{penyel\adddot}},
+  organizers       = {{penyelenggara}{penyel\adddot}},
+  byorganizer      = {{diselenggarakan oleh}{diselenggarakan oleh}},
+  byauthor         = {{oleh}{oleh}},
+  byeditor         = {{disunting oleh}{disunting oleh}},
+  bycompiler       = {{disusun oleh}{disusun oleh}},
+  byredactor       = {{disunting demi kerahasiaan oleh}{disunting demi kerahasiaan oleh}},
+  byreviser        = {{direvisi oleh}{direvisi oleh}},
+  byreviewer       = {{ditinjau oleh}{ditinjau oleh}},
+  byfounder        = {{didirikan oleh}{didirikan oleh}},
+  bycontinuator    = {{dilanjutkan oleh}{dilanjutkan oleh}},
+  bycollaborator   = {{bekerja sama dengan}{bekerja sama dengan}},% FIXME: unsure
+  bytranslator     = {{diterjemahkan \lbx@lfromlang\ oleh}{diterjemahkan \lbx@sfromlang\ oleh}},
+  bycommentator    = {{dikomentari oleh}{dikomentari oleh}},
+  byannotator      = {{dianotasi oleh}{dianotasi oleh}},
+  withcommentator  = {{dengan komentar oleh}{dengan komentar oleh}},
+  withannotator    = {{dengan anotasi oleh}{dengan anotasi oleh}},
+  withintroduction = {{dengan pengantar oleh}{dengan pengantar oleh}},
+  withforeword     = {{dengan prakata oleh}{dengan prakata oleh}},
+  withafterword    = {{dengan epilog oleh}{dengan epilog oleh}},
+  byeditortr       = {{disunting dan diterjemahkan \lbx@lfromlang\ oleh}%
+                      {disunting dan diterjemahkan \lbx@lfromlang\ oleh}},
+  byeditorco       = {{disunting dan dikomentari oleh}%
+                      {disunting dan dikomentari oleh}},
+  byeditoran       = {{disunting dan dianotasi oleh}%
+                      {disunting dan dianotasi oleh}},
+  byeditorin       = {{disunting, dengan pengantar, oleh}%
+                      {disunting, dengan pengantar, oleh}},
+  byeditorfo       = {{disunting, dengan prakata, oleh}%
+                      {disunting, dengan prakata, oleh}},
+  byeditoraf       = {{disunting, dengan epilog, oleh}%
+                      {disunting, dengan epilog, oleh}},
+  byeditortrco     = {{disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dikomentari oleh}%
+                      {disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dikomentari oleh}},
+  byeditortran     = {{disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dianotasi oleh}%
+                      {disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dianotasi oleh}},
+  byeditortrin     = {{disunting dan diterjemahkan \lbx@lfromlang, dengan pengantar, oleh}%
+                      {disunting dan diterjemahkan \lbx@lfromlang, dengan pengantar, oleh}},
+  byeditortrfo     = {{disunting dan diterjemahkan \lbx@lfromlang, dengan prakata, oleh}%
+                      {disunting dan diterjemahkan \lbx@lfromlang, dengan prakata, oleh}},
+  byeditortraf     = {{disunting dan diterjemahkan \lbx@lfromlang, dengan epilog, oleh}%
+                      {disunting dan diterjemahkan \lbx@lfromlang, dengan epilog, oleh}},
+  byeditorcoin     = {{disunting dan dikomentari, dengan pengantar, oleh}%
+                      {disunting dan dikomentari, dengan pengantar, oleh}},
+  byeditorcofo     = {{disunting dan dikomentari, dengan prakata, oleh}%
+                      {disunting dan dikomentari, dengan prakata, oleh}},
+  byeditorcoaf     = {{disunting dan dikomentari, dengan epilog, oleh}%
+                      {disunting dan dikomentari, dengan epilog, oleh}},
+  byeditoranin     = {{disunting dan dianotasi, dengan pengantar, oleh}%
+                      {disunting dan dianotasi, dengan pengantar, oleh}},
+  byeditoranfo     = {{disunting dan dianotasi, dengan prakata, oleh}%
+                      {disunting dan dianotasi, dengan prakata, oleh}},
+  byeditoranaf     = {{disunting dan dianotasi, dengan epilog, oleh}%
+                      {disunting dan dianotasi, dengan epilog, oleh}},
+  byeditortrcoin   = {{disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dikomentari, dengan pengantar, oleh}%
+                      {disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dikomentari, dengan pengantar, oleh}},
+  byeditortrcofo   = {{disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dikomentari, dengan prakata, oleh}%
+                      {disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dikomentari, dengan prakata, oleh}},
+  byeditortrcoaf   = {{disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dikomentari, dengan epilog, oleh}%
+                      {disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dikomentari, dengan epilog, oleh}},
+  byeditortranin   = {{disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dianotasi, dengan pengantar, oleh}%
+                      {disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dianotasi, dengan pengantar, oleh}},
+  byeditortranfo   = {{disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dianotasi, dengan prakata, oleh}%
+                      {disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dianotasi, dengan prakata, oleh}},
+  byeditortranaf   = {{disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dianotasi, dengan epilog, oleh}%
+                      {disunting, diterjemahkan \lbx@lfromlang\finalandcomma\ dan dianotasi, dengan epilog, oleh}},
+  bytranslatorco   = {{diterjemahkan \lbx@lfromlang\ dan dikomentari oleh}%
+                      {diterjemahkan \lbx@lfromlang\ dan dikomentari oleh}},
+  bytranslatoran   = {{diterjemahkan \lbx@lfromlang\ dan dianotasi oleh}%
+                      {diterjemahkan \lbx@lfromlang\ dan dianotasi oleh}},
+  bytranslatorin   = {{diterjemahkan \lbx@lfromlang, dengan pengantar, oleh}%
+                      {diterjemahkan \lbx@lfromlang, dengan pengantar, oleh}},
+  bytranslatorfo   = {{diterjemahkan \lbx@lfromlang, dengan prakata, oleh}%
+                      {diterjemahkan \lbx@lfromlang, dengan prakata, oleh}},
+  bytranslatoraf   = {{diterjemahkan \lbx@lfromlang, dengan epilog, oleh}%
+                      {diterjemahkan \lbx@lfromlang, dengan epilog, oleh}},
+  bytranslatorcoin = {{diterjemahkan \lbx@lfromlang\ dan dikomentari, dengan pengantar, oleh}%
+                      {diterjemahkan \lbx@lfromlang\ dan dikomentari, dengan pengantar, oleh}},
+  bytranslatorcofo = {{diterjemahkan \lbx@lfromlang\ dan dikomentari, dengan prakata, oleh}%
+                      {diterjemahkan \lbx@lfromlang\ dan dikomentari, dengan prakata, oleh}},
+  bytranslatorcoaf = {{diterjemahkan \lbx@lfromlang\ dan dikomentari, dengan epilog, oleh}%
+                      {diterjemahkan \lbx@lfromlang\ dan dikomentari, dengan epilog, oleh}},
+  bytranslatoranin = {{diterjemahkan \lbx@lfromlang\ dan dnaotasi, dengan pengantar, oleh}%
+                      {diterjemahkan \lbx@lfromlang\ dan dnaotasi, dengan pengantar, oleh}},
+  bytranslatoranfo = {{diterjemahkan \lbx@lfromlang\ dan dnaotasi, dengan prakata, oleh}%
+                      {diterjemahkan \lbx@lfromlang\ dan dnaotasi, dengan prakata, oleh}},
+  bytranslatoranaf = {{diterjemahkan \lbx@lfromlang\ dan dnaotasi, dengan epilog, oleh}%
+                      {diterjemahkan \lbx@lfromlang\ dan dnaotasi, dengan epilog, oleh}},
+  and              = {{dan}{dan}},
+  andothers        = {{dkk\adddot}{dkk\adddot}},
+  andmore          = {{dkk\adddot}{dkk\adddot}},
+  volume           = {{volume}{vol\adddot}},
+  volumes          = {{volume}{vol\adddot}},
+  involumes        = {{dalam}{dalam}},
+  jourvol          = {{volume}{vol\adddot}},
+  jourser          = {{seri}{ser\adddot}},
+  book             = {{buku}{buku}},
+  part             = {{bagian}{bag\adddot}},
+  issue            = {{nomor}{no\adddot}},
+  newseries        = {{seri baru}{ser\adddotspace baru}},
+  oldseries        = {{seri lama}{ser\adddotspace lama}},
+  edition          = {{edisi}{edisi}},
+  reprint          = {{cetakan ulang}{cet\adddotspace ulang}},
+  reprintof        = {{cetakan ulang dari}{cet\adddotspace ulang dari}},
+  reprintas        = {{dicetak ulang sebagai}{dicetak ulang sebagai}},
+  reprintfrom      = {{dicetak ulang dari}{dicetak ulang dari}},
+  reviewof         = {{ulasan tentang}{ulasan tentang}},
+  translationof    = {{terjemahan dari}{terj\adddotspace dari}},
+  translationas    = {{diterjemahkan sebagai}{diterjemahkan sebagai}},
+  translationfrom  = {{diterjemahkan dari}{diterjemahkan dari}},
+  origpubas        = {{aslinya diterbitkan sebagai}{aslinya diterbitkan sebagai}},
+  origpubin        = {{aslinya diterbitkan dalam}{aslinya diterbitkan dalam}},
+  astitle          = {{sebagai}{sebagai}},
+  bypublisher      = {{oleh}{oleh}},
+  nodate           = {{tanpa tanggal}{t\adddot t\adddot}},
+  page             = {{halaman}{hlm\adddot}},
+  pages            = {{halaman}{hlm\adddot}},
+  column           = {{kolom}{kol\adddot}},
+  columns          = {{kolom}{kol\adddot}},
+  line             = {{baris}{b\adddot}},
+  lines            = {{baris}{b\adddot}},
+  verse            = {{bait}{bait}},
+  verses           = {{bait}{bait}},
+  section          = {{bagian}{\S}},
+  sections         = {{bagian}{\S\S}},
+  paragraph        = {{paragraf}{par\adddot}},
+  paragraphs       = {{paragraf}{par\adddot}},
+  pagetotal        = {{halaman}{hlm\adddot}},
+  pagetotals       = {{halaman}{hlm\adddot}},
+  columntotal      = {{kolom}{kol\adddot}},
+  columntotals     = {{kolom}{kol\adddot}},
+  linetotal        = {{baris}{b\adddot}},
+  linetotals       = {{baris}{b\adddot}},
+  versetotal       = {{bait}{bait}},
+  versetotals      = {{bait}{bait}},
+  sectiontotal     = {{bagian}{\S}},
+  sectiontotals    = {{bagian}{\S\S}},
+  paragraphtotal   = {{paragraf}{par\adddot}},
+  paragraphtotals  = {{paragraf}{par\adddot}},
+  in               = {{dalam}{dalam}},
+  inseries         = {{dalam}{dalam}},
+  ofseries         = {{dari}{dari}},
+  number           = {{nomor}{no\adddot}},
+  chapter          = {{bab}{bab}},
+  bathesis         = {{Skripsi sarjana}{Skripsi}},
+  mathesis         = {{Tesis magister}{Tesis}},
+  phdthesis        = {{Disertasi doktor}{Disertasi}},
+  candthesis       = {{Tesis kandidat}{Tesis kandidat}},
+  resreport        = {{laporan penelitian}{lap\adddotspace penelitian}},
+  techreport       = {{laporan teknis}{lap\adddotspace teknis}},
+  software         = {{perangkat lunak komputer}{perangkat lunak}},
+  datacd           = {{CD-ROM}{CD-ROM}},
+  audiocd          = {{CD audio}{CD audio}},
+  version          = {{versi}{versi}},
+  url              = {{URL}{URL}},
+  urlfrom          = {{tersedia dari}{tersedia dari}},
+  urlseen          = {{diakses pada}{diakses pada}},
+  inpreparation    = {{dalam persiapan}{dalam persiapan}},
+  submitted        = {{diajukan}{diajukan}},
+  forthcoming      = {{akan terbit}{akan terbit}},
+  inpress          = {{dalam proses penerbitan}{dalam proses penerbitan}},
+  prepublished     = {{pra-terbit}{pra-terbit}},
+  citedas          = {{selanjutnya dikutip sebagai}{selanjutnya dikutip sebagai}},
+  thiscite         = {{khususnya}{khususnya}},
+  seenote          = {{lihat catatan}{lihat cat\adddot}},
+  quotedin         = {{dikutip dalam}{dikutip dalam}},
+  idem             = {{idem}{idem}},
+  idemsm           = {{idem}{idem}},
+  idemsf           = {{idem}{idem}},
+  idemsn           = {{idem}{idem}},
+  idempm           = {{idem}{idem}},
+  idempf           = {{idem}{idem}},
+  idempn           = {{idem}{idem}},
+  idempp           = {{idem}{idem}},
+  ibidem           = {{ibidem}{ibid\adddot}},
+  opcit            = {{op\adddotspace cit\adddot}{op\adddotspace cit\adddot}},
+  loccit           = {{loc\adddotspace cit\adddot}{loc\adddotspace cit\adddot}},
+  confer           = {{bandingkan}{bdk\adddot}},
+  sequens          = {{dan seterusnya}{dst\adddot}},
+  sequentes        = {{dan seterusnya}{dst\adddot}},
+  passim           = {{passim}{pass\adddot}},
+  see              = {{lihat}{lihat}},
+  seealso          = {{lihat juga}{lihat juga}},
+  backrefpage      = {{dikutp pada halaman}{dikutip pada hlm\adddot}},
+  backrefpages     = {{dikutip pada halaman}{dikutip pada hlm\adddot}},
+  january          = {{Januari}{Jan\adddot}},
+  february         = {{Februari}{Feb\adddot}},
+  march            = {{Maret}{Mar\adddot}},
+  april            = {{April}{Apr\adddot}},
+  may              = {{Mei}{Mei}},
+  june             = {{Juni}{Jun\adddot}},
+  july             = {{Juli}{Jul\adddot}},
+  august           = {{Agustus}{Agu\adddot}},
+  september        = {{September}{Sep\adddot}},
+  october          = {{Oktober}{Okt\adddot}},
+  november         = {{November}{Nov\adddot}},
+  december         = {{Desember}{Des\adddot}},
+  langamerican     = {{Bahasa Amerika}{Amerika}},
+  langbasque       = {{Bahasa Bask}{Bask}},
+  langbrazilian    = {{Bahasa Brasil}{Brasil}},
+  langbulgarian    = {{Bahasa Bulgaria}{Bulgaria}},
+  langcatalan      = {{Bahasa Katalan}{Katalan}},
+  langcroatian     = {{Bahasa Kroasia}{Kroasia}},
+  langczech        = {{Bahasa Ceko}{Ceko}},
+  langdanish       = {{Bahasa Denmark}{Denmark}},
+  langdutch        = {{Bahasa Belanda}{Belanda}},
+  langenglish      = {{Bahasa Inggris}{Inggris}},
+  langestonian     = {{Bahasa Estonia}{Estonia}},
+  langfinnish      = {{Bahasa Finlandia}{Finlandia}},
+  langfrench       = {{Bahasa Prancis}{Prancis}},
+  langgalician     = {{Bahasa Galisia}{Galisia}},
+  langgerman       = {{Bahasa Jerman}{Jerman}},
+  langgreek        = {{Bahasa Yunani}{Yunani}},
+  langhungarian    = {{Bahasa Hungaria}{Hungaria}},
+  langitalian      = {{Bahasa Italia}{Italia}},
+  langjapanese     = {{Bahasa Jepang}{Jepang}},
+  langlatin        = {{Bahasa Latin}{Latin}},
+  langlatvian      = {{Bahasa Latvia}{Latvia}},
+  langlithuanian   = {{Bahasa Lituania}{Lituania}},
+  langmarathi      = {{Bahasa Marathi}{Marathi}},
+  langnorwegian    = {{Bahasa Norwegia}{Norwegia}},
+  langpolish       = {{Bahasa Polandia}{Polandia}},
+  langportuguese   = {{Bahasa Portugis}{Portugis}},
+  langromanian     = {{Bahasa Rumania}{Rumania}},
+  langrussian      = {{Bahasa Rusia}{Rusia}},
+  langserbian      = {{Bahasa Serbia}{Serbia}},
+  langslovak       = {{Bahasa Slovak}{Slovak}},
+  langslovene      = {{Bahasa Slovenia}{Slovenia}},
+  langspanish      = {{Bahasa Spanyol}{Spanyol}},
+  langswedish      = {{Bahasa Swedia}{Swedia}},
+  langturkish      = {{Bahasa Turki}{Turki}},
+  langukrainian    = {{Bahasa Ukraina}{Ukraina}},
+  fromamerican     = {{dari bahasa Amerika}{dari bhs\adddotspace Amerika}},
+  frombasque       = {{dari bahasa Bask}{dari bhs\adddotspace Bask}},
+  frombrazilian    = {{dari bahasa Brasil}{dari bhs\adddotspace Brasil}},
+  frombulgarian    = {{dari bahasa Bulgaria}{dari bhs\adddotspace Bulgaria}},
+  fromcatalan      = {{dari bahasa Katalan}{dari bhs\adddotspace Katalan}},
+  fromcroatian     = {{dari bahasa Kroasia}{dari bhs\adddotspace Kroasia}},
+  fromczech        = {{dari bahasa Ceko}{dari bhs\adddotspace Ceko}},
+  fromdanish       = {{dari bahasa Denmark}{dari bhs\adddotspace Denmark}},
+  fromdutch        = {{dari bahasa Belanda}{dari bhs\adddotspace Belanda}},
+  fromenglish      = {{dari bahasa Inggris}{dari bhs\adddotspace Inggris}},
+  fromestonian     = {{dari bahasa Estonia}{dari bhs\adddotspace Estonia}},
+  fromfinnish      = {{dari bahasa Finlandia}{dari bhs\adddotspace Finlandia}},
+  fromfrench       = {{dari bahasa Prancis}{dari bhs\adddotspace Prancis}},
+  fromgalician     = {{dari bahasa Galisia}{dari bhs\adddotspace Galisia}},
+  fromgerman       = {{dari bahasa Jerman}{dari bhs\adddotspace Jerman}},
+  fromgreek        = {{dari bahasa Yunani}{dari bhs\adddotspace Yunani}},
+  fromhungarian    = {{dari bahasa Hungaria}{dari bhs\adddotspace Hungaria}},
+  fromitalian      = {{dari bahasa Italia}{dari bhs\adddotspace Italia}},
+  fromjapanese     = {{dari bahasa Jepang}{dari bhs\adddotspace Jepang}},
+  fromlatin        = {{dari bahasa Latin}{dari bhs\adddotspace Latin}},
+  fromlatvian      = {{dari bahasa Latvia}{dari bhs\adddotspace Latvia}},
+  fromlithuanian   = {{dari bahasa Lituania}{dari bhs\adddotspace Lituania}},
+  frommarathi      = {{dari bahasa Marathi}{dari bhs\adddotspace Marathi}},
+  fromnorwegian    = {{dari bahasa Norwegia}{dari bhs\adddotspace Norwegia}},
+  frompolish       = {{dari bahasa Polandia}{dari bhs\adddotspace Polandia}},
+  fromportuguese   = {{dari bahasa Portugis}{dari bhs\adddotspace Portugis}},
+  fromromanian     = {{dari bahasa Rumania}{dari bhs\adddotspace Rumania}},
+  fromrussian      = {{dari bahasa Rusia}{dari bhs\adddotspace Rusia}},
+  fromserbian      = {{dari bahasa Serbia}{dari bhs\adddotspace Serbia}},
+  fromslovak       = {{dari bahasa Slovak}{dari bhs\adddotspace Slovak}},
+  fromslovene      = {{dari bahasa Slovenia}{dari bhs\adddotspace Slovenia}},
+  fromspanish      = {{dari bahasa Spanyol}{dari bhs\adddotspace Spanyol}},
+  fromswedish      = {{dari bahasa Swedia}{dari bhs\adddotspace Swedia}},
+  fromturkish      = {{dari bahasa Turki}{dari bhs\adddotspace Turki}},
+  fromukrainian    = {{dari bahasa Ukraina}{dari bhs\adddotspace Ukraina}},
+  countryde        = {{Jerman}{DE}},
+  countryeu        = {{Uni Eropa}{EU}},
+  countryep        = {{Uni Eropa}{EP}},
+  countryfr        = {{Prancis}{FR}},
+  countryuk        = {{Britania Raya}{GB}},
+  countryus        = {{Amerika Serikat}{US}},
+  patent           = {{paten}{pat\adddot}},
+  patentde         = {{Paten Jerman}{paten Jerman}},
+  patenteu         = {{Paten Eropa}{paten Eropa}},
+  patentfr         = {{Paten Prancis}{paten Prancis}},
+  patentuk         = {{Paten Britania Raya}{paten Britania Raya}},
+  patentus         = {{Paten Amerika Serikat}{paten Amerika Serikat}},
+  patreq           = {{Permohonan Paten}{permohonan paten}},
+  patreqde         = {{Permohonan Paten Jerman}{permohonan paten Jerman}},
+  patreqeu         = {{Permohonan Paten Uni Eropa}{permohonan paten Uni Eropa}},
+  patreqfr         = {{Permohonan Paten Prancis}{permohonan paten Prancis}},
+  patrequk         = {{Permohonan Paten Britania Raya}{permohonan paten Britania Raya}},
+  patrequs         = {{Permohonan Paten Amerika Serikat}{permohonan paten Amerika Serikat}},
+  file             = {{berkas}{berkas}},
+  library          = {{perpustakaan}{perpustakaan}},
+  abstract         = {{abstrak}{abstrak}},
+  annotation       = {{anotasi}{anotasi}},
+  commonera        = {{Era Umum}{EU}},
+  beforecommonera  = {{Sebelum Era Umum}{SEU}},
+  annodomini       = {{Masehi}{M}},
+  beforechrist     = {{Sebelum Masehi}{SM}},
+  circa            = {{sekitar}{sekitar}},
+  spring           = {{Musim Semi}{Musim Semi}},
+  summer           = {{Musim Panas}{Musim Panas}},
+  autumn           = {{Musim Gugur}{Musim Gugur}},
+  winter           = {{Musim Dingin}{Musim Dingin}},
+  springN          = {{Musim Semi (Belahan Bumi Utara)}{Musim Semi (BBU)}},
+  summerN          = {{Musim Panas (Belahan Bumi Utara)}{Musim Panas (BBU)}},
+  autumnN          = {{Musim Gugur (Belahan Bumi Utara)}{Musim Gugur (BBU)}},
+  winterN          = {{Musim Dingin (Belahan Bumi Utara)}{Musim Dingin (BBU)}},
+  springS          = {{Musim Semi (Belahan Bumi Selatan)}{Musim Semi (BBS)}},
+  summerS          = {{Musim Panas (Belahan Bumi Selatan)}{Musim Panas (BBS)}},
+  autumnS          = {{Musim Gugur (Belahan Bumi Selatan)}{Musim Gugur (BBS)}},
+  winterS          = {{Musim Dingin (Belahan Bumi Selatan)}{Musim Dingin (BBS)}},
+  Q1               = {{Kuartal~1}{K1}},
+  Q2               = {{Kuartal~2}{K2}},
+  Q3               = {{Kuartal~3}{K3}},
+  Q4               = {{Kuartal~4}{K4}},
+  QD1              = {{Caturwulan~1}{Cw1}},
+  QD2              = {{Caturwulan~2}{Cw2}},
+  QD3              = {{Caturwulan~3}{Cw3}},
+  S1               = {{Semester~1}{S1}},
+  S2               = {{Semester~2}{S2}},
+  am               = {{AM}{AM}},
+  pm               = {{PM}{PM}},
+}
+
+\protected\gdef\lbx@us@mkdaterangetrunc@long#1#2{%
+  \blx@if@printanytimes{#2}
+    {\mkdaterangefull{#1}{#2}}
+    {\lbx@us@mkdaterangetrunc@long@i{#1}{#2}}}
+
+\protected\gdef\lbx@us@mkdaterangetrunc@long@i#1#2{%
+  \begingroup
+    \blx@metadateinfo{#2}%
+    \iffieldundef{#2year}
+      {\blx@nounit}
+      {\printtext[{#2date}]{%
+         \datecircaprint
+         \iffieldundef{#2yeardivision}
+           {\ifdateyearsequal{#2}{#2end}
+             {\csuse{mkbibdate#1}{}{#2month}{#2day}}
+             {\csuse{mkbibdate#1}{#2year}{#2month}{#2day}%
+              \dateeraprint{#2year}}}
+           {\ifdateyearsequal{#2}{#2end}
+             {\csuse{mkbibyeardivisiondate#1}{}{#2yeardivision}}
+             {\csuse{mkbibyeardivisiondate#1}{#2year}{#2yeardivision}%
+              \dateeraprint{#2year}}}%
+         \dateuncertainprint
+         \iffieldundef{#2endyear}
+           {}
+           {\iffieldequalstr{#2endyear}{}
+             {\mbox{\bibdaterangesep}}
+             {\bibdaterangesep
+              \enddatecircaprint
+              \iffieldundef{#2endyeardivision}
+                {\ifdateyearsequal{#2}{#2end}
+                  {\iffieldsequal{#2month}{#2endmonth}
+                    {\csuse{mkbibdate#1}{#2endyear}{}{#2endday}}
+                    {\csuse{mkbibdate#1}{#2endyear}{#2endmonth}{#2endday}}}
+                  {\csuse{mkbibdate#1}{#2endyear}{#2endmonth}{#2endday}}}
+                {\csuse{mkbibyeardivisiondate#1}{#2endyear}{#2endyeardivision}}%
+              \enddateuncertainprint
+              \dateeraprint{#2endyear}}}}}%
+  \endgroup}
+
+\protected\gdef\lbx@us@mkdaterangetrunc@short#1#2{%
+  \blx@if@printanytimes{#2}
+    {\mkdaterangefull{#1}{#2}}
+    {\lbx@us@mkdaterangetrunc@short@i{#1}{#2}}}
+
+\protected\gdef\lbx@us@mkdaterangetrunc@short@i#1#2{%
+  \begingroup
+    \blx@metadateinfo{#2}%
+    \iffieldundef{#2year}
+      {\blx@nounit}
+      {\printtext[{#2date}]{%
+         \datecircaprint
+         \iffieldundef{#2yeardivision}
+           {\ifdateyearsequal{#2}{#2end}
+             {\csuse{mkbibdate#1}{}{#2month}{#2day}}
+             {\csuse{mkbibdate#1}{#2year}{#2month}{#2day}%
+              \dateeraprint{#2year}}}
+           {\ifdateyearsequal{#2}{#2end}
+             {\csuse{mkbibyeardivisiondate#1}{}{#2yeardivision}}
+             {\csuse{mkbibyeardivisiondate#1}{#2year}{#2yeardivision}%
+              \dateeraprint{#2year}}}%
+         \dateuncertainprint
+         \iffieldundef{#2endyear}
+           {}
+           {\iffieldequalstr{#2endyear}{}
+              {\mbox{\bibdaterangesep}}
+              {\bibdaterangesep
+               \enddatecircaprint
+               \iffieldundef{#2endyeardivision}
+                 {\csuse{mkbibdate#1}{#2endyear}{#2endmonth}{#2endday}}
+                 {\csuse{mkbibyeardivisiondate#1}{#2endyear}{#2endyeardivision}}%
+               \enddateuncertainprint
+               \dateeraprint{#2endyear}}}}}%
+  \endgroup}
+
+\protected\gdef\lbx@us@mkdaterangetruncextra@long#1#2{%
+  \blx@if@printanytimes{#2}
+    {\mkdaterangefullextra{#1}{#2}}
+    {\lbx@us@mkdaterangetruncextra@long@i{#1}{#2}}}
+
+\protected\gdef\lbx@us@mkdaterangetruncextra@long@i#1#2{%
+  \begingroup
+    \blx@metadateinfo{#2}%
+    \iffieldundef{#2year}
+      {\blx@nounit}
+      {\printtext[{#2date}]{%
+         \datecircaprint
+         \iffieldundef{#2yeardivision}
+           {\ifdateyearsequal{#2}{#2end}
+             {\csuse{mkbibdate#1}{}{#2month}{#2day}}
+             {\csuse{mkbibdate#1}{#2year}{#2month}{#2day}%
+              \dateeraprint{#2year}}}
+           {\ifdateyearsequal{#2}{#2end}
+             {\csuse{mkbibyeardivisiondate#1}{}{#2yeardivision}}
+             {\csuse{mkbibyeardivisiondate#1}{#2year}{#2yeardivision}%
+              \dateeraprint{#2year}}}%
+         \dateuncertainprint
+         \iffieldundef{#2endyear}
+           {\printfield{extradate}}
+           {\iffieldequalstr{#2endyear}{}
+              {\printfield{extradate}%
+               \mbox{\bibdaterangesep}}
+              {\bibdaterangesep
+               \enddatecircaprint
+               \iffieldundef{#2endyeardivision}
+                 {\ifdateyearsequal{#2}{#2end}
+                   {\iffieldsequal{#2month}{#2endmonth}
+                      {\csuse{mkbibdate#1}{#2endyear}{}{#2endday}}
+                      {\csuse{mkbibdate#1}{#2endyear}{#2endmonth}{#2endday}}}
+                   {\csuse{mkbibdate#1}{#2endyear}{#2endmonth}{#2endday}}}
+                 {\csuse{mkbibyeardivisiondate#1}{#2endyear}{#2endyeardivision}}%
+               \printfield{extradate}%
+               \enddateuncertainprint
+               \dateeraprint{#2endyear}}}}}%
+  \endgroup}
+
+\protected\gdef\lbx@us@mkdaterangetruncextra@short#1#2{%
+  \blx@if@printanytimes{#2}
+    {\mkdaterangefullextra{#1}{#2}}
+    {\lbx@us@mkdaterangetruncextra@short@i{#1}{#2}}}
+
+\protected\gdef\lbx@us@mkdaterangetruncextra@short@i#1#2{%
+  \begingroup
+    \blx@metadateinfo{#2}%
+    \iffieldundef{#2year}
+      {\blx@nounit}
+      {\printtext[{#2date}]{%
+         \datecircaprint
+         \iffieldundef{#2yeardivision}
+           {\ifdateyearsequal{#2}{#2end}
+             {\csuse{mkbibdate#1}{}{#2month}{#2day}}
+             {\csuse{mkbibdate#1}{#2year}{#2month}{#2day}%
+              \dateeraprint{#2year}}}
+           {\ifdateyearsequal{#2}{#2end}
+             {\csuse{mkbibyeardivisiondate#1}{}{#2yeardivision}}
+             {\csuse{mkbibyeardivisiondate#1}{#2year}{#2yeardivision}%
+              \dateeraprint{#2year}}}%
+         \dateuncertainprint
+         \iffieldundef{#2endyear}
+           {\printfield{extradate}}
+           {\iffieldequalstr{#2endyear}{}
+              {\printfield{extradate}%
+            \mbox{\bibdaterangesep}}
+           {\bibdaterangesep
+            \enddatecircaprint
+            \iffieldundef{#2endyeardivision}
+              {\csuse{mkbibdate#1}{#2endyear}{#2endmonth}{#2endday}}
+              {\csuse{mkbibyeardivisiondate#1}{#2endyear}{#2endyeardivision}}%
+            \printfield{extradate}%
+            \enddateuncertainprint
+            \dateeraprint{#2endyear}}}}}%
+  \endgroup}
+
+\endinput
