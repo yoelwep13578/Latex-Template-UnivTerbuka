@@ -183,16 +183,13 @@
 \newcommand{\longcaption}[1]{\caption{\begin{tabular}[t]{@{}l@{}}#1\end{tabular}}}
 
 % --- Sumber Lampiran Tabel ---
-\newcommand{\tablesource}[1]{\vspace{.3\baselineskip}\caption*{Sumber: #1}\vspace{-\baselineskip}}
-\newcommand{\tablesourceleft}[2]{
-    
-    \raggedright\medskip\hspace{#1}\small Sumber: #2}
+\newcommand{\tablesource}[1]{\vspace{2pt}\caption*{\Sumber: #1}\vspace{-15pt}}
 
 % --- Sumber Lampiran Gambar ---
-\newcommand{\figuresource}[1]{\vspace{-.9em}\caption*{Sumber: #1}\vspace{-.3\baselineskip}}
+\newcommand{\figuresource}[1]{\vspace{-10pt}\caption*{\Sumber: #1}\vspace{-10pt}}
 
 % --- Sumber Lampiran Kode ---
-\newcommand{\lstsource}[1]{\begin{center}\vspace{-1.27\baselineskip}\setstretch{1}\small Sumber: #1 \vspace{.5\baselineskip}\end{center}}
+\newcommand{\lstsource}[1]{\vspace{-25pt}\begin{center}\setstretch{1}\small \Sumber: #1 \vspace{10pt}\end{center}}
 
 % --- Link Email ---
 \newcommand{\emailref}[1]{\href{mailto:#1}{{\url#1}}}
