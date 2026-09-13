@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/09/04 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/09/13 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -60,6 +60,10 @@
 % --- Pilihan Ukuran Heading yang Lebih Kecil ---
 %     Default: -
 \DeclareStringOption[false]{seccompact}[true]
+
+% --- Pilihan Ukuran Heading Besar di Tingkat Pertama ---
+%     Default: -
+\DeclareStringOption[false]{secmag}[true]
 
 % --- Pilihan BibLaTeX atau BibTeX ---
 %     Default: -
@@ -855,11 +859,20 @@
     \newcommand{\template@size@subsubsection}{\normalsize}
     
     % --- Ukuran Sederhana (Maksimaal Hanya Mendekati 14pt) ---
-    \ifdefstring{\template@seccompact}{true}{
+    \ifdefstring{\template@seccompact}{true}{%
         \renewcommand{\template@size@chapter}{\large}
         \renewcommand{\template@size@section}{\large}
         \renewcommand{\template@size@subsection}{\normalsize}
         \renewcommand{\template@size@subsubsection}{\normalsize}
+    }{}
+    
+    % --- Ukuran Besar di Tingkat Pertama ---
+    \ifdefstring{\template@secmag}{true}{%
+        \ifdef{\chapter}{%
+            \renewcommand{\template@size@chapter}{\fontsize{32}{38}\selectfont}
+        }{%
+            \renewcommand{\template@size@section}{\fontsize{32}{38}\selectfont}
+        }%
     }{}
     
 	%===============================================================%
@@ -879,14 +892,8 @@
 	\ifdefstring{\template@heading}{alpha}{
 	    \input{preset/titles/\template@titlefilename-alphanumeric.tex}
 	}{}
-	\ifdefstring{\template@heading}{alpha-mag}{
-	    \input{preset/titles/\template@titlefilename-alphanumeric-mag.tex}
-	}{}
 	\ifdefstring{\template@heading}{multi}{
 	    \input{preset/titles/\template@titlefilename-multilevel.tex}
-	}{}
-	\ifdefstring{\template@heading}{multi-mag}{
-	    \input{preset/titles/\template@titlefilename-multilevel-mag.tex}
 	}{}
 	\ifdefstring{\template@heading}{apalike}{
 	    \input{preset/titles/\template@titlefilename-lowlevel.tex}
@@ -986,6 +993,7 @@
 %     Format Lampiran     %
 %=========================%
 
+\makeatletter
 \gappto{\appendix}{
     \label{LastMainPage}
     \clearpage
@@ -1020,16 +1028,10 @@
             {\hfill\contentspage}
         }
         
-        % --- Ukuran Huruf Lampiran Biasa & Mag ---
-        \newcommand{\makalah@appfont}{%
-            \ifboolexpr{ test {\ifdefstring{\template@heading}{alpha-mag}} or test {\ifdefstring{\template@heading}{multi-mag}} }%
-            {\fontsize{32}{38}\selectfont}{\Large}%
-        }%
-        
         \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
             % --- Soal Jawab atau APA-Like ---
             \titleformat{\chapter}[block]
-            {\setstretch{1}\template@secfont\bfseries\filcenter\makalah@appfont}
+            {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@chapter}
             {}
             {0pt}
             {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
@@ -1038,14 +1040,14 @@
             \ifdefstring{\template@appnewline}{true}{%
                 % --- Format Dua Baris ---
                 \titleformat{\chapter}[display]
-                {\setstretch{1}\template@secfont\bfseries\filcenter\makalah@appfont}
-                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thechapter}
+                {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@chapter}
+                {\template@size@chapter\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thechapter}
                 {-.5ex}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
             }{%
                 % --- Format Sebaris ---
                 \titleformat{\chapter}[block]
-                {\setstretch{1}\template@secfont\bfseries\filcenter\makalah@appfont}
+                {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@chapter}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thechapter:\ }
                 {0pt}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
@@ -1091,17 +1093,11 @@
                 \ifdef{\thelstlisting}{\setcounter{lstlisting}{0}}{}%
             }
         }
-    }{
-        % --- Ukuran Huruf Lampiran Biasa & Mag (Artikel) ---
-        \newcommand{\artikel@appfont}{%
-            \ifboolexpr{ test {\ifdefstring{\template@heading}{alpha-mag}} or test {\ifdefstring{\template@heading}{multi-mag}} }%
-            {\fontsize{32}{38}\selectfont}{\Large}%
-        }%
-        
+    }{%
         \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
             % --- Soal Jawab atau APA-Like (Artikel) ---
             \titleformat{\section}[block]
-            {\setstretch{1}\template@secfont\bfseries\filcenter\artikel@appfont}
+            {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@section}
             {}
             {0pt}
             {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
@@ -1110,14 +1106,14 @@
             \ifdefstring{\template@appnewline}{true}{%
                 % --- Format Dua Baris ---
                 \titleformat{\section}[display]
-                {\setstretch{1}\template@secfont\bfseries\filcenter\artikel@appfont}
-                {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thesection}
+                {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@section}
+                {\template@size@section\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thesection}
                 {-.5ex}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
             }{%
                 % --- Format Sebaris ---
                 \titleformat{\section}[block]
-                {\setstretch{1}\template@secfont\bfseries\filcenter\artikel@appfont}
+                {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@section}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\appendixname\ \thesection:\ }
                 {0pt}
                 {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
@@ -1186,3 +1182,4 @@
         }
     }{}
 }
+\makeatother

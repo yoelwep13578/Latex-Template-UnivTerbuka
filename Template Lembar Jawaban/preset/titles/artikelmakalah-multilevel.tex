@@ -9,7 +9,7 @@
     
     \titleformat{\chapter}[display]
     {\setstretch{1}\template@secfont\bfseries\filcenter\template@size@chapter}
-    {\setstretch{1}\template@secfont\bfseries\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thechapter}
+    {\setstretch{1}\template@secfont\bfseries\template@size@chapter\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}\chaptername\ \thechapter}
     {-.5ex}
     {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
     

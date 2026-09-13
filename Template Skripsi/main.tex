@@ -16,12 +16,8 @@
 %      - alpha     --- Penomoran alphanumeric I. > A. > 1. > a. 
 %                      > 1) > a)
 %                      atau berformat A. > 1. > a. > 1) > a)
-%      - alpha-mag --- Penomoran alphanumeric dengan teks besar
-%                      di level 1
 %      - multi     --- Penomoran multilevel 1 > 1.1 > 1.1.1 
 %                      > 1.1.1.1
-%      - multi-mag --- Penomoran multilevel dengan teks besar 
-%                      di level 1
 %      - apalike   --- Tanpa penomoran seperti APA 7
 %      - [kosong]  --- Memakai pilihan alpha
 %
@@ -35,19 +31,23 @@
 %     Ukuran judul heading dibuat lebih kecil dari bawaan LaTeX. 
 %     Heading setingkat Bab dan Seksi hanya berukuran sekitar 14pt.
 %
-%     4. urlroman
+%     4. secmag
+%     Ukuran judul heading tingkat pertama menjadi besar seperti
+%     layaknya majalah.
+%
+%     5. urlroman
 %     URL disarankan menggunakan huruf monospace agar mudah
 %     dilihat dan diketik dari media tercetak (kertas).
 %     urlroman dapat digunakan agar URL menggunakan huruf 
 %     roman, namun sebaiknya jangan jika tidak ada aturan
 %     yang memaksa.
 %
-%     5. sansstructure
+%     6. sansstructure
 %     Judul heading (bab sampai subparagraf) dan keterangan sisipan
 %     menggunakan huruf berjenis Sans agar bisa terpisah dari
 %     narasi.
 %
-%     6. mainfont
+%     7. mainfont
 %     Pilihan untuk font utama dan font matematika
 %
 %     Pilihan yang tersedia:
@@ -85,7 +85,7 @@
 %                            dengan \setmainfont dan \setmathfont
 %                            di LuaLaTeX
 %
-%     7. sansfont
+%     8. sansfont
 %     Pilihan untuk font sans serif
 %
 %     Pilihan yang tersedia:
@@ -99,7 +99,7 @@
 %                     Bisa dipakai untuk disetel sendiri dengan 
 %                     \setsansfont di LuaLaTeX
 %
-%     8. monofont
+%     9. monofont
 %     Pilihan untuk font monospace
 %     
 %     Pilihan yang tersedia:
@@ -112,7 +112,7 @@
 %                      Bisa dipakai untuk disetel sendiri dengan
 %                      \setmonofont di LuaLaTeX
 %
-%     9. indent
+%     10. indent
 %     Jarak menjorok pada baris awal paragraf, ditulis dengan angka
 %     dan satuannya.
 %
@@ -124,27 +124,27 @@
 %
 %     Contoh penggunaan: indent=1.5cm atau indent=2em
 %
-%     10. microtype
+%     11. microtype
 %     Alat tambahan untuk membuat teks terlihat lebih rapi dengan
 %     melebar-sempitkan jarak antar-huruf dalam skala mikro. 
 %     Microtype dapat digunakan setelah pengerjaan selesai (final).
 %
-%     11. listappendix
+%     12. listappendix
 %     Memunculkan daftar isi baru bernama "Daftar Lampiran" seperti
 %     yang ada pada Daftar Gambar, Daftar Tabel, dan Daftar Kode.
 %
-%     12. appnewline
+%     13. appnewline
 %     Membuat judul lampiran memiliki dua baris, sama seperti bab
 %     makalah.
 %
 %     Lampiran A: Nama Lampiran -->  Lampiran A
 %                                   Nama Lampiran
 %
-%     13. appnumarabic
+%     14. appnumarabic
 %     Mengganti nomor Lampiran A, Lampiran B, Lampiran C, ...
 %     menjadi Lampiran 1, Lampiran 2, Lampiran 3, ...
 %
-%     14. apppagenum
+%     15. apppagenum
 %     Format nomor halaman untuk bagian Lampiran (setelah daftar
 %     pustaka atau glosarium)
 %
@@ -161,14 +161,14 @@
 %                      pada lampiran tersebut.
 %      - [kosong]  --- Memakai pilihan arabic
 %
-%     15. showlabelname
+%     16. showlabelname
 %     Memunculkan tulisan nama label:
 %     Daftar Gambar  : "2.2"   --> "Gambar 2.2"
 %     Daftar Tabel   : "2.2"   --> "Tabel 2.2"
 %     Daftar Kode    : "2.2"   --> "Kode 2.2"
 %     Daftar Lampiran: "A"/"1" --> "Lampiran A"/"Lampiran 1"
 %
-%     16. biblatex
+%     17. biblatex
 %     Memakai mesin pengolahan BibLaTeX dengan Biber untuk
 %     menggantikan BibTeX. BibLaTeX memiliki lokalisasi
 %     lewat babel sehingga setelan bahasa biblang tidak 
@@ -177,7 +177,7 @@
 %     [NOTE] Pastikan Biber terinstal dan menggunakan
 %            bibliography tool Biber
 %
-%     17. bibstyle
+%     18. bibstyle
 %     Gaya selingkung referensi dan pengutipan (sitasi)
 %
 %     Pilihan yang tersedia:
@@ -188,7 +188,7 @@
 %                     Electronics Engineers
 %      - [kosong] --- Memakai pilihan apa6 (APA 6)
 %
-%     18. biblang
+%     19. biblang
 %     Bahasa dan penerjemahan istilah dari gaya selingkung
 %     referensi yang dipilih
 %
@@ -211,7 +211,7 @@
 
 % --- Hyperlink ---
 \usepackage[hidelinks, bookmarksdepth=3]{hyperref}
-\usepackage{xurl}
+%\usepackage{xurl}
 
 %======================%
 %     Bahasa Utama     %
@@ -320,57 +320,7 @@
 % --- Daftar Istilah Glosarium ---
 \input{glossary.tex}
 
-%===========================================%
-%     Pilihan Gaya Selingkung Referensi     %
-%===========================================%
-%
-% --- Gaya Selingkung Referensi APA 6 ---
-%
-%     Kutipan di Awal: \citeA{keyword}
-%
-%     Menurut \citeA{nama-rujukan}, konsep ini ...
-%     Menurut Penulis (2077), konsep ini ...
-%
-%     Kutipan di Akhir: \cite{keyword}
-%
-%     ... agar selaras dengan kesejahteraan \cite{nama-rujukan}. 
-%     ... agar selaras dengan kesejahteraan (Penulis, 2077). 
-%
-%     Daftar Pustaka:
-%     
-%     Penulis. (2077). _Judul karya tulis buku_. Alamat Penerbit:
-%          Nama Penerbit.
-%
-\usepackage{apacite}
-\bibliographystyle{apacite}
-% ----------------------------------------- %
-%
-% --- Gaya Selingkung Referensi IEEE ---
-%
-%     Kutipan di Awal: \cite{keyword}
-%
-%     Berdasarkan \cite{nama-rujukan}, konsep ini ...
-%     Berdasarkan [3], konsep ini ...
-%
-%     Berdasarkan Penulis \cite{nama-rujukan}, konsep ini ...
-%     Berdasarkan Penulis [3], konsep ini ...
-%
-%     Kutipan di Akhir: \cite{keyword}
-%
-%     ... agar selaras dengan kesejahteraan \cite{nama-rujukan}. 
-%     ... agar selaras dengan kesejahteraan [3]. 
-%
-%     Daftar Pustaka:
-%     
-%     [3] Penulis, _Judul Karya Tulis Buku_. Alamat Penerbit:
-%         Nama Penerbit, 2077
-%
-%     [NOTE] Jangan gunakan setelan bahasa APA di \documentclass 
-%            saat menggunakan gaya selingkung IEEE.
-%
-%\usepackage{cite}
-%\bibliographystyle{ieeetr}
-% ----------------------------------------- %
+
 
 \begin{document}
     
