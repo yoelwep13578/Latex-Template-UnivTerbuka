@@ -117,11 +117,19 @@
     \renewcommand{\theparagraph}{\alph{paragraph}}
     \renewcommand{\thesubparagraph}{\arabic{subparagraph}}
     
-    \titleformat{\section}[hang]
-    {\setstretch{1}\template@secfont\bfseries\filright\template@size@section}
-    {\makebox[\titleindent][l]{\template@secfont\bfseries\thesection.}}
-    {0em}
-    {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    \ifdefstring{\template@secmag}{true}{%
+        \titleformat{\section}[hang]
+        {\setstretch{1}\template@secfont\bfseries\filright\template@size@section}
+        {\template@secfont\bfseries\thesection.}
+        {.5em}
+        {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    }{%
+        \titleformat{\section}[hang]
+        {\setstretch{1}\template@secfont\bfseries\filright\template@size@section}
+        {\makebox[\titleindent][l]{\template@secfont\bfseries\thesection.}}
+        {0em}
+        {\ifdefstring{\template@seccaps}{true}{\MakeUppercase}{}}
+    }
     
     \titleformat{\subsection}[hang]
     {\setstretch{1}\template@secfont\bfseries\filright\template@size@subsection}
