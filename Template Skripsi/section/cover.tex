@@ -26,10 +26,11 @@
 %
 \begin{titlepage}
     
+    \makeatletter
     \centering
     
     % --- Judul ---
-    {\setstretch{1}\Large\textbf{\MakeUppercase{%
+    {\setstretch{1}\template@size@section\textbf{\MakeUppercase{%
         \ifundef{\judul}{%
             \ifundef{\captionsindonesian}{%
                 \skemaPembelajaran\ \Tugas\ \tugasKe
@@ -71,7 +72,7 @@
     
     \vfill
     
-    {\setstretch{1}\large
+    {\setstretch{1}\template@size@subsection
         \ifundef{\captionsindonesian}{
             \textbf{\MakeUppercase{\Fakultas\ of \fakultasENG}} \\
             \textbf{\MakeUppercase{\kampusENG}} \\
@@ -84,5 +85,7 @@
             \textbf{\tahun}
         }
     }
+    
+    \makeatother
     
 \end{titlepage}
