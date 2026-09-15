@@ -415,7 +415,7 @@
 
     % Daftar Pustaka
     %\nocite{*} % <-- Tampil tanpa dikutip
-    \bibliography{reference}
+    \ifdef{\printbibliography}{\printbibliography}{\bibliography{reference}}
     
     % Glosarium
     \ifdef{\printglossaries}{\printglossaries}{}

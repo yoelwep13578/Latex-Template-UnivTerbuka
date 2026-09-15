@@ -392,10 +392,7 @@
     
     % Daftar Pustaka
     %\nocite{*} % <-- Tampil tanpa dikutip
-    
-    \makeatletter
-    \ifdefstring{\template@biblatex}{true}{\printbibliography}{\bibliography{reference}}
-    \makeatother
+    \ifdef{\printbibliography}{\printbibliography}{\bibliography{reference}}
     
     % Glosarium
     \ifdef{\printglossaries}{\printglossaries}{}
