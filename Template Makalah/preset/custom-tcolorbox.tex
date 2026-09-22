@@ -67,7 +67,7 @@
 }
 
 \AtBeginDocument{%
-    \NewTCBListing[blend into=listings]{lstcodecap}{ O{} m }{%
+    \NewTCBListing[blend into=listings]{lstcodecap}{ O{} m O{} }{%
         arc=0mm,
         outer arc=0mm,
         boxrule=0.5pt,
@@ -85,87 +85,69 @@
             belowskip=0pt,
             frame=none,
             breaklines=true,
-            xleftmargin=0em,
-            xrightmargin=0em,
+            xleftmargin=0pt,
+            xrightmargin=0pt,
+            caption={#2},
             #1
         },
         title={#2},
         detach title,
         coltitle=black,
         listing above* comment,
-        comment={\centering\small\tcbtitle\vspace{.5\baselineskip}}
+        comment={\centering\small\tcbtitle\vspace{18pt}},
+        #3
+    }%
+}
+
+%===========================%
+%     Theorem Tcolorbox     %
+%===========================%
+
+\tcbset{
+    theoremboxstyle/.style={
+        parbox=false,
+        arc=0pt,
+        outer arc=0pt,
+        boxrule=0.5pt,
+        titlerule=0.5pt,
+        before skip=12pt, after skip=12pt,
+        colback=white,
+        colframe=graybr,
+        colbacktitle=graybg,
+        coltitle=black,
+        breakable,
+        lines before break=2,
+        label separator={}%:
     }
 }
 
 % --- Teorema (Theorem) ---
-\newtcbtheorem{theorembox}{\Teorema}{
-    parbox=false,
-    arc=0pt,
-    outer arc=0pt,
-    boxrule=0.5pt,
-    titlerule=0.5pt,
+\newtcbtheorem[use counter=theorem, number freestyle={\noexpand\thetheorem}]{theorembox}{\Teorema}{
+    theoremboxstyle,
     fonttitle=\bfseries,
-    before skip=12pt, after skip=12pt,
-    colback=white,
-    colframe=red!40!black,
-    colbacktitle=red!8,
-    coltitle=red!40!black,
-    breakable,
-    lines before break=2
-}{thm}
+    fontupper=\itshape
+}{}%thm
 
 % --- Lema (Lemma) ---
-\newtcbtheorem[use counter from=theorembox]{lemmabox}{\Lema}{
-    parbox=false,
-    arc=0pt,
-    outer arc=0pt,
-    boxrule=0.5pt,
-    titlerule=0.5pt,
+\newtcbtheorem[use counter=lemma, number freestyle={\noexpand\thetheorem}]{lemmabox}{\Lema}{
+    theoremboxstyle,
     fonttitle=\bfseries,
-    before skip=12pt, after skip=12pt,
-    colback=white,
-    colframe=purple!40!black,
-    colbacktitle=purple!8,
-    coltitle=purple!40!black,
-    breakable,
-    lines before break=2
-}{lem}
+    fontupper=\itshape
+}{}%lem
 
 % --- Definisi (Definition) ---
-\newtcbtheorem[use counter from=theorembox]{definitionbox}{\Definisi}{
-    parbox=false,
-    arc=0pt,
-    outer arc=0pt,
-    boxrule=0.5pt,
-    titlerule=0.5pt,
-    fonttitle=\bfseries,
-    before skip=12pt, after skip=12pt,
-    colback=white,
-    colframe=green!40!black,
-    colbacktitle=green!8,
-    coltitle=green!40!black,
-    breakable,
-    lines before break=2
-}{def}
+\newtcbtheorem[use counter=definition, number freestyle={\noexpand\thetheorem}]{definitionbox}{\Definisi}{
+    theoremboxstyle,
+    fonttitle=\bfseries
+}{}%def
 
 % --- Contoh (Example) ---
-\newtcbtheorem[use counter from=theorembox]{examplebox}{\Contoh}{
-    parbox=false,
-    arc=0pt,
-    outer arc=0pt,
-    boxrule=0.5pt,
-    titlerule=0.5pt,
-    fonttitle=\bfseries,
-    before skip=12pt, after skip=12pt,
-    colback=white,
-    colframe=black!70,
-    colbacktitle=black!8,
-    coltitle=black!80,
-    breakable,
-    lines before break=2
-}{ex}
+\newtcbtheorem[use counter=example, number freestyle={\noexpand\thetheorem}]{examplebox}{\Contoh}{
+    theoremboxstyle,
+    fonttitle=\itshape
+}{}%ex
 
 }{
-\typeout{Template Info: tcolorbox not used.}
+    \typeout{Template Info: tcolorbox not used.}
 }
 \makeatother

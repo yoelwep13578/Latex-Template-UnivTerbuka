@@ -1,0 +1,60 @@
+%======================%
+%     Nama Autoref     %
+%======================%
+
+% --- Teorema ---
+\renewcommand{\theoremautorefname}{\Teorema}
+\newcommand{\lemmaautorefname}{\Lema}
+\newcommand{\definitionautorefname}{\Definisi}
+\newcommand{\exampleautorefname}{\Contoh}
+
+% --- Nama Level Bagian untuk \autoref ---
+%
+%     Penamaan untuk level Chapter hingga Subparagraph saat 
+%     dirujuk
+%     di dalam kalimat, contohnya lihat Bagian 2.5.
+%
+%     [NOTE] Rujukan level bagian hanya efektif untuk penomoran 
+%            heading Multilevel (bernomor 1, 1.1, 1.1.1, 1.1.1.1)
+%
+\ifdef{\captionsindonesian}{\addto\captionsindonesian{
+    \renewcommand{\chapterautorefname}{Bab}
+    \ifdef{\chapter}{%
+        \renewcommand{\sectionautorefname}{Subbab}
+    }{%
+        \renewcommand{\sectionautorefname}{Bagian}
+    }%
+    \renewcommand{\subsectionautorefname}{Bagian}
+    \renewcommand{\subsubsectionautorefname}{Bagian}
+    \renewcommand{\paragraphautorefname}{Paragraf}
+    \renewcommand{\subparagraphautorefname}{Subparagraf}
+}}{}
+
+% --- Nama Sisipan ---
+%
+%     Penamaan untuk gambar, tabel, matematika, dan kode yang ada
+%     di keterangan lampiran maupun dirujuk di dalam kalimat; 
+%     contohnya lihat Gambar 2, lihat Tabel 3, Persamaan 4 
+%     menunjukkan, lihat Kode 5.
+%
+\ifdef{\captionsindonesian}{\addto\captionsindonesian{
+    \renewcommand{\figureautorefname}{Gambar}
+    \renewcommand{\tableautorefname}{Tabel}
+    \renewcommand{\equationautorefname}{Persamaan}
+}}{}
+
+\ifdef{\lstlistingname}{%
+    \ifdef{\captionsindonesian}{\addto\captionsindonesian{
+        \renewcommand{\lstlistingname}{Kode}
+    }}{%
+        \ifdef{\captionsamerican}{\addto\captionsamerican{
+            \renewcommand{\lstlistingname}{Code}
+        }}{%
+            \ifdef{\captionsbritish}{\addto\captionsbritish{
+                \renewcommand{\lstlistingname}{Code}
+            }}{}%
+        }%
+    }%
+}{}
+
+

@@ -1,15 +1,18 @@
 %=====================%
-%     COLOR NAMES     %
+%     Color Names     %
 %=====================%
 
+% --- Simple Monokai-like Set ---
 \definecolor{monokai-bg}{RGB}{250,250,250}     % Light gray background
 \definecolor{monokai-comment}{RGB}{117,113,94} % Grayish comments
 \definecolor{monokai-purple}{RGB}{137,89,168}  % Purple for keywords
 \definecolor{monokai-green}{RGB}{58,110,59}    % Green for strings
 \definecolor{monokai-orange}{RGB}{253,151,31}  % Orange for specials
 \definecolor{monokai-blue}{RGB}{81,154,186}    % Blue for types/functions
-\definecolor{graybg}{RGB}{249, 249, 249}
-\definecolor{graybr}{RGB}{204, 204, 204}
+
+% --- Template ---
+\definecolor{graybg}{RGB}{249,249,249}
+\definecolor{graybr}{RGB}{204,204,204}
 
 
 
@@ -18,10 +21,35 @@
 %==============%
 
 % --- Penambahan Teorema ---
-\newtheorem{theorem}{\Teorema}              % Teorema
-\newtheorem{lemma}[theorem]{\Lema}          % Lema
-\newtheorem{definition}[theorem]{\Definisi} % Definisi
-\newtheorem{example}[theorem]{\Contoh}      % Contoh
+\makeatletter
+\ifdef{\chapter}{%
+    \ifboolexpr{ test {\ifdefstring{\template@soaljawab}{true}} or test {\ifdefstring{\template@heading}{apalike}} }{%
+        \newtheorem{theorem}{\Teorema} % Teorema
+        \renewcommand{\thetheorem}{\arabic{theorem}}
+    }{%
+        \newtheorem{theorem}{\Teorema}[chapter] % Teorema
+        \renewcommand{\thetheorem}{\arabic{chapter}.\arabic{theorem}}
+    }
+}{%
+    \newtheorem{theorem}{\Teorema} % Teorema
+    \renewcommand{\thetheorem}{\arabic{theorem}}
+}
+\makeatother
+
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{\Lema} % Lema
+\aliascntresetthe{lemma}
+
+\theoremstyle{definition}
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{\Definisi} % Definisi
+\aliascntresetthe{definition}
+
+\theoremstyle{remark}
+\newaliascnt{example}{theorem}
+\newtheorem{example}[example]{\Contoh} % Contoh
+\aliascntresetthe{example}
+
 
 % --- Math Roman Alternatif ---
 \newcommand{\upmath}[1]{\mathrm{#1}}
@@ -169,7 +197,7 @@
             \centering
             Meterai \\ Rp10.000
         }%
-    }
+    }%
 }
 
 %=======================%

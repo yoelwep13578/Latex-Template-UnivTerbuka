@@ -17,8 +17,8 @@
     %style=FiraCodeStyle,
     aboveskip=\baselineskip,
     belowskip=.9\baselineskip,
-    xleftmargin=1em,
-    xrightmargin=1em,
+    xleftmargin=24pt,
+    xrightmargin=24pt,
     basicstyle=\ttfamily,
     numberstyle=\footnotesize\color{gray},
     captionpos=b,
@@ -33,6 +33,19 @@
     ndkeywordstyle=\itshape\bfseries\color{monokai-orange},
     stringstyle=\color{monokai-green},
     identifierstyle=\color{black},
+}
+
+\lstdefinestyle{numbered}{
+    numbers=left,
+    numbersep=12pt,
+    xleftmargin=56pt,
+    framexleftmargin=32pt
+}
+
+\lstdefinestyle{lstcodenumbered}{
+    numbers=left,
+    numbersep=12pt,
+    xleftmargin=24pt
 }
 
 
@@ -101,6 +114,6 @@
 }%
 
 }{
-\typeout{Template Info: listings not used.}
+    \typeout{Template Info: listings not used.}
 }
 \makeatother

@@ -1,7 +1,7 @@
 % !TeX root = ./main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{artikelmakalah}[2026/09/13 v2.0 Template Artikel dan Makalah]
+\ProvidesClass{artikelmakalah}[2026/09/22 v2.0 Template Artikel dan Makalah]
 
 %===========================%
 %     Key Value Options     %
@@ -974,6 +974,7 @@
 %     Daftar Lampiran     %
 %=========================%
 
+\makeatletter
 \newcommand{\listofappendices}{%
 	\ifdefstring{\template@listappendix}{true}{%
 		\clearpage
@@ -982,12 +983,13 @@
 			\addcontentsline{toc}{chapter}{\listappendicesname}%
 		}{%
 			\section*{\listappendicesname}%
-			\addcontentsline{toc}{chapter}{\listappendicesname}%
+			\addcontentsline{toc}{section}{\listappendicesname}%
 		}%
 		\markboth{\listappendicesname}{\listappendicesname}%
 		\@starttoc{loa}%
 	}{}%
 }
+\makeatother
 
 %=========================%
 %     Format Lampiran     %
@@ -1000,6 +1002,11 @@
     
     % --- Pembuangan dari Daftar Isi bila Memakai Daftar Lampiran ---
     \ifdefstring{\template@listappendix}{true}{
+        \ifdef{\chapter}{%
+            \phantomsection\addcontentsline{toc}{chapter}{\appendicesname}%
+        }{%
+            \phantomsection\addcontentsline{toc}{section}{\appendicesname}%
+        }
     	\addtocontents{toc}{\protect\setcounter{tocdepth}{-2}}
     }{}
     

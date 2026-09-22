@@ -209,10 +209,6 @@
 % --- Halaman Landscape ---
 \usepackage{pdflscape}
 
-% --- Hyperlink ---
-\usepackage[hidelinks, bookmarksdepth=3]{hyperref}
-\usepackage{xurl}
-
 %======================%
 %     Bahasa Utama     %
 %======================%
@@ -235,6 +231,11 @@
 
 % --- Line Break Display Matematika ---
 \allowdisplaybreaks
+
+% --- Hyperlink & Referensi Silang ---
+\usepackage{aliascnt}
+\usepackage[hidelinks, bookmarksdepth=3]{hyperref}
+\usepackage{xurl}
 
 % --- Tabel Pelengkap & Pengganti tabular ---
 \usepackage{multirow}
@@ -311,66 +312,17 @@
 % --- Variabel ---
 \input{variable.tex}
 
-\input{preset/custom-commands.tex}
+\input{preset/custom-autoref.tex}
 \input{preset/custom-enumitem.tex}
 \input{preset/custom-listing.tex}
 \input{preset/custom-tcolorbox.tex}
+\input{preset/custom-commands.tex}
 \input{preset/languagelist.tex}
 
 % --- Daftar Istilah Glosarium ---
 \input{glossary.tex}
 
-%===========================================%
-%     Pilihan Gaya Selingkung Referensi     %
-%===========================================%
-%
-% --- Gaya Selingkung Referensi APA 6 ---
-%
-%     Kutipan di Awal: \citeA{keyword}
-%
-%     Menurut \citeA{nama-rujukan}, konsep ini ...
-%     Menurut Penulis (2077), konsep ini ...
-%
-%     Kutipan di Akhir: \cite{keyword}
-%
-%     ... agar selaras dengan kesejahteraan \cite{nama-rujukan}. 
-%     ... agar selaras dengan kesejahteraan (Penulis, 2077). 
-%
-%     Daftar Pustaka:
-%     
-%     Penulis. (2077). _Judul karya tulis buku_. Alamat Penerbit:
-%          Nama Penerbit.
-%
-\usepackage{apacite}
-\bibliographystyle{apacite}
-% ----------------------------------------- %
-%
-% --- Gaya Selingkung Referensi IEEE ---
-%
-%     Kutipan di Awal: \cite{keyword}
-%
-%     Berdasarkan \cite{nama-rujukan}, konsep ini ...
-%     Berdasarkan [3], konsep ini ...
-%
-%     Berdasarkan Penulis \cite{nama-rujukan}, konsep ini ...
-%     Berdasarkan Penulis [3], konsep ini ...
-%
-%     Kutipan di Akhir: \cite{keyword}
-%
-%     ... agar selaras dengan kesejahteraan \cite{nama-rujukan}. 
-%     ... agar selaras dengan kesejahteraan [3]. 
-%
-%     Daftar Pustaka:
-%     
-%     [3] Penulis, _Judul Karya Tulis Buku_. Alamat Penerbit:
-%         Nama Penerbit, 2077
-%
-%     [NOTE] Jangan gunakan setelan bahasa APA di \documentclass 
-%            saat menggunakan gaya selingkung IEEE.
-%
-%\usepackage{cite}
-%\bibliographystyle{ieeetr}
-% ----------------------------------------- %
+
 
 \begin{document}
     

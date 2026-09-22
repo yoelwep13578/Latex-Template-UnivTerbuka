@@ -3,31 +3,18 @@
 %===============================%
 
 \ifdef{\lstlistingname}{
-    
     % --- Bahasa Inggris Amerika ---
-    \ifundef{\captionsamerican}{}{
-        \addto\captionsamerican{
-            \renewcommand{\lstlistingname}{Code}
+    \ifdef{\captionsamerican}{\addto\captionsamerican{
+        \renewcommand{\lstlistlistingname}{List of Code}
+    }}{% --- Bahasa Inggris ---
+        \ifdef{\captionsbritish}{\addto\captionsbritish{
             \renewcommand{\lstlistlistingname}{List of Code}
-        }
-    }
-    
-    % --- Bahasa Inggris ---
-    \ifundef{\captionsbritish}{}{
-        \addto\captionsbritish{
-            \renewcommand{\lstlistingname}{Code}
-            \renewcommand{\lstlistlistingname}{List of Code}
-        }
-    }
-    
-    % --- Bahasa Indonesia ---
-    \ifundef{\captionsindonesian}{}{
-        \addto\captionsindonesian{
-            \renewcommand{\lstlistingname}{Kode}
-            \renewcommand{\lstlistlistingname}{Daftar Kode}
-        }
-    }
-    
+        }}{% --- Bahasa Indonesia ---
+            \ifdef{\captionsindonesian}{\addto\captionsindonesian{
+                \renewcommand{\lstlistlistingname}{Daftar Kode}
+            }}{}%
+        }%
+    }%
 }{}
 
 
@@ -111,6 +98,7 @@
 % --- Lampiran
 \newcommand{\LampiranSatu}{Appendix}
 \newcommand{\LampiranBanyak}{Appendices}
+\newcommand{\appendicesname}{Appendices}
 %
 % --- Teorema Matematika ----
 %
@@ -210,6 +198,7 @@
     % --- Lampiran
     \renewcommand{\LampiranSatu}{Lampiran}
     \renewcommand{\LampiranBanyak}{Lampiran}
+    \renewcommand{\appendicesname}{Lampiran}
     %
     % --- Teorema Matematika ----
     %
@@ -272,55 +261,6 @@
         %     Anda dapat menggantinya menjadi "Glosarium" jika mau
         %
         \renewcommand{\glossaryname}{Daftar Istilah}
-        %
-        % --- Nama Level Bagian untuk \autoref ---
-        %
-        %     Penamaan untuk level Chapter hingga Subparagraph saat 
-        %     dirujuk
-        %     di dalam kalimat, contohnya lihat Bagian 2.5.
-        %
-        %     [NOTE] Rujukan level bagian hanya efektif untuk penomoran 
-        %            heading Multilevel (bernomor 1, 1.1, 1.1.1, 1.1.1.1)
-        %
-        %     Bawaan Tanpa Disetel:
-        %     Chapter > Section > Subsection > Subsubsection > Paragraph %     > Subparagraph
-        %
-        %     Bahasa Indonesia (Terjemahan Paksa):
-        %     Bab > Seksi > Subseksi > Subsubseksi > Paragraf >
-        %     Subparagraf
-        %
-        %     Bahasa Indonesia (Terjemahan Paksa 2):
-        %     Bab > Bagian > Subbagian > Subsubbagian > Paragraf > 
-        %     Subparagraf
-        %
-        %     Bahasa Indonesia (Penyesuaian 1):
-        %     Bab > Subbab > Bagian > Bagian > Bagian > Paragraf > 
-        %     Subparagraf
-        %
-        %     Bahasa Indonesia (Penyesuaian 2) [Digunakan]:
-        %     Bab > Bagian > Bagian > Bagian > Bagian > Paragraf > 
-        %     Subparagraf
-        %
-        \renewcommand{\chapterautorefname}{Bab}
-        \renewcommand{\sectionautorefname}{Bagian}
-        \renewcommand{\subsectionautorefname}{Bagian}
-        \renewcommand{\subsubsectionautorefname}{Bagian}
-        \renewcommand{\paragraphautorefname}{Paragraf}
-        \renewcommand{\subparagraphautorefname}{Subparagraf}
-        %
-        % --- Nama Lampiran ---
-        %
-        %     Penamaan untuk gambar, tabel, matematika, dan kode yang ada
-        %     di keterangan lampiran maupun dirujuk di dalam kalimat; 
-        %     contohnya lihat Gambar 2, lihat Tabel 3, Persamaan 4 
-        %     menunjukkan, lihat Kode 5.
-        %
-        %     Bahasa Indonesia:
-        %     Gambar, Tabel, Persamaan, Kode
-        %
-        \renewcommand{\figureautorefname}{Gambar}
-        \renewcommand{\tableautorefname}{Tabel}
-        \renewcommand{\equationautorefname}{Persamaan}
         %
         % --- Nama Lanjutan Tabel Tabularray di Halaman Berikutnya ---
         %

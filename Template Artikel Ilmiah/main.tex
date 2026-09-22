@@ -209,10 +209,6 @@
 % --- Halaman Landscape ---
 \usepackage{pdflscape}
 
-% --- Hyperlink ---
-\usepackage[hidelinks, bookmarksdepth=3]{hyperref}
-\usepackage{xurl}
-
 %======================%
 %     Bahasa Utama     %
 %======================%
@@ -235,6 +231,11 @@
 
 % --- Line Break Display Matematika ---
 \allowdisplaybreaks
+
+% --- Hyperlink & Referensi Silang ---
+\usepackage{aliascnt}
+\usepackage[hidelinks, bookmarksdepth=3]{hyperref}
+\usepackage{xurl}
 
 % --- Tabel Pelengkap & Pengganti tabular ---
 \usepackage{multirow}
@@ -311,10 +312,11 @@
 % --- Variabel ---
 \input{variable.tex}
 
-\input{preset/custom-commands.tex}
+\input{preset/custom-autoref.tex}
 \input{preset/custom-enumitem.tex}
 \input{preset/custom-listing.tex}
 \input{preset/custom-tcolorbox.tex}
+\input{preset/custom-commands.tex}
 \input{preset/languagelist.tex}
 
 % --- Daftar Istilah Glosarium ---
